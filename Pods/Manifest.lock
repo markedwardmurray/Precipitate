@@ -1,0 +1,21 @@
+PODS:
+  - ForecastIO (1.0.3)
+  - KIF (3.3.0):
+    - KIF/Core (= 3.3.0)
+  - KIF/Core (3.3.0)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
+
+DEPENDENCIES:
+  - ForecastIO
+  - KIF (~> 3.3.0)
+  - Nimble (~> 3.0.0)
+  - Quick (~> 0.8.0)
+
+SPEC CHECKSUMS:
+  ForecastIO: 55b7bf11a7821391bf8502ca11cca861ae437d4e
+  KIF: 0a82046d06f3648799cac522d2d0f7934214caac
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+
+COCOAPODS: 0.39.0

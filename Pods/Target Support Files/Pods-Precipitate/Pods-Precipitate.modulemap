@@ -1,0 +1,6 @@
+framework module Pods_Precipitate {
+  umbrella header "Pods-Precipitate-umbrella.h"
+
+  export *
+  module * { export * }
+}
