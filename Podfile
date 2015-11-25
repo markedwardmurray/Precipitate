@@ -11,6 +11,7 @@ end
 
 target 'Precipitate' do
   pod 'ForecastIO'
+  pod 'SwiftyJSON'
 end
 
 target 'PrecipitateTests' do
