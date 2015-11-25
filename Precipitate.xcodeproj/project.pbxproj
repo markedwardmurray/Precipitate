@@ -14,6 +14,7 @@
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
 		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
 		4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */; };
+		4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E1D1C06785500A15C54 /* Secrets.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
 		707A89BA38B22BF3AD67950F /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA941FF68011B2F61E7D541 /* Pods_PrecipitateUITests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
@@ -51,6 +52,7 @@
 		4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D7E0E1D1C06785500A15C54 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
 		77820C9BD56E7D5302992A22 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
 				4D7E0DF11C064B4D00A15C54 /* ViewController.swift */,
+				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D7E0DF31C064B4D00A15C54 /* Main.storyboard */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */,
+				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
