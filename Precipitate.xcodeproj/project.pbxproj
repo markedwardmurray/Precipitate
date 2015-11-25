@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
+		4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF11C064B4D00A15C54 /* ViewController.swift */; };
+		4D7E0DF51C064B4D00A15C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF31C064B4D00A15C54 /* Main.storyboard */; };
+		4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */; };
+		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
+		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
+		4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D7E0E011C064B4D00A15C54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D7E0DE41C064B4D00A15C54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D7E0DEB1C064B4D00A15C54;
+			remoteInfo = Precipitate;
+		};
+		4D7E0E0C1C064B4D00A15C54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D7E0DE41C064B4D00A15C54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D7E0DEB1C064B4D00A15C54;
+			remoteInfo = Precipitate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D7E0DF11C064B4D00A15C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D7E0DF41C064B4D00A15C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D7E0DF91C064B4D00A15C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D7E0DFB1C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateTests.swift; sourceTree = "<group>"; };
+		4D7E0E061C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
+		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D7E0DE91C064B4D00A15C54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0DFD1C064B4D00A15C54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0E081C064B4D00A15C54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D7E0DE31C064B4D00A15C54 = {
+			isa = PBXGroup;
+			children = (
+				4D7E0DEE1C064B4D00A15C54 /* Precipitate */,
+				4D7E0E031C064B4D00A15C54 /* PrecipitateTests */,
+				4D7E0E0E1C064B4D00A15C54 /* PrecipitateUITests */,
+				4D7E0DED1C064B4D00A15C54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D7E0DED1C064B4D00A15C54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */,
+				4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */,
+				4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D7E0DEE1C064B4D00A15C54 /* Precipitate */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
+				4D7E0DF11C064B4D00A15C54 /* ViewController.swift */,
+				4D7E0DF31C064B4D00A15C54 /* Main.storyboard */,
+				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
+				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
+				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
+			);
+			path = Precipitate;
+			sourceTree = "<group>";
+		};
+		4D7E0E031C064B4D00A15C54 /* PrecipitateTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */,
+				4D7E0E061C064B4D00A15C54 /* Info.plist */,
+			);
+			path = PrecipitateTests;
+			sourceTree = "<group>";
+		};
+		4D7E0E0E1C064B4D00A15C54 /* PrecipitateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */,
+				4D7E0E111C064B4D00A15C54 /* Info.plist */,
+			);
+			path = PrecipitateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D7E0DEB1C064B4D00A15C54 /* Precipitate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D7E0E141C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "Precipitate" */;
+			buildPhases = (
+				4D7E0DE81C064B4D00A15C54 /* Sources */,
+				4D7E0DE91C064B4D00A15C54 /* Frameworks */,
+				4D7E0DEA1C064B4D00A15C54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Precipitate;
+			productName = Precipitate;
+			productReference = 4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D7E0DFF1C064B4D00A15C54 /* PrecipitateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D7E0E171C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateTests" */;
+			buildPhases = (
+				4D7E0DFC1C064B4D00A15C54 /* Sources */,
+				4D7E0DFD1C064B4D00A15C54 /* Frameworks */,
+				4D7E0DFE1C064B4D00A15C54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D7E0E021C064B4D00A15C54 /* PBXTargetDependency */,
+			);
+			name = PrecipitateTests;
+			productName = PrecipitateTests;
+			productReference = 4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D7E0E0A1C064B4D00A15C54 /* PrecipitateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D7E0E1A1C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateUITests" */;
+			buildPhases = (
+				4D7E0E071C064B4D00A15C54 /* Sources */,
+				4D7E0E081C064B4D00A15C54 /* Frameworks */,
+				4D7E0E091C064B4D00A15C54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D7E0E0D1C064B4D00A15C54 /* PBXTargetDependency */,
+			);
+			name = PrecipitateUITests;
+			productName = PrecipitateUITests;
+			productReference = 4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D7E0DE41C064B4D00A15C54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = markedwardmurray;
+				TargetAttributes = {
+					4D7E0DEB1C064B4D00A15C54 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					4D7E0DFF1C064B4D00A15C54 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 4D7E0DEB1C064B4D00A15C54;
+					};
+					4D7E0E0A1C064B4D00A15C54 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 4D7E0DEB1C064B4D00A15C54;
+					};
+				};
+			};
+			buildConfigurationList = 4D7E0DE71C064B4D00A15C54 /* Build configuration list for PBXProject "Precipitate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D7E0DE31C064B4D00A15C54;
+			productRefGroup = 4D7E0DED1C064B4D00A15C54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D7E0DEB1C064B4D00A15C54 /* Precipitate */,
+				4D7E0DFF1C064B4D00A15C54 /* PrecipitateTests */,
+				4D7E0E0A1C064B4D00A15C54 /* PrecipitateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D7E0DEA1C064B4D00A15C54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
+				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
+				4D7E0DF51C064B4D00A15C54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0DFE1C064B4D00A15C54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0E091C064B4D00A15C54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D7E0DE81C064B4D00A15C54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */,
+				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0DFC1C064B4D00A15C54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D7E0E071C064B4D00A15C54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D7E0E021C064B4D00A15C54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D7E0DEB1C064B4D00A15C54 /* Precipitate */;
+			targetProxy = 4D7E0E011C064B4D00A15C54 /* PBXContainerItemProxy */;
+		};
+		4D7E0E0D1C064B4D00A15C54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D7E0DEB1C064B4D00A15C54 /* Precipitate */;
+			targetProxy = 4D7E0E0C1C064B4D00A15C54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D7E0DF31C064B4D00A15C54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D7E0DF41C064B4D00A15C54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D7E0DF91C064B4D00A15C54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D7E0E121C064B4D00A15C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D7E0E131C064B4D00A15C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D7E0E151C064B4D00A15C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Precipitate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4D7E0E161C064B4D00A15C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Precipitate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4D7E0E181C064B4D00A15C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PrecipitateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
+			};
+			name = Debug;
+		};
+		4D7E0E191C064B4D00A15C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PrecipitateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
+			};
+			name = Release;
+		};
+		4D7E0E1B1C064B4D00A15C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PrecipitateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Precipitate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4D7E0E1C1C064B4D00A15C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PrecipitateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Precipitate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D7E0DE71C064B4D00A15C54 /* Build configuration list for PBXProject "Precipitate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D7E0E121C064B4D00A15C54 /* Debug */,
+				4D7E0E131C064B4D00A15C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D7E0E141C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "Precipitate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D7E0E151C064B4D00A15C54 /* Debug */,
+				4D7E0E161C064B4D00A15C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4D7E0E171C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D7E0E181C064B4D00A15C54 /* Debug */,
+				4D7E0E191C064B4D00A15C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4D7E0E1A1C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D7E0E1B1C064B4D00A15C54 /* Debug */,
+				4D7E0E1C1C064B4D00A15C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D7E0DE41C064B4D00A15C54 /* Project object */;
+}
