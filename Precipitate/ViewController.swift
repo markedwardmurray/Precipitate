@@ -56,7 +56,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         
                         if let precipProbability = currentForecast?.currently?.precipProbability {
                             print(precipProbability)
-                            self.probability.text = "\(precipProbability) %"
+                            self.probability.text = "\(precipProbability * 100) %"
                         }
                         if let precipIntensity = currentForecast?.currently?.precipIntensity {
                             print(precipIntensity)
