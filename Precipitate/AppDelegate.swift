@@ -39,32 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // first implementation
         // always hit the internet, and always cache it
-        // read from the cache
+        // read from the cache, no error handling
         
         // second implementation
         // always parse things in
         // both the return and the completionBlock
         // no error handling
         
-        
-        // documents directory -- gets backed up, be careful (via Apple) putting huge files in documents directory
-        // tmp directory -- doesn't get backed up, wiped if uninstalled
-        
-        // NSFileManager gettempdirectory
-
-        
-//        let file: NSFileHandle? = NSFileHandle(forReadingAtPath: "Applications/Precipitate.app/forecastResponse.json")
-//        
-//        if file != nil {
-//            if let data = file?.readDataToEndOfFile() {
-//                file?.closeFile()
-//                let json = JSON(data)
-//                print(json)
-//            }
-//        }
-//        else {
-//            print("Ooops! Something went wrong!")
-//        }
         
         return true
     }
