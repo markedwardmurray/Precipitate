@@ -17,6 +17,10 @@ class ForecastAPIClient {
     private let apiKey = marksAPIKey
     
     func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
+        
+        //cached
+        //completion(json: cached)
+        
         let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
         Alamofire.request(.GET, url ).responseJSON { response in

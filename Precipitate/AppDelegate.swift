@@ -26,6 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("AppDelegate: \(json)")
         }
         
+        // perfect answer
+        // apimanager: does a return AND a completion block
+        // return -> immediately shows any cached data, optional return type
+        //  --> call completionBlock twice? instead
+        // completionblock -> new update with the current API response
+        // caveats:
+        // save the timestamp
+        // check the json -> how old are you, or nil
+        // if need to make internet request, do it immediately
+        // parallelize things when possible
+        
+        // first implementation
+        // always hit the internet, and always cache it
+        // read from the cache
+        
+        // second implementation
+        // always parse things in
+        // both the return and the completionBlock
+        // no error handling
+        
+        
+        // documents directory -- gets backed up, be careful (via Apple) putting huge files in documents directory
+        // tmp directory -- doesn't get backed up, wiped if uninstalled
+        
+        // NSFileManager gettempdirectory
+
         
 //        let file: NSFileHandle? = NSFileHandle(forReadingAtPath: "Applications/Precipitate.app/forecastResponse.json")
 //        
