@@ -7,29 +7,43 @@
 //
 
 import Foundation
+import Alamofire
 import SwiftyJSON
 
-typealias ServiceResponse = (JSON, NSError?)
-
 class ForecastAPIClient {
-    static let sharedInstance = ForecastAPIClient()
+    static let sharedInstance = ForecastAPIClient()   // is this threadsafe?
     static let forecastURL = "https://api.forecast.io/forecast/"
     
     private let apiKey = marksAPIKey
     
-    func getForecastForLatitude(latitude: Double, longitude: Double, onCompletion: (ServiceResponse) ) {
+    func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
         let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
-        let request = NSURLRequest(URL: url)
-        
-        let session = NSURLSession.sharedSession()
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            if let data = data {
-                let json:JSON = JSON(data: data)
-                onCompletion((json, error))
+        Alamofire.request(.GET, url ).responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    //print("JSON: \(json)")
+                    completion(json: json)
+                }
+            case .Failure(let error):
+                print(error)
             }
-        })
-        task.resume()
+
+            
+//            if let data = response.data {
+////                print(data)
+////                let json = JSON(data)
+////                debugPrint(json)
+////            
+////                let str = json.description
+////                let data = str.dataUsingEncoding(NSUTF8StringEncoding)!
+//                let manager = NSFileManager.defaultManager()
+//                if !manager.fileExistsAtPath(filepath) {
+//                    manager.createFileAtPath(filepath, contents: data, attributes: nil)
+//                }                
+//            }
+        }
     }
 }

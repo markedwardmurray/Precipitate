@@ -6,7 +6,10 @@
 //  Copyright © 2015 markedwardmurray. All rights reserved.
 //
 
+// lat 40.705313  lng -74.013959
+
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let apiClient = ForecastAPIClient()
         
+        apiClient.getForecastForLatitude(40.705313, longitude: -74.013959) { (json) -> Void in
+            print("AppDelegate: \(json)")
+        }
+        
+        
+//        let file: NSFileHandle? = NSFileHandle(forReadingAtPath: "Applications/Precipitate.app/forecastResponse.json")
+//        
+//        if file != nil {
+//            if let data = file?.readDataToEndOfFile() {
+//                file?.closeFile()
+//                let json = JSON(data)
+//                print(json)
+//            }
+//        }
+//        else {
+//            print("Ooops! Something went wrong!")
+//        }
         
         return true
     }
