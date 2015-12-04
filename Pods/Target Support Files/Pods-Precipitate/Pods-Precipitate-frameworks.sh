@@ -85,12 +85,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
+  install_framework "Pods-Precipitate/Charts.framework"
   install_framework "Pods-Precipitate/ForecastIO.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
   install_framework "Pods-Precipitate/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
+  install_framework "Pods-Precipitate/Charts.framework"
   install_framework "Pods-Precipitate/ForecastIO.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
   install_framework "Pods-Precipitate/SwiftyJSON.framework"

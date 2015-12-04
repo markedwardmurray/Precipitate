@@ -11,6 +11,7 @@ end
 
 target 'Precipitate' do
   pod 'Alamofire', '~> 3.1.3'
+  pod 'Charts', '~> 2.1.6'
   pod 'ForecastIO'
   pod 'INTULocationManager', '~> 4.1.1'
   pod 'SwiftyJSON'
