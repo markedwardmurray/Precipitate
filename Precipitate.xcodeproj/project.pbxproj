@@ -65,6 +65,7 @@
 		4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
 		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
 		4DA717201C15EDAD0039418E /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Precipitate-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
 		77820C9BD56E7D5302992A22 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
+				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
 			);
 			path = Precipitate;
 			sourceTree = "<group>";
@@ -611,6 +613,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -624,6 +627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class ForecastAPIClient {
-    static let sharedInstance = ForecastAPIClient()   // is this threadsafe?
+    static let sharedInstance = ForecastAPIClient()
     static let forecastURL = "https://api.forecast.io/forecast/"
     
     static let fileURL = NSURL.fileURLWithPath(NSTemporaryDirectory() + "forecast.json")
@@ -68,7 +68,7 @@ class ForecastAPIClient {
     func cacheJSON(json: JSON) {
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
-        //print("path: \(path)")
+        print("path: \(path)")
         
         if manager.fileExistsAtPath(path) {
             do {
