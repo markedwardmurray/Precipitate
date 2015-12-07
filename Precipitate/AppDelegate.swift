@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let apiClient = ForecastAPIClient()
+//        let apiClient = ForecastAPIClient()
         
-        apiClient.getForecastForLatitude(40.705313, longitude: -74.013959) { (json) -> Void in
-            print("AppDelegate: \(json)")
-        }
+//        apiClient.getForecastForLatitude(40.705313, longitude: -74.013959) { (json) -> Void in
+//            print("AppDelegate: \(json)")
+//        }
+        
+//        let json = apiClient.retrieveCachedJSON()
         
         // perfect answer
         // apimanager: does a return AND a completion block
@@ -74,4 +76,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

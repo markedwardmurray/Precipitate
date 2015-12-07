@@ -15,8 +15,12 @@
 		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
 		4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */; };
 		4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E1D1C06785500A15C54 /* Secrets.swift */; };
-		4DA717141C0F3E460039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717131C0F3E460039418E /* Main.storyboard */; };
+		4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717131C0F3E460039418E /* Braindump.storyboard */; };
 		4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */; };
+		4DA717191C15CEDA0039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717181C15CEDA0039418E /* Main.storyboard */; };
+		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
+		4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171E1C15CFCF0039418E /* LineChartCell.swift */; };
+		4DA717211C15EDAD0039418E /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717201C15EDAD0039418E /* DataConverter.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
 		707A89BA38B22BF3AD67950F /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA941FF68011B2F61E7D541 /* Pods_PrecipitateUITests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
@@ -55,8 +59,12 @@
 		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7E0E1D1C06785500A15C54 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		4DA717131C0F3E460039418E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4DA717131C0F3E460039418E /* Braindump.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Braindump.storyboard; sourceTree = "<group>"; };
 		4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAPIClient.swift; sourceTree = "<group>"; };
+		4DA717181C15CEDA0039418E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
+		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
+		4DA717201C15EDAD0039418E /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
 		77820C9BD56E7D5302992A22 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +145,10 @@
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
 				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
-				4DA717131C0F3E460039418E /* Main.storyboard */,
+				4DA717201C15EDAD0039418E /* DataConverter.swift */,
+				4DA717181C15CEDA0039418E /* Main.storyboard */,
+				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
+				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
@@ -166,6 +177,7 @@
 		4DA717151C0F3EFB0039418E /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				4DA717131C0F3E460039418E /* Braindump.storyboard */,
 				4D7E0DF11C064B4D00A15C54 /* ViewController.swift */,
 				4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */,
 			);
@@ -296,9 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
+				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
 				4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */,
-				4DA717141C0F3E460039418E /* Main.storyboard in Resources */,
+				4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,9 +459,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
+				4DA717211C15EDAD0039418E /* DataConverter.swift in Sources */,
 				4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
+				4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */,
 				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,7 +53,7 @@ class ForecastAPIClient {
             if let data = NSData(contentsOfURL: ForecastAPIClient.fileURL) {
                 //print("data \(data)")
                 let json = JSON(data: data)
-                print(json)
+                //print("json: \(json)")
                 return json
             } else {
                 print("no data from file")
@@ -68,7 +68,7 @@ class ForecastAPIClient {
     func cacheJSON(json: JSON) {
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
-        print("path: \(path)")
+        //print("path: \(path)")
         
         if manager.fileExistsAtPath(path) {
             do {
