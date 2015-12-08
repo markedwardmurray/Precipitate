@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJ6-Ox-m3l" id="uSF-uK-YUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBl-2N-rKS" customClass="LineChartView" customModule="Charts">

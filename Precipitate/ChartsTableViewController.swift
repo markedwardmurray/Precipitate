@@ -41,9 +41,15 @@ class ChartsTableViewController: UITableViewController {
         */
         
         json = apiClient.retrieveCachedJSON()
+        NSLog("retrieved json")
         
         if let json = json {
             hourlyHumidityDataSet = dataConverter.hourlyHumidityDataFromJSON(json)
+            NSLog("submitting json to collate")
+            let collatedHourlyDataEntries = HourlyDataEntryCollator(json: json)
+            NSLog("\(collatedHourlyDataEntries)")
+        } else {
+            print("no cached json")
         }
     }
     

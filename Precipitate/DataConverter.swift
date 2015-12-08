@@ -22,18 +22,16 @@ class DataConverter {
             let dataBlock = hourlyData[i]
             
             if let humidity = dataBlock["humidity"].double {
-                if let time = dataBlock["time"].int {
-                    print(humidity)
-                    let dataEntry = ChartDataEntry(value: humidity, xIndex: i)
-                    print(dataEntry)
-                    hourlyHumidity.append(dataEntry)
-                }
+                
+                let dataEntry = ChartDataEntry(value: humidity, xIndex: i)
+                
+                hourlyHumidity.append(dataEntry)
             }
         }
-        print(hourlyHumidity)
+        
         
         let dataSet = LineChartDataSet(yVals: hourlyHumidity, label: "humidity")
-        dataSet.lineWidth = 2.0
+//        dataSet.lineWidth = 2.0
 //        dataSet.fillAlpha = 65/255.0
         dataSet.setColor(UIColor.blueColor())
         
