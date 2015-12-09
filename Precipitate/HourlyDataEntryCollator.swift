@@ -10,26 +10,28 @@ import Foundation
 import SwiftyJSON
 import Charts
 
-class HourlyDataEntryCollator: CustomDebugStringConvertible {
+class HourlyDataEntryCollator {
     let times: [Int]
     let sunriseTime: Int  // from daily data
     let sunsetTime: Int   // from daily data
     
-    let temperatures: [ChartDataEntry]
-    let apparentTemperatures: [ChartDataEntry]
+    let dataEntrys: [String: [ChartDataEntry] ]
     
-    let precipProbabilitys: [ChartDataEntry]
-    let precipIntensitys: [ChartDataEntry]
-    let precipAccumulations: [ChartDataEntry]
-    
-    let windSpeeds: [ChartDataEntry]
-    let cloudCovers: [ChartDataEntry]
-    let visibilitys: [ChartDataEntry]
-    
-    let ozones: [ChartDataEntry]
-    let humiditys: [ChartDataEntry]
-    let dewPoints: [ChartDataEntry]
-    let pressures: [ChartDataEntry]
+//    let temperatures: [ChartDataEntry]
+//    let apparentTemperatures: [ChartDataEntry]
+//    
+//    let precipProbabilitys: [ChartDataEntry]
+//    let precipIntensitys: [ChartDataEntry]
+//    let precipAccumulations: [ChartDataEntry]
+//    
+//    let windSpeeds: [ChartDataEntry]
+//    let cloudCovers: [ChartDataEntry]
+//    let visibilitys: [ChartDataEntry]
+//    
+//    let ozones: [ChartDataEntry]
+//    let humiditys: [ChartDataEntry]
+//    let dewPoints: [ChartDataEntry]
+//    let pressures: [ChartDataEntry]
     
     init(json: JSON) {
         sunriseTime = json["daily"]["data"][0]["sunriseTime"].int!
@@ -47,6 +49,9 @@ class HourlyDataEntryCollator: CustomDebugStringConvertible {
         }
         times = allTimes
         
+        self.dataEntrys = HourlyDataEntryCollator.dataEntrysFromHourlyData(hourlyData)
+        
+        /*
         temperatures = dataEntrysFromHourlyData(hourlyData, andKey: "temperature")
         apparentTemperatures = dataEntrysFromHourlyData(hourlyData, andKey: "apparentTemperature")
         precipProbabilitys = dataEntrysFromHourlyData(hourlyData, andKey: "precipProbability")
@@ -59,24 +64,65 @@ class HourlyDataEntryCollator: CustomDebugStringConvertible {
         humiditys = dataEntrysFromHourlyData(hourlyData, andKey: "humidity")
         dewPoints = dataEntrysFromHourlyData(hourlyData, andKey: "dewPoints")
         pressures = dataEntrysFromHourlyData(hourlyData, andKey: "pressures")
+        */
     }
     
-    var jsonKeysForDataEntrys: [String: [ChartDataEntry] ] { return
-        [
-            "temperature" : temperatures,
-            "apparentTemperature" : apparentTemperatures,
-            "precipProbability" : precipProbabilitys,
-            "precipIntensity" : precipIntensitys,
-            "precipAccumulation" : precipAccumulations,
-            "windSpeed" : windSpeeds,
-            "cloudCover" : cloudCovers,
-            "visibility" : visibilitys,
-            "ozone" : ozones,
-            "humidity" : humiditys,
-            "dewPoint" : dewPoints,
-            "pressure" : pressures
-        ]
+    class private func dataEntrysFromHourlyData(hourlyData: JSON) -> [String:[ChartDataEntry]] {
+        var dataDictionary = [ String: [ChartDataEntry] ]()
+        
+        for jsonKey in HourlyDataEntryCollator.jsonKeys {
+            var dataEntrys = [ChartDataEntry]()
+            
+            for var i = 0; i <= 24; i++ {
+                if let yVal = hourlyData[i][jsonKey].double {
+                    let dataEntry = ChartDataEntry(value: yVal, xIndex: i)
+                    dataEntrys.append(dataEntry)
+                } else {
+                    let nilEntry = ChartDataEntry(value: 0.0, xIndex: i)
+                    dataEntrys.append(nilEntry)
+                }
+            }
+            dataDictionary[jsonKey] = dataEntrys
+        }
+        return dataDictionary
     }
+    
+    static let jsonKeys: [String] =
+    [
+        "temperature",
+        "apparentTemperature",
+        
+        "precipProbability",
+        "precipIntensity",
+        "precipAccumulation",
+        
+        "windSpeed",
+        "cloudCover",
+        "visibility",
+        
+        "ozone",
+        "humidity",
+        "dewpoint",
+        "pressure"
+    ]
+    
+    /*
+    let dataEntrysByJSONKey: [String: [ChartDataEntry] ] =
+    [
+        "temperature" : temperatures,
+        "apparentTemperature" : apparentTemperatures,
+        "precipProbability" : precipProbabilitys,
+        "precipIntensity" : precipIntensitys,
+        "precipAccumulation" : precipAccumulations,
+        "windSpeed" : windSpeeds,
+        "cloudCover" : cloudCovers,
+        "visibility" : visibilitys,
+        "ozone" : ozones,
+        "humidity" : humiditys,
+        "dewPoint" : dewPoints,
+        "pressure" : pressures
+    ]
+
     
     var debugDescription: String { return self.getDebugDescription() }
     
@@ -85,20 +131,25 @@ class HourlyDataEntryCollator: CustomDebugStringConvertible {
         result += "  sunriseTime = \(sunriseTime)\n"
         result += "  sunsetTime = \(sunsetTime)\n"
         
-        for (jsonKey, dataEntrys) in jsonKeysForDataEntrys {
-            result += "  \(jsonKey) ="
-            
-            for dataEntry in dataEntrys {
-                result += "  \(dataEntry.value)"
+        for jsonKey in HourlyDataEntryCollator.jsonKeys {
+            if let dataEntrys = self.dataEntrysByJSONKey[jsonKey] {
+                result += "  \(jsonKey) ="
+                
+                for dataEntry in dataEntrys {
+                    result += "  \(dataEntry.value)"
+                }
+                result += "\n"
             }
-            result += "\n"
         }
         
         return result
     }
-        
+    */
+    
+
 }
 
+/*
 private func dataEntrysFromHourlyData(hourlyData: JSON, andKey jsonKey: String) -> [ChartDataEntry] {
     var dataEntrys = [ChartDataEntry]()
     
@@ -114,7 +165,7 @@ private func dataEntrysFromHourlyData(hourlyData: JSON, andKey jsonKey: String) 
     
     return dataEntrys
 }
-
+*/
 
 /* scrapped
 static let jsonKeys: [String] =

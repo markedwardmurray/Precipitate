@@ -17,13 +17,14 @@ class ChartsTableViewController: UITableViewController {
     let locationManager = INTULocationManager.sharedInstance()
     
     var json: JSON?
+    var hourlyDataEntrys: HourlyDataEntryCollator?
     
     var hourlyHumidityDataSet: LineChartDataSet?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /* just saving on API calls, using the cache instead
+        // just saving on API calls, using the cache instead
         
         locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
             print(status)
@@ -33,38 +34,50 @@ class ChartsTableViewController: UITableViewController {
             
             self.apiClient.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
                 print(json)
-                self.hourlyHumidityDataSet = self.dataConverter.hourlyHumidityDataFromJSON(json)
+                //self.hourlyHumidityDataSet = self.dataConverter.hourlyHumidityDataFromJSON(json)
+                self.hourlyDataEntrys = HourlyDataEntryCollator(json: json)
                 self.tableView.reloadData()
             })
         }
+        
 
-        */
         
         json = apiClient.retrieveCachedJSON()
         NSLog("retrieved json")
         
         if let json = json {
-            hourlyHumidityDataSet = dataConverter.hourlyHumidityDataFromJSON(json)
-            NSLog("submitting json to collate")
-            let collatedHourlyDataEntries = HourlyDataEntryCollator(json: json)
-            NSLog("\(collatedHourlyDataEntries)")
+            //hourlyHumidityDataSet = dataConverter.hourlyHumidityDataFromJSON(json)
+            hourlyDataEntrys = HourlyDataEntryCollator(json: json)
         } else {
             print("no cached json")
         }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return HourlyDataEntryCollator.jsonKeys.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let lineChartCell: LineChartCell = tableView.dequeueReusableCellWithIdentifier("lineChartCell", forIndexPath: indexPath) as! LineChartCell
         
-        if let hourlyHumidityDataSet = hourlyHumidityDataSet {
-            let lineChartData = LineChartData(xVals: ["now", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"], dataSets: [hourlyHumidityDataSet])
-
+        if let hourlyDataEntrys = hourlyDataEntrys {
+            let jsonKey = HourlyDataEntryCollator.jsonKeys[indexPath.row]
+            let dataEntrys = hourlyDataEntrys.dataEntrys[jsonKey]
+            
+            let lineChartDataSet = LineChartDataSet(yVals: dataEntrys, label: jsonKey)
+            lineChartDataSet.drawCirclesEnabled = false
+            
+            let lineChartData = LineChartData(xVals: NSDate.allHoursFromNow(), dataSet: lineChartDataSet)
+            
             lineChartCell.lineChartView.data = lineChartData
         }
+        
+        /*
+        if let hourlyHumidityDataSet = hourlyHumidityDataSet {
+            let lineChartData = LineChartData(xVals: NSDate.allHoursFromNow(), dataSets: [hourlyHumidityDataSet])
+
+            lineChartCell.lineChartView.data = lineChartData
+        }*/
         
         lineChartCell.lineChartView.doubleTapToZoomEnabled = false
         

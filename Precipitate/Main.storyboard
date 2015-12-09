@@ -26,11 +26,10 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBl-2N-rKS" customClass="LineChartView" customModule="Charts">
                                             <rect key="frame" x="30" y="10" width="540" height="180"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                     </subviews>
                                     <animations/>
-                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="VBl-2N-rKS" firstAttribute="width" secondItem="uSF-uK-YUH" secondAttribute="width" multiplier="0.9" id="0pW-b4-BV8"/>
                                         <constraint firstItem="VBl-2N-rKS" firstAttribute="height" secondItem="uSF-uK-YUH" secondAttribute="height" multiplier="0.9" id="Jva-xv-Uqm"/>
