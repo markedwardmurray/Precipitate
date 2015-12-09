@@ -37,7 +37,7 @@ class DataEntryCollator {
     class private func allHoursFromHourlyData(hourlyData: JSON) -> [NSTimeInterval] {
         var allHours = [NSTimeInterval]()
         
-        for var i = 0; i <= hourlyData.count; i++ {
+        for var i = 0; i < hourlyData.count; i++ {
             if let time = hourlyData[i]["time"].double {
                 let hour = NSTimeInterval(time)
                 allHours.append(hour)
@@ -52,7 +52,7 @@ class DataEntryCollator {
     class private func allDaysFromDailyData(dailyData: JSON) -> [NSTimeInterval] {
         var allDays = [NSTimeInterval]()
         
-        for var i = 0; i <= dailyData.count; i++ {
+        for var i = 0; i < dailyData.count; i++ {
             if let time = dailyData[i]["time"].double {
                 let day = NSTimeInterval(time)
                 allDays.append(day)
@@ -70,7 +70,7 @@ class DataEntryCollator {
         for hourlyKey in DataEntryCollator.hourlyKeys {
             var dataEntrys = [ChartDataEntry]()
             
-            for var i = 0; i <= hourlyData.count; i++ {
+            for var i = 0; i < hourlyData.count; i++ {
                 if let yVal = hourlyData[i][hourlyKey].double {
                     let dataEntry = ChartDataEntry(value: yVal, xIndex: i)
                     dataEntrys.append(dataEntry)
@@ -90,7 +90,7 @@ class DataEntryCollator {
         for dailyKey in DataEntryCollator.dailyKeys {
             var dataEntrys = [ChartDataEntry]()
             
-            for var i = 0; i <= dailyData.count; i++ {
+            for var i = 0; i < dailyData.count; i++ {
                 if let yVal = dailyData[i][dailyKey].double {
                     let dataEntry = ChartDataEntry(value: yVal, xIndex: i)
                     dataEntrys.append(dataEntry)

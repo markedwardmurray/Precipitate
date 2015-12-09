@@ -16,8 +16,11 @@ class ChartDataSetManager {
     var dataEntryCollator: DataEntryCollator? {
         didSet {
             self.setHourlyDataSets()
-            self.setDailyDataSets()
+            //self.setDailyDataSets()
         }
+    }
+    func collateDataEntrysFromJSON(json: JSON) {
+        dataEntryCollator = DataEntryCollator(json: json)
     }
     
     private(set) var hourlyDataSets: [String: LineChartDataSet]?
@@ -33,6 +36,9 @@ class ChartDataSetManager {
                 
                 // settings for individual lines
                 hourlyDataSet.drawCirclesEnabled = false
+                hourlyDataSet.drawValuesEnabled = false
+                hourlyDataSet.setColor(UIColor.blueColor())
+                hourlyDataSet.lineWidth = 2.0
                 
                 hourlyDataSetsTemp[hourlyKey] = hourlyDataSet
             }
@@ -102,6 +108,5 @@ class ChartDataSetManager {
         "dewpoint" : "Dew Point",
         "pressure" : "Pressure"
     ]
-
 }
 

@@ -9,5 +9,6 @@
 import Foundation
 
 extension NSDate {
-    var hour: Int { return NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: self).hour }
+    var hour: Int { return NSCalendar.currentCalendar().components([.Hour], fromDate: self).hour }
+    var day: Int { return NSCalendar.currentCalendar().components([.Day], fromDate: self).day }
 }
