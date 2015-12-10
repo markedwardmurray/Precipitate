@@ -25,15 +25,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
             self.lineChartDataManager.json = json
             self.setUpChildVCs()
         }
-        /*
-        let json = apiClient.retrieveCachedJSON()
-        NSLog("retrieved json")
-        if let json = json {
-            lineChartDataManager.json = json
-        } else {
-            print("no cached json")
-        }
-        */
     }
     
     func setUpChildVCs() {

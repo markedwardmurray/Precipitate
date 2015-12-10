@@ -9,8 +9,6 @@
 // lat 40.705313  lng -74.013959
 
 import UIKit
-import SwiftyJSON
-import INTULocationManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,29 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        /*
-        self.locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
-            print(status)
-            
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            
-            self.apiClient.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
-                //print(json)
-                self.lineChartDataManager.json = json
-            })
-        }
-        */
-        /*
-        let json = apiClient.retrieveCachedJSON()
-        NSLog("retrieved json")
-        
-        if let json = json {
-            lineChartDataManager.json = json
-        } else {
-            print("no cached json")
-        }
-        */
         return true
     }
 
