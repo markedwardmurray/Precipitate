@@ -10,45 +10,40 @@
 
 import UIKit
 import SwiftyJSON
+import INTULocationManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let locationManager = INTULocationManager.sharedInstance()
+    let apiClient = ForecastAPIClient.sharedInstance
+    let lineChartDataManager = LineChartDataManager.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let apiClient = ForecastAPIClient()
+        self.locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
+            print(status)
+            
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            
+            self.apiClient.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
+                //print(json)
+                self.lineChartDataManager.json = json
+            })
+        }
+        /*
+        let json = apiClient.retrieveCachedJSON()
+        NSLog("retrieved json")
         
-//        apiClient.getForecastForLatitude(40.705313, longitude: -74.013959) { (json) -> Void in
-//            print("AppDelegate: \(json)")
-//        }
-        
-//        let json = apiClient.retrieveCachedJSON()
-        
-        // perfect answer
-        // apimanager: does a return AND a completion block
-        // return -> immediately shows any cached data, optional return type
-        //  --> call completionBlock twice? instead
-        // completionblock -> new update with the current API response
-        // caveats:
-        // save the timestamp
-        // check the json -> how old are you, or nil
-        // if need to make internet request, do it immediately
-        // parallelize things when possible
-        
-        // first implementation
-        // always hit the internet, and always cache it
-        // read from the cache, no error handling
-        
-        // second implementation
-        // always parse things in
-        // both the return and the completionBlock
-        // no error handling
-        
-        
+        if let json = json {
+            lineChartDataManager.json = json
+        } else {
+            print("no cached json")
+        }
+        */
         return true
     }
 

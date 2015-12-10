@@ -20,11 +20,12 @@
 		4DA717191C15CEDA0039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717181C15CEDA0039418E /* Main.storyboard */; };
 		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
 		4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171E1C15CFCF0039418E /* LineChartCell.swift */; };
-		4DA717211C15EDAD0039418E /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717201C15EDAD0039418E /* DataConverter.swift */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
 		4DCB45001C17F03F00C02325 /* NSDate+hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
+		4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */; };
+		4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
 		707A89BA38B22BF3AD67950F /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA941FF68011B2F61E7D541 /* Pods_PrecipitateUITests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
@@ -68,12 +69,13 @@
 		4DA717181C15CEDA0039418E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
 		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
-		4DA717201C15EDAD0039418E /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Precipitate-Bridging-Header.h"; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
 		4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+hour.swift"; sourceTree = "<group>"; };
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
+		4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
 		77820C9BD56E7D5302992A22 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,13 +155,14 @@
 				4DA717151C0F3EFB0039418E /* MVP */,
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
-				4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */,
 				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
-				4DA717201C15EDAD0039418E /* DataConverter.swift */,
-				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
+				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
+				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
+				4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
+				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
+				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
 				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
 				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
@@ -474,10 +477,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCB45001C17F03F00C02325 /* NSDate+hour.swift in Sources */,
+				4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
+				4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */,
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
-				4DA717211C15EDAD0039418E /* DataConverter.swift in Sources */,
 				4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,

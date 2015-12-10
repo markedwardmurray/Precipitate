@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fQE-Tv-YDH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVA-f6-X01">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="7Gr-79-XF0">
+            <objects>
+                <viewController storyboardIdentifier="initialVC" id="cVA-f6-X01" customClass="InitialViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LLU-i1-cQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="gPn-ie-kiK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MCz-YM-xUG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-bl-7dT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="iKB-XS-qRD" kind="embed" identifier="embeddedPageViewSegue" id="r6w-BB-Jr7"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N0S-bl-7dT" firstAttribute="centerY" secondItem="MCz-YM-xUG" secondAttribute="centerY" id="1jx-ff-5WK"/>
+                            <constraint firstItem="N0S-bl-7dT" firstAttribute="centerX" secondItem="MCz-YM-xUG" secondAttribute="centerX" id="Qej-CF-s8L"/>
+                            <constraint firstItem="N0S-bl-7dT" firstAttribute="height" secondItem="MCz-YM-xUG" secondAttribute="height" id="bKo-Es-V6q"/>
+                            <constraint firstItem="N0S-bl-7dT" firstAttribute="width" secondItem="MCz-YM-xUG" secondAttribute="width" id="tez-bM-AhY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageContainer" destination="N0S-bl-7dT" id="dlT-Cm-3g3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMA-iN-QZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="-244"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="iVQ-78-Uci">
+            <objects>
+                <pageViewController storyboardIdentifier="pageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="PageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BL3-Yy-V09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="-244"/>
+        </scene>
         <!--Charts Table View Controller-->
         <scene sceneID="Ayv-Rs-9Tu">
             <objects>
-                <tableViewController id="fQE-Tv-YDH" customClass="ChartsTableViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="chartsTVC" id="fQE-Tv-YDH" customClass="ChartsTableViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6wa-Qj-3z7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

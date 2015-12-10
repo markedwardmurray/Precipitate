@@ -20,7 +20,7 @@ class LineChartDataManager {
             if let json = json {
                 chartDataSetManager.collateDataEntrysFromJSON(json)
                 self.setHourlyDatas()
-                //self.setDailyDatas()
+                self.setDailyDatas()
             }
         }
     }
@@ -68,7 +68,7 @@ class LineChartDataManager {
                 
                 dailyDatasTemp[dailyKey] = lineChartData
             }
-            hourlyDatas = dailyDatasTemp
+            dailyDatas = dailyDatasTemp
         }
     }
 }

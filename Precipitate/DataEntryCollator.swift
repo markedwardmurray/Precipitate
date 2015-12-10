@@ -125,10 +125,8 @@ class DataEntryCollator {
     
     static let dailyKeys: [String] =
     [
-        "temperature",
         "temperatureMin",
         "temperatureMax",
-        "apparentTemperature",
         "apparentTemperatureMin",
         "apparentTemperatureMax",
         

@@ -16,7 +16,7 @@ class ChartDataSetManager {
     var dataEntryCollator: DataEntryCollator? {
         didSet {
             self.setHourlyDataSets()
-            //self.setDailyDataSets()
+            self.setDailyDataSets()
         }
     }
     func collateDataEntrysFromJSON(json: JSON) {
@@ -39,6 +39,7 @@ class ChartDataSetManager {
                 hourlyDataSet.drawValuesEnabled = false
                 hourlyDataSet.setColor(UIColor.blueColor())
                 hourlyDataSet.lineWidth = 2.0
+                ///////////////////////////////
                 
                 hourlyDataSetsTemp[hourlyKey] = hourlyDataSet
             }
@@ -58,6 +59,10 @@ class ChartDataSetManager {
                 
                 // settings for individual lines
                 dailyDataSet.drawCirclesEnabled = false
+                dailyDataSet.drawValuesEnabled = false
+                dailyDataSet.setColor(UIColor.greenColor())
+                dailyDataSet.lineWidth = 2.0
+                ///////////////////////////////
                 
                 dailyDataSetsTemp[dailyKey] = dailyDataSet
             }
@@ -88,10 +93,8 @@ class ChartDataSetManager {
     
     static let dailyLabelsForDailyKeys: [String : String] =
     [
-        "temperature" : "Temp",
         "temperatureMin" : "Min Temp",
         "temperatureMax" : "Max Temp",
-        "apparentTemperature" : "App Temp",
         "apparentTemperatureMin" : "App Min Temp",
         "apparentTemperatureMax" : "App Max Temp",
         
