@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import INTULocationManager
 
 class ForecastAPIClient {
     static let sharedInstance = ForecastAPIClient()
@@ -18,13 +19,38 @@ class ForecastAPIClient {
     
     private let apiKey = marksAPIKey
     
-    func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
+    func getForecastForCurrentLocationCompletion(completion: (json: JSON) -> Void) {
         
+        //print("read cache")
+        let json = self.retrieveCachedJSON()
+        if let json = json {
+            print("ForecastAPIClient: return cache")
+            completion(json: json)
+        }
+        
+        let locationManager = INTULocationManager.sharedInstance()
+        locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
+            print(status)
+            
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            
+            self.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
+                //print(json)
+                
+                completion(json: json)
+            })
+        }
+    }
+    
+    func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
+        /*
         //print("read cache")
         if let json = self.retrieveCachedJSON() {
             print("ForecastAPIClient: return cache")
             completion(json: json)
         }
+        */
         
         let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
@@ -46,6 +72,15 @@ class ForecastAPIClient {
     }
         
     func retrieveCachedJSON() -> JSON? {   // should throw
+        
+        /*
+        let cachedURL = NSURL(string: "Precipitate/saved-forecast.json")!
+        let data = NSData(contentsOfURL: cachedURL)
+        if let data = data {
+            return JSON(data)
+        }
+        */
+        
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
         

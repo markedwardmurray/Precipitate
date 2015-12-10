@@ -13,9 +13,8 @@ import Charts
 
 
 class InitialViewController: UIViewController {
-    let apiClient = ForecastAPIClient.sharedInstance
+
     let lineChartDataManager = LineChartDataManager.sharedInstance
-    
     
     var json: JSON?    
 

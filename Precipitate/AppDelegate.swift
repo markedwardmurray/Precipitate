@@ -16,13 +16,10 @@ import INTULocationManager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let locationManager = INTULocationManager.sharedInstance()
-    let apiClient = ForecastAPIClient.sharedInstance
-    let lineChartDataManager = LineChartDataManager.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        /*
         self.locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
             print(status)
             
@@ -34,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.lineChartDataManager.json = json
             })
         }
+        */
         /*
         let json = apiClient.retrieveCachedJSON()
         NSLog("retrieved json")

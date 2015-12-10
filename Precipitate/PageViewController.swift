@@ -21,6 +21,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.delegate = self
         self.dataSource = self
         
+        self.apiClient.getForecastForCurrentLocationCompletion { (json) -> Void in
+            self.lineChartDataManager.json = json
+            self.setUpChildVCs()
+        }
+        /*
         let json = apiClient.retrieveCachedJSON()
         NSLog("retrieved json")
         if let json = json {
@@ -28,7 +33,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         } else {
             print("no cached json")
         }
-        
+        */
+    }
+    
+    func setUpChildVCs() {
         let hourlyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.chartDatas = hourlyDatas
@@ -41,8 +49,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
             dailyTVC.chartKeys = dailyChartKeys
         }
         
-        //pages.append(hourlyTVC)
-        pages.append(dailyTVC)
+        pages = [hourlyTVC]
+        //pages = [dailyTVC]
         
         self.setViewControllers(pages, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
