@@ -17,34 +17,8 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         
         if let currentlyIcon = lineChartDataManager.chartDataSetManager.dataEntryCollator?.currentlyIcon {
-            iconLabel.text = self.iconForIconString(currentlyIcon)
+            iconLabel.text = weatherIconForIconString(currentlyIcon)
         }
     }
     
-    func iconForIconString(iconString: String) -> String {
-        switch iconString {
-        case "clear-day":
-            return ""
-        case "clear-night":
-            return ""
-        case "rain":
-            return ""
-        case "snow":
-            return ""
-        case "sleet":
-            return ""
-        case "wind":
-            return ""
-        case "fog":
-            return ""
-        case "cloudy":
-            return ""
-        case "partly-cloudy-day":
-            return ""
-        case "partly-cloudy-night":
-            return ""
-        default:
-            return ""
-        }
-    }
 }

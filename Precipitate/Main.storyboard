@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -33,14 +34,14 @@
                                     <constraint firstAttribute="height" constant="100" id="mvS-CH-9ie"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="j73-Re-sFS" kind="embed" id="8Ym-V5-9xp"/>
+                                    <segue destination="j73-Re-sFS" kind="embed" identifier="embeddedSummaryVCSegue" id="8Ym-V5-9xp"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-bl-7dT">
                                 <rect key="frame" x="0.0" y="120" width="600" height="480"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="iKB-XS-qRD" kind="embed" identifier="embeddedPageViewSegue" id="r6w-BB-Jr7"/>
+                                    <segue destination="iKB-XS-qRD" kind="embed" identifier="embeddedPageVCSegue" id="r6w-BB-Jr7"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -71,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="pageContainer" destination="N0S-bl-7dT" id="dlT-Cm-3g3"/>
+                        <outlet property="summaryContainer" destination="XN9-xV-ezV" id="OoC-2t-wwU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMA-iN-QZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +137,7 @@
         <!--Summary View Controller-->
         <scene sceneID="FFS-Gh-wrd">
             <objects>
-                <viewController id="j73-Re-sFS" customClass="SummaryViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="summaryVC" id="j73-Re-sFS" customClass="SummaryViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rhH-16-Cbg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,8 +157,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="top" secondItem="rhH-16-Cbg" secondAttribute="topMargin" constant="20" id="2WP-4J-5PQ"/>
                             <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerX" secondItem="rhH-16-Cbg" secondAttribute="centerX" id="B3l-4U-ZYL"/>
-                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerY" secondItem="rhH-16-Cbg" secondAttribute="centerY" id="XD8-CB-ezX"/>
                         </constraints>
                     </view>
                     <connections>
