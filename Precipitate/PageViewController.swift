@@ -10,7 +10,6 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
-    let apiClient = ForecastAPIClient.sharedInstance
     let lineChartDataManager = LineChartDataManager.sharedInstance
     
     var pages = [ChartsTableViewController]()
@@ -21,10 +20,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.delegate = self
         self.dataSource = self
         
-        self.apiClient.getForecastForCurrentLocationCompletion { (json) -> Void in
-            self.lineChartDataManager.json = json
-            self.setUpChildVCs()
-        }
+        self.setUpChildVCs()
     }
     
     func setUpChildVCs() {
@@ -32,12 +28,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.chartDatas = hourlyDatas
             hourlyTVC.chartKeys = hourlyChartKeys
+            hourlyTVC.timescale = "Hourly"
         }
         
         let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.chartDatas = dailyDatas
             dailyTVC.chartKeys = dailyChartKeys
+            dailyTVC.timescale = "Daily"
         }
         
         pages = [hourlyTVC, dailyTVC]

@@ -13,6 +13,7 @@ import Charts
 class ChartsTableViewController: UITableViewController {
     var chartDatas = [String : LineChartData]()
     var chartKeys = [String]()
+    var timescale: String = ""
     
     
     override func viewDidLoad() {
@@ -43,5 +44,14 @@ class ChartsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return self.timescale
+        default:
+            return nil
+        }
     }
 }
