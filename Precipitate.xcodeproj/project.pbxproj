@@ -157,21 +157,11 @@
 				4DA717151C0F3EFB0039418E /* MVP */,
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
-				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
-				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
-				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
-				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
-				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
-				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
-				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
-				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
-				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
-				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
-				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
-				4DB10E921C193DD1002D618E /* saved-forecast.json */,
-				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
+				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
+				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
+				4DCC822A1C1F446900AB2AD5 /* DataConverters */,
+				4DCC822C1C1F44A600AB2AD5 /* Resources */,
 			);
 			path = Precipitate;
 			sourceTree = "<group>";
@@ -202,6 +192,40 @@
 				4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */,
 			);
 			name = MVP;
+			sourceTree = "<group>";
+		};
+		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
+			isa = PBXGroup;
+			children = (
+				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
+				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
+				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
+				4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */,
+			);
+			name = DataConverters;
+			sourceTree = "<group>";
+		};
+		4DCC822B1C1F448100AB2AD5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
+				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
+				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
+				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4DCC822C1C1F44A600AB2AD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
+				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
+				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
+				4DB10E921C193DD1002D618E /* saved-forecast.json */,
+				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		EE7AF513508E693F27478AF1 /* Frameworks */ = {
