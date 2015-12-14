@@ -159,6 +159,9 @@
                             <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerY" secondItem="rhH-16-Cbg" secondAttribute="centerY" id="XD8-CB-ezX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconLabel" destination="nLq-Bd-9kF" id="MzF-vz-UB8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGo-6k-Vsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
