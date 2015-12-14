@@ -1,5 +1,5 @@
 //
-//  NSDate+hour.swift
+//  NSDate+Timescales.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 12/9/15.

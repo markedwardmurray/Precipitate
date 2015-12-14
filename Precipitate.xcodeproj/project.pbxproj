@@ -23,7 +23,7 @@
 		4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB10E921C193DD1002D618E /* saved-forecast.json */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
-		4DCB45001C17F03F00C02325 /* NSDate+hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */; };
+		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
 		4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */; };
 		4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */; };
@@ -74,7 +74,7 @@
 		4DB10E921C193DD1002D618E /* saved-forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "saved-forecast.json"; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
-		4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+hour.swift"; sourceTree = "<group>"; };
+		4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timescales.swift"; sourceTree = "<group>"; };
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
 		4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
 				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCB44FF1C17F03E00C02325 /* NSDate+hour.swift */,
+				4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
 				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
 				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
@@ -480,7 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DCB45001C17F03F00C02325 /* NSDate+hour.swift in Sources */,
+				4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */,
 				4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
