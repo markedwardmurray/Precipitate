@@ -40,10 +40,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
             dailyTVC.chartKeys = dailyChartKeys
         }
         
-        pages = [hourlyTVC]
-        //pages = [dailyTVC]
+        pages = [hourlyTVC, dailyTVC]
         
-        self.setViewControllers(pages, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([hourlyTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
