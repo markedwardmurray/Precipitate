@@ -16,6 +16,9 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var summaryContainer: UIView!
     @IBOutlet weak var pageContainer: UIView!
     
+    weak var summaryViewController: SummaryViewController!
+    weak var pageViewController: PageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -36,11 +39,8 @@ class InitialViewController: UIViewController {
             if let json = json {
                 self.lineChartDataManager.json = json
                 
-                let summaryVC = self.storyboard?.instantiateViewControllerWithIdentifier("summaryVC") as! SummaryViewController
-                self.setEmbeddedSummaryViewController(summaryVC)
-                
-                let pageVC = self.storyboard?.instantiateViewControllerWithIdentifier("pageVC") as! PageViewController
-                self.setEmbeddedPageViewController(pageVC)
+                self.pageViewController.setUpChildVCs()
+                self.summaryViewController.setUpSubviews()
             } else {
                 let alertController = UIAlertController(title: "Data Error!", message: "Something went wrong—there is no weather data to display. Please make sure that your phone has an internet connection and that location services are enabled.", preferredStyle: .Alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -52,26 +52,16 @@ class InitialViewController: UIViewController {
         }
     }
     
-    func setEmbeddedSummaryViewController(summaryViewController: SummaryViewController) {
-        self.addChildViewController(summaryViewController)
-        if self.summaryContainer.subviews.count > 0 {
-            let summaryView = self.summaryContainer.subviews[0]
-            summaryView.removeFromSuperview()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "embeddedPageVCSegue" {
+            self.pageViewController = segue.destinationViewController as! PageViewController
         }
-        
-        self.summaryContainer.addSubview(summaryViewController.view)
-        summaryViewController.didMoveToParentViewController(self)
-    }
-    
-    func setEmbeddedPageViewController(pageViewController: PageViewController) {
-        self.addChildViewController(pageViewController)
-        if self.pageContainer.subviews.count > 0 {
-            let pageView = self.pageContainer.subviews[0]
-            pageView.removeFromSuperview()
+        else if segue.identifier == "embeddedSummaryVCSegue" {
+            self.summaryViewController = segue.destinationViewController as! SummaryViewController
         }
-
-        self.pageContainer.addSubview(pageViewController.view)
-        pageViewController.didMoveToParentViewController(self)
+        else {
+            print("InitialVC - unrecognized segue identifier: \(segue.identifier)")
+        }
     }
     
 }

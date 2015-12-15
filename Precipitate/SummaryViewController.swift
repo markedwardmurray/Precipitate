@@ -16,6 +16,10 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUpSubviews()
+    }
+    
+    func setUpSubviews() {
         if let currentlyIcon = lineChartDataManager.chartDataSetManager.dataEntryCollator?.currentlyIcon {
             iconLabel.text = weatherIconForIconString(currentlyIcon)
         }
