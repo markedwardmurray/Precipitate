@@ -17,8 +17,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var pageContainer: UIView!
     
     override func viewDidLoad() {
-
-        self.apiClient.getForecastForCurrentLocationCompletion { (json) -> Void in
+        self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json) -> Void in
             self.lineChartDataManager.json = json
             
             let summaryVC = self.storyboard?.instantiateViewControllerWithIdentifier("summaryVC") as! SummaryViewController

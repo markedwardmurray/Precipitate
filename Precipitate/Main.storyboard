@@ -85,7 +85,7 @@
                 <pageViewController storyboardIdentifier="pageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="PageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BL3-Yy-V09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="-244"/>
+            <point key="canvasLocation" x="464" y="-184"/>
         </scene>
         <!--Charts Table View Controller-->
         <scene sceneID="Ayv-Rs-9Tu">
@@ -138,18 +138,22 @@
         <scene sceneID="FFS-Gh-wrd">
             <objects>
                 <viewController storyboardIdentifier="summaryVC" id="j73-Re-sFS" customClass="SummaryViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gNM-Zl-1Lm"/>
+                        <viewControllerLayoutGuide type="bottom" id="su2-ki-Dnu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rhH-16-Cbg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-Bd-9kF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-Bd-9kF">
                                 <rect key="frame" x="270" y="20" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="9UO-Lr-L4u"/>
                                     <constraint firstAttribute="height" constant="60" id="h8n-mP-V2V"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

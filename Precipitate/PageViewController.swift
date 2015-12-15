@@ -28,14 +28,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.chartDatas = hourlyDatas
             hourlyTVC.chartKeys = hourlyChartKeys
-            hourlyTVC.timescale = "Hourly"
+            hourlyTVC.timescale = "48-Hour Forecast"
         }
         
         let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.chartDatas = dailyDatas
             dailyTVC.chartKeys = dailyChartKeys
-            dailyTVC.timescale = "Daily"
+            dailyTVC.timescale = "7-Day Forecast"
         }
         
         pages = [hourlyTVC, dailyTVC]

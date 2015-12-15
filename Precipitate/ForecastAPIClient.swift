@@ -19,18 +19,55 @@ class ForecastAPIClient {
     
     private let apiKey = marksAPIKey
     
-    func getForecastForCurrentLocationCompletion(completion: (json: JSON) -> Void) {
-        
+    func getRecentlyCachedForecastOrNewAPIResponse(completion: (json: JSON) -> Void) {
         //print("read cache")
         let json = self.retrieveCachedJSON()
         if let json = json {
-            print("ForecastAPIClient: return cache")
-            completion(json: json)
+            let minutesAgo = 60
+            if self.json(json, isRecentWithinMinutesAgo: 1) {
+                print("json cache is less than \(minutesAgo) minutes old, return cache")
+                completion(json: json)
+            } else {
+                print("json cache is more than \(minutesAgo) minutes old, requesting new API response.")
+                self.getForecastForCurrentLocationCompletion({ (json) -> Void in
+                    completion(json: json)
+                })
+            }
+        } else {
+            self.getForecastForCurrentLocationCompletion({ (json) -> Void in
+                completion(json: json)
+            })
         }
         
+        if let jsonTime = json?["currently"]["time"].int! {
+            let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
+            let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
+            
+            let negative3600seconds: NSTimeInterval = -3600
+            let oneHourAgo = NSDate(timeIntervalSinceNow: negative3600seconds)
+            
+            let earlier = oneHourAgo.earlierDate(jsonDate)
+            
+            if earlier.isEqualToDate(oneHourAgo) {
+                
+                // do nothing
+            } else {
+                
+            }
+        }
+    }
+    
+    func getForecastForCurrentLocationCompletion(completion: (json: JSON) -> Void) {
+        
         let locationManager = INTULocationManager.sharedInstance()
+        
         locationManager.requestLocationWithDesiredAccuracy(INTULocationAccuracy.Block, timeout: NSTimeInterval(20), delayUntilAuthorized: true) { (location, accuracy, status) -> Void in
             print(status)
+            
+            if location == nil {
+                print("location request returned nil")
+                return;
+            }
             
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
@@ -44,23 +81,14 @@ class ForecastAPIClient {
     }
     
     func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
-        /*
-        //print("read cache")
-        if let json = self.retrieveCachedJSON() {
-            print("ForecastAPIClient: return cache")
-            completion(json: json)
-        }
-        */
         
         let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
         Alamofire.request(.GET, url ).responseJSON { response in
             switch response.result {
             case .Success:
-                //print("response success")
                 if let value = response.result.value {
                     let json = JSON(value)
-                    //print("write to cache")
                     self.cacheJSON(json)
                     print("ForecastAPIClient: return fresh API response")
                     completion(json: json)
@@ -70,25 +98,28 @@ class ForecastAPIClient {
             }
         }
     }
+    
+    func json(json: JSON, isRecentWithinMinutesAgo minutesAgo: Int) -> Bool {
+        let jsonTime = json["currently"]["time"].int!
+        let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
+        let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
+        
+        let minutesAgoInterval: NSTimeInterval = Double(-minutesAgo*60)
+        let minutesAgoDate = NSDate(timeIntervalSinceNow: minutesAgoInterval)
+        
+        let earlier = jsonDate.earlierDate(minutesAgoDate)
+        
+        return earlier.isEqualToDate(minutesAgoDate)
+    }
         
     func retrieveCachedJSON() -> JSON? {   // should throw
-        
-        /*
-        let cachedURL = NSURL(string: "Precipitate/saved-forecast.json")!
-        let data = NSData(contentsOfURL: cachedURL)
-        if let data = data {
-            return JSON(data)
-        }
-        */
         
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
         
         if manager.fileExistsAtPath(path) {
             if let data = NSData(contentsOfURL: ForecastAPIClient.fileURL) {
-                //print("data \(data)")
                 let json = JSON(data: data)
-                //print("json: \(json)")
                 return json
             } else {
                 print("no data from file")
@@ -107,7 +138,6 @@ class ForecastAPIClient {
         
         if manager.fileExistsAtPath(path) {
             do {
-                //print("remove old cache")
                 try manager.removeItemAtPath(path)
             }
             catch let error as NSError {
@@ -116,9 +146,9 @@ class ForecastAPIClient {
         }
         
         do {
-            //print("create file for cache")
             let data = try json.rawData(options: NSJSONWritingOptions.PrettyPrinted)
             manager.createFileAtPath(path, contents: data, attributes: nil)
+            print("file create at path: \(path)")
         }
         catch let error as NSError {
             print(error.localizedDescription)
