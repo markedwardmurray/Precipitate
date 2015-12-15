@@ -14,11 +14,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     var pages = [ChartsTableViewController]()
     
+    var presentationIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
         self.dataSource = self
+        
+        self.view.backgroundColor = UIColor.notMyChristian()
         
         self.setUpChildVCs()
     }
@@ -49,6 +53,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         let currentIndex = pages.indexOf(chartsTVC)!
         
         let previousIndex = abs((currentIndex - 1) % pages.count)
+        self.presentationIndex = previousIndex
         return pages[previousIndex]
     }
     
@@ -57,6 +62,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
         let currentIndex = pages.indexOf(chartsTVC)!
         let nextIndex = abs((currentIndex + 1) % pages.count)
+        self.presentationIndex = nextIndex
         return pages[nextIndex]
     }
     
@@ -65,7 +71,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        return self.presentationIndex
     }
     
     var hourlyChartKeys: [String] =

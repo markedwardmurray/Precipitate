@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
+		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
 		4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF11C064B4D00A15C54 /* ViewController.swift */; };
 		4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		10A33F943356239AD43CB6A7 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
+		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7E0DF11C064B4D00A15C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				4DA717151C0F3EFB0039418E /* MVP */,
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
+				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
 				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */,
+				4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */,
 				4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
