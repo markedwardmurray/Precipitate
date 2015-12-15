@@ -17,14 +17,29 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var pageContainer: UIView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
         self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json) -> Void in
-            self.lineChartDataManager.json = json
-            
-            let summaryVC = self.storyboard?.instantiateViewControllerWithIdentifier("summaryVC") as! SummaryViewController
-            self.setEmbeddedSummaryViewController(summaryVC)
-            
-            let pageVC = self.storyboard?.instantiateViewControllerWithIdentifier("pageVC") as! PageViewController
-            self.setEmbeddedPageViewController(pageVC)
+            if let json = json {
+                self.lineChartDataManager.json = json
+                
+                let summaryVC = self.storyboard?.instantiateViewControllerWithIdentifier("summaryVC") as! SummaryViewController
+                self.setEmbeddedSummaryViewController(summaryVC)
+                
+                let pageVC = self.storyboard?.instantiateViewControllerWithIdentifier("pageVC") as! PageViewController
+                self.setEmbeddedPageViewController(pageVC)
+            } else {
+                let alertController = UIAlertController(title: "Data Error!", message: "Something went wrong—there is no weather data to display. Please make sure that your phone has an internet connection and that location services are enabled.", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                    print(action)
+                }
+                alertController.addAction(cancelAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
     }
     

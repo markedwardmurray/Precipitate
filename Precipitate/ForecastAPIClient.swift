@@ -19,12 +19,12 @@ class ForecastAPIClient {
     
     private let apiKey = marksAPIKey
     
-    func getRecentlyCachedForecastOrNewAPIResponse(completion: (json: JSON) -> Void) {
+    func getRecentlyCachedForecastOrNewAPIResponse(completion: (json: JSON?) -> Void) {
         //print("read cache")
         let json = self.retrieveCachedJSON()
         if let json = json {
-            let minutesAgo = 60
-            if self.json(json, isRecentWithinMinutesAgo: 1) {
+            let minutesAgo = 1
+            if self.json(json, isRecentWithinMinutesAgo: minutesAgo) {
                 print("json cache is less than \(minutesAgo) minutes old, return cache")
                 completion(json: json)
             } else {
@@ -34,30 +34,14 @@ class ForecastAPIClient {
                 })
             }
         } else {
+            print("no cached json retrieved, making API request")
             self.getForecastForCurrentLocationCompletion({ (json) -> Void in
                 completion(json: json)
             })
         }
-        
-        if let jsonTime = json?["currently"]["time"].int! {
-            let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
-            let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
-            
-            let negative3600seconds: NSTimeInterval = -3600
-            let oneHourAgo = NSDate(timeIntervalSinceNow: negative3600seconds)
-            
-            let earlier = oneHourAgo.earlierDate(jsonDate)
-            
-            if earlier.isEqualToDate(oneHourAgo) {
-                
-                // do nothing
-            } else {
-                
-            }
-        }
     }
     
-    func getForecastForCurrentLocationCompletion(completion: (json: JSON) -> Void) {
+    func getForecastForCurrentLocationCompletion(completion: (json: JSON?) -> Void) {
         
         let locationManager = INTULocationManager.sharedInstance()
         
@@ -66,50 +50,62 @@ class ForecastAPIClient {
             
             if location == nil {
                 print("location request returned nil")
-                return;
-            }
-            
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            
-            self.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
-                //print(json)
+                completion(json: nil)
+            } else {
+                let latitude = location.coordinate.latitude
+                let longitude = location.coordinate.longitude
                 
-                completion(json: json)
-            })
+                self.getForecastForLatitude(latitude, longitude: longitude, completion: { (json) -> Void in
+                    //print(json)
+                    
+                    completion(json: json)
+                })
+            }
         }
     }
     
-    func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON) -> Void) {
+    func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON?) -> Void) {
+        
+        //let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
         let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
         
         Alamofire.request(.GET, url ).responseJSON { response in
+            print("Alamofire response: \(response)")
             switch response.result {
             case .Success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    self.cacheJSON(json)
-                    print("ForecastAPIClient: return fresh API response")
-                    completion(json: json)
+                    if let error = json["error"].string {
+                        print("Alamofire json error: \(error)")
+                        completion(json: nil)
+                    } else {
+                        self.cacheJSON(json)
+                        print("ForecastAPIClient: return fresh API response")
+                        completion(json: json)
+                    }
                 }
             case .Failure(let error):
-                print(error)
+                print("Alamofire error: \(error)")
+                completion(json: nil)
             }
         }
     }
     
     func json(json: JSON, isRecentWithinMinutesAgo minutesAgo: Int) -> Bool {
-        let jsonTime = json["currently"]["time"].int!
-        let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
-        let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
-        
-        let minutesAgoInterval: NSTimeInterval = Double(-minutesAgo*60)
-        let minutesAgoDate = NSDate(timeIntervalSinceNow: minutesAgoInterval)
-        
-        let earlier = jsonDate.earlierDate(minutesAgoDate)
-        
-        return earlier.isEqualToDate(minutesAgoDate)
+        if let jsonTime = json["currently"]["time"].int {
+            let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
+            let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
+            
+            let minutesAgoInterval: NSTimeInterval = Double(-minutesAgo*60)
+            let minutesAgoDate = NSDate(timeIntervalSinceNow: minutesAgoInterval)
+            
+            let earlier = jsonDate.earlierDate(minutesAgoDate)
+            
+            return earlier.isEqualToDate(minutesAgoDate)
+        } else {
+            return false
+        }
     }
         
     func retrieveCachedJSON() -> JSON? {   // should throw
@@ -134,7 +130,6 @@ class ForecastAPIClient {
     func cacheJSON(json: JSON) {
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
-        print("path: \(path)")
         
         if manager.fileExistsAtPath(path) {
             do {
@@ -148,7 +143,6 @@ class ForecastAPIClient {
         do {
             let data = try json.rawData(options: NSJSONWritingOptions.PrettyPrinted)
             manager.createFileAtPath(path, contents: data, attributes: nil)
-            print("file create at path: \(path)")
         }
         catch let error as NSError {
             print(error.localizedDescription)
