@@ -18,7 +18,7 @@ class LineChartDataManager {
     var json: JSON? {
         didSet {
             if let json = json {
-                chartDataSetManager.collateDataEntrysFromJSON(json)
+                self.chartDataSetManager.collateDataEntrysFromJSON(json)
                 self.setHourlyDatas()
                 self.setDailyDatas()
             }
