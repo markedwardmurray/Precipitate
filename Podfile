@@ -6,7 +6,9 @@ use_frameworks!
 def testing_pods
   pod 'Quick', '~> 0.8.0'
   pod 'Nimble', '~> 3.0.0'
+  pod 'Nimble-Snapshots', '~> 3.0.0'
   pod 'KIF', '~> 3.3.0'
+  pod 'FBSnapshotTestCase', '~> 2.0.7'
 end
 
 target 'Precipitate' do

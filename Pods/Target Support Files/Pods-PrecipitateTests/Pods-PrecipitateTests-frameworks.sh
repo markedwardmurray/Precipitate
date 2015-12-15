@@ -84,12 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-PrecipitateTests/FBSnapshotTestCase.framework"
   install_framework "Pods-PrecipitateTests/KIF.framework"
   install_framework "Pods-PrecipitateTests/Nimble.framework"
+  install_framework "Pods-PrecipitateTests/Nimble_Snapshots.framework"
   install_framework "Pods-PrecipitateTests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-PrecipitateTests/FBSnapshotTestCase.framework"
   install_framework "Pods-PrecipitateTests/KIF.framework"
   install_framework "Pods-PrecipitateTests/Nimble.framework"
+  install_framework "Pods-PrecipitateTests/Nimble_Snapshots.framework"
   install_framework "Pods-PrecipitateTests/Quick.framework"
 fi
