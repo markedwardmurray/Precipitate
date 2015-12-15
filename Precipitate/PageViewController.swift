@@ -25,6 +25,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.view.backgroundColor = UIColor.notMyChristian()
         
         self.setUpChildVCs()
+        
+        /*
+        let subviews: Array = self.pageViewController.view.subviews
+        var pageControl: UIPageControl! = nil
+        
+        for (var i = 0; i < subviews.count; i++) {
+            if (subviews[i] is UIPageControl) {
+                pageControl = subviews[i] as! UIPageControl
+                pageControl.pageIndicatorTintColor = UIColor.notMyChristian()
+                pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
+                break
+            }
+        }
+        */
     }
     
     func setUpChildVCs() {

@@ -54,7 +54,7 @@ class InitialViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "embeddedPageVCSegue" {
-            self.pageViewController = segue.destinationViewController as! PageViewController
+            self.pageViewController = segue.destinationViewController as! PageViewController            
         }
         else if segue.identifier == "embeddedSummaryVCSegue" {
             self.summaryViewController = segue.destinationViewController as! SummaryViewController
