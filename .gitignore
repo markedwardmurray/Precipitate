@@ -24,4 +24,7 @@ build/
 *.dat
 *.dep
 
+
+# Project-specific ignores
 Precipitate/Secrets.swift
+PrecipitateTests/ReferenceImages/

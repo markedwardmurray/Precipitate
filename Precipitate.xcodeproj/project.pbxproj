@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
+		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
+		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
 		4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF11C064B4D00A15C54 /* ViewController.swift */; };
 		4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */; };
 		4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */; };
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
 		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
-		4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */; };
 		4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E1D1C06785500A15C54 /* Secrets.swift */; };
 		4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717131C0F3E460039418E /* Braindump.storyboard */; };
 		4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */; };
@@ -31,7 +32,6 @@
 		4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */; };
 		4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
-		707A89BA38B22BF3AD67950F /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA941FF68011B2F61E7D541 /* Pods_PrecipitateUITests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,18 +43,14 @@
 			remoteGlobalIDString = 4D7E0DEB1C064B4D00A15C54;
 			remoteInfo = Precipitate;
 		};
-		4D7E0E0C1C064B4D00A15C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D7E0DE41C064B4D00A15C54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D7E0DEB1C064B4D00A15C54;
-			remoteInfo = Precipitate;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		10A33F943356239AD43CB6A7 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
+		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7E0DF11C064B4D00A15C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +61,6 @@
 		4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateTests.swift; sourceTree = "<group>"; };
 		4D7E0E061C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7E0E1D1C06785500A15C54 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -111,14 +106,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D7E0E081C064B4D00A15C54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				707A89BA38B22BF3AD67950F /* Pods_PrecipitateUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -152,7 +139,6 @@
 			children = (
 				4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */,
 				4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */,
-				4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +162,10 @@
 		4D7E0E031C064B4D00A15C54 /* PrecipitateTests */ = {
 			isa = PBXGroup;
 			children = (
+				4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */,
 				4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */,
+				4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */,
+				4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */,
 				4D7E0E061C064B4D00A15C54 /* Info.plist */,
 			);
 			path = PrecipitateTests;
@@ -291,26 +280,6 @@
 			productReference = 4D7E0E001C064B4D00A15C54 /* PrecipitateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4D7E0E0A1C064B4D00A15C54 /* PrecipitateUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D7E0E1A1C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateUITests" */;
-			buildPhases = (
-				238369480B6B3D72C8FF41DC /* Check Pods Manifest.lock */,
-				4D7E0E071C064B4D00A15C54 /* Sources */,
-				4D7E0E081C064B4D00A15C54 /* Frameworks */,
-				4D7E0E091C064B4D00A15C54 /* Resources */,
-				D809040C8E53F45A7DC9211F /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4D7E0E0D1C064B4D00A15C54 /* PBXTargetDependency */,
-			);
-			name = PrecipitateUITests;
-			productName = PrecipitateUITests;
-			productReference = 4D7E0E0B1C064B4D00A15C54 /* PrecipitateUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,10 +295,6 @@
 						DevelopmentTeam = 4YFVWFGQC2;
 					};
 					4D7E0DFF1C064B4D00A15C54 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 4D7E0DEB1C064B4D00A15C54;
-					};
-					4D7E0E0A1C064B4D00A15C54 = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 4D7E0DEB1C064B4D00A15C54;
 					};
@@ -350,7 +315,6 @@
 			targets = (
 				4D7E0DEB1C064B4D00A15C54 /* Precipitate */,
 				4D7E0DFF1C064B4D00A15C54 /* PrecipitateTests */,
-				4D7E0E0A1C064B4D00A15C54 /* PrecipitateUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -376,13 +340,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D7E0E091C064B4D00A15C54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -399,21 +356,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		238369480B6B3D72C8FF41DC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3A0810FCC1DAC1E13D0A73EF /* Copy Pods Resources */ = {
@@ -459,21 +401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D809040C8E53F45A7DC9211F /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1B79D11ECCD1164F1C6D84E /* Check Pods Manifest.lock */ = {
@@ -535,15 +462,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */,
+				4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */,
 				4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D7E0E071C064B4D00A15C54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D7E0E101C064B4D00A15C54 /* PrecipitateUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,11 +475,6 @@
 			isa = PBXTargetDependency;
 			target = 4D7E0DEB1C064B4D00A15C54 /* Precipitate */;
 			targetProxy = 4D7E0E011C064B4D00A15C54 /* PBXContainerItemProxy */;
-		};
-		4D7E0E0D1C064B4D00A15C54 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4D7E0DEB1C064B4D00A15C54 /* Precipitate */;
-			targetProxy = 4D7E0E0C1C064B4D00A15C54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -602,6 +518,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -646,6 +563,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -669,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Precipitate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
@@ -683,6 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Precipitate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
@@ -698,8 +618,32 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PrecipitateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"FBSnapshotTestCase\"",
+					"-framework",
+					"\"KIF\"",
+					"-framework",
+					"\"Nimble\"",
+					"-framework",
+					"\"Nimble_Snapshots\"",
+					"-framework",
+					"\"Quick\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"INTULocationManager\"",
+					"-framework",
+					"\"ForecastIO\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/PrecipitateTests/PrecipitateTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
 			};
 			name = Debug;
@@ -711,35 +655,33 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PrecipitateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"FBSnapshotTestCase\"",
+					"-framework",
+					"\"KIF\"",
+					"-framework",
+					"\"Nimble\"",
+					"-framework",
+					"\"Nimble_Snapshots\"",
+					"-framework",
+					"\"Quick\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Charts\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"INTULocationManager\"",
+					"-framework",
+					"\"ForecastIO\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/PrecipitateTests/PrecipitateTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
-			};
-			name = Release;
-		};
-		4D7E0E1B1C064B4D00A15C54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3485C80C178391B0E630F8A /* Pods-PrecipitateUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = PrecipitateUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Precipitate;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		4D7E0E1C1C064B4D00A15C54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77820C9BD56E7D5302992A22 /* Pods-PrecipitateUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = PrecipitateUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Precipitate;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -769,15 +711,6 @@
 			buildConfigurations = (
 				4D7E0E181C064B4D00A15C54 /* Debug */,
 				4D7E0E191C064B4D00A15C54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D7E0E1A1C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D7E0E1B1C064B4D00A15C54 /* Debug */,
-				4D7E0E1C1C064B4D00A15C54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
