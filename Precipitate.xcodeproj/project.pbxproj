@@ -292,7 +292,7 @@
 				TargetAttributes = {
 					4D7E0DEB1C064B4D00A15C54 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 4YFVWFGQC2;
+						DevelopmentTeam = 9RXLE5FXUN;
 					};
 					4D7E0DFF1C064B4D00A15C54 = {
 						CreatedOnToolsVersion = 7.1;
@@ -590,7 +590,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Precipitate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatironschool.precipitate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
 			};
@@ -605,7 +605,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Precipitate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.Precipitate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatironschool.precipitate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
 			};
