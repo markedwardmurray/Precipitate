@@ -22,6 +22,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.delegate = self
         self.dataSource = self
         
+        // KIF
+        self.accessibilityLabel = "pageVC"
+        
         self.view.backgroundColor = UIColor.notMyChristian()
         
         self.setUpChildVCs()
@@ -43,6 +46,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     func setUpChildVCs() {
         let hourlyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        // setup for KIF - begin
+        hourlyTVC.tableView.accessibilityLabel = "hourlyTableView"
+        hourlyTVC.tableView.accessibilityIdentifier = "hourlyTableView"
+        // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.chartDatas = hourlyDatas
             hourlyTVC.chartKeys = hourlyChartKeys
@@ -50,6 +57,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         }
         
         let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        // setup for KIF - begin
+        dailyTVC.tableView.accessibilityLabel = "dailyTableView"
+        dailyTVC.tableView.accessibilityIdentifier = "dailyTableView"
+        // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.chartDatas = dailyDatas
             dailyTVC.chartKeys = dailyChartKeys

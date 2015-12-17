@@ -17,7 +17,8 @@ import SwiftyJSON
 class SnapshotSpec: QuickSpec {
     override func spec() {
         
-        let recordingSession: Bool = false
+        // The ReferenceImages folder is ignored by git to keep the image files from ballooning the repository over time. Run a test with recordingSession set to 'true' to record snapshots on your local machine. Then set recordingSession to 'false' to run the test.
+        let recordingSession: Bool = true
         
         let tester = self.tester()
         
@@ -27,6 +28,8 @@ class SnapshotSpec: QuickSpec {
             let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("initialVC")
             
             initialVC = mainVC as! InitialViewController
+            
+            tester.tapViewWithAccessibilityLabel("OK")
             
             UIApplication.sharedApplication().keyWindow?.rootViewController = initialVC
             
@@ -40,13 +43,14 @@ class SnapshotSpec: QuickSpec {
                     
                     initialVC.pageViewController.setUpChildVCs()
                     initialVC.summaryViewController.setUpSubviews()
+                    
+                    tester.tapViewWithAccessibilityLabel("OK")
                 }
             }
         }
 
-        describe("in some context") {
-            it("has valid snapshot") {
-                tester.waitForTimeInterval(NSTimeInterval(3))
+        describe("initialVC") {
+            it("correctly loads first hourly charts") {
                 
                 if recordingSession {
                     expect(initialVC).to( recordSnapshot() )
@@ -54,6 +58,53 @@ class SnapshotSpec: QuickSpec {
                     expect(initialVC).to( haveValidSnapshot() )
                 }
             }
+            
+            it("correctly loads last hourly charts") {
+                tester.waitForViewWithAccessibilityLabel("hourlyTableView") as! UITableView
+                tester.swipeViewWithAccessibilityLabel("hourlyTableView", inDirection: KIFSwipeDirection.Up)
+                
+                    tester.waitForTimeInterval(NSTimeInterval(1))
+                
+                if recordingSession {
+                    expect(initialVC).to( recordSnapshot() )
+                } else {
+                    expect(initialVC).to( haveValidSnapshot() )
+                }
+            }
+            
+            /* cannot get KIF to swipe the page view
+            
+            it("correctly loads first daily charts") {
+                tester.waitForViewWithAccessibilityLabel("pageVC") as! UITableView
+                
+                tester.swipeViewWithAccessibilityLabel("pageVC", inDirection: KIFSwipeDirection.Left)
+                
+                tester.waitForTimeInterval(NSTimeInterval(1))
+                
+                if recordingSession {
+                    expect(initialVC).to( recordSnapshot() )
+                } else {
+                    expect(initialVC).to( haveValidSnapshot() )
+                }
+            }
+            
+            it("correctly loads last daily charts") {
+                tester.waitForViewWithAccessibilityLabel("pageVC") as! UITableView
+                tester.swipeViewWithAccessibilityLabel("pageVC", inDirection: KIFSwipeDirection.Left)
+                
+                tester.waitForViewWithAccessibilityLabel("dailyTableView")
+                
+                tester.swipeViewWithAccessibilityLabel("dailyTableView", inDirection: KIFSwipeDirection.Up)
+                
+                tester.waitForTimeInterval(NSTimeInterval(1))
+                
+                if recordingSession {
+                    expect(initialVC).to( recordSnapshot() )
+                } else {
+                    expect(initialVC).to( haveValidSnapshot() )
+                }
+            }
+            */
         }
     }
 }
