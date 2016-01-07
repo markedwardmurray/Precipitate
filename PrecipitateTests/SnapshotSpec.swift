@@ -18,7 +18,7 @@ class SnapshotSpec: QuickSpec {
     override func spec() {
         
         // The ReferenceImages folder is ignored by git to keep the image files from ballooning the repository over time. Run a test with recordingSession set to 'true' to record snapshots on your local machine. Then set recordingSession to 'false' to run the test.
-        let recordingSession: Bool = true
+        let recordingSession: Bool = false
         
         let tester = self.tester()
         
