@@ -37,7 +37,7 @@ class ChartDataSetManager {
                 // settings for individual lines
                 hourlyDataSet.drawCirclesEnabled = false
                 hourlyDataSet.drawValuesEnabled = false
-                hourlyDataSet.setColor(UIColor.redColor())
+                hourlyDataSet.setColor(UIColor.blueColor())
                 hourlyDataSet.lineWidth = 2.0
                 ///////////////////////////////
                 
@@ -60,7 +60,7 @@ class ChartDataSetManager {
                 // settings for individual lines
                 dailyDataSet.drawCirclesEnabled = false
                 dailyDataSet.drawValuesEnabled = false
-                dailyDataSet.setColor(UIColor.greenColor())
+                dailyDataSet.setColor(UIColor.redColor())
                 dailyDataSet.lineWidth = 2.0
                 ///////////////////////////////
                 
