@@ -10,6 +10,7 @@
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
+		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
 		4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF11C064B4D00A15C54 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
+		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		4DCC822C1C1F44A600AB2AD5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D718BA31C3F213C00F4C287 /* Icon-Original.png */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
@@ -330,6 +333,7 @@
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
 				4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */,
 				4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */,
+				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
