@@ -13,13 +13,10 @@
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
-		4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF11C064B4D00A15C54 /* ViewController.swift */; };
-		4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */; };
 		4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */; };
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
 		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
 		4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E1D1C06785500A15C54 /* Secrets.swift */; };
-		4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717131C0F3E460039418E /* Braindump.storyboard */; };
 		4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */; };
 		4DA717191C15CEDA0039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717181C15CEDA0039418E /* Main.storyboard */; };
 		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
@@ -55,8 +52,6 @@
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D7E0DF11C064B4D00A15C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4D7E0DF41C064B4D00A15C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MVP.storyboard; sourceTree = "<group>"; };
 		4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D7E0DF91C064B4D00A15C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D7E0DFB1C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +61,6 @@
 		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7E0E1D1C06785500A15C54 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		4DA717131C0F3E460039418E /* Braindump.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Braindump.storyboard; sourceTree = "<group>"; };
 		4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAPIClient.swift; sourceTree = "<group>"; };
 		4DA717181C15CEDA0039418E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +142,6 @@
 		4D7E0DEE1C064B4D00A15C54 /* Precipitate */ = {
 			isa = PBXGroup;
 			children = (
-				4DA717151C0F3EFB0039418E /* MVP */,
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
@@ -180,16 +173,6 @@
 				4D7E0E111C064B4D00A15C54 /* Info.plist */,
 			);
 			path = PrecipitateUITests;
-			sourceTree = "<group>";
-		};
-		4DA717151C0F3EFB0039418E /* MVP */ = {
-			isa = PBXGroup;
-			children = (
-				4DA717131C0F3E460039418E /* Braindump.storyboard */,
-				4D7E0DF11C064B4D00A15C54 /* ViewController.swift */,
-				4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */,
-			);
-			name = MVP;
 			sourceTree = "<group>";
 		};
 		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
@@ -331,8 +314,6 @@
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
 				4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
-				4D7E0DF51C064B4D00A15C54 /* MVP.storyboard in Resources */,
-				4DA717141C0F3E460039418E /* Braindump.storyboard in Resources */,
 				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +434,6 @@
 				4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */,
 				4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */,
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
-				4D7E0DF21C064B4D00A15C54 /* ViewController.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
@@ -483,14 +463,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4D7E0DF31C064B4D00A15C54 /* MVP.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D7E0DF41C064B4D00A15C54 /* Base */,
-			);
-			name = MVP.storyboard;
-			sourceTree = "<group>";
-		};
 		4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
