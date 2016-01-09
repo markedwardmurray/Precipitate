@@ -18,7 +18,8 @@ class ChartsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
