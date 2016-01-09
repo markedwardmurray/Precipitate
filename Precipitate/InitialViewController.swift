@@ -19,8 +19,25 @@ class InitialViewController: UIViewController {
     weak var summaryViewController: SummaryViewController!
     weak var pageViewController: PageViewController!
     
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.defineSpinner()
+    }
+    
+    private func defineSpinner() {
+        let centerX = UIScreen.mainScreen().bounds.size.width / 2
+        let centerY = UIScreen.mainScreen().bounds.size.height / 2
+        self.spinner.center = CGPointMake(centerX, centerY)
+        
+        let transform = CGAffineTransformMakeScale(3.0, 3.0)
+        self.spinner.transform = transform
+        
+        self.spinner.hidesWhenStopped = true
+        
+        self.view.addSubview(spinner)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,7 +52,13 @@ class InitialViewController: UIViewController {
     }
     
     func loadViewsAfterGettingData() {
+        
+        self.spinner.startAnimating()
+        
         self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json) -> Void in
+            
+            self.spinner.stopAnimating()
+            
             if let json = json {
                 self.lineChartDataManager.json = json
                 
