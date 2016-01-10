@@ -87,7 +87,7 @@ class ChartDataSetManager {
         
         "ozone" : "Ozone",
         "humidity" : "Humidity",
-        "dewpoint" : "Dew Point",
+        "dewPoint" : "Dew Point",
         "pressure" : "Pressure"
     ]
     
@@ -108,7 +108,7 @@ class ChartDataSetManager {
         
         "ozone" : "Ozone",
         "humidity" : "Humidity",
-        "dewpoint" : "Dew Point",
+        "dewPoint" : "Dew Point",
         "pressure" : "Pressure"
     ]
 }

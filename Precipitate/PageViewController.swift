@@ -114,7 +114,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
         "ozone",
         "humidity",
-        "dewpoint",
+        "dewPoint",
         "pressure",
     ]
     
@@ -135,7 +135,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
         "ozone",
         "humidity",
-        "dewpoint",
+        "dewPoint",
         "pressure"
     ]
 }

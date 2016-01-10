@@ -123,7 +123,7 @@ class DataEntryCollator {
         
         "ozone",
         "humidity",
-        "dewpoint",
+        "dewPoint",
         "pressure"
     ]
     
@@ -144,7 +144,7 @@ class DataEntryCollator {
         
         "ozone",
         "humidity",
-        "dewpoint",
+        "dewPoint",
         "pressure"
     ]
 
