@@ -11,8 +11,10 @@ import SwiftyJSON
 import Charts
 
 class ChartsTableViewController: UITableViewController {
+    var chartSettings = [LineChartDataSettings]()
+    
     var chartDatas = [String : LineChartData]()
-    var chartKeys = [String]()
+    //var chartKeys = [String]()
     var timescale: String = ""
     
     
@@ -23,15 +25,14 @@ class ChartsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chartKeys.count
+        return chartSettings.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let lineChartCell: LineChartCell = tableView.dequeueReusableCellWithIdentifier("lineChartCell", forIndexPath: indexPath) as! LineChartCell
         
-        let chartKey = chartKeys[indexPath.row]
-        let chartData = chartDatas[chartKey]
-        lineChartCell.lineChartView.data = chartData
+        let chartSetting = chartSettings[indexPath.row]
+        lineChartCell.lineChartView.data = chartDatas[chartSetting.label]
             
         // LineChartView settings
         

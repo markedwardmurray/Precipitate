@@ -10,6 +10,16 @@ import Foundation
 import SwiftyJSON
 import Charts
 
+struct LineChartDataSettings {
+    let label: String
+    let dataKeys: [String]
+    
+    init(label: String, dataKeys: [String]) {
+        self.label = label
+        self.dataKeys = dataKeys
+    }
+}
+
 class LineChartDataManager {
     static let sharedInstance = LineChartDataManager()
     
@@ -36,17 +46,20 @@ class LineChartDataManager {
                 hourStrings.append("\(NSDate(timeIntervalSince1970: hour).hour)")
             }
             
-            var hourlyDatasTemp = [String : LineChartData]()
-            for (hourlyKey, hourlyDataSet) in hourlyDataSets {
-                let lineChartData = LineChartData(xVals: hourStrings, dataSet: hourlyDataSet)
+            var hourlyDatasTmp = [String : LineChartData]()
+            for hourlyChartSetting in LineChartDataManager.hourlyChartSettings {
+                var chartDataSets = [LineChartDataSet]()
+                for dataKey in hourlyChartSetting.dataKeys {
+                    if let chartDataSet = hourlyDataSets[dataKey] {
+                        chartDataSets.append(chartDataSet)
+                    }
+                }
                 
-                // hourly chart data settings
-                
-                /////////////////////////////
-                
-                hourlyDatasTemp[hourlyKey] = lineChartData
+                let lineChartData = LineChartData(xVals: hourStrings, dataSets: chartDataSets)
+                let chartLabel = hourlyChartSetting.label
+                hourlyDatasTmp[chartLabel] = lineChartData
             }
-            hourlyDatas = hourlyDatasTemp
+            hourlyDatas = hourlyDatasTmp
         }
     }
     
@@ -58,17 +71,119 @@ class LineChartDataManager {
                 dayStrings.append("\(NSDate(timeIntervalSince1970: day).day)")
             }
             
-            var dailyDatasTemp = [String : LineChartData]()
-            for (dailyKey, dailyDataSet) in dailyDataSets {
-                let lineChartData = LineChartData(xVals: dayStrings, dataSet: dailyDataSet)
+            var dailyDatasTmp = [String : LineChartData]()
+            for dailyChartSetting in LineChartDataManager.dailyChartSettings {
+                var chartDataSets = [LineChartDataSet]()
+                for dataKey in dailyChartSetting.dataKeys {
+                    if let chartDataSet = dailyDataSets[dataKey] {
+                        chartDataSets.append(chartDataSet)
+                    }
+                }
                 
-                // daily chart data settings
-                
-                /////////////////////////////
-                
-                dailyDatasTemp[dailyKey] = lineChartData
+                let lineChartData = LineChartData(xVals: dayStrings, dataSets: chartDataSets)
+                let chartLabel = dailyChartSetting.label
+                dailyDatasTmp[chartLabel] = lineChartData
             }
-            dailyDatas = dailyDatasTemp
+            dailyDatas = dailyDatasTmp
         }
     }
+    
+    static let hourlyChartSettings: [LineChartDataSettings] =
+    [
+        LineChartDataSettings(
+            label: "Temperature",
+            dataKeys: ["temperature", "apparentTemperature"]
+        ),
+        
+        LineChartDataSettings(
+            label: "Precipitation Probability",
+            dataKeys: ["precipProbability"]
+        ),
+        LineChartDataSettings(
+            label: "Precipitation Intensity",
+            dataKeys: ["precipIntensity"]
+        ),
+        LineChartDataSettings(
+            label: "Precipitation Accumulation",
+            dataKeys: ["precipAccumulation"]
+        ),
+        
+        LineChartDataSettings(
+            label: "Wind Speed",
+            dataKeys: ["windSpeed"]
+        ),
+        LineChartDataSettings(
+            label:"Cloud Cover",
+            dataKeys: ["cloudCover"]
+        ),
+        LineChartDataSettings(
+            label:"Visibility",
+            dataKeys: ["visibility"]
+        ),
+    
+        LineChartDataSettings(
+            label: "Ozone",
+            dataKeys: ["ozone"]
+        ),
+        LineChartDataSettings(
+            label: "Humidity",
+            dataKeys: ["humidity"]
+        ),
+        LineChartDataSettings(
+            label: "Dew Point",
+            dataKeys: ["dewPoint"]
+        ),
+        LineChartDataSettings(
+            label: "Pressure",
+            dataKeys: ["pressure"]
+        )
+    ]
+    
+    static let dailyChartSettings: [LineChartDataSettings] =
+    [
+        LineChartDataSettings(
+            label: "Temperature",
+            dataKeys: ["temperatureMin", "temperatureMax", "apparentTemperatureMin", "apparentTemperatureMax"]
+        ),
+        
+        LineChartDataSettings(
+            label: "Precipitation Probability",
+            dataKeys: ["precipProbability"]
+        ),
+        LineChartDataSettings(
+            label: "Precipitation Intensity",
+            dataKeys: ["precipIntensity", "precipIntensityMax"]
+        ),
+        
+        LineChartDataSettings(
+            label: "Wind Speed",
+            dataKeys: ["windSpeed"]
+        ),
+        LineChartDataSettings(
+            label:"Cloud Cover",
+            dataKeys: ["cloudCover"]
+        ),
+        LineChartDataSettings(
+            label:"Visibility",
+            dataKeys: ["visibility"]
+        ),
+        
+        LineChartDataSettings(
+            label: "Ozone",
+            dataKeys: ["ozone"]
+        ),
+        LineChartDataSettings(
+            label: "Humidity",
+            dataKeys: ["humidity"]
+        ),
+        LineChartDataSettings(
+            label: "Dew Point",
+            dataKeys: ["dewPoint"]
+        ),
+        LineChartDataSettings(
+            label: "Pressure",
+            dataKeys: ["pressure"]
+        )
+    ]
+
 }

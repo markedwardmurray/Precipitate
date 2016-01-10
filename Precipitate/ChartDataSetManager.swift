@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Charts
 
-class ChartDataSetSettings {
+struct ChartDataSetSettings {
     var label: String
     var unitOfMeasure: String
     var lineColor: UIColor
@@ -21,7 +21,7 @@ class ChartDataSetSettings {
         self.lineColor = lineColor
     }
     
-    convenience init(label: String, unitOfMeasure: String) {
+    init(label: String, unitOfMeasure: String) {
         self.init(label: label, unitOfMeasure: unitOfMeasure, lineColor: UIColor.blueColor())
     }
 }
@@ -134,7 +134,8 @@ class ChartDataSetManager {
         ),
         "precipIntensityMax" : ChartDataSetSettings(
             label: "Max Precip Intensity",
-            unitOfMeasure: "internal-precip"
+            unitOfMeasure: "internal-precip",
+            lineColor: UIColor.purpleColor()
         ),
         "precipAccumulation" : ChartDataSetSettings(
             label: "Precipitation Accumulation (in)",

@@ -51,9 +51,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         hourlyTVC.tableView.accessibilityIdentifier = "hourlyTableView"
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
-            hourlyTVC.chartDatas = hourlyDatas
-            hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
             hourlyTVC.timescale = "48-Hour Forecast"
+            
+            hourlyTVC.chartSettings = LineChartDataManager.hourlyChartSettings
+            hourlyTVC.chartDatas = hourlyDatas
+            //hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
         }
         
         let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
@@ -62,9 +64,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         dailyTVC.tableView.accessibilityIdentifier = "dailyTableView"
         // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
-            dailyTVC.chartDatas = dailyDatas
-            dailyTVC.chartKeys = DataEntryCollator.dailyKeys
             dailyTVC.timescale = "7-Day Forecast"
+            
+            dailyTVC.chartSettings = LineChartDataManager.dailyChartSettings
+            dailyTVC.chartDatas = dailyDatas
+            //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }
         
         pages = [hourlyTVC, dailyTVC]
