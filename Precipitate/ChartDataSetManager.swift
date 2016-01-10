@@ -31,7 +31,7 @@ class ChartDataSetManager {
              var hourlyDataSetsTemp = [String: LineChartDataSet]()
             
             for (hourlyKey, dataEntrysArray) in dataEntryCollator.hourlyDataEntrys {
-                let label = ChartDataSetManager.hourlyLabelsForHourlyKeys[hourlyKey]
+                let label = ChartDataSetManager.labelsForKeys[hourlyKey]
                 let hourlyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
                 
                 // settings for individual lines
@@ -54,7 +54,7 @@ class ChartDataSetManager {
             var dailyDataSetsTemp = [String: LineChartDataSet]()
             
             for (dailyKey, dataEntrysArray) in dataEntryCollator.dailyDataEntrys {
-                let label = ChartDataSetManager.dailyLabelsForDailyKeys[dailyKey]
+                let label = ChartDataSetManager.labelsForKeys[dailyKey]
                 let dailyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
                 
                 // settings for individual lines
@@ -71,28 +71,12 @@ class ChartDataSetManager {
             print("ChartDataSetManager - DataEntryCollator is nil")
         }
     }
-
-    static let hourlyLabelsForHourlyKeys: [String : String] =
+    
+    static let labelsForKeys: [String : String] =
     [
         "temperature" : "Temp (°F)",
         "apparentTemperature" : "Apparent Temp (°F)",
         
-        "precipProbability" : "Precipitation Probability (%)",
-        "precipIntensity" : "Precipitation Intensity",
-        "precipAccumulation" : "Precipitation Accumulation (in)",
-        
-        "windSpeed" : "Wind Speed (mph)",
-        "cloudCover" : "Cloud Cover (%)",
-        "visibility" : "Visibility (miles)",
-        
-        "ozone" : "Ozone (DU)",
-        "humidity" : "Humidity (%)",
-        "dewPoint" : "Dew Point (°F)",
-        "pressure" : "Pressure (mbar)"
-    ]
-    
-    static let dailyLabelsForDailyKeys: [String : String] =
-    [
         "temperatureMin" : "Min Temp (°F)",
         "temperatureMax" : "Max Temp (°F)",
         "apparentTemperatureMin" : "App Min Temp (°F)",
@@ -101,6 +85,7 @@ class ChartDataSetManager {
         "precipProbability" : "Precipitation Probability (%)",
         "precipIntensity" : "Precipitation Intensity",
         "precipIntensityMax" : "Max Precip Intensity",
+        "precipAccumulation" : "Precipitation Accumulation (in)",
         
         "windSpeed" : "Wind Speed (mph)",
         "cloudCover" : "Cloud Cover (%)",
