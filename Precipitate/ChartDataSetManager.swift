@@ -74,42 +74,42 @@ class ChartDataSetManager {
 
     static let hourlyLabelsForHourlyKeys: [String : String] =
     [
-        "temperature" : "Temp",
-        "apparentTemperature" : "Apparent Temp",
+        "temperature" : "Temp (°F)",
+        "apparentTemperature" : "Apparent Temp (°F)",
         
-        "precipProbability" : "Precipitation Probability",
+        "precipProbability" : "Precipitation Probability (%)",
         "precipIntensity" : "Precipitation Intensity",
-        "precipAccumulation" : "Precipitation Accumulation",
+        "precipAccumulation" : "Precipitation Accumulation (in)",
         
-        "windSpeed" : "Wind Speed",
-        "cloudCover" : "Cloud Cover",
-        "visibility" : "Visibility",
+        "windSpeed" : "Wind Speed (mph)",
+        "cloudCover" : "Cloud Cover (%)",
+        "visibility" : "Visibility (miles)",
         
-        "ozone" : "Ozone",
-        "humidity" : "Humidity",
-        "dewPoint" : "Dew Point",
-        "pressure" : "Pressure"
+        "ozone" : "Ozone (DU)",
+        "humidity" : "Humidity (%)",
+        "dewPoint" : "Dew Point (°F)",
+        "pressure" : "Pressure (mbar)"
     ]
     
     static let dailyLabelsForDailyKeys: [String : String] =
     [
-        "temperatureMin" : "Min Temp",
-        "temperatureMax" : "Max Temp",
-        "apparentTemperatureMin" : "App Min Temp",
-        "apparentTemperatureMax" : "App Max Temp",
+        "temperatureMin" : "Min Temp (°F)",
+        "temperatureMax" : "Max Temp (°F)",
+        "apparentTemperatureMin" : "App Min Temp (°F)",
+        "apparentTemperatureMax" : "App Max Temp (°F)",
         
-        "precipProbability" : "Precipitation Probability",
+        "precipProbability" : "Precipitation Probability (%)",
         "precipIntensity" : "Precipitation Intensity",
         "precipIntensityMax" : "Max Precip Intensity",
         
-        "windSpeed" : "Wind Speed",
-        "cloudCover" : "Cloud Cover",
-        "visibility" : "Visibility",
+        "windSpeed" : "Wind Speed (mph)",
+        "cloudCover" : "Cloud Cover (%)",
+        "visibility" : "Visibility (miles)",
         
-        "ozone" : "Ozone",
-        "humidity" : "Humidity",
-        "dewPoint" : "Dew Point",
-        "pressure" : "Pressure"
+        "ozone" : "Ozone (DU)",
+        "humidity" : "Humidity (%)",
+        "dewPoint" : "Dew Point (°F)",
+        "pressure" : "Pressure (mbar)"
     ]
 }
 
