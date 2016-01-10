@@ -42,7 +42,7 @@ The 7-day data points are:
 
 CocoaPods used in distributed code:
 
-* Charts (by Ivan Schuetz)
+* Charts (by Daniel Cohen Gindi and Philipp Jahoda)
 * Alamofire
 * INTULocationManager
 * SwiftyJSON
