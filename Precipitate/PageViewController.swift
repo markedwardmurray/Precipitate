@@ -52,7 +52,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.chartDatas = hourlyDatas
-            hourlyTVC.chartKeys = hourlyChartKeys
+            hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
             hourlyTVC.timescale = "48-Hour Forecast"
         }
         
@@ -63,7 +63,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.chartDatas = dailyDatas
-            dailyTVC.chartKeys = dailyChartKeys
+            dailyTVC.chartKeys = DataEntryCollator.dailyKeys
             dailyTVC.timescale = "7-Day Forecast"
         }
         
@@ -99,43 +99,4 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         return self.presentationIndex
     }
     
-    var hourlyChartKeys: [String] =
-    [
-        "temperature",
-        "apparentTemperature",
-        
-        "precipProbability",
-        "precipIntensity",
-        "precipAccumulation",
-        
-        "windSpeed",
-        "cloudCover",
-        "visibility",
-        
-        "ozone",
-        "humidity",
-        "dewPoint",
-        "pressure",
-    ]
-    
-    var dailyChartKeys: [String] =
-    [
-        "temperatureMin",
-        "temperatureMax",
-        "apparentTemperatureMin",
-        "apparentTemperatureMax",
-        
-        "precipProbability",
-        "precipIntensity",
-        "precipIntensityMax",
-        
-        "windSpeed",
-        "cloudCover",
-        "visibility",
-        
-        "ozone",
-        "humidity",
-        "dewPoint",
-        "pressure"
-    ]
 }
