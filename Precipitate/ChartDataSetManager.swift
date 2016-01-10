@@ -10,6 +10,22 @@ import Foundation
 import SwiftyJSON
 import Charts
 
+class ChartDataSetSettings {
+    var label: String
+    var unitOfMeasure: String
+    var lineColor: UIColor
+    
+    init(label: String, unitOfMeasure: String, lineColor: UIColor) {
+        self.label = label
+        self.unitOfMeasure = unitOfMeasure
+        self.lineColor = lineColor
+    }
+    
+    convenience init(label: String, unitOfMeasure: String) {
+        self.init(label: label, unitOfMeasure: unitOfMeasure, lineColor: UIColor.blueColor())
+    }
+}
+
 class ChartDataSetManager {
     static let sharedInstance = ChartDataSetManager()
     
@@ -28,22 +44,23 @@ class ChartDataSetManager {
     
     private func setHourlyDataSets() {
         if let dataEntryCollator = dataEntryCollator {
-             var hourlyDataSetsTemp = [String: LineChartDataSet]()
+             var hourlyDataSetsTmp = [String: LineChartDataSet]()
             
             for (hourlyKey, dataEntrysArray) in dataEntryCollator.hourlyDataEntrys {
-                let label = ChartDataSetManager.labelsForKeys[hourlyKey]
+                let settings = ChartDataSetManager.settingsForKeys[hourlyKey]
+                let label = settings?.label
                 let hourlyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
+                hourlyDataSet.setColor((settings?.lineColor)!)
                 
-                // settings for individual lines
+                // settings for all lines //////
                 hourlyDataSet.drawCirclesEnabled = false
                 hourlyDataSet.drawValuesEnabled = false
-                hourlyDataSet.setColor(UIColor.blueColor())
                 hourlyDataSet.lineWidth = 2.0
-                ///////////////////////////////
+                ////////////////////////////////
                 
-                hourlyDataSetsTemp[hourlyKey] = hourlyDataSet
+                hourlyDataSetsTmp[hourlyKey] = hourlyDataSet
             }
-            hourlyDataSets = hourlyDataSetsTemp
+            hourlyDataSets = hourlyDataSetsTmp
         } else {
             print("ChartDataSetManager - DataEntryCollator is nil")
         }
@@ -51,50 +68,108 @@ class ChartDataSetManager {
     
     private func setDailyDataSets() {
         if let dataEntryCollator = dataEntryCollator {
-            var dailyDataSetsTemp = [String: LineChartDataSet]()
+            var dailyDataSetsTmp = [String: LineChartDataSet]()
             
             for (dailyKey, dataEntrysArray) in dataEntryCollator.dailyDataEntrys {
-                let label = ChartDataSetManager.labelsForKeys[dailyKey]
+                let settings = ChartDataSetManager.settingsForKeys[dailyKey]
+                let label = settings?.label
                 let dailyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
+                dailyDataSet.setColor((settings?.lineColor)!)
                 
-                // settings for individual lines
+                // settings for all lines //////
                 dailyDataSet.drawCirclesEnabled = false
                 dailyDataSet.drawValuesEnabled = false
-                dailyDataSet.setColor(UIColor.redColor())
                 dailyDataSet.lineWidth = 2.0
-                ///////////////////////////////
+                ////////////////////////////////
                 
-                dailyDataSetsTemp[dailyKey] = dailyDataSet
+                dailyDataSetsTmp[dailyKey] = dailyDataSet
             }
-            dailyDataSets = dailyDataSetsTemp
+            dailyDataSets = dailyDataSetsTmp
         } else {
             print("ChartDataSetManager - DataEntryCollator is nil")
         }
     }
     
-    static let labelsForKeys: [String : String] =
+    static let settingsForKeys: [String : ChartDataSetSettings] =
     [
-        "temperature" : "Temp (°F)",
-        "apparentTemperature" : "Apparent Temp (°F)",
+        "temperature" : ChartDataSetSettings(
+            label: "Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.temperature()
+        ),
+        "apparentTemperature" : ChartDataSetSettings(
+            label: "Apparent Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.apparentTemp()
+        ),
         
-        "temperatureMin" : "Min Temp (°F)",
-        "temperatureMax" : "Max Temp (°F)",
-        "apparentTemperatureMin" : "App Min Temp (°F)",
-        "apparentTemperatureMax" : "App Max Temp (°F)",
+        "temperatureMin" : ChartDataSetSettings(
+            label: "Min Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.temperature()
+        ),
+        "temperatureMax" : ChartDataSetSettings(
+            label: "Max Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.temperature()
+        ),
+        "apparentTemperatureMin" : ChartDataSetSettings(
+            label: "App Min Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.apparentTemp()
+        ),
+        "apparentTemperatureMax" : ChartDataSetSettings(
+            label: "App Max Temp (°F)",
+            unitOfMeasure: "°F",
+            lineColor: UIColor.apparentTemp()
+        ),
         
-        "precipProbability" : "Precipitation Probability (%)",
-        "precipIntensity" : "Precipitation Intensity",
-        "precipIntensityMax" : "Max Precip Intensity",
-        "precipAccumulation" : "Precipitation Accumulation (in)",
+        "precipProbability" : ChartDataSetSettings(
+            label: "Precipitation Probability (%)",
+            unitOfMeasure: "%"
+        ),
+        "precipIntensity" : ChartDataSetSettings(
+            label: "Precipitation Intensity",
+            unitOfMeasure: "internal-precip"
+        ),
+        "precipIntensityMax" : ChartDataSetSettings(
+            label: "Max Precip Intensity",
+            unitOfMeasure: "internal-precip"
+        ),
+        "precipAccumulation" : ChartDataSetSettings(
+            label: "Precipitation Accumulation (in)",
+            unitOfMeasure: "inches"
+        ),
         
-        "windSpeed" : "Wind Speed (mph)",
-        "cloudCover" : "Cloud Cover (%)",
-        "visibility" : "Visibility (miles)",
+        "windSpeed" : ChartDataSetSettings(
+            label: "Wind Speed (mph)",
+            unitOfMeasure: "mph"
+        ),
+        "cloudCover" : ChartDataSetSettings(
+            label: "Cloud Cover (%)",
+            unitOfMeasure: "%"
+        ),
+        "visibility" : ChartDataSetSettings(
+            label: "Visibility (miles)",
+            unitOfMeasure: "miles"
+        ),
         
-        "ozone" : "Ozone (DU)",
-        "humidity" : "Humidity (%)",
-        "dewPoint" : "Dew Point (°F)",
-        "pressure" : "Pressure (mbar)"
+        "ozone" : ChartDataSetSettings(
+            label: "Ozone (DU)",
+            unitOfMeasure: "DU"
+        ),
+        "humidity" : ChartDataSetSettings(
+            label: "Humidity (%)",
+            unitOfMeasure: "%"
+        ),
+        "dewPoint" : ChartDataSetSettings(
+            label: "Dew Point (°F)",
+            unitOfMeasure: "°F"
+        ),
+        "pressure" : ChartDataSetSettings(
+            label: "Pressure (mbar)",
+            unitOfMeasure: "millibars"
+        )
     ]
 }
 
