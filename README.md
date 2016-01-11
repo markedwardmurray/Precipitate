@@ -10,14 +10,14 @@ The 48-hour data points are:
 
 * Temperature (ºF)
 * Apparent Temperature (ºF)
-* Precipitation Probably (0-1.0)
-* Precipitation Intensity 
+* Precipitation Probably (%)
+* Precipitation Intensity (inches/hour)
 * Precipitation Accumulation (inches)
 * Wind Speed (mph)
-* Cloud Cover (0-1.0)
-* Visibility (0-10 miles)
+* Cloud Cover (%)
+* Visibility (miles)
 * Ozone (Dobson units)
-* Humidity (0-1.0)
+* Humidity (%)
 * Dew Point (ºF)
 * Pressure (millibars)
 
@@ -27,14 +27,14 @@ The 7-day data points are:
 * Max Temperature (ºF)
 * Min Apparent Temperature (ºF)
 * Max Apparent Temperature (ºF)
-* Precipitation Probability (0-1.0)
-* Precipitation Intensity
-* Max Precipitation Intensity
+* Precipitation Probability (%)
+* Precipitation Intensity (inches/hour)
+* Max Precipitation Intensity (inches/hour)
 * Wind Speed (mph)
-* Cloud Cover (0-1.0)
-* Visibility (0-1.0)
+* Cloud Cover (%)
+* Visibility (%)
 * Ozone (Dobson units)
-* Humidity (0-1.0)
+* Humidity (%)
 * Dew Point (ºF)
 * Pressure (millibars)
 
