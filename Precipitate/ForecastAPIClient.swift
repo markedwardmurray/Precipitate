@@ -66,9 +66,8 @@ class ForecastAPIClient {
     
     func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON?) -> Void) {
         
-        //let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
-        
-        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)")!
+        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?exclude=[minutely,flags]")!
+        // note to self: units datapoint is within flags block
         
         Alamofire.request(.GET, url ).responseJSON { response in
             print("Alamofire response: \(response)")
