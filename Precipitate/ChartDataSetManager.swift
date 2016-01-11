@@ -129,12 +129,12 @@ class ChartDataSetManager {
             unitOfMeasure: "%"
         ),
         "precipIntensity" : ChartDataSetSettings(
-            label: "Precipitation Intensity",
-            unitOfMeasure: "internal-precip"
+            label: "Precipitation Intensity (in/hr)",
+            unitOfMeasure: "inches/hour"
         ),
         "precipIntensityMax" : ChartDataSetSettings(
-            label: "Max Precip Intensity",
-            unitOfMeasure: "internal-precip",
+            label: "Max Precip Intensity (in/hr)",
+            unitOfMeasure: "inches/hour",
             lineColor: UIColor.purpleColor()
         ),
         "precipAccumulation" : ChartDataSetSettings(
@@ -157,7 +157,7 @@ class ChartDataSetManager {
         
         "ozone" : ChartDataSetSettings(
             label: "Ozone (DU)",
-            unitOfMeasure: "DU"
+            unitOfMeasure: "Dobson Units"
         ),
         "humidity" : ChartDataSetSettings(
             label: "Humidity (%)",
