@@ -1,5 +1,8 @@
 # Precipitate
 
+Precipitate is now live on the app store!  
+[iTunes preview](https://appsto.re/us/z4m9_.i)
+
 ## Description
 
 Precipitate is a weather app that presents the forecast data in a series of charts to make viewing a whole day's weather quick and intuitive. The application will save the latest forecast on your device for up to one hour, so a recently-acquired forecast can be reviewed again without an internet connection, such as when underground. 
