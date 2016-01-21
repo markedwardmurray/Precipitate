@@ -10,6 +10,7 @@
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
+		4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */; };
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
+		4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastUnits.swift; sourceTree = "<group>"; };
 		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
 				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
 				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
+				4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */,
 				4DCC822A1C1F446900AB2AD5 /* DataConverters */,
 				4DCC822C1C1F44A600AB2AD5 /* Resources */,
 			);
@@ -431,6 +434,7 @@
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
 				4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */,
+				4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */,
 				4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */,
 				4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */,
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
