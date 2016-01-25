@@ -100,7 +100,7 @@ struct ForecastUnits {
         }
     }
     
-    var forHumidity: Units {
+    var forOzone: Units {
         switch option {
         case .US, .SI, .CA, .UK2:
             return Units(short: "DU", long: "Dobson Units")
