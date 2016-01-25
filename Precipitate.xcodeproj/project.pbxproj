@@ -23,6 +23,24 @@
 		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
 		4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171E1C15CFCF0039418E /* LineChartCell.swift */; };
 		4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB10E921C193DD1002D618E /* saved-forecast.json */; };
+		4DB1EC121C55A0E500131BB2 /* forecast20160123-1547-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */; };
+		4DB1EC131C55A0E500131BB2 /* forecast20160122-0030-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */; };
+		4DB1EC141C55A0E500131BB2 /* forecast20160122-0033-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */; };
+		4DB1EC151C55A0E500131BB2 /* forecast20160122-0034-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */; };
+		4DB1EC161C55A0E500131BB2 /* forecast20160122-0037-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */; };
+		4DB1EC171C55A0E500131BB2 /* forecast20160122-1809-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */; };
+		4DB1EC181C55A0E500131BB2 /* forecast20160122-1809-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */; };
+		4DB1EC191C55A0E500131BB2 /* forecast20160122-2140-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */; };
+		4DB1EC1A1C55A0E500131BB2 /* forecast20160122-2140-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */; };
+		4DB1EC1B1C55A0E500131BB2 /* forecast20160122-2140-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */; };
+		4DB1EC1C1C55A0E500131BB2 /* forecast20160122-2140-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */; };
+		4DB1EC1D1C55A0E500131BB2 /* forecast20160123-0306-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */; };
+		4DB1EC1E1C55A0E500131BB2 /* forecast20160123-0306-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */; };
+		4DB1EC1F1C55A0E500131BB2 /* forecast20160123-0306-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */; };
+		4DB1EC201C55A0E500131BB2 /* forecast20160123-0306-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */; };
+		4DB1EC211C55A0E500131BB2 /* forecast20160123-1547-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */; };
+		4DB1EC221C55A0E500131BB2 /* forecast20160123-1547-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */; };
+		4DB1EC231C55A0E500131BB2 /* forecast20160123-1547-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
 		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
@@ -69,6 +87,24 @@
 		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
 		4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Precipitate-Bridging-Header.h"; sourceTree = "<group>"; };
 		4DB10E921C193DD1002D618E /* saved-forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "saved-forecast.json"; sourceTree = "<group>"; };
+		4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-us.json"; path = "JSONfiles/forecast20160123-1547-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0030-si.json"; path = "JSONfiles/forecast20160122-0030-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0033-us.json"; path = "JSONfiles/forecast20160122-0033-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0034-uk2.json"; path = "JSONfiles/forecast20160122-0034-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0037-ca.json"; path = "JSONfiles/forecast20160122-0037-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-si.json"; path = "JSONfiles/forecast20160122-1809-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-us.json"; path = "JSONfiles/forecast20160122-1809-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-ca.json"; path = "JSONfiles/forecast20160122-2140-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-si.json"; path = "JSONfiles/forecast20160122-2140-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-uk2.json"; path = "JSONfiles/forecast20160122-2140-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-us.json"; path = "JSONfiles/forecast20160122-2140-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-ca.json"; path = "JSONfiles/forecast20160123-0306-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-si.json"; path = "JSONfiles/forecast20160123-0306-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-uk2.json"; path = "JSONfiles/forecast20160123-0306-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-us.json"; path = "JSONfiles/forecast20160123-0306-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-ca.json"; path = "JSONfiles/forecast20160123-1547-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-si.json"; path = "JSONfiles/forecast20160123-1547-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-uk2.json"; path = "JSONfiles/forecast20160123-1547-uk2.json"; sourceTree = SOURCE_ROOT; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
 		4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timescales.swift"; sourceTree = "<group>"; };
@@ -178,6 +214,31 @@
 			path = PrecipitateUITests;
 			sourceTree = "<group>";
 		};
+		4DB1EBFF1C55A0AC00131BB2 /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */,
+				4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */,
+				4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */,
+				4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */,
+				4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */,
+				4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */,
+				4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */,
+				4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */,
+				4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */,
+				4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */,
+				4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */,
+				4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */,
+				4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */,
+				4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */,
+				4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */,
+				4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */,
+				4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */,
+				4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */,
+			);
+			name = JSONFiles;
+			sourceTree = "<group>";
+		};
 		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +272,7 @@
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
 				4DB10E921C193DD1002D618E /* saved-forecast.json */,
 				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
+				4DB1EBFF1C55A0AC00131BB2 /* JSONFiles */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -313,10 +375,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB1EC1E1C55A0E500131BB2 /* forecast20160123-0306-si.json in Resources */,
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
+				4DB1EC141C55A0E500131BB2 /* forecast20160122-0033-us.json in Resources */,
+				4DB1EC1C1C55A0E500131BB2 /* forecast20160122-2140-us.json in Resources */,
+				4DB1EC1B1C55A0E500131BB2 /* forecast20160122-2140-uk2.json in Resources */,
+				4DB1EC131C55A0E500131BB2 /* forecast20160122-0030-si.json in Resources */,
+				4DB1EC121C55A0E500131BB2 /* forecast20160123-1547-us.json in Resources */,
+				4DB1EC221C55A0E500131BB2 /* forecast20160123-1547-si.json in Resources */,
+				4DB1EC171C55A0E500131BB2 /* forecast20160122-1809-si.json in Resources */,
+				4DB1EC1F1C55A0E500131BB2 /* forecast20160123-0306-uk2.json in Resources */,
+				4DB1EC181C55A0E500131BB2 /* forecast20160122-1809-us.json in Resources */,
+				4DB1EC1A1C55A0E500131BB2 /* forecast20160122-2140-si.json in Resources */,
+				4DB1EC191C55A0E500131BB2 /* forecast20160122-2140-ca.json in Resources */,
+				4DB1EC151C55A0E500131BB2 /* forecast20160122-0034-uk2.json in Resources */,
+				4DB1EC201C55A0E500131BB2 /* forecast20160123-0306-us.json in Resources */,
 				4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
+				4DB1EC231C55A0E500131BB2 /* forecast20160123-1547-uk2.json in Resources */,
+				4DB1EC211C55A0E500131BB2 /* forecast20160123-1547-ca.json in Resources */,
+				4DB1EC161C55A0E500131BB2 /* forecast20160122-0037-ca.json in Resources */,
+				4DB1EC1D1C55A0E500131BB2 /* forecast20160123-0306-ca.json in Resources */,
 				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
