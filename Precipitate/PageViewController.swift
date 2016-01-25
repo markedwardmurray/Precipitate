@@ -53,7 +53,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.timescale = "48-Hour Forecast"
             
-            hourlyTVC.chartSettings = LineChartDataManager.hourlyChartSettings
+            hourlyTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
             hourlyTVC.chartDatas = hourlyDatas
             //hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
         }
@@ -66,7 +66,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.timescale = "7-Day Forecast"
             
-            dailyTVC.chartSettings = LineChartDataManager.dailyChartSettings
+            dailyTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
             dailyTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }

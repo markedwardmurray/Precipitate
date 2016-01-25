@@ -12,10 +12,12 @@ import Charts
 
 struct LineChartDataSettings {
     let label: String
+    var units: String
     let dataKeys: [String]
     
-    init(label: String, dataKeys: [String]) {
+    init(label: String, units: String, dataKeys: [String]) {
         self.label = label
+        self.units = units
         self.dataKeys = dataKeys
     }
 }
@@ -47,7 +49,9 @@ class LineChartDataManager {
             }
             
             var hourlyDatasTmp = [String : LineChartData]()
-            for hourlyChartSetting in LineChartDataManager.hourlyChartSettings {
+            let hourlyChartSettings: [LineChartDataSettings] = self.hourlyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
+            
+            for hourlyChartSetting in hourlyChartSettings {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in hourlyChartSetting.dataKeys {
                     if let chartDataSet = hourlyDataSets[dataKey] {
@@ -72,7 +76,9 @@ class LineChartDataManager {
             }
             
             var dailyDatasTmp = [String : LineChartData]()
-            for dailyChartSetting in LineChartDataManager.dailyChartSettings {
+            let dailyChartSettings = self.dailyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
+            
+            for dailyChartSetting in dailyChartSettings {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in dailyChartSetting.dataKeys {
                     if let chartDataSet = dailyDataSets[dataKey] {
@@ -88,102 +94,136 @@ class LineChartDataManager {
         }
     }
     
-    static let hourlyChartSettings: [LineChartDataSettings] =
-    [
-        LineChartDataSettings(
-            label: "Temperature",
-            dataKeys: ["temperature", "apparentTemperature"]
-        ),
-        
-        LineChartDataSettings(
-            label: "Precipitation Probability",
-            dataKeys: ["precipProbability"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Intensity",
-            dataKeys: ["precipIntensity"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Accumulation",
-            dataKeys: ["precipAccumulation"]
-        ),
-        
-        LineChartDataSettings(
-            label: "Wind Speed",
-            dataKeys: ["windSpeed"]
-        ),
-        LineChartDataSettings(
-            label:"Cloud Cover",
-            dataKeys: ["cloudCover"]
-        ),
-        LineChartDataSettings(
-            label:"Visibility",
-            dataKeys: ["visibility"]
-        ),
+    func hourlyChartSettingsForForecastUnitsOption(unitsOption: ForecastUnitsOption) -> [LineChartDataSettings] {
     
-        LineChartDataSettings(
-            label: "Ozone",
-            dataKeys: ["ozone"]
-        ),
-        LineChartDataSettings(
-            label: "Humidity",
-            dataKeys: ["humidity"]
-        ),
-        LineChartDataSettings(
-            label: "Dew Point",
-            dataKeys: ["dewPoint"]
-        ),
-        LineChartDataSettings(
-            label: "Pressure",
-            dataKeys: ["pressure"]
-        )
-    ]
+        let units = ForecastUnits(option: unitsOption)
+        
+        let hourlyChartSettings: [LineChartDataSettings] =
+        [
+            LineChartDataSettings(
+                label: "Temperature",
+                units: units.forTemperature.short,
+                dataKeys: ["temperature", "apparentTemperature"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Precipitation Probability",
+                units: units.forPercentage.short,
+                dataKeys: ["precipProbability"]
+            ),
+            LineChartDataSettings(
+                label: "Precipitation Intensity",
+                units: units.forPrecipIntensity.short,
+                dataKeys: ["precipIntensity"]
+            ),
+            LineChartDataSettings(
+                label: "Precipitation Accumulation",
+                units: units.forPrecipAccumulation.short,
+                dataKeys: ["precipAccumulation"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Wind Speed",
+                units: units.forSpeed.short,
+                dataKeys: ["windSpeed"]
+            ),
+            LineChartDataSettings(
+                label: "Cloud Cover",
+                units: units.forPercentage.short,
+                dataKeys: ["cloudCover"]
+            ),
+            LineChartDataSettings(
+                label:"Visibility",
+                units: units.forPercentage.short,
+                dataKeys: ["visibility"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Ozone",
+                units: units.forOzone.short,
+                dataKeys: ["ozone"]
+            ),
+            LineChartDataSettings(
+                label: "Humidity",
+                units: units.forPercentage.short,
+                dataKeys: ["humidity"]
+            ),
+            LineChartDataSettings(
+                label: "Dew Point",
+                units: units.forTemperature.short,
+                dataKeys: ["dewPoint"]
+            ),
+            LineChartDataSettings(
+                label: "Pressure",
+                units: units.forPressure.short,
+                dataKeys: ["pressure"]
+            )
+        ]
+        
+        return hourlyChartSettings
+    }
     
-    static let dailyChartSettings: [LineChartDataSettings] =
-    [
-        LineChartDataSettings(
-            label: "Temperature",
-            dataKeys: ["temperatureMin", "temperatureMax", "apparentTemperatureMin", "apparentTemperatureMax"]
-        ),
+    func dailyChartSettingsForForecastUnitsOption(unitsOption: ForecastUnitsOption) -> [LineChartDataSettings] {
         
-        LineChartDataSettings(
-            label: "Precipitation Probability",
-            dataKeys: ["precipProbability"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Intensity",
-            dataKeys: ["precipIntensity", "precipIntensityMax"]
-        ),
+        let units = ForecastUnits(option: unitsOption)
         
-        LineChartDataSettings(
-            label: "Wind Speed",
-            dataKeys: ["windSpeed"]
-        ),
-        LineChartDataSettings(
-            label:"Cloud Cover",
-            dataKeys: ["cloudCover"]
-        ),
-        LineChartDataSettings(
-            label:"Visibility",
-            dataKeys: ["visibility"]
-        ),
+        let dailyChartSettings: [LineChartDataSettings] =
+        [
+            LineChartDataSettings(
+                label: "Temperature",
+                units: units.forTemperature.short,
+                dataKeys: ["temperatureMin", "temperatureMax", "apparentTemperatureMin", "apparentTemperatureMax"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Precipitation Probability",
+                units: units.forPercentage.short,
+                dataKeys: ["precipProbability"]
+            ),
+            LineChartDataSettings(
+                label: "Precipitation Intensity",
+                units: units.forPrecipIntensity.short,
+                dataKeys: ["precipIntensity", "precipIntensityMax"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Wind Speed",
+                units: units.forSpeed.short,
+                dataKeys: ["windSpeed"]
+            ),
+            LineChartDataSettings(
+                label:"Cloud Cover",
+                units: units.forPercentage.short,
+                dataKeys: ["cloudCover"]
+            ),
+            LineChartDataSettings(
+                label:"Visibility",
+                units: units.forDistance.short,
+                dataKeys: ["visibility"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Ozone",
+                units: units.forOzone.short,
+                dataKeys: ["ozone"]
+            ),
+            LineChartDataSettings(
+                label: "Humidity",
+                units: units.forPercentage.short,
+                dataKeys: ["humidity"]
+            ),
+            LineChartDataSettings(
+                label: "Dew Point",
+                units: units.forTemperature.short,
+                dataKeys: ["dewPoint"]
+            ),
+            LineChartDataSettings(
+                label: "Pressure",
+                units: units.forPressure.short,
+                dataKeys: ["pressure"]
+            )
+        ]
         
-        LineChartDataSettings(
-            label: "Ozone",
-            dataKeys: ["ozone"]
-        ),
-        LineChartDataSettings(
-            label: "Humidity",
-            dataKeys: ["humidity"]
-        ),
-        LineChartDataSettings(
-            label: "Dew Point",
-            dataKeys: ["dewPoint"]
-        ),
-        LineChartDataSettings(
-            label: "Pressure",
-            dataKeys: ["pressure"]
-        )
-    ]
-
+        return dailyChartSettings
+    }
 }
