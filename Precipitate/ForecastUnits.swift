@@ -106,4 +106,11 @@ struct ForecastUnits {
             return Units(short: "DU", long: "Dobson Units")
         }
     }
+    
+    var forPercentage: Units {
+        switch option {
+        case .US, .SI, .CA, .UK2:
+            return Units(short: "%", long: "Percentage")
+        }
+    }
 }
