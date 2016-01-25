@@ -14,6 +14,7 @@ import INTULocationManager
 class ForecastAPIClient {
     static let sharedInstance = ForecastAPIClient()
     static let forecastURL = "https://api.forecast.io/forecast/"
+    static var forecastUnitsOption = ForecastUnitsOption.UK2
     
     static let fileURL = NSURL.fileURLWithPath(NSTemporaryDirectory() + "forecast.json")
     
@@ -23,7 +24,7 @@ class ForecastAPIClient {
         //print("read cache")
         let json = self.retrieveCachedJSON()
         if let json = json {
-            let minutesAgo = 60
+            let minutesAgo = 1
             if self.json(json, isRecentWithinMinutesAgo: minutesAgo) {
                 print("json cache is less than \(minutesAgo) minutes old, return cache")
                 completion(json: json)
@@ -65,9 +66,9 @@ class ForecastAPIClient {
     }
     
     func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON?) -> Void) {
+        let units = ForecastAPIClient.forecastUnitsOption.rawValue.lowercaseString
         
-        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?exclude=[minutely,flags]")!
-        // note to self: units datapoint is within flags block
+        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?units=\(units)&exclude=[minutely]")!
         
         Alamofire.request(.GET, url ).responseJSON { response in
             print("Alamofire response: \(response)")

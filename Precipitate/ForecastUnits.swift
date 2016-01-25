@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 enum ForecastUnitsOption: String {
     case US = "us"
@@ -111,6 +112,23 @@ struct ForecastUnits {
         switch option {
         case .US, .SI, .CA, .UK2:
             return Units(short: "%", long: "Percentage")
+        }
+    }
+    
+    static func optionFromJSON(json: JSON) -> ForecastUnitsOption {
+        let flag = json["flags"]["units"]
+        switch flag {
+        case "us":
+            return ForecastUnitsOption.US
+        case "si":
+            return ForecastUnitsOption.SI
+        case "uk2":
+            return ForecastUnitsOption.UK2
+        case "ca":
+            return ForecastUnitsOption.CA
+        default:
+            print("Unregonized units flag in JSON")
+            return ForecastUnitsOption.US
         }
     }
 }

@@ -120,14 +120,14 @@ class ChartDataSetManager {
             label: "Precipitation Probability"
         ),
         "precipIntensity" : ChartDataSetSettings(
-            label: "Precipitation Intensity"
+            label: "Expected Intensity"
         ),
         "precipIntensityMax" : ChartDataSetSettings(
-            label: "Max Precip Intensity",
+            label: "Max Intensity",
             lineColor: UIColor.purpleColor()
         ),
         "precipAccumulation" : ChartDataSetSettings(
-            label: "Precipitation Accumulation"
+            label: "Accumulation"
         ),
         
         "windSpeed" : ChartDataSetSettings(

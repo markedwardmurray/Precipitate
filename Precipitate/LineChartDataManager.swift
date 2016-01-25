@@ -33,12 +33,28 @@ class LineChartDataManager {
                 self.chartDataSetManager.collateDataEntrysFromJSON(json)
                 self.setHourlyDatas()
                 self.setDailyDatas()
+                self.units = ForecastUnits(option: ForecastUnits.optionFromJSON(json))
             }
         }
     }
     
     private(set) var hourlyDatas: [String : LineChartData]?
     private(set) var dailyDatas: [String : LineChartData]?
+    private(set) var units: ForecastUnits = ForecastUnits(option: ForecastUnitsOption.US)
+    
+//    private func forecastUnitsOptionFromJSON(json: JSON) -> ForecastUnitsOption {
+//        let flag = json["flags"]["units"]
+//        switch flag {
+//            case "us":
+//            return ForecastUnitsOption.US
+//            case "si":
+//            return ForecastUnitsOption.SI
+//            case "uk2":
+//            return ForecastUnitsOption.UK2
+//            case "ca":
+//            return ForecastUnitsOption.CA
+//        }
+//    }
     
     private func setHourlyDatas() {
         if let hourlyDataSets = chartDataSetManager.hourlyDataSets {
@@ -49,9 +65,8 @@ class LineChartDataManager {
             }
             
             var hourlyDatasTmp = [String : LineChartData]()
-            let hourlyChartSettings: [LineChartDataSettings] = self.hourlyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
             
-            for hourlyChartSetting in hourlyChartSettings {
+            for hourlyChartSetting in self.hourlyChartSettings() {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in hourlyChartSetting.dataKeys {
                     if let chartDataSet = hourlyDataSets[dataKey] {
@@ -76,9 +91,8 @@ class LineChartDataManager {
             }
             
             var dailyDatasTmp = [String : LineChartData]()
-            let dailyChartSettings = self.dailyChartSettingsForForecastUnitsOption(ForecastUnitsOption.US)
             
-            for dailyChartSetting in dailyChartSettings {
+            for dailyChartSetting in self.dailyChartSettings() {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in dailyChartSetting.dataKeys {
                     if let chartDataSet = dailyDataSets[dataKey] {
@@ -94,15 +108,13 @@ class LineChartDataManager {
         }
     }
     
-    func hourlyChartSettingsForForecastUnitsOption(unitsOption: ForecastUnitsOption) -> [LineChartDataSettings] {
-    
-        let units = ForecastUnits(option: unitsOption)
+    func hourlyChartSettings() -> [LineChartDataSettings] {
         
         let hourlyChartSettings: [LineChartDataSettings] =
         [
             LineChartDataSettings(
                 label: "Temperature",
-                units: units.forTemperature.short,
+                units: self.units.forTemperature.short,
                 dataKeys: ["temperature", "apparentTemperature"]
             ),
             
@@ -112,12 +124,12 @@ class LineChartDataManager {
                 dataKeys: ["precipProbability"]
             ),
             LineChartDataSettings(
-                label: "Precipitation Intensity",
+                label: "Rainfall (Liquid Precipitation)",
                 units: units.forPrecipIntensity.short,
                 dataKeys: ["precipIntensity"]
             ),
             LineChartDataSettings(
-                label: "Precipitation Accumulation",
+                label: "Snowfall",
                 units: units.forPrecipAccumulation.short,
                 dataKeys: ["precipAccumulation"]
             ),
@@ -163,9 +175,7 @@ class LineChartDataManager {
         return hourlyChartSettings
     }
     
-    func dailyChartSettingsForForecastUnitsOption(unitsOption: ForecastUnitsOption) -> [LineChartDataSettings] {
-        
-        let units = ForecastUnits(option: unitsOption)
+    func dailyChartSettings() -> [LineChartDataSettings] {
         
         let dailyChartSettings: [LineChartDataSettings] =
         [
@@ -181,7 +191,7 @@ class LineChartDataManager {
                 dataKeys: ["precipProbability"]
             ),
             LineChartDataSettings(
-                label: "Precipitation Intensity",
+                label: "Rainfall (Liquid Precipitation)",
                 units: units.forPrecipIntensity.short,
                 dataKeys: ["precipIntensity", "precipIntensityMax"]
             ),
