@@ -10,6 +10,9 @@ import UIKit
 import Charts
 
 class LineChartCell: UITableViewCell {
+    
+    @IBOutlet weak var title: UILabel!
+    
     @IBOutlet weak var lineChartView: LineChartView!
     
 }
