@@ -33,14 +33,14 @@ struct ForecastUnits {
     var systemDescription: Units {
         switch option {
         case .US:
-            return Units(short: "U.S.", long: "United States")
+            return Units(short: "US", long: "United States")
         case .SI:
-            return Units(short: "S.I.", long: "International System")
+            return Units(short: "SI", long: "International System")
         case .CA:
             //FIXME: CA strings not set
-            return Units(short: "ca", long: "ca")
+            return Units(short: "CA", long: "Canada")
         case .UK2:
-            return Units(short: "U.K.", long: "United Kingdom")
+            return Units(short: "UK", long: "United Kingdom")
         }
     }
     
@@ -97,6 +97,13 @@ struct ForecastUnits {
             return Units(short: "mbar", long: "millibars")
         case .SI, .CA, .UK2:
             return Units(short: "hPa", long: "Hectopascals")
+        }
+    }
+    
+    var forHumidity: Units {
+        switch option {
+        case .US, .SI, .CA, .UK2:
+            return Units(short: "DU", long: "Dobson Units")
         }
     }
 }
