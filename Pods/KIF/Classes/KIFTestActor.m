@@ -16,55 +16,13 @@
 #import "UIApplication-KIFAdditions.h"
 #import "UIView-KIFAdditions.h"
 
-@interface AccessibilitySettingsController
-- (void)setAXInspectorEnabled:(NSNumber*)enabled specifier:(id)specifier;
-@end
-
-
 @implementation KIFTestActor
 
 + (void)load
 {
     @autoreleasepool {
         NSLog(@"KIFTester loaded");
-        [KIFTestActor _enableAccessibility];
         [UIApplication swizzleRunLoop];
-    }
-}
-
-+ (void)_enableAccessibility;
-{
-    NSDictionary *environment = [[NSProcessInfo processInfo] environment];
-    NSString *simulatorRoot = [environment objectForKey:@"IPHONE_SIMULATOR_ROOT"];
-    
-    NSString *appSupportLocation = @"/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport";
-    if (simulatorRoot) {
-        appSupportLocation = [simulatorRoot stringByAppendingString:appSupportLocation];
-    }
-    
-    void *appSupportLibrary = dlopen([appSupportLocation fileSystemRepresentation], RTLD_LAZY);
-    
-    CFStringRef (*copySharedResourcesPreferencesDomainForDomain)(CFStringRef domain) = dlsym(appSupportLibrary, "CPCopySharedResourcesPreferencesDomainForDomain");
-    
-    if (copySharedResourcesPreferencesDomainForDomain) {
-        CFStringRef accessibilityDomain = copySharedResourcesPreferencesDomainForDomain(CFSTR("com.apple.Accessibility"));
-        
-        if (accessibilityDomain) {
-            CFPreferencesSetValue(CFSTR("ApplicationAccessibilityEnabled"), kCFBooleanTrue, accessibilityDomain, kCFPreferencesAnyUser, kCFPreferencesAnyHost);
-            CFRelease(accessibilityDomain);
-        }
-    }
-    
-    NSString* accessibilitySettingsBundleLocation = @"/System/Library/PreferenceBundles/AccessibilitySettings.bundle/AccessibilitySettings";
-    if (simulatorRoot) {
-        accessibilitySettingsBundleLocation = [simulatorRoot stringByAppendingString:accessibilitySettingsBundleLocation];
-    }
-    const char *accessibilitySettingsBundlePath = [accessibilitySettingsBundleLocation fileSystemRepresentation];
-    void* accessibilitySettingsBundle = dlopen(accessibilitySettingsBundlePath, RTLD_LAZY);
-    if (accessibilitySettingsBundle) {
-        Class axSettingsPrefControllerClass = NSClassFromString(@"AccessibilitySettingsController");
-        id axSettingPrefController = [[axSettingsPrefControllerClass alloc] init];
-        [axSettingPrefController setAXInspectorEnabled:@(YES) specifier:nil];
     }
 }
 
@@ -185,6 +143,16 @@ static NSTimeInterval KIFTestStepDelay = 0.1;
     [self runBlock:^KIFTestStepResult(NSError **error) {
         KIFTestCondition(NO, error, @"This test always fails");
     }];
+}
+
+- (void)failWithMessage:(NSString *)message, ...;
+{
+    va_list args;
+    va_start(args, message);
+    NSString *formattedMessage = [[NSString alloc] initWithFormat:message arguments:args];
+    NSError *error = [NSError errorWithDomain:@"KIFTest" code:KIFTestStepResultFailure userInfo:[NSDictionary dictionaryWithObjectsAndKeys:formattedMessage, NSLocalizedDescriptionKey, nil]];
+    [self failWithError:error stopTest:YES];
+    va_end(args);
 }
 
 - (void)failWithError:(NSError *)error stopTest:(BOOL)stopTest

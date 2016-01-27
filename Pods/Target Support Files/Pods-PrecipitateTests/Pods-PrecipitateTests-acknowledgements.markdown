@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ## KIF
 
 KIF
-Copyright 2011 Square, Inc.
+Copyright 2011-2016 Square, Inc.
 A full list of contributors is available at https://github.com/square/KIF/contributors
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,6 +51,7 @@ A full list of contributors is available at https://github.com/square/KIF/contri
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
 
 ## Nimble
 
