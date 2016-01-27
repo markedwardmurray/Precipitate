@@ -7,7 +7,10 @@ target 'Precipitate' do
   pod 'Alamofire', '~> 3.1.3'
   pod 'Charts', '~> 2.1.6'
   pod 'INTULocationManager', '~> 4.1.1'
-  pod 'SwiftyJSON'
+  pod 'SwiftyDate', '~> 1.0.1'
+  pod 'SwiftyJSON', '~> 2.3.1'
+  pod 'SwiftySettings', '~> 0.0.3'
+  pod 'SwiftyUserDefaults', '~> 2.0.0'
 end
 
 target 'PrecipitateTests' do

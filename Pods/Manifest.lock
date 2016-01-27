@@ -16,7 +16,10 @@ PODS:
     - Nimble
     - Quick
   - Quick (0.8.0)
+  - SwiftyDate (1.0.1)
   - SwiftyJSON (2.3.1)
+  - SwiftySettings (0.0.3)
+  - SwiftyUserDefaults (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.1.3)
@@ -27,7 +30,10 @@ DEPENDENCIES:
   - Nimble (~> 3.0.0)
   - Nimble-Snapshots (~> 3.0.0)
   - Quick (~> 0.8.0)
-  - SwiftyJSON
+  - SwiftyDate (~> 1.0.1)
+  - SwiftyJSON (~> 2.3.1)
+  - SwiftySettings (~> 0.0.3)
+  - SwiftyUserDefaults (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
@@ -38,6 +44,9 @@ SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Nimble-Snapshots: ab41dd737dcd33a0b0cb005a30465fef70b7207a
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  SwiftyDate: c36df91df8f59115bba3180828b633969517c4b0
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  SwiftySettings: 93eea276ba534d80e07208a94a3df05aee520e3d
+  SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
 
 COCOAPODS: 0.39.0
