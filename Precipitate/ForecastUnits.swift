@@ -38,7 +38,6 @@ struct ForecastUnits {
         case .SI:
             return Units(short: "SI", long: "International System")
         case .CA:
-            //FIXME: CA strings not set
             return Units(short: "CA", long: "Canada")
         case .UK2:
             return Units(short: "UK", long: "United Kingdom")

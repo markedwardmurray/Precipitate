@@ -27,4 +27,8 @@ class SummaryViewController: UIViewController {
         }
     }
     
+    @IBAction func SettingsTapped(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.showDetailViewController(SettingsViewController(), sender: self)
+    }
 }
