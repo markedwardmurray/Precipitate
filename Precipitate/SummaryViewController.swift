@@ -13,6 +13,8 @@ class SummaryViewController: UIViewController {
 
     @IBOutlet weak var iconLabel: UILabel!
     
+    @IBOutlet weak var settingsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

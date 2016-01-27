@@ -119,7 +119,7 @@
                                                 <constraint firstAttribute="height" constant="22" id="J33-se-Ymb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -178,20 +178,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-fh-iJU">
+                                <rect key="frame" x="536" y="27.5" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Hoy-gY-fPR"/>
+                                    <constraint firstAttribute="height" constant="44" id="S4M-JB-z7Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="⚙"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nLq-Bd-9kF" firstAttribute="top" secondItem="rhH-16-Cbg" secondAttribute="topMargin" constant="20" id="2WP-4J-5PQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cjL-fh-iJU" secondAttribute="trailing" id="6ge-dU-sA8"/>
                             <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerX" secondItem="rhH-16-Cbg" secondAttribute="centerX" id="B3l-4U-ZYL"/>
+                            <constraint firstItem="cjL-fh-iJU" firstAttribute="centerY" secondItem="rhH-16-Cbg" secondAttribute="centerY" id="ucj-19-NK4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="iconLabel" destination="nLq-Bd-9kF" id="MzF-vz-UB8"/>
+                        <outlet property="settingsButton" destination="cjL-fh-iJU" id="YZn-Se-nuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGo-6k-Vsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-708"/>
+            <point key="canvasLocation" x="-307" y="-723"/>
         </scene>
     </scenes>
 </document>
