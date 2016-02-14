@@ -25,7 +25,7 @@ class ForecastAPIClient {
         //print("read cache")
         let json = self.retrieveCachedJSON()
         if let json = json {
-            let minutesAgo = 1
+            let minutesAgo = 60
             if self.json(json, isRecentWithinMinutesAgo: minutesAgo) {
                 print("json cache is less than \(minutesAgo) minutes old, return cache")
                 completion(json: json)
