@@ -33,10 +33,10 @@ class PrecipitateSettingsViewController: SwiftySettingsViewController {
                         Option(title: "\(uk2.info.ticker) - \(uk2.info.units)", optionId: 2),
                         Option(title: "\(ca.info.ticker) - \(ca.info.units)", optionId: 3)
                         ]
-                    },
-                    OptionsButton(key: "lang", title: "Language") {
-                    [   Option(title: "English", optionId: 0)
-                        ]
+//                    },
+//                    OptionsButton(key: "lang", title: "Language") {
+//                    [   Option(title: "English", optionId: 0)
+//                        ]
                     }
                 ]
             },
