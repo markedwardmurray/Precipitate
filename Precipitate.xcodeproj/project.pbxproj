@@ -46,7 +46,6 @@
 		4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
-		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
 		4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */; };
 		4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */; };
@@ -113,7 +112,6 @@
 		4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipitateSettingsViewController.swift; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
-		4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timescales.swift"; sourceTree = "<group>"; };
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
 		4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconForIconString.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
 				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */,
 				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */,
 			);
 			name = DataConverters;
@@ -517,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */,
 				4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */,
 				4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
