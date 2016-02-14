@@ -146,7 +146,7 @@ class LineChartDataManager {
             ),
             LineChartDataSettings(
                 label:"Visibility",
-                units: units.forPercentage.short,
+                units: units.forDistance.short,
                 dataKeys: ["visibility"]
             ),
             
