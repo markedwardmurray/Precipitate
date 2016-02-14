@@ -8,35 +8,44 @@ Precipitate is powered by the Forecast.io API which provides data in two timesca
 
 The 48-hour data points are:
 
-* Temperature (ºF)
-* Apparent Temperature (ºF)
-* Precipitation Probably (%)
-* Precipitation Intensity (inches/hour)
-* Precipitation Accumulation (inches)
-* Wind Speed (mph)
-* Cloud Cover (%)
-* Visibility (miles)
-* Ozone (Dobson units)
-* Humidity (%)
-* Dew Point (ºF)
-* Pressure (millibars)
+* Temperature
+* Apparent Temperature
+* Precipitation Probably
+* Precipitation Intensity (Rainfall)
+* Precipitation Accumulation (Snowfall)
+* Wind Speed
+* Cloud Cover
+* Visibility
+* Ozone
+* Humidity
+* Dew Point
+* Pressure
 
 The 7-day data points are:
 
-* Min Temperature (ºF)
-* Max Temperature (ºF)
-* Min Apparent Temperature (ºF)
-* Max Apparent Temperature (ºF)
-* Precipitation Probability (%)
-* Precipitation Intensity (inches/hour)
-* Max Precipitation Intensity (inches/hour)
-* Wind Speed (mph)
-* Cloud Cover (%)
-* Visibility (%)
-* Ozone (Dobson units)
-* Humidity (%)
-* Dew Point (ºF)
-* Pressure (millibars)
+* Min Temperature
+* Max Temperature
+* Min Apparent Temperature
+* Max Apparent Temperature
+* Precipitation Probability
+* Precipitation Intensity
+* Max Precipitation Intensity
+* Wind Speed
+* Cloud Cover
+* Visibility
+* Ozone
+* Humidity
+* Dew Point
+* Pressure
+
+There are four options for units of measure defined by the Forecast API:
+
+| Option | Temp | Snowfall | Rainfall | Distance | Windspeed | Pressure |
+|:--:|:-:|:--:|:-----:|:--:|:---:|:----:|
+| US | ℉ | in | in/hr | mi | mph | mbar |
+| SI | ℃ | ㎝ | ㎜/hr | ㏎ | m/s | hPa |
+| UK | ℃ | ㎝ | ㎜/hr | mi | mph | hPa |
+| CA | ℃ | ㎝ | ㎜/hr | ㏎ | kph | hPa |
 
 ## Dependencies
 
@@ -45,7 +54,11 @@ CocoaPods used in distributed code:
 * Charts (by Daniel Cohen Gindi and Philipp Jahoda)
 * Alamofire
 * INTULocationManager
+* SnapKit
+* SwiftyDate
 * SwiftyJSON
+* SwiftySettings
+* SwiftyUserDefaults
 
 CocoaPods used during testing:
 
