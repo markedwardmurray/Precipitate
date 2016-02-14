@@ -17,6 +17,25 @@ enum ForecastUnitsOption: String {
 }
 
 struct ForecastUnits {
+    static func unitsOptionForKey(key: Int?) -> ForecastUnitsOption {
+        if let key = key {
+            switch key {
+            case 0:
+                return ForecastUnitsOption.US
+            case 1:
+                return ForecastUnitsOption.SI
+            case 2:
+                return ForecastUnitsOption.UK2
+            case 3:
+                return ForecastUnitsOption.CA
+            default:
+                return ForecastUnitsOption.US
+            }
+        } else {
+            return ForecastUnitsOption.US
+        }
+    }
+    
     let option: ForecastUnitsOption
     
     init() {
