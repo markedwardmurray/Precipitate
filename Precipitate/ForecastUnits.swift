@@ -53,13 +53,13 @@ struct ForecastUnits {
     var info: Info {
         switch option {
         case .US:
-            return Info(ticker: "US", name: "United States", units: "ºF, inches, in/hr, miles, mph, mbar")
+            return Info(ticker: "US", name: "United States", units: "℉, in, in/hr, mi, mph, mbar")
         case .SI:
-            return Info(ticker: "SI", name: "International System", units: "ºC, cm, mm/hr, km, m/s, hPa")
+            return Info(ticker: "SI", name: "International System", units: " ℃, ㎝, ㎜/hr, ㏎, m/s, hPa")
         case .UK2:
-            return Info(ticker: "UK", name: "United Kingdom", units: "ºC, cm, mm/hr, miles, mph, hPa")
+            return Info(ticker: "UK", name: "United Kingdom", units: "℃, ㎝, ㎜/hr, mi, mph, hPa")
         case .CA:
-            return Info(ticker: "CA", name: "Canada", units: "ºC, cm, mm/hr, km, kph, hPa")
+            return Info(ticker: "CA", name: "Canada", units: "℃, ㎝, ㎜/hr, ㏎, kph, hPa")
         }
     }
     
@@ -70,9 +70,9 @@ struct ForecastUnits {
     var forTemperature: Units {
         switch option {
         case .US:
-            return Units(short: "ºF", long: "degrees Fahrenheit")
+            return Units(short: "℉", long: "degrees Fahrenheit")
         case .SI, .CA, .UK2:
-            return Units(short: "ºC", long: "degrees Celcius")
+            return Units(short: "℃", long: "degrees Celcius")
         }
     }
     
@@ -81,7 +81,7 @@ struct ForecastUnits {
         case .US, .UK2:
             return Units(short: "mi", long: "miles")
         case .SI, .CA:
-            return Units(short: "km", long: "Kilometers")
+            return Units(short: "㏎", long: "Kilometers")
         }
     }
     
@@ -101,7 +101,7 @@ struct ForecastUnits {
         case .US:
             return Units(short: "in/hr", long: "inches per hour")
         case .SI, .CA, .UK2:
-            return Units(short: "mm/hr", long: "millimeters per hour")
+            return Units(short: "㎜/hr", long: "millimeters per hour")
         }
     }
     
@@ -110,7 +110,7 @@ struct ForecastUnits {
         case .US:
             return Units(short: "in", long: "inches")
         case .SI, .CA, .UK2:
-            return Units(short: "cm", long: "Centimeters")
+            return Units(short: "㎝", long: "Centimeters")
         }
     }
     
