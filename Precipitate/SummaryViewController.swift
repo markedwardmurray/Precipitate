@@ -14,11 +14,23 @@ class SummaryViewController: UIViewController {
 
     @IBOutlet weak var iconLabel: UILabel!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var timeAgoLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var apparentTempLabel: UILabel!
+    
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     var shouldShowSettings: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.infoButton.hidden = true
+        self.locationLabel.hidden = true
+        self.timeAgoLabel.hidden = true
+        self.temperatureLabel.hidden = true
+        self.apparentTempLabel.hidden = true
         
         self.setUpSubviews()
     }
