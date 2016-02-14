@@ -16,6 +16,7 @@ PODS:
     - Nimble
     - Quick
   - Quick (0.8.0)
+  - SnapKit (0.19.1)
   - SwiftyDate (1.0.1)
   - SwiftyJSON (2.3.2)
   - SwiftySettings (0.0.3)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - Nimble (~> 3.0.0)
   - Nimble-Snapshots (~> 3.0.0)
   - Quick (~> 0.8.0)
+  - SnapKit (~> 0.19.1)
   - SwiftyDate (~> 1.0.1)
   - SwiftyJSON (~> 2.3.2)
   - SwiftySettings (~> 0.0.3)
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Nimble-Snapshots: ab41dd737dcd33a0b0cb005a30465fef70b7207a
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
   SwiftyDate: c36df91df8f59115bba3180828b633969517c4b0
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SwiftySettings: 93eea276ba534d80e07208a94a3df05aee520e3d
