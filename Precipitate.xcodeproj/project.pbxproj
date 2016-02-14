@@ -43,7 +43,7 @@
 		4DB1EC211C55A0E500131BB2 /* forecast20160123-1547-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */; };
 		4DB1EC221C55A0E500131BB2 /* forecast20160123-1547-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */; };
 		4DB1EC231C55A0E500131BB2 /* forecast20160123-1547-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */; };
-		4DB1EC281C574DFA00131BB2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1EC271C574DFA00131BB2 /* SettingsViewController.swift */; };
+		4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
 		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
@@ -110,7 +110,7 @@
 		4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-ca.json"; path = "JSONfiles/forecast20160123-1547-ca.json"; sourceTree = SOURCE_ROOT; };
 		4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-si.json"; path = "JSONfiles/forecast20160123-1547-si.json"; sourceTree = SOURCE_ROOT; };
 		4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-uk2.json"; path = "JSONfiles/forecast20160123-1547-uk2.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC271C574DFA00131BB2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipitateSettingsViewController.swift; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
 		4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timescales.swift"; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		4DB1EC261C574DC900131BB2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4DB1EC271C574DFA00131BB2 /* SettingsViewController.swift */,
+				4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
-				4DB1EC281C574DFA00131BB2 /* SettingsViewController.swift in Sources */,
+				4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
 				4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */,
 				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,

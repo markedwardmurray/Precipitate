@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  PrecipitateSettingsViewController.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 1/26/16.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftySettings
 
-class SettingsViewController: SwiftySettingsViewController {
+class PrecipitateSettingsViewController: SwiftySettingsViewController {
     var storage = SettingsStore()
     
     override func viewDidLoad() {
