@@ -27,21 +27,25 @@ struct ForecastUnits {
         self.option = option
     }
     
-    struct Units {
-        let short: String, long: String
+    struct Info {
+        let ticker: String, name: String, units: String
     }
     
-    var systemDescription: Units {
+    var info: Info {
         switch option {
         case .US:
-            return Units(short: "US", long: "United States")
+            return Info(ticker: "US", name: "United States", units: "ºF, inches, in/hr, miles, mph, mbar")
         case .SI:
-            return Units(short: "SI", long: "International System")
-        case .CA:
-            return Units(short: "CA", long: "Canada")
+            return Info(ticker: "SI", name: "International System", units: "ºC, cm, mm/hr, km, m/s, hPa")
         case .UK2:
-            return Units(short: "UK", long: "United Kingdom")
+            return Info(ticker: "UK", name: "United Kingdom", units: "ºC, cm, mm/hr, miles, mph, hPa")
+        case .CA:
+            return Info(ticker: "CA", name: "Canada", units: "ºC, cm, mm/hr, km, kph, hPa")
         }
+    }
+    
+    struct Units {
+        let short: String, long: String
     }
     
     var forTemperature: Units {
