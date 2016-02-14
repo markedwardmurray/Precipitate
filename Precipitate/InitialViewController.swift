@@ -19,7 +19,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var pageContainer: UIView!
     
     weak var summaryViewController: SummaryViewController!
-    weak var pageViewController: PageViewController!
+    weak var weatherPageViewController: WeatherPageViewController!
     
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     
@@ -77,7 +77,7 @@ class InitialViewController: UIViewController {
             if let json = json {
                 self.lineChartDataManager.json = json
                 
-                self.pageViewController.setUpChildVCs()
+                self.weatherPageViewController.setUpChildVCs()
                 self.summaryViewController.setUpSubviews()
             } else {
                 self.presentDataErrorAlertController()
@@ -87,7 +87,7 @@ class InitialViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "embeddedPageVCSegue" {
-            self.pageViewController = segue.destinationViewController as! PageViewController
+            self.weatherPageViewController = segue.destinationViewController as! WeatherPageViewController
         }
         else if segue.identifier == "embeddedSummaryVCSegue" {
             self.summaryViewController = segue.destinationViewController as! SummaryViewController
@@ -101,8 +101,8 @@ class InitialViewController: UIViewController {
     
     func showWeather() {
         print("show weather")
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("pageVC") as! PageViewController
-        self.setEmbeddedMainViewController(self.pageViewController)
+        self.weatherPageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherPageVC") as! WeatherPageViewController
+        self.setEmbeddedMainViewController(self.weatherPageViewController)
         self.loadViewsAfterGettingData()
     }
     

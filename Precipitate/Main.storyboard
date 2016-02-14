@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-307" y="-272"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Weather Page View Controller-->
         <scene sceneID="iVQ-78-Uci">
             <objects>
-                <pageViewController storyboardIdentifier="pageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="PageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="weatherPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="WeatherPageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BL3-Yy-V09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="464" y="-184"/>

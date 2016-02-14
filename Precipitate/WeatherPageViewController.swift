@@ -1,5 +1,5 @@
 //
-//  PageViewController.swift
+//  WeatherPageViewController.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 12/9/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class WeatherPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     let lineChartDataManager = LineChartDataManager.sharedInstance
     

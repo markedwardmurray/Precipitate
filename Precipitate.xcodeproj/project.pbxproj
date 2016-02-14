@@ -49,7 +49,7 @@
 		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
 		4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */; };
-		4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */; };
+		4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */; };
 		4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
@@ -117,7 +117,7 @@
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
 		4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconForIconString.swift; sourceTree = "<group>"; };
-		4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPageViewController.swift; sourceTree = "<group>"; };
 		4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,14 +247,6 @@
 			name = JSONFiles;
 			sourceTree = "<group>";
 		};
-		4DB1EC261C574DC900131BB2 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
 		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +262,10 @@
 		4DCC822B1C1F448100AB2AD5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DB1EC261C574DC900131BB2 /* Settings */,
 				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
 				4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */,
-				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
+				4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */,
+				4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */,
 				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
 				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 			);
@@ -531,7 +523,7 @@
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
 				4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
-				4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */,
+				4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */,
 				4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */,
 				4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */,
 				4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */,
