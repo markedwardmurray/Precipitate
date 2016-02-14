@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class InitialViewController: UIViewController {
    
@@ -24,7 +25,13 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.registerObservers()
         self.defineSpinner()
+    }
+    
+    private func registerObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"showSettings", name: "showSettings", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showWeather", name: "showWeather", object: nil)
     }
     
     private func defineSpinner() {
@@ -77,7 +84,7 @@ class InitialViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "embeddedPageVCSegue" {
-            self.pageViewController = segue.destinationViewController as! PageViewController            
+            self.pageViewController = segue.destinationViewController as! PageViewController
         }
         else if segue.identifier == "embeddedSummaryVCSegue" {
             self.summaryViewController = segue.destinationViewController as! SummaryViewController
@@ -87,4 +94,91 @@ class InitialViewController: UIViewController {
         }
     }
     
+    func showWeather() {
+        print("show weather")
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("pageVC") as! PageViewController
+        self.setEmbeddedMainViewController(self.pageViewController)
+    }
+    
+    func showSettings() {
+        print("show settings")
+        let settingsVC = PrecipitateSettingsViewController()
+        self.setEmbeddedMainViewController(settingsVC)
+    }
+    
+    func setEmbeddedMainViewController(viewController: UIViewController) {
+        if (self.childViewControllers.contains(viewController)) {
+            return
+        }
+        
+        for childVC in self.childViewControllers {
+            if (childVC === self.summaryViewController) {
+                continue
+            }
+            
+            childVC.willMoveToParentViewController(nil)
+            
+            if (childVC.isViewLoaded()) {
+                childVC.view.removeFromSuperview()
+            }
+            childVC.removeFromParentViewController()
+        }
+        
+        self.addChildViewController(viewController)
+        self.pageContainer.addSubview(viewController.view)
+        viewController.view.snp_updateConstraints { (make) -> Void in
+            make.edges.equalTo(0)
+        }
+        viewController.didMoveToParentViewController(self)
+    }
+
 }
+
+
+/*
+
+
+// load saved settings
+}
+
+override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+}
+
+func showSettings() {
+    let settingsVC = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
+    self.setEmbeddedViewController(settingsVC)
+}
+
+func showWeather() {
+    let weatherVC = UIStoryboard(name: "Main", bundle:  nil).instantiateViewControllerWithIdentifier("initialVC")
+    self.setEmbeddedViewController(weatherVC)
+}
+
+func setEmbeddedViewController(viewController: UIViewController) {
+    if (self.childViewControllers.contains(viewController)) {
+        return
+    }
+    
+    for childVC in self.childViewControllers {
+        childVC.willMoveToParentViewController(nil)
+        
+        if (childVC.isViewLoaded()) {
+            childVC.view.removeFromSuperview()
+        }
+        childVC.removeFromParentViewController()
+    }
+    
+    if (!viewController) {
+        return
+    }
+    
+    self.addChildViewController(viewController)
+    self.containerView.addSubview(viewController.view)
+    //        [controller.view mas_updateConstraints:^(MASConstraintMaker *make) {
+    //            make.edges.equalTo(@0);
+    //            }];
+    viewController.didMoveToParentViewController(self)
+}
+*/

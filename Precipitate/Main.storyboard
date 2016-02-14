@@ -74,24 +74,6 @@
             </objects>
             <point key="canvasLocation" x="-307" y="-272"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="Ijm-UO-mLY">
-            <objects>
-                <viewController id="sff-F2-r7k" customClass="SettingsViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uww-rc-Hlp"/>
-                        <viewControllerLayoutGuide type="bottom" id="hDY-Se-FxN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FEA-oh-LmV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eg5-rD-Cao" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="464" y="-888"/>
-        </scene>
         <!--Page View Controller-->
         <scene sceneID="iVQ-78-Uci">
             <objects>

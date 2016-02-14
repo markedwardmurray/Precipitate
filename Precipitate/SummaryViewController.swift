@@ -14,6 +14,7 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var iconLabel: UILabel!
     
     @IBOutlet weak var settingsButton: UIButton!
+    var shouldShowSettings: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,12 @@ class SummaryViewController: UIViewController {
     }
     
     @IBAction func SettingsTapped(sender: AnyObject) {
+        self.shouldShowSettings = !self.shouldShowSettings
         
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.showDetailViewController(SettingsViewController(), sender: self)
+        if self.shouldShowSettings {
+            NSNotificationCenter.defaultCenter().postNotificationName("showSettings", object: nil)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("showWeather", object: nil)
+        }
     }
 }
