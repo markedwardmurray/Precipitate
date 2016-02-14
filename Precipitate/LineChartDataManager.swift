@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Charts
+import SwiftyJSON
+import SwiftyDate
+import SwiftyUserDefaults
 
 struct LineChartDataSettings {
     let label: String
@@ -42,26 +44,32 @@ class LineChartDataManager {
     private(set) var dailyDatas: [String : LineChartData]?
     private(set) var units: ForecastUnits = ForecastUnits(option: ForecastUnitsOption.US)
     
-//    private func forecastUnitsOptionFromJSON(json: JSON) -> ForecastUnitsOption {
-//        let flag = json["flags"]["units"]
-//        switch flag {
-//            case "us":
-//            return ForecastUnitsOption.US
-//            case "si":
-//            return ForecastUnitsOption.SI
-//            case "uk2":
-//            return ForecastUnitsOption.UK2
-//            case "ca":
-//            return ForecastUnitsOption.CA
-//        }
-//    }
-    
     private func setHourlyDatas() {
+        let hoursFormatter = NSDateFormatter()
+        
+        print("hours setting: \(Defaults["hours"].int)")
+        if let hoursSetting = Defaults["hours"].int {
+            switch hoursSetting {
+            case 0: // 24-hour
+                hoursFormatter.dateFormat = "HH"
+            case 1: // 12-hour
+                hoursFormatter.dateFormat = "ha"
+                hoursFormatter.AMSymbol = "a"
+                hoursFormatter.PMSymbol = "p"
+            default:
+                hoursFormatter.dateFormat = "HH"
+            }
+        } else {
+            hoursFormatter.dateFormat = "HH"
+        }
+        
         if let hourlyDataSets = chartDataSetManager.hourlyDataSets {
             let hours = chartDataSetManager.dataEntryCollator!.hours
             var hourStrings = [String]()
             for hour in hours {
-                hourStrings.append("\(NSDate(timeIntervalSince1970: hour).hour)")
+                let hourString = hoursFormatter.stringFromDate(NSDate(timeIntervalSince1970:hour))
+                
+                hourStrings.append(hourString)
             }
             
             var hourlyDatasTmp = [String : LineChartData]()
@@ -83,11 +91,29 @@ class LineChartDataManager {
     }
     
     private func setDailyDatas() {
+        let daysFormatter = NSDateFormatter()
+        
+        print("days setting: \(Defaults["days"].int)")
+        if let daysSetting = Defaults["days"].int {
+            switch daysSetting {
+            case 0: // Day of Month
+                daysFormatter.dateFormat = "d"
+            case 1: // Weekday Letter
+                daysFormatter.dateFormat = "EEEEEE"
+            default:
+                daysFormatter.dateFormat = "d"
+            }
+        } else {
+            daysFormatter.dateFormat = "d"
+        }
+        
         if let dailyDataSets = chartDataSetManager.dailyDataSets {
             let days = chartDataSetManager.dataEntryCollator!.days
             var dayStrings = [String]()
             for day in days {
-                dayStrings.append("\(NSDate(timeIntervalSince1970: day).day)")
+                let dayString = daysFormatter.stringFromDate(NSDate(timeIntervalSince1970:day))
+                
+                dayStrings.append(dayString)
             }
             
             var dailyDatasTmp = [String : LineChartData]()

@@ -75,7 +75,7 @@ class ForecastAPIClient {
         print(url)
         
         Alamofire.request(.GET, url ).responseJSON { response in
-            print("Alamofire response: \(response)")
+            //print("Alamofire response: \(response)")
             switch response.result {
             case .Success:
                 if let value = response.result.value {

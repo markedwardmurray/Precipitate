@@ -48,7 +48,7 @@ class PrecipitateSettingsViewController: SwiftySettingsViewController {
                     },
                     OptionsButton(key: "days", title: "Date Display") {
                     [   Option(title: "Date Digit", optionId: 0),
-                        Option(title: "Weekday", optionId: 1)
+                        Option(title: "Weekday Letter", optionId: 1)
                         ]
                     }
                 ]
