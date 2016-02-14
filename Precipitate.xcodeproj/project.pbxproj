@@ -10,8 +10,11 @@
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
+		4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */; };
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
+		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
+		4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9771C588D1600A92ABF /* SettingsStore.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
 		4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */; };
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
@@ -21,13 +24,31 @@
 		4DA717191C15CEDA0039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717181C15CEDA0039418E /* Main.storyboard */; };
 		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
 		4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171E1C15CFCF0039418E /* LineChartCell.swift */; };
-		4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB10E921C193DD1002D618E /* saved-forecast.json */; };
+		4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */; };
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
-		4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
 		4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */; };
-		4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */; };
+		4DCD9BC81C7127E900EA772B /* forecast20160122-0030-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */; };
+		4DCD9BC91C7127E900EA772B /* forecast20160122-0033-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */; };
+		4DCD9BCA1C7127E900EA772B /* forecast20160122-0034-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */; };
+		4DCD9BCB1C7127E900EA772B /* forecast20160122-0037-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */; };
+		4DCD9BCC1C7127E900EA772B /* forecast20160122-1809-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */; };
+		4DCD9BCD1C7127E900EA772B /* forecast20160122-1809-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */; };
+		4DCD9BCE1C7127E900EA772B /* forecast20160122-2140-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */; };
+		4DCD9BCF1C7127E900EA772B /* forecast20160122-2140-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */; };
+		4DCD9BD01C7127E900EA772B /* forecast20160122-2140-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */; };
+		4DCD9BD11C7127E900EA772B /* forecast20160122-2140-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */; };
+		4DCD9BD21C7127E900EA772B /* forecast20160123-0306-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */; };
+		4DCD9BD31C7127E900EA772B /* forecast20160123-0306-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */; };
+		4DCD9BD41C7127E900EA772B /* forecast20160123-0306-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */; };
+		4DCD9BD51C7127E900EA772B /* forecast20160123-0306-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */; };
+		4DCD9BD61C7127E900EA772B /* forecast20160123-1547-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */; };
+		4DCD9BD71C7127E900EA772B /* forecast20160123-1547-ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */; };
+		4DCD9BD81C7127E900EA772B /* forecast20160123-1547-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */; };
+		4DCD9BD91C7127E900EA772B /* forecast20160123-1547-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */; };
+		4DCD9BDA1C7127F700EA772B /* saved-forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB10E921C193DD1002D618E /* saved-forecast.json */; };
+		4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */; };
 		4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */; };
 		50BD138207F9615EFF0F308B /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */; };
 		927576AC12D526E4B3DB051E /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFA1F2812C47E8BBE632189 /* Pods_Precipitate.framework */; };
@@ -48,8 +69,11 @@
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
+		4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastUnits.swift; sourceTree = "<group>"; };
 		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
+		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
+		4D7AF9771C588D1600A92ABF /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,13 +91,31 @@
 		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
 		4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Precipitate-Bridging-Header.h"; sourceTree = "<group>"; };
 		4DB10E921C193DD1002D618E /* saved-forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "saved-forecast.json"; sourceTree = "<group>"; };
+		4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-us.json"; path = "JSONfiles/forecast20160123-1547-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0030-si.json"; path = "JSONfiles/forecast20160122-0030-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0033-us.json"; path = "JSONfiles/forecast20160122-0033-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0034-uk2.json"; path = "JSONfiles/forecast20160122-0034-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0037-ca.json"; path = "JSONfiles/forecast20160122-0037-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-si.json"; path = "JSONfiles/forecast20160122-1809-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-us.json"; path = "JSONfiles/forecast20160122-1809-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-ca.json"; path = "JSONfiles/forecast20160122-2140-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-si.json"; path = "JSONfiles/forecast20160122-2140-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-uk2.json"; path = "JSONfiles/forecast20160122-2140-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-us.json"; path = "JSONfiles/forecast20160122-2140-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-ca.json"; path = "JSONfiles/forecast20160123-0306-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-si.json"; path = "JSONfiles/forecast20160123-0306-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-uk2.json"; path = "JSONfiles/forecast20160123-0306-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-us.json"; path = "JSONfiles/forecast20160123-0306-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-ca.json"; path = "JSONfiles/forecast20160123-1547-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-si.json"; path = "JSONfiles/forecast20160123-1547-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-uk2.json"; path = "JSONfiles/forecast20160123-1547-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipitateSettingsViewController.swift; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
-		4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timescales.swift"; sourceTree = "<group>"; };
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
 		4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconForIconString.swift; sourceTree = "<group>"; };
-		4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPageViewController.swift; sourceTree = "<group>"; };
 		4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F30AF15DA5A778039A01B94 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +190,9 @@
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
 				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
 				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
+				4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */,
+				4D7AF9771C588D1600A92ABF /* SettingsStore.swift */,
+				4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */,
 				4DCC822A1C1F446900AB2AD5 /* DataConverters */,
 				4DCC822C1C1F44A600AB2AD5 /* Resources */,
 			);
@@ -175,13 +220,37 @@
 			path = PrecipitateUITests;
 			sourceTree = "<group>";
 		};
+		4DB1EBFF1C55A0AC00131BB2 /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */,
+				4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */,
+				4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */,
+				4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */,
+				4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */,
+				4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */,
+				4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */,
+				4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */,
+				4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */,
+				4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */,
+				4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */,
+				4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */,
+				4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */,
+				4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */,
+				4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */,
+				4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */,
+				4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */,
+				4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */,
+			);
+			name = JSONFiles;
+			sourceTree = "<group>";
+		};
 		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
 			isa = PBXGroup;
 			children = (
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
 				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCB44FF1C17F03E00C02325 /* NSDate+Timescales.swift */,
 				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */,
 			);
 			name = DataConverters;
@@ -192,7 +261,8 @@
 			children = (
 				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
 				4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */,
-				4DCF06AF1C18E8D0009FEEA9 /* PageViewController.swift */,
+				4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */,
+				4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */,
 				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
 				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 			);
@@ -208,6 +278,7 @@
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
 				4DB10E921C193DD1002D618E /* saved-forecast.json */,
 				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
+				4DB1EBFF1C55A0AC00131BB2 /* JSONFiles */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -312,7 +383,6 @@
 			files = (
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
-				4DB10E931C193DD1002D618E /* saved-forecast.json in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
 				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
@@ -322,6 +392,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCD9BCD1C7127E900EA772B /* forecast20160122-1809-us.json in Resources */,
+				4DCD9BD41C7127E900EA772B /* forecast20160123-0306-uk2.json in Resources */,
+				4DCD9BD21C7127E900EA772B /* forecast20160123-0306-ca.json in Resources */,
+				4DCD9BD91C7127E900EA772B /* forecast20160123-1547-uk2.json in Resources */,
+				4DCD9BC91C7127E900EA772B /* forecast20160122-0033-us.json in Resources */,
+				4DCD9BDA1C7127F700EA772B /* saved-forecast.json in Resources */,
+				4DCD9BC81C7127E900EA772B /* forecast20160122-0030-si.json in Resources */,
+				4DCD9BD01C7127E900EA772B /* forecast20160122-2140-uk2.json in Resources */,
+				4DCD9BCC1C7127E900EA772B /* forecast20160122-1809-si.json in Resources */,
+				4DCD9BD61C7127E900EA772B /* forecast20160123-1547-us.json in Resources */,
+				4DCD9BD31C7127E900EA772B /* forecast20160123-0306-si.json in Resources */,
+				4DCD9BD11C7127E900EA772B /* forecast20160122-2140-us.json in Resources */,
+				4DCD9BD71C7127E900EA772B /* forecast20160123-1547-ca.json in Resources */,
+				4DCD9BD81C7127E900EA772B /* forecast20160123-1547-si.json in Resources */,
+				4DCD9BCB1C7127E900EA772B /* forecast20160122-0037-ca.json in Resources */,
+				4DCD9BCA1C7127E900EA772B /* forecast20160122-0034-uk2.json in Resources */,
+				4DCD9BCE1C7127E900EA772B /* forecast20160122-2140-ca.json in Resources */,
+				4DCD9BD51C7127E900EA772B /* forecast20160123-0306-us.json in Resources */,
+				4DCD9BCF1C7127E900EA772B /* forecast20160122-2140-si.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,20 +514,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DCB45001C17F03F00C02325 /* NSDate+Timescales.swift in Sources */,
 				4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */,
 				4DCF06B21C18E8E4009FEEA9 /* InitialViewController.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
+				4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
-				4DCF06B01C18E8D0009FEEA9 /* PageViewController.swift in Sources */,
+				4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */,
+				4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */,
 				4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */,
 				4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */,
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
+				4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
 				4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */,
 				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,
+				4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

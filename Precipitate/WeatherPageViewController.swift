@@ -1,5 +1,5 @@
 //
-//  PageViewController.swift
+//  WeatherPageViewController.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 12/9/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class WeatherPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     let lineChartDataManager = LineChartDataManager.sharedInstance
     
@@ -53,7 +53,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
             hourlyTVC.timescale = "48-Hour Forecast"
             
-            hourlyTVC.chartSettings = LineChartDataManager.hourlyChartSettings
+            hourlyTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
             hourlyTVC.chartDatas = hourlyDatas
             //hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
         }
@@ -66,7 +66,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         if let dailyDatas = lineChartDataManager.dailyDatas {
             dailyTVC.timescale = "7-Day Forecast"
             
-            dailyTVC.chartSettings = LineChartDataManager.dailyChartSettings
+            dailyTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
             dailyTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }

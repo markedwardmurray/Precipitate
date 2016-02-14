@@ -32,6 +32,7 @@ class ChartsTableViewController: UITableViewController {
         let lineChartCell: LineChartCell = tableView.dequeueReusableCellWithIdentifier("lineChartCell", forIndexPath: indexPath) as! LineChartCell
         
         let chartSetting = chartSettings[indexPath.row]
+        lineChartCell.title.text = "\(chartSetting.label) (\(chartSetting.units))"
         lineChartCell.lineChartView.data = chartDatas[chartSetting.label]
             
         // LineChartView settings

@@ -12,17 +12,15 @@ import Charts
 
 struct ChartDataSetSettings {
     var label: String
-    var unitOfMeasure: String
     var lineColor: UIColor
     
-    init(label: String, unitOfMeasure: String, lineColor: UIColor) {
+    init(label: String, lineColor: UIColor) {
         self.label = label
-        self.unitOfMeasure = unitOfMeasure
         self.lineColor = lineColor
     }
     
-    init(label: String, unitOfMeasure: String) {
-        self.init(label: label, unitOfMeasure: unitOfMeasure, lineColor: UIColor.blueColor())
+    init(label: String) {
+        self.init(label: label, lineColor: UIColor.blueColor())
     }
 }
 
@@ -93,83 +91,66 @@ class ChartDataSetManager {
     static let settingsForKeys: [String : ChartDataSetSettings] =
     [
         "temperature" : ChartDataSetSettings(
-            label: "Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "Temp",
             lineColor: UIColor.temperature()
         ),
         "apparentTemperature" : ChartDataSetSettings(
-            label: "Apparent Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "Apparent Temp",
             lineColor: UIColor.apparentTemp()
         ),
         
         "temperatureMin" : ChartDataSetSettings(
-            label: "Min Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "Min Temp",
             lineColor: UIColor.temperature()
         ),
         "temperatureMax" : ChartDataSetSettings(
-            label: "Max Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "Max Temp",
             lineColor: UIColor.temperature()
         ),
         "apparentTemperatureMin" : ChartDataSetSettings(
-            label: "App Min Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "App Min Temp",
             lineColor: UIColor.apparentTemp()
         ),
         "apparentTemperatureMax" : ChartDataSetSettings(
-            label: "App Max Temp (°F)",
-            unitOfMeasure: "°F",
+            label: "App Max Temp",
             lineColor: UIColor.apparentTemp()
         ),
         
         "precipProbability" : ChartDataSetSettings(
-            label: "Precipitation Probability (%)",
-            unitOfMeasure: "%"
+            label: "Precipitation Probability"
         ),
         "precipIntensity" : ChartDataSetSettings(
-            label: "Precipitation Intensity (in/hr)",
-            unitOfMeasure: "inches/hour"
+            label: "Expected Intensity"
         ),
         "precipIntensityMax" : ChartDataSetSettings(
-            label: "Max Precip Intensity (in/hr)",
-            unitOfMeasure: "inches/hour",
+            label: "Max Intensity",
             lineColor: UIColor.purpleColor()
         ),
         "precipAccumulation" : ChartDataSetSettings(
-            label: "Precipitation Accumulation (in)",
-            unitOfMeasure: "inches"
+            label: "Accumulation"
         ),
         
         "windSpeed" : ChartDataSetSettings(
-            label: "Wind Speed (mph)",
-            unitOfMeasure: "mph"
+            label: "Wind Speed"
         ),
         "cloudCover" : ChartDataSetSettings(
-            label: "Cloud Cover (%)",
-            unitOfMeasure: "%"
+            label: "Cloud Cover"
         ),
         "visibility" : ChartDataSetSettings(
-            label: "Visibility (miles)",
-            unitOfMeasure: "miles"
+            label: "Visibility"
         ),
         
         "ozone" : ChartDataSetSettings(
-            label: "Ozone (DU)",
-            unitOfMeasure: "Dobson Units"
+            label: "Ozone"
         ),
         "humidity" : ChartDataSetSettings(
-            label: "Humidity (%)",
-            unitOfMeasure: "%"
+            label: "Humidity"
         ),
         "dewPoint" : ChartDataSetSettings(
-            label: "Dew Point (°F)",
-            unitOfMeasure: "°F"
+            label: "Dew Point"
         ),
         "pressure" : ChartDataSetSettings(
-            label: "Pressure (mbar)",
-            unitOfMeasure: "millibars"
+            label: "Pressure"
         )
     ]
 }

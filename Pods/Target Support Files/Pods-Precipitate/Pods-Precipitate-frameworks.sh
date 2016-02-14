@@ -87,11 +87,19 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
   install_framework "Pods-Precipitate/Charts.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
+  install_framework "Pods-Precipitate/SnapKit.framework"
+  install_framework "Pods-Precipitate/SwiftyDate.framework"
   install_framework "Pods-Precipitate/SwiftyJSON.framework"
+  install_framework "Pods-Precipitate/SwiftySettings.framework"
+  install_framework "Pods-Precipitate/SwiftyUserDefaults.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
   install_framework "Pods-Precipitate/Charts.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
+  install_framework "Pods-Precipitate/SnapKit.framework"
+  install_framework "Pods-Precipitate/SwiftyDate.framework"
   install_framework "Pods-Precipitate/SwiftyJSON.framework"
+  install_framework "Pods-Precipitate/SwiftySettings.framework"
+  install_framework "Pods-Precipitate/SwiftyUserDefaults.framework"
 fi
