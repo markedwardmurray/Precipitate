@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class SummaryViewController: UIViewController {
     let lineChartDataManager = LineChartDataManager.sharedInstance
@@ -33,7 +34,7 @@ class SummaryViewController: UIViewController {
         
         if self.shouldShowSettings {
             NSNotificationCenter.defaultCenter().postNotificationName("showSettings", object: nil)
-        } else {
+        } else {            
             NSNotificationCenter.defaultCenter().postNotificationName("showWeather", object: nil)
         }
     }
