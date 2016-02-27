@@ -301,22 +301,5 @@
             </objects>
             <point key="canvasLocation" x="-307" y="-723"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="16x-L6-4s5">
-            <objects>
-                <viewController id="1sw-Vu-BqB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Rj-xI-BWD"/>
-                        <viewControllerLayoutGuide type="bottom" id="M2S-z5-KNJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="thK-Mw-YsV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f0X-xz-4QV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
 </document>
