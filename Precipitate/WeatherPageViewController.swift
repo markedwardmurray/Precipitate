@@ -29,19 +29,9 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         
         self.setUpChildVCs()
         
-        /*
-        let subviews: Array = self.pageViewController.view.subviews
-        var pageControl: UIPageControl! = nil
-        
-        for (var i = 0; i < subviews.count; i++) {
-            if (subviews[i] is UIPageControl) {
-                pageControl = subviews[i] as! UIPageControl
-                pageControl.pageIndicatorTintColor = UIColor.notMyChristian()
-                pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
-                break
-            }
-        }
-        */
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.notMyChristian()
+        pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
     }
     
     func setUpChildVCs() {
