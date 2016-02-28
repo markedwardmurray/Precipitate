@@ -16,6 +16,34 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     var presentationIndex: Int = 0
     
+    override func viewDidLayoutSubviews() {
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        // hides the footer
+        // Objective-C implementation by Zerotool (Stack Overflow)
+        var scrollView: UIScrollView?
+        var pageControl: UIPageControl?
+        
+        if (self.view.subviews.count == 2) {
+            for view in self.view.subviews {
+                if (view.isKindOfClass(UIScrollView)) {
+                    scrollView = view as? UIScrollView
+                } else if (view.isKindOfClass(UIPageControl)) {
+                    pageControl = view as? UIPageControl
+                }
+            }
+        }
+        
+        if let scrollView = scrollView {
+            if let pageControl = pageControl {
+                scrollView.frame = self.view.bounds
+                self.view.bringSubviewToFront(pageControl)
+            }
+        }
+        
+        super.viewDidLayoutSubviews()
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,12 +53,10 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         // KIF
         self.accessibilityLabel = "pageVC"
         
-        self.view.backgroundColor = UIColor.notMyChristian()
-        
         self.setUpChildVCs()
         
         let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = UIColor.notMyChristian()
+        pageControl.pageIndicatorTintColor = UIColor.havelockBlue()
         pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
     }
     
