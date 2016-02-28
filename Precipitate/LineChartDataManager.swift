@@ -47,23 +47,7 @@ class LineChartDataManager {
     private(set) var units: ForecastUnits = ForecastUnits(option: ForecastUnitsOption.US)
     
     private func setHourlyDatas() {
-        let hoursFormatter = NSDateFormatter()
-        
-        print("hours setting: \(Defaults["hours"].int)")
-        if let hoursSetting = Defaults["hours"].int {
-            switch hoursSetting {
-            case 0: // 24-hour
-                hoursFormatter.dateFormat = "HH"
-            case 1: // 12-hour
-                hoursFormatter.dateFormat = "ha"
-                hoursFormatter.AMSymbol = "a"
-                hoursFormatter.PMSymbol = "p"
-            default:
-                hoursFormatter.dateFormat = "HH"
-            }
-        } else {
-            hoursFormatter.dateFormat = "HH"
-        }
+        let hoursFormatter = NSDateFormatter.selectedHoursFormatter()
         
         if let hourlyDataSets = chartDataSetManager.hourlyDataSets {
             let hours = chartDataSetManager.dataEntryCollator!.hours
@@ -95,22 +79,8 @@ class LineChartDataManager {
     }
     
     private func setDailyDatas() {
-        let daysFormatter = NSDateFormatter()
-        
-        print("days setting: \(Defaults["days"].int)")
-        if let daysSetting = Defaults["days"].int {
-            switch daysSetting {
-            case 0: // Day of Month
-                daysFormatter.dateFormat = "d"
-            case 1: // Weekday Letter
-                daysFormatter.dateFormat = "EEEEEE"
-            default:
-                daysFormatter.dateFormat = "d"
-            }
-        } else {
-            daysFormatter.dateFormat = "d"
-        }
-        
+        let daysFormatter = NSDateFormatter.selectedDaysFormatter()
+                
         if let dailyDataSets = chartDataSetManager.dailyDataSets {
             let days = chartDataSetManager.dataEntryCollator!.days
             var dayStrings = [String]()

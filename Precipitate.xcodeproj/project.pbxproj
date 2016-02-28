@@ -12,6 +12,7 @@
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
 		4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */; };
 		4D6373301C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */; };
+		4D6373321C82CE7800C40B58 /* NSDateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */; };
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
@@ -72,6 +73,7 @@
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastUnits.swift; sourceTree = "<group>"; };
 		4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumberFormatter+Formatters.swift"; sourceTree = "<group>"; };
+		4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Formatters.swift"; sourceTree = "<group>"; };
 		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
 				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
+				4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */,
 				4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
@@ -529,6 +532,7 @@
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
 				4D6373301C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift in Sources */,
+				4D6373321C82CE7800C40B58 /* NSDateFormatter+Formatters.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
