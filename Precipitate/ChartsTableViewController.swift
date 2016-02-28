@@ -10,13 +10,32 @@ import UIKit
 import SwiftyJSON
 import Charts
 
+enum ChartsTableViewControllerTimeScaleOption: Int {
+    case NotDetermined = 0
+    case Today = 1
+    case Tomorrow = 2
+    case Weekly = 3
+}
+
 class ChartsTableViewController: UITableViewController {
     var chartSettings = [LineChartDataSettings]()
     
     var chartDatas = [String : LineChartData]()
-    //var chartKeys = [String]()
-    var timescale: String = ""
     
+    var timeScale: ChartsTableViewControllerTimeScaleOption = .NotDetermined
+    
+    var timeScaleLabel: String {
+        switch self.timeScale {
+        case .NotDetermined:
+            return ""
+        case .Today:
+            return "Today (next 24 hours)"
+        case .Tomorrow:
+            return "Following 24 Hours"
+        case .Weekly:
+            return "This Week (next 7 days)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +57,6 @@ class ChartsTableViewController: UITableViewController {
         chartCell.lineChartView.leftAxis.valueFormatter = chartSetting.formatter
         chartCell.lineChartView.rightAxis.enabled = false
         
-        // LineChartView settings
-        
-//        lineChartCell.lineChartView.descriptionText = ""
-//        lineChartCell.lineChartView.doubleTapToZoomEnabled = false
-//        lineChartCell.lineChartView.pinchZoomEnabled = false
-//        lineChartCell.lineChartView.backgroundColor = UIColor.glitter()
-//        lineChartCell.lineChartView.layer.cornerRadius = 10
-        
-        //////////////////////
-        
         return chartCell
     }
     
@@ -58,7 +67,7 @@ class ChartsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return self.timescale
+            return self.timeScaleLabel
         default:
             return nil
         }

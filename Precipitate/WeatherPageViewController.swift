@@ -61,35 +61,43 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     }
     
     func setUpChildVCs() {
-        let hourlyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let todayTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        todayTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Today
         // setup for KIF - begin
-        hourlyTVC.tableView.accessibilityLabel = "hourlyTableView"
-        hourlyTVC.tableView.accessibilityIdentifier = "hourlyTableView"
+        todayTVC.tableView.accessibilityLabel = "todayTableView"
+        todayTVC.tableView.accessibilityIdentifier = "todayTableView"
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
-            hourlyTVC.timescale = "48-Hour Forecast"
-            
-            hourlyTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
-            hourlyTVC.chartDatas = hourlyDatas
-            //hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
+            todayTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            todayTVC.chartDatas = hourlyDatas
         }
         
-        let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let tomorrowTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        tomorrowTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Tomorrow
         // setup for KIF - begin
-        dailyTVC.tableView.accessibilityLabel = "dailyTableView"
-        dailyTVC.tableView.accessibilityIdentifier = "dailyTableView"
+        tomorrowTVC.tableView.accessibilityLabel = "tomorrowTableView"
+        tomorrowTVC.tableView.accessibilityIdentifier = "tomorrowTableView"
+        // setup for KIF - end
+        if let hourlyDatas = lineChartDataManager.hourlyDatas {
+            tomorrowTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            tomorrowTVC.chartDatas = hourlyDatas
+        }
+        
+        let thisWeekTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        thisWeekTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Weekly
+        // setup for KIF - begin
+        thisWeekTVC.tableView.accessibilityLabel = "thisWeekTableView"
+        thisWeekTVC.tableView.accessibilityIdentifier = "thisWeekTableView"
         // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
-            dailyTVC.timescale = "7-Day Forecast"
-            
-            dailyTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
-            dailyTVC.chartDatas = dailyDatas
+            thisWeekTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
+            thisWeekTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }
         
-        pages = [hourlyTVC, dailyTVC]
+        pages = [todayTVC, tomorrowTVC, thisWeekTVC]
         
-        self.setViewControllers([hourlyTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([todayTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
