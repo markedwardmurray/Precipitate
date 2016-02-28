@@ -22,6 +22,7 @@ class ChartsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.allowsSelection = false
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,20 +30,23 @@ class ChartsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let lineChartCell: LineChartCell = tableView.dequeueReusableCellWithIdentifier("lineChartCell", forIndexPath: indexPath) as! LineChartCell
+        let chartCell: LineChartCell = tableView.dequeueReusableCellWithIdentifier("lineChartCell", forIndexPath: indexPath) as! LineChartCell
         
         let chartSetting = chartSettings[indexPath.row]
-        lineChartCell.title.text = "\(chartSetting.label) (\(chartSetting.units))"
-        lineChartCell.lineChartView.data = chartDatas[chartSetting.label]
+        chartCell.title.text = "\(chartSetting.label) (\(chartSetting.units))"
+        chartCell.lineChartView.data = chartDatas[chartSetting.label]
             
         // LineChartView settings
         
-        lineChartCell.lineChartView.descriptionText = ""
-        lineChartCell.lineChartView.doubleTapToZoomEnabled = false
+//        lineChartCell.lineChartView.descriptionText = ""
+//        lineChartCell.lineChartView.doubleTapToZoomEnabled = false
+//        lineChartCell.lineChartView.pinchZoomEnabled = false
+//        lineChartCell.lineChartView.backgroundColor = UIColor.glitter()
+//        lineChartCell.lineChartView.layer.cornerRadius = 10
         
         //////////////////////
         
-        return lineChartCell
+        return chartCell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
