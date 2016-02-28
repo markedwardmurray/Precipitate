@@ -25,6 +25,5 @@ class LineChartCell: UITableViewCell {
         self.lineChartView.layer.cornerRadius = 10
         self.lineChartView.layer.masksToBounds = true
         self.lineChartView.drawMarkers = true
-        
     }
 }

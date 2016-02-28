@@ -35,7 +35,9 @@ class ChartsTableViewController: UITableViewController {
         let chartSetting = chartSettings[indexPath.row]
         chartCell.title.text = "\(chartSetting.label) (\(chartSetting.units))"
         chartCell.lineChartView.data = chartDatas[chartSetting.label]
-            
+        chartCell.lineChartView.leftAxis.valueFormatter = chartSetting.formatter
+        chartCell.lineChartView.rightAxis.enabled = false
+        
         // LineChartView settings
         
 //        lineChartCell.lineChartView.descriptionText = ""
