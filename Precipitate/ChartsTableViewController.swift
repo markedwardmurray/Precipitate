@@ -55,7 +55,8 @@ class ChartsTableViewController: UITableViewController {
         chartCell.title.text = "\(chartSetting.label) (\(chartSetting.units))"
         chartCell.lineChartView.data = chartDatas[chartSetting.label]
         chartCell.lineChartView.leftAxis.valueFormatter = chartSetting.formatter
-        chartCell.lineChartView.rightAxis.enabled = false
+        chartCell.lineChartView.rightAxis.valueFormatter = chartSetting.formatter
+        chartCell.lineChartView.rightAxis.enabled = DeviceType.IS_IPHONE_6P
         
         switch self.timeScale {
         case .Today:
