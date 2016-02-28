@@ -102,21 +102,33 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let chartsTVC = viewController as! ChartsTableViewController
+                
+        let currentIndex = self.pages.indexOf(chartsTVC)
         
-        let currentIndex = pages.indexOf(chartsTVC)!
-        
-        let previousIndex = abs((currentIndex - 1) % pages.count)
-        self.presentationIndex = previousIndex
-        return pages[previousIndex]
+        if let currentIndex = currentIndex {
+            if (currentIndex != 0) {
+                let newIndex = currentIndex - 1
+                self.presentationIndex = newIndex
+                return self.pages[newIndex]
+            }
+        }
+        return nil;
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let chartsTVC = viewController as! ChartsTableViewController
         
-        let currentIndex = pages.indexOf(chartsTVC)!
-        let nextIndex = abs((currentIndex + 1) % pages.count)
-        self.presentationIndex = nextIndex
-        return pages[nextIndex]
+        let currentIndex = self.pages.indexOf(chartsTVC)
+        
+        if let currentIndex = currentIndex {
+            let lastIndex = self.pages.count - 1
+            if (currentIndex != lastIndex) {
+                let newIndex = currentIndex + 1
+                self.presentationIndex = newIndex
+                return self.pages[newIndex]
+            }
+        }
+        return nil;
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {

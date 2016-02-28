@@ -58,8 +58,6 @@ class ChartsTableViewController: UITableViewController {
         chartCell.lineChartView.rightAxis.valueFormatter = chartSetting.formatter
         chartCell.lineChartView.rightAxis.enabled = DeviceType.IS_IPHONE_6P
         
-        
-        
         switch self.timeScale {
         case .Today:
             chartCell.lineChartView.setVisibleXRange(minXRange: 0, maxXRange: 24)
