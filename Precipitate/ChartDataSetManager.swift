@@ -20,7 +20,7 @@ struct ChartDataSetSettings {
     }
     
     init(label: String) {
-        self.init(label: label, lineColor: UIColor.blueColor())
+        self.init(label: label, lineColor: UIColor.defaultLine())
     }
 }
 
@@ -91,29 +91,26 @@ class ChartDataSetManager {
     static let settingsForKeys: [String : ChartDataSetSettings] =
     [
         "temperature" : ChartDataSetSettings(
-            label: "Temp",
-            lineColor: UIColor.temperature()
+            label: "Temp"
         ),
         "apparentTemperature" : ChartDataSetSettings(
             label: "Apparent Temp",
-            lineColor: UIColor.apparentTemp()
+            lineColor: UIColor.secondLine()
         ),
         
         "temperatureMin" : ChartDataSetSettings(
-            label: "Min Temp",
-            lineColor: UIColor.temperature()
+            label: "Min Temp"
         ),
         "temperatureMax" : ChartDataSetSettings(
-            label: "Max Temp",
-            lineColor: UIColor.temperature()
+            label: "Max Temp"
         ),
         "apparentTemperatureMin" : ChartDataSetSettings(
             label: "App Min Temp",
-            lineColor: UIColor.apparentTemp()
+            lineColor: UIColor.secondLine()
         ),
         "apparentTemperatureMax" : ChartDataSetSettings(
             label: "App Max Temp",
-            lineColor: UIColor.apparentTemp()
+            lineColor: UIColor.secondLine()
         ),
         
         "precipProbability" : ChartDataSetSettings(
@@ -124,7 +121,7 @@ class ChartDataSetManager {
         ),
         "precipIntensityMax" : ChartDataSetSettings(
             label: "Max Intensity",
-            lineColor: UIColor.purpleColor()
+            lineColor: UIColor.secondLine()
         ),
         "precipAccumulation" : ChartDataSetSettings(
             label: "Accumulation"

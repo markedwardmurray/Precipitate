@@ -14,14 +14,14 @@ extension UIColor {
         return UIColor(white: 0.9, alpha: 1.0)
     }
     
-    class func temperature() -> UIColor {
-        return UIColor.blueColor()
+    class func defaultLine() -> UIColor {
+        return UIColor.s3Chambray()
     }
     
-    class func apparentTemp() -> UIColor {
-        return UIColor.purpleColor()
+    class func secondLine() -> UIColor {
+        return UIColor.t2SummerSky()
     }
-    
+        
     /**
      468EE5
      */
