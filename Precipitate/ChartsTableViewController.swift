@@ -57,6 +57,19 @@ class ChartsTableViewController: UITableViewController {
         chartCell.lineChartView.leftAxis.valueFormatter = chartSetting.formatter
         chartCell.lineChartView.rightAxis.enabled = false
         
+        switch self.timeScale {
+        case .Today:
+            chartCell.lineChartView.setVisibleXRangeMinimum(0)
+            chartCell.lineChartView.setVisibleXRangeMaximum(12)
+            break;
+        case .Tomorrow:
+            chartCell.lineChartView.setVisibleXRangeMinimum(12)
+            chartCell.lineChartView.setVisibleXRangeMaximum(24)
+            break;
+        default:
+            break;
+        }
+        
         return chartCell
     }
     
