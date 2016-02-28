@@ -21,6 +21,9 @@ extension UIColor {
         return UIColor.purpleColor()
     }
     
+    /**
+     468EE5
+     */
     class func havelockBlue() -> UIColor {
         return UIColor(red:70/255.0, green:142/255.0, blue:229/255.0, alpha:255/255.0)
     }

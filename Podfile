@@ -8,6 +8,7 @@ target 'Precipitate' do
   pod 'Charts', '~> 2.1.6'
   pod 'INTULocationManager', '~> 4.1.1'
   pod 'SnapKit', '~> 0.19.1'
+  pod 'SwiftHEXColors', '~> 1.0.2'
   pod 'SwiftyDate', '~> 1.0.1'
   pod 'SwiftyJSON', '~> 2.3.2'
   pod 'SwiftySettings', '~> 0.0.3'
