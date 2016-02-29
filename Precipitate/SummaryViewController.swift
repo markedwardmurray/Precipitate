@@ -37,6 +37,9 @@ class SummaryViewController: UIViewController {
     
     func setUpSubviews() {
         if let currentlyIcon = lineChartDataManager.chartDataSetManager.dataEntryCollator?.currentlyIcon {
+            // https://erikflowers.github.io/weather-icons/
+            iconLabel.font = UIFont(name: "Weather Icons", size: 60)
+            iconLabel.textColor = UIColor.s3Chambray()
             iconLabel.text = weatherIconForIconString(currentlyIcon)
         }
     }

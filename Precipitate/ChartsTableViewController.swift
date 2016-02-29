@@ -59,8 +59,7 @@ class ChartsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.backgroundColor = UIColor.whiteColor()
-        header.tintColor = self.chartViewColor
+        header.contentView.backgroundColor = self.chartViewColor
         header.textLabel?.textAlignment = NSTextAlignment.Center
     }
         

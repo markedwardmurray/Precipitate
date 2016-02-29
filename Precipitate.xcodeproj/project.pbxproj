@@ -14,6 +14,7 @@
 		4D6373301C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */; };
 		4D6373321C82CE7800C40B58 /* NSDateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */; };
 		4D6373341C82E46500C40B58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373331C82E46500C40B58 /* Constants.swift */; };
+		4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */; };
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
@@ -76,6 +77,7 @@
 		4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumberFormatter+Formatters.swift"; sourceTree = "<group>"; };
 		4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Formatters.swift"; sourceTree = "<group>"; };
 		4D6373331C82E46500C40B58 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				4D718BA31C3F213C00F4C287 /* Icon-Original.png */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
+				4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
 				4DB10E921C193DD1002D618E /* saved-forecast.json */,
@@ -393,6 +396,7 @@
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
+				4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */,
 				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
