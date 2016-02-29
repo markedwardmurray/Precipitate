@@ -20,8 +20,6 @@ class LineChartCell: UITableViewCell {
         self.lineChartView.doubleTapToZoomEnabled = false
         self.lineChartView.pinchZoomEnabled = false
         self.lineChartView.dragEnabled = false
-        self.lineChartView.backgroundColor = UIColor.glitter()
-        self.lineChartView.gridBackgroundColor = UIColor.aliceBlue()
         self.lineChartView.layer.cornerRadius = 10
         self.lineChartView.layer.masksToBounds = true
         self.lineChartView.drawMarkers = true

@@ -37,6 +37,19 @@ class ChartsTableViewController: UITableViewController {
         }
     }
     
+    var chartViewColor: UIColor {
+        switch self.timeScale {
+        case .NotDetermined:
+            return UIColor.s00Thorzum()
+        case .Today:
+            return UIColor.s00Thorzum()
+        case .Tomorrow:
+            return UIColor.p00Zumthor()
+        case .Weekly:
+            return UIColor.t00TwilightBlue()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +57,13 @@ class ChartsTableViewController: UITableViewController {
         self.tableView.allowsSelection = false
     }
     
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.backgroundColor = UIColor.whiteColor()
+        header.tintColor = self.chartViewColor
+        header.textLabel?.textAlignment = NSTextAlignment.Center
+    }
+        
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chartSettings.count
     }
@@ -68,6 +88,9 @@ class ChartsTableViewController: UITableViewController {
         default:
             break;
         }
+        
+        chartCell.lineChartView.backgroundColor = self.chartViewColor
+        chartCell.lineChartView.gridBackgroundColor = UIColor(white: 1.0, alpha: 0.5)
         
         return chartCell
     }

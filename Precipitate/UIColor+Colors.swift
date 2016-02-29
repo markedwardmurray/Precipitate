@@ -45,6 +45,10 @@ extension UIColor {
         return UIColor(red:241/255.0, green:248/255.0, blue:253/255.0, alpha:255/255.0)
     }
     
+    class func p00Zumthor() -> UIColor {
+        return UIColor(red: 237/255.0, green: 245/255.0, blue: 255/255.0, alpha: 1.0)
+    }
+    
     /**
      HEX: A5CEFF
      RGB: 165–206–255
@@ -85,6 +89,10 @@ extension UIColor {
         return UIColor(hexString: "233347")!
     }
     
+    class func s00Thorzum() -> UIColor {
+        return UIColor(red: 238/255.0, green: 241/255.0, blue: 255/255.0, alpha: 1.0)
+    }
+    
     /**
      HEX: A8BBFF
      RGB: 168–187–255
@@ -123,6 +131,10 @@ extension UIColor {
      */
     class func s4LuckyPoint() -> UIColor {
         return UIColor(hexString: "252D4A")!
+    }
+    
+    class func t00TwilightBlue() -> UIColor {
+        return UIColor(red: 236/255.0, green: 250/255.0, blue: 255/255.0, alpha: 1.0)
     }
 
     /**
