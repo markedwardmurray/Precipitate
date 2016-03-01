@@ -107,9 +107,7 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         
         if let currentIndex = currentIndex {
             if (currentIndex != 0) {
-                let newIndex = currentIndex - 1
-                self.presentationIndex = newIndex
-                return self.pages[newIndex]
+                return self.pages[currentIndex - 1]
             }
         }
         return nil;
@@ -123,9 +121,7 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         if let currentIndex = currentIndex {
             let lastIndex = self.pages.count - 1
             if (currentIndex != lastIndex) {
-                let newIndex = currentIndex + 1
-                self.presentationIndex = newIndex
-                return self.pages[newIndex]
+                return self.pages[currentIndex + 1]
             }
         }
         return nil;
@@ -136,7 +132,11 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return self.presentationIndex
+        let visibleVC = self.viewControllers?.first as! ChartsTableViewController?
+        if let visibleVC = visibleVC {
+            return self.pages.indexOf(visibleVC)!
+        }
+        return 0
     }
     
 }
