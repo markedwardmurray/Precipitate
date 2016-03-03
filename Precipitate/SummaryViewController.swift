@@ -12,35 +12,31 @@ import SwiftyUserDefaults
 class SummaryViewController: UIViewController {
     let lineChartDataManager = LineChartDataManager.sharedInstance
 
-    @IBOutlet weak var iconLabel: UILabel!
-    
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var timeAgoLabel: UILabel!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var apparentTempLabel: UILabel!
-    
-    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
     var shouldShowSettings: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.infoButton.hidden = true
-        self.locationLabel.hidden = true
-        self.timeAgoLabel.hidden = true
-        self.temperatureLabel.hidden = true
-        self.apparentTempLabel.hidden = true
-        
+                
         self.setUpSubviews()
     }
     
     func setUpSubviews() {
         if let currentlyIcon = lineChartDataManager.chartDataSetManager.dataEntryCollator?.currentlyIcon {
             // https://erikflowers.github.io/weather-icons/
-            iconLabel.font = UIFont(name: "Weather Icons", size: 40)
-            iconLabel.textColor = UIColor.s3Chambray()
-            iconLabel.text = weatherIconForIconString(currentlyIcon)
+            iconButton.titleLabel?.font = UIFont(name: "Weather Icons", size: 20)
+            let icon = weatherIconForIconString(currentlyIcon)
+            iconButton.setTitle(icon, forState: UIControlState.Normal)
+            iconButton.setTitleColor(UIColor.s3Chambray(), forState: UIControlState.Normal)
+            iconButton.setTitle(icon, forState: UIControlState.Highlighted)
+            iconButton.setTitleColor(UIColor.s1FadedBlue(), forState: UIControlState.Highlighted)
+            
+        }
+        
+        if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
+            self.summaryLabel.text = summary
         }
     }
     
