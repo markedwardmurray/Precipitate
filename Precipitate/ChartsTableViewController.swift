@@ -12,9 +12,9 @@ import Charts
 
 enum ChartsTableViewControllerTimeScaleOption: Int {
     case NotDetermined = 0
-    case Today = 1
-    case Tomorrow = 2
-    case Weekly = 3
+    case TwelveHour = 1
+    case FortyEightHour = 2
+    case SevenDay = 3
 }
 
 class ChartsTableViewController: UITableViewController {
@@ -28,12 +28,12 @@ class ChartsTableViewController: UITableViewController {
         switch self.timeScale {
         case .NotDetermined:
             return ""
-        case .Today:
-            return "Today (next 24 hours)"
-        case .Tomorrow:
-            return "Following 24 Hours"
-        case .Weekly:
-            return "This Week (next 7 days)"
+        case .TwelveHour:
+            return "12-hour"
+        case .FortyEightHour:
+            return "48-hour"
+        case .SevenDay:
+            return "7-day"
         }
     }
     
@@ -41,11 +41,11 @@ class ChartsTableViewController: UITableViewController {
         switch self.timeScale {
         case .NotDetermined:
             return UIColor.s00Thorzum()
-        case .Today:
+        case .TwelveHour:
             return UIColor.s00Thorzum()
-        case .Tomorrow:
+        case .FortyEightHour:
             return UIColor.p00Zumthor()
-        case .Weekly:
+        case .SevenDay:
             return UIColor.t00TwilightBlue()
         }
     }
@@ -78,12 +78,14 @@ class ChartsTableViewController: UITableViewController {
         chartCell.lineChartView.rightAxis.enabled = DeviceType.IS_IPHONE_6P
         
         switch self.timeScale {
-        case .Today:
-            chartCell.lineChartView.setVisibleXRange(minXRange: 0, maxXRange: 24)
+        case .TwelveHour:
+            chartCell.lineChartView.setVisibleXRange(minXRange: 12, maxXRange: 12)
             break;
-        case .Tomorrow:
-            chartCell.lineChartView.setVisibleXRange(minXRange: 24, maxXRange: 48)
+        case .FortyEightHour:
+            chartCell.lineChartView.setVisibleXRange(minXRange: 48, maxXRange: 48)
             break;
+        case .SevenDay:
+            chartCell.lineChartView.setVisibleXRange(minXRange: 8, maxXRange: 8)
         default:
             break;
         }

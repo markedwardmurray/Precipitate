@@ -61,43 +61,43 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     }
     
     func setUpChildVCs() {
-        let todayTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
-        todayTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Today
+        let twelveHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        twelveHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.TwelveHour
         // setup for KIF - begin
-        todayTVC.tableView.accessibilityLabel = "todayTableView"
-        todayTVC.tableView.accessibilityIdentifier = "todayTableView"
+        twelveHourTVC.tableView.accessibilityLabel = "twelveHourTableView"
+        twelveHourTVC.tableView.accessibilityIdentifier = "twelveHourTableView"
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
-            todayTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
-            todayTVC.chartDatas = hourlyDatas
+            twelveHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            twelveHourTVC.chartDatas = hourlyDatas
         }
         
-        let tomorrowTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
-        tomorrowTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Tomorrow
+        let fortyEightHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        fortyEightHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.FortyEightHour
         // setup for KIF - begin
-        tomorrowTVC.tableView.accessibilityLabel = "tomorrowTableView"
-        tomorrowTVC.tableView.accessibilityIdentifier = "tomorrowTableView"
+        fortyEightHourTVC.tableView.accessibilityLabel = "fortyEightHourTableView"
+        fortyEightHourTVC.tableView.accessibilityIdentifier = "fortyEightHourTableView"
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
-            tomorrowTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
-            tomorrowTVC.chartDatas = hourlyDatas
+            fortyEightHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            fortyEightHourTVC.chartDatas = hourlyDatas
         }
         
-        let thisWeekTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
-        thisWeekTVC.timeScale = ChartsTableViewControllerTimeScaleOption.Weekly
+        let sevenDayTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        sevenDayTVC.timeScale = ChartsTableViewControllerTimeScaleOption.SevenDay
         // setup for KIF - begin
-        thisWeekTVC.tableView.accessibilityLabel = "thisWeekTableView"
-        thisWeekTVC.tableView.accessibilityIdentifier = "thisWeekTableView"
+        sevenDayTVC.tableView.accessibilityLabel = "sevenDayTableView"
+        sevenDayTVC.tableView.accessibilityIdentifier = "sevenDayWeekTableView"
         // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
-            thisWeekTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
-            thisWeekTVC.chartDatas = dailyDatas
+            sevenDayTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
+            sevenDayTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }
         
-        pages = [todayTVC, tomorrowTVC, thisWeekTVC]
+        pages = [twelveHourTVC, fortyEightHourTVC, sevenDayTVC]
         
-        self.setViewControllers([todayTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([twelveHourTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
