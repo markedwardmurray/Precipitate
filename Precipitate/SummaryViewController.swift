@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import SwiftyUserDefaults
 import FontAwesome_swift
+import MarqueeLabel_Swift
+import SwiftyUserDefaults
 
 class SummaryViewController: UIViewController {
     let lineChartDataManager = LineChartDataManager.sharedInstance
 
     @IBOutlet weak var iconButton: UIButton!
-    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var summaryLabel: MarqueeLabel!
     @IBOutlet weak var settingsButton: UIButton!
     var shouldShowSettings: Bool = false
     
@@ -41,7 +42,8 @@ class SummaryViewController: UIViewController {
         }
         
         if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
-            self.summaryLabel.text = summary
+            self.summaryLabel.text = summary + "   "
+            self.summaryLabel.triggerScrollStart()
         }
         
         settingsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
