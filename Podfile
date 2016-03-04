@@ -8,6 +8,7 @@ target 'Precipitate' do
   pod 'Charts', '~> 2.1.6'
   pod 'FontAwesome.swift', '~> 0.7.0'
   pod 'INTULocationManager', '~> 4.1.1'
+  pod 'MarqueeLabel-Swift', '~> 2.6.4'
   pod 'SnapKit', '~> 0.19.1'
   pod 'SwiftHEXColors', '~> 1.0.2'
   pod 'SwiftyDate', '~> 1.0.1'

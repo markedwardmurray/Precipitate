@@ -11,6 +11,7 @@ PODS:
   - KIF (3.3.2):
     - KIF/Core (= 3.3.2)
   - KIF/Core (3.3.2)
+  - MarqueeLabel-Swift (2.6.4)
   - Nimble (3.0.0)
   - Nimble-Snapshots (3.0.0):
     - FBSnapshotTestCase (~> 2.0.7)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - FontAwesome.swift (~> 0.7.0)
   - INTULocationManager (~> 4.1.1)
   - KIF (~> 3.3.2)
+  - MarqueeLabel-Swift (~> 2.6.4)
   - Nimble (~> 3.0.0)
   - Nimble-Snapshots (~> 3.0.0)
   - Quick (~> 0.8.0)
@@ -48,6 +50,7 @@ SPEC CHECKSUMS:
   FontAwesome.swift: c6e30a1a81716306ff9c81f2d38dda88ac5b8294
   INTULocationManager: 83c7373048d583cda57e25eefb9bb8a3675acf16
   KIF: 9de83fa627adaf65d28ace31e40f19d830bc255c
+  MarqueeLabel-Swift: 9e85cc250f6204dad5a8b285dd4910019b961491
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Nimble-Snapshots: ab41dd737dcd33a0b0cb005a30465fef70b7207a
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
