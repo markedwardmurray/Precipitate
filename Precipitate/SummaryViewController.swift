@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyUserDefaults
+import FontAwesome_swift
 
 class SummaryViewController: UIViewController {
     let lineChartDataManager = LineChartDataManager.sharedInstance
@@ -32,16 +33,22 @@ class SummaryViewController: UIViewController {
             iconButton.titleLabel?.font = UIFont(name: "Weather Icons", size: size)
             
             iconButton.setTitle(icon, forState: UIControlState.Normal)
-            iconButton.setTitleColor(UIColor.s3Chambray(), forState: UIControlState.Normal)
+            iconButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Normal)
             
             iconButton.setTitle(icon, forState: UIControlState.Highlighted)
-            iconButton.setTitleColor(UIColor.s1FadedBlue(), forState: UIControlState.Highlighted)
+            iconButton.setTitleColor(UIColor.s1FadedBlue(), forState:UIControlState.Highlighted)
             
         }
         
         if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
             self.summaryLabel.text = summary
         }
+        
+        settingsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
+        settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Normal)
+        settingsButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Normal)
+        settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Highlighted)
+        settingsButton.setTitleColor(UIColor.s1FadedBlue(), forState:UIControlState.Highlighted)
     }
     
     @IBAction func iconTapped(sender: AnyObject) {
