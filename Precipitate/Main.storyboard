@@ -190,7 +190,7 @@
                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="25"/>
                                 <state key="normal" title="❄"/>
                                 <connections>
-                                    <action selector="SettingsTapped:" destination="j73-Re-sFS" eventType="touchUpInside" id="5kF-7D-HnG"/>
+                                    <action selector="iconTapped:" destination="j73-Re-sFS" eventType="touchUpInside" id="hBw-92-Ylo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-fh-iJU">

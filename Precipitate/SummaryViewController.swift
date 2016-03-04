@@ -25,11 +25,15 @@ class SummaryViewController: UIViewController {
     
     func setUpSubviews() {
         if let currentlyIcon = lineChartDataManager.chartDataSetManager.dataEntryCollator?.currentlyIcon {
-            // https://erikflowers.github.io/weather-icons/
-            iconButton.titleLabel?.font = UIFont(name: "Weather Icons", size: 20)
-            let icon = weatherIconForIconString(currentlyIcon)
+            
+            let weatherIconName = WeatherIconName(rawValue: currentlyIcon)
+            let (icon, size) = weatherIconForName(weatherIconName)
+            
+            iconButton.titleLabel?.font = UIFont(name: "Weather Icons", size: size)
+            
             iconButton.setTitle(icon, forState: UIControlState.Normal)
             iconButton.setTitleColor(UIColor.s3Chambray(), forState: UIControlState.Normal)
+            
             iconButton.setTitle(icon, forState: UIControlState.Highlighted)
             iconButton.setTitleColor(UIColor.s1FadedBlue(), forState: UIControlState.Highlighted)
             
@@ -38,6 +42,9 @@ class SummaryViewController: UIViewController {
         if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
             self.summaryLabel.text = summary
         }
+    }
+    
+    @IBAction func iconTapped(sender: AnyObject) {
     }
     
     @IBAction func SettingsTapped(sender: AnyObject) {
