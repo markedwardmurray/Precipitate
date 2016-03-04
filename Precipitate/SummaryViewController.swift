@@ -48,7 +48,7 @@ class SummaryViewController: UIViewController {
         settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Normal)
         settingsButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Normal)
         settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Highlighted)
-        settingsButton.setTitleColor(UIColor.s1FadedBlue(), forState:UIControlState.Highlighted)
+        settingsButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Highlighted)
     }
     
     @IBAction func iconTapped(sender: AnyObject) {
