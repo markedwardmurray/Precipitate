@@ -6,6 +6,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.0.7)
   - FBSnapshotTestCase/SwiftSupport (2.0.7):
     - FBSnapshotTestCase/Core
+  - FontAwesome.swift (0.7.0)
   - INTULocationManager (4.1.1)
   - KIF (3.3.2):
     - KIF/Core (= 3.3.2)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.1.5)
   - Charts (~> 2.1.6)
   - FBSnapshotTestCase (~> 2.0.7)
+  - FontAwesome.swift (~> 0.7.0)
   - INTULocationManager (~> 4.1.1)
   - KIF (~> 3.3.2)
   - Nimble (~> 3.0.0)
@@ -43,6 +45,7 @@ SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  FontAwesome.swift: c6e30a1a81716306ff9c81f2d38dda88ac5b8294
   INTULocationManager: 83c7373048d583cda57e25eefb9bb8a3675acf16
   KIF: 9de83fa627adaf65d28ace31e40f19d830bc255c
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926

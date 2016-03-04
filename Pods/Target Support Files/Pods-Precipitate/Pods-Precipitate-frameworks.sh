@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
   install_framework "Pods-Precipitate/Charts.framework"
+  install_framework "Pods-Precipitate/FontAwesome_swift.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
   install_framework "Pods-Precipitate/SnapKit.framework"
   install_framework "Pods-Precipitate/SwiftHEXColors.framework"
@@ -97,6 +98,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Precipitate/Alamofire.framework"
   install_framework "Pods-Precipitate/Charts.framework"
+  install_framework "Pods-Precipitate/FontAwesome_swift.framework"
   install_framework "Pods-Precipitate/INTULocationManager.framework"
   install_framework "Pods-Precipitate/SnapKit.framework"
   install_framework "Pods-Precipitate/SwiftHEXColors.framework"

@@ -6,6 +6,7 @@ use_frameworks!
 target 'Precipitate' do
   pod 'Alamofire', '~> 3.1.5'
   pod 'Charts', '~> 2.1.6'
+  pod 'FontAwesome.swift', '~> 0.7.0'
   pod 'INTULocationManager', '~> 4.1.1'
   pod 'SnapKit', '~> 0.19.1'
   pod 'SwiftHEXColors', '~> 1.0.2'
