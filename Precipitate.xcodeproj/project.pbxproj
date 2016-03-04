@@ -267,9 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
-				4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */,
 				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
+				4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */,
 				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */,
 			);
 			name = DataConverters;

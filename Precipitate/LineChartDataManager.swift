@@ -34,7 +34,6 @@ class LineChartDataManager {
     var json: JSON? {
         didSet {
             if let json = json {
-                self.setCurrentlyData()
                 self.chartDataSetManager.collateDataEntrysFromJSON(json)
                 self.setHourlyDatas()
                 self.setDailyDatas()
@@ -43,15 +42,10 @@ class LineChartDataManager {
         }
     }
     
-    private(set) var currentlyData: CurrentlyDataBlock?
     private(set) var hourlyDatas: [String : LineChartData]?
     private(set) var dailyDatas: [String : LineChartData]?
     private(set) var units: ForecastUnits = ForecastUnits(option: ForecastUnitsOption.US)
-    
-    private func setCurrentlyData() {
-        self.currentlyData = CurrentlyDataBlock(json: self.json!)
-    }
-    
+        
     private func setHourlyDatas() {
         let hoursFormatter = NSDateFormatter.selectedHoursFormatter()
         
@@ -196,7 +190,7 @@ class LineChartDataManager {
     
     func dailyChartSettings() -> [LineChartDataSettings] {
         
-        let dailyChartSettings: [LineChartDataSettings] =
+    let dailyChartSettings: [LineChartDataSettings] =
         [
             LineChartDataSettings(
                 label: "Temperature",
