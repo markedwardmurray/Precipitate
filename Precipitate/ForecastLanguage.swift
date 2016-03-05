@@ -9,38 +9,38 @@
 import Foundation
 import SwiftyJSON
 
-/* enum ForecastLanguageKey: Int {
-case None       = 0
-case Arabic     = 1
-case Bosnian    = 2
-case Czech      = 3
-case German     = 4
-case Greek      = 5
-case English    = 6
-case Spanish    = 7
-case French     = 8
-case Croatian   = 9
-case Hungarian  = 10
-case Italian    = 11
-case Icelandic  = 12
-case Cornish    = 13
-case Norwegian  = 14 // (Norwegian Bokmål),
-case Dutch      = 15
-case Polish     = 16
-case Portuguese = 17
-case Russian    = 18
-case Slovak     = 19
-case Serbian    = 20
-case Swedish    = 21
-case Tetum      = 22
-case Turkish    = 23
-case Ukrainian  = 24
-case PigLatin   = 25 // (Igpay Atinlay),
-case Chinese    = 26
-case ChineseTW  = 27
-} */
+enum ForecastLanguageOption: Int {
+    case None       = 0
+    case Arabic     = 10
+    case Bosnian    = 20
+    case Czech      = 30
+    case German     = 40
+    case Greek      = 50
+    case English    = 60
+    case Spanish    = 70
+    case French     = 80
+    case Croatian   = 90
+    case Hungarian  = 100
+    case Italian    = 110
+    case Icelandic  = 120
+    case Cornish    = 130
+    case Norwegian  = 140
+    case Dutch      = 150
+    case Polish     = 160
+    case Portuguese = 170
+    case Russian    = 180
+    case Slovak     = 190
+    case Serbian    = 200
+    case Swedish    = 210
+    case Tetum      = 220
+    case Turkish    = 230
+    case Ukrainian  = 240
+    case PigLatin   = 250
+    case Chinese    = 260
+    case ChineseTW  = 270
+}
 
-enum ForecastLanguageOption: String {
+enum ForecastLanguageKey: String {
     case None       = ""
     case Arabic     = "ar"
     case Bosnian    = "bs"
@@ -72,86 +72,176 @@ enum ForecastLanguageOption: String {
 }
 
 struct ForecastLanguage {
-    static func languageOptionForKey(key: Int?) -> ForecastLanguageOption {
+    
+    static func keyFromJSON(json: JSON) -> ForecastLanguageKey {
+        if let lang = json["flags"]["language"].string {
+            if let key = ForecastLanguageKey(rawValue: lang) {
+                return key
+            }
+        }
+        return ForecastLanguageKey.None
+    }
+    
+    static func languageOptionForKey(key: ForecastLanguageKey?) -> ForecastLanguageOption {
         if let key = key {
             switch key {
-            case 0:
+            case ForecastLanguageKey.None:
                 return ForecastLanguageOption.None
-            case 1:
+            case ForecastLanguageKey.Arabic:
                 return ForecastLanguageOption.Arabic
-            case 2:
+            case ForecastLanguageKey.Bosnian:
                 return ForecastLanguageOption.Bosnian
-            case 3:
+            case ForecastLanguageKey.Czech:
                 return ForecastLanguageOption.Czech
-            case 4:
+            case ForecastLanguageKey.German:
                 return ForecastLanguageOption.German
                 
-            case 5:
+            case ForecastLanguageKey.Greek:
                 return ForecastLanguageOption.Greek
-            case 6:
+            case ForecastLanguageKey.English:
                 return ForecastLanguageOption.English
-            case 7:
+            case ForecastLanguageKey.Spanish:
                 return ForecastLanguageOption.Spanish
-            case 8:
+            case ForecastLanguageKey.French:
                 return ForecastLanguageOption.French
-            case 9:
+            case ForecastLanguageKey.Croatian:
                 return ForecastLanguageOption.Croatian
                 
-            case 10:
+            case ForecastLanguageKey.Hungarian:
                 return ForecastLanguageOption.Hungarian
-            case 11:
+            case ForecastLanguageKey.Italian:
                 return ForecastLanguageOption.Italian
-            case 12:
+            case ForecastLanguageKey.Icelandic:
                 return ForecastLanguageOption.Icelandic
-            case 13:
+            case ForecastLanguageKey.Cornish:
                 return ForecastLanguageOption.Cornish
-            case 14:
+            case ForecastLanguageKey.Norwegian:
                 return ForecastLanguageOption.Norwegian
                 
-            case 15:
+            case ForecastLanguageKey.Dutch:
                 return ForecastLanguageOption.Dutch
-            case 16:
+            case ForecastLanguageKey.Polish:
                 return ForecastLanguageOption.Polish
-            case 17:
+            case ForecastLanguageKey.Portuguese:
                 return ForecastLanguageOption.Portuguese
-            case 18:
+            case ForecastLanguageKey.Russian:
                 return ForecastLanguageOption.Russian
-            case 19:
+            case ForecastLanguageKey.Slovak:
                 return ForecastLanguageOption.Slovak
                 
-            case 20:
+            case ForecastLanguageKey.Serbian:
                 return ForecastLanguageOption.Serbian
-            case 21:
+            case ForecastLanguageKey.Swedish:
                 return ForecastLanguageOption.Swedish
-            case 22:
+            case ForecastLanguageKey.Tetum:
                 return ForecastLanguageOption.Tetum
-            case 23:
+            case ForecastLanguageKey.Turkish:
                 return ForecastLanguageOption.Turkish
-            case 24:
+            case ForecastLanguageKey.Ukrainian:
                 return ForecastLanguageOption.Ukrainian
-            case 25:
+            case ForecastLanguageKey.PigLatin:
                 return ForecastLanguageOption.PigLatin
                 
-            case 26:
+            case ForecastLanguageKey.Chinese:
                 return ForecastLanguageOption.Chinese
-            case 27:
+            case ForecastLanguageKey.ChineseTW:
                 return ForecastLanguageOption.ChineseTW
-            default:
-                return ForecastLanguageOption.None
+//            default:
+//                return ForecastLanguageOption.None
             }
         } else {
             return ForecastLanguageOption.None
         }
     }
     
+    static func languageKeyForOption(option: ForecastLanguageOption?) -> ForecastLanguageKey {
+        if let option = option {
+            switch option {
+            case ForecastLanguageOption.None:
+                return ForecastLanguageKey.None
+            case ForecastLanguageOption.Arabic:
+                return ForecastLanguageKey.Arabic
+            case ForecastLanguageOption.Bosnian:
+                return ForecastLanguageKey.Bosnian
+            case ForecastLanguageOption.Czech:
+                return ForecastLanguageKey.Czech
+            case ForecastLanguageOption.German:
+                return ForecastLanguageKey.German
+                
+            case ForecastLanguageOption.Greek:
+                return ForecastLanguageKey.Greek
+            case ForecastLanguageOption.English:
+                return ForecastLanguageKey.English
+            case ForecastLanguageOption.Spanish:
+                return ForecastLanguageKey.Spanish
+            case ForecastLanguageOption.French:
+                return ForecastLanguageKey.French
+            case ForecastLanguageOption.Croatian:
+                return ForecastLanguageKey.Croatian
+                
+            case ForecastLanguageOption.Hungarian:
+                return ForecastLanguageKey.Hungarian
+            case ForecastLanguageOption.Italian:
+                return ForecastLanguageKey.Italian
+            case ForecastLanguageOption.Icelandic:
+                return ForecastLanguageKey.Icelandic
+            case ForecastLanguageOption.Cornish:
+                return ForecastLanguageKey.Cornish
+            case ForecastLanguageOption.Norwegian:
+                return ForecastLanguageKey.Norwegian
+                
+            case ForecastLanguageOption.Dutch:
+                return ForecastLanguageKey.Dutch
+            case ForecastLanguageOption.Polish:
+                return ForecastLanguageKey.Polish
+            case ForecastLanguageOption.Portuguese:
+                return ForecastLanguageKey.Portuguese
+            case ForecastLanguageOption.Russian:
+                return ForecastLanguageKey.Russian
+            case ForecastLanguageOption.Slovak:
+                return ForecastLanguageKey.Slovak
+                
+            case ForecastLanguageOption.Serbian:
+                return ForecastLanguageKey.Serbian
+            case ForecastLanguageOption.Swedish:
+                return ForecastLanguageKey.Swedish
+            case ForecastLanguageOption.Tetum:
+                return ForecastLanguageKey.Tetum
+            case ForecastLanguageOption.Turkish:
+                return ForecastLanguageKey.Turkish
+            case ForecastLanguageOption.Ukrainian:
+                return ForecastLanguageKey.Ukrainian
+            case ForecastLanguageOption.PigLatin:
+                return ForecastLanguageKey.PigLatin
+                
+            case ForecastLanguageOption.Chinese:
+                return ForecastLanguageKey.Chinese
+            case ForecastLanguageOption.ChineseTW:
+                return ForecastLanguageKey.ChineseTW
+                //            default:
+                //                return ForecastLanguageOption.None
+            }
+        } else {
+            return ForecastLanguageKey.None
+        }
+    }
+    
     let option: ForecastLanguageOption
+    let key: ForecastLanguageKey
     
     init() {
         self.option = ForecastLanguageOption.English
+        self.key = ForecastLanguageKey.English
     }
     
     init(option: ForecastLanguageOption) {
         self.option = option
+        self.key = ForecastLanguage.languageKeyForOption(option)
+    }
+    
+    init(key: ForecastLanguageKey) {
+        self.key = key
+        self.option = ForecastLanguage.languageOptionForKey(key)
     }
     
     struct Info {
@@ -219,13 +309,11 @@ struct ForecastLanguage {
         }
     }
     
-    static func optionFromJSON(json: JSON) -> ForecastLanguageOption {
-        if let lang = json["flags"]["language"].string {
-            if let option = ForecastLanguageOption(rawValue: lang) {
-                return option
-            }
+    var settingsDescription: String {
+        if (self.key == ForecastLanguageKey.PigLatin) {
+            return "\(self.info.flag) \(self.info.name)"
         }
-        return ForecastLanguageOption.None
+        return "\(self.info.flag) \(self.info.name) (\(self.key.rawValue))"
     }
 }
 

@@ -25,7 +25,7 @@ class ForecastAPIClient {
         //print("read cache")
         let json = self.retrieveCachedJSON()
         if let json = json {
-            let minutesAgo = 60
+            let minutesAgo = 60.0
             if self.json(json, isRecentWithinMinutesAgo: minutesAgo) {
                 print("json cache is less than \(minutesAgo) minutes old, return cache")
                 completion(json: json)
@@ -71,7 +71,10 @@ class ForecastAPIClient {
         print(unitsKey)
         let units = ForecastUnits.unitsOptionForKey(unitsKey).rawValue
         
-        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?units=\(units)&exclude=[minutely]")!
+        let languageOption = ForecastLanguageOption(rawValue: Defaults["lang"].int!)
+        let languageKey = ForecastLanguage.languageKeyForOption(languageOption).rawValue
+        
+        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?units=\(units)&lang=\(languageKey)&exclude=[minutely]")!
         print(url)
         
         Alamofire.request(.GET, url ).responseJSON { response in
@@ -96,7 +99,7 @@ class ForecastAPIClient {
         }
     }
     
-    func json(json: JSON, isRecentWithinMinutesAgo minutesAgo: Int) -> Bool {
+    func json(json: JSON, isRecentWithinMinutesAgo minutesAgo: Double) -> Bool {
         if let jsonTime = json["currently"]["time"].int {
             let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
             let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
