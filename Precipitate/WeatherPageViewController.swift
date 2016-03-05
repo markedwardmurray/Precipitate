@@ -14,8 +14,6 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     var pages = [ChartsTableViewController]()
     
-    var presentationIndex: Int = 0
-    
     override func viewDidLayoutSubviews() {
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
         // hides the footer

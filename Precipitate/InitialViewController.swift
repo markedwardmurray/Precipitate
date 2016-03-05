@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 import SnapKit
 import SwiftyUserDefaults
 
@@ -29,11 +30,39 @@ class InitialViewController: UIViewController {
         self.registerObservers()
         self.defineSpinner()
         
+        // delay to let the frames load correctly
+        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            
+            if (Defaults["openedOnce"].bool == nil) {
+                Defaults["openedOnce"] = true
+                
+                Defaults["units"] = 0
+                Defaults["lang"] = 6
+                self.showSettings()
+                self.presentWelcomeAlertController()
+            } else {
+                self.loadViewsAfterGettingData()
+            }
+        })
     }
     
     private func registerObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"showSettings", name: "showSettings", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showWeather", name: "showWeather", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "save", name: "applicationWillResignActive", object: UIApplication.sharedApplication().delegate)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "applicationDidBecomeActive", object: UIApplication.sharedApplication().delegate)
+    }
+    
+    func save() {
+        Defaults["shouldShowSettings"] = self.summaryViewController.shouldShowSettings
+    }
+    
+    func reload() {
+        if let shouldShowSettings = Defaults["shouldShowSettings"].bool {
+            shouldShowSettings ? self.showSettings() : self.showWeather()
+        }
     }
     
     private func defineSpinner() {
@@ -51,20 +80,6 @@ class InitialViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        // delay to let the frames load correctly
-        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            
-            if (Defaults["units"].int == nil || Defaults["lang"].int == nil) {
-                Defaults["units"] = 0
-                Defaults["lang"] = 6
-                self.showSettings()
-                self.presentWelcomeAlertController()
-            } else {
-                self.loadViewsAfterGettingData()
-            }
-        })
     }
     
     func loadViewsAfterGettingData() {
@@ -143,7 +158,12 @@ class InitialViewController: UIViewController {
 //MARK: Alert Controllers
     
     func presentWelcomeAlertController() {
-        let alertController = UIAlertController(title: "Welcome to Precipitate!", message: "Since this is your first time opening the app, please select your preferred units option before receiving weather data. You can change this option later but doing so won't take effect until the following weather data request.\n\nTap the ⚙ button when you are done.", preferredStyle: .Alert)
+        let gear = String.fontAwesomeIconWithName(FontAwesome.Gear)
+        let alertController = UIAlertController(title: "Welcome to Precipitate!", message: nil, preferredStyle: .Alert)
+        
+        let message = NSAttributedString(string: "Please select your preferences for the following options:\n\nForecast API: Units\nForecast API: Language\n\nYou can change these options later but they won't take immediate effect.\n\nTap the \(gear) when you are done.", attributes: [NSFontAttributeName : UIFont.fontAwesomeOfSize(14)])
+        alertController.setValue(message, forKey: "attributedMessage")
+        
         let cancelAction = UIAlertAction(title: "Got it!", style: .Cancel) { (action) in
             print(action)
         }
