@@ -86,17 +86,19 @@ class InitialViewController: UIViewController {
         
         self.spinner.startAnimating()
         
-        self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json) -> Void in
-            
+        self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json, error) -> Void in
             self.spinner.stopAnimating()
+            
+            if let error = error {
+                print("~~~~~~~~~~~~~ERROR~~~~~~~~~\n\(error)")
+                self.presentAlertWithNSError(error as NSError)
+            }
             
             if let json = json {
                 self.lineChartDataManager.json = json
                 
                 self.weatherPageViewController.setUpChildVCs()
                 self.summaryViewController.setUpSubviews()
-            } else {
-                self.presentDataErrorAlertController()
             }
         }
     }
@@ -173,11 +175,23 @@ class InitialViewController: UIViewController {
     
     func presentDataErrorAlertController() {
         let alertController = UIAlertController(title: "Data Error!", message: "Something went wrong—there is no weather data to display. Please make sure that your phone has an internet connection and that location services are enabled.", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-            print(action)
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in }
         alertController.addAction(cancelAction)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default) { (action) in
+            self.loadViewsAfterGettingData()
+        }
+        alertController.addAction(tryAgainAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
+    func presentAlertWithNSError(nsError: NSError) {
+        let alertController = UIAlertController(title: "Error!", message: nsError.localizedDescription, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) in }
+        alertController.addAction(cancelAction)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default) { (action) in
+            self.loadViewsAfterGettingData()
+        }
+        alertController.addAction(tryAgainAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
