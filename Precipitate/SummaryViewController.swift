@@ -38,8 +38,9 @@ class SummaryViewController: UIViewController {
             
             iconButton.setTitle(icon, forState: UIControlState.Highlighted)
             iconButton.setTitleColor(UIColor.s1FadedBlue(), forState:UIControlState.Highlighted)
-            
         }
+        // disable until it does something
+        iconButton.userInteractionEnabled = false
         
         if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
             self.summaryLabel.text = summary + "   "
@@ -51,7 +52,7 @@ class SummaryViewController: UIViewController {
         settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Normal)
         settingsButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Normal)
         settingsButton.setTitle(String.fontAwesomeIconWithName(FontAwesome.Gear), forState:UIControlState.Highlighted)
-        settingsButton.setTitleColor(UIColor.s3Chambray(), forState:UIControlState.Highlighted)
+        settingsButton.setTitleColor(UIColor.s1FadedBlue(), forState:UIControlState.Highlighted)
     }
     
     @IBAction func iconTapped(sender: AnyObject) {
