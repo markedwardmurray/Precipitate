@@ -85,7 +85,7 @@ class ChartsTableViewController: UITableViewController {
             chartCell.lineChartView.setVisibleXRange(minXRange: 48, maxXRange: 48)
             break;
         case .SevenDay:
-            chartCell.lineChartView.setVisibleXRange(minXRange: 8, maxXRange: 8)
+            chartCell.lineChartView.setVisibleXRange(minXRange: 7, maxXRange: 7)
         default:
             break;
         }
