@@ -44,6 +44,7 @@ class SummaryViewController: UIViewController {
         if let summary = lineChartDataManager.chartDataSetManager.dataEntryCollator?.summary {
             self.summaryLabel.text = summary + "   "
             self.summaryLabel.triggerScrollStart()
+            self.summaryLabel.animationDelay = 2.0;
         }
         
         settingsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
