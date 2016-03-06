@@ -29,6 +29,17 @@ class ForecastAPIClient {
     func getRecentlyCachedForecastOrNewAPIResponse(completion: (json: JSON?, error: ErrorType?) -> Void) {
         //print("read cache")
         
+        /* // inject data for app store screenshots
+        // don't forget to add the json files to the project target
+        if let savedForecastPath = NSBundle.mainBundle().pathForResource("forecast20160122-1809-us", ofType: "json") {
+            if let savedData = NSData(contentsOfFile: savedForecastPath) {
+                let savedJSON = JSON.init(data: savedData, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                completion(json: savedJSON, error: nil)
+                return;
+            }
+        }
+        */
+        
         var cachedJSON = JSON([:])
         do {
             cachedJSON = try self.retrieveCachedJSON()
