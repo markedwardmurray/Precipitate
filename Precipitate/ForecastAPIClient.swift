@@ -13,6 +13,7 @@ import INTULocationManager
 import SwiftyUserDefaults
 
 enum ForecastError: ErrorType {
+    case CacheReadFailed
     case LocationRequestFailed
 }
 
@@ -27,8 +28,12 @@ class ForecastAPIClient {
     
     func getRecentlyCachedForecastOrNewAPIResponse(completion: (json: JSON?, error: ErrorType?) -> Void) {
         //print("read cache")
-        let cachedJSONO = self.retrieveCachedJSON()
-        guard let cachedJSON = cachedJSONO else {
+        
+        var cachedJSON = JSON([:])
+        do {
+            cachedJSON = try self.retrieveCachedJSON()
+        }
+        catch {
             print("no cached json retrieved, making API request")
             self.getForecastForCurrentLocationCompletion({ (json, error) -> Void in
                 completion(json: json, error: error)
@@ -37,7 +42,8 @@ class ForecastAPIClient {
         }
         
         let minutesAgo = 60.0
-        if self.cachedJSON(cachedJSON, isRecentWithinMinutesAgo: minutesAgo) {
+        if self.cache(cachedJSON, isRecentWithinMinutesAgo: minutesAgo) {
+            
             print("json cache is less than \(minutesAgo) minutes old, return cache")
             completion(json: cachedJSON, error: nil)
             return;
@@ -101,6 +107,7 @@ class ForecastAPIClient {
                 if let value = response.result.value {
                     let json = JSON(value)
                     guard json.error == nil else {
+                        print(json.error)
                         completion(json: nil, error: json.error)
                         return;
                     }
@@ -116,7 +123,7 @@ class ForecastAPIClient {
         }
     }
     
-    func cachedJSON(json: JSON, isRecentWithinMinutesAgo minutesAgo: Double) -> Bool {
+    func cache(json: JSON, isRecentWithinMinutesAgo minutesAgo: Double) -> Bool {
         if let jsonTime = json["currently"]["time"].int {
             let jsonTimeInterval: NSTimeInterval = Double(jsonTime)
             let jsonDate = NSDate(timeIntervalSince1970: jsonTimeInterval)
@@ -132,24 +139,22 @@ class ForecastAPIClient {
         }
     }
         
-    func retrieveCachedJSON() -> JSON? {   // should throw
+    func retrieveCachedJSON() throws -> JSON {
         
         let manager = NSFileManager.defaultManager()
         let path = ForecastAPIClient.fileURL.path!
         
-        if manager.fileExistsAtPath(path) {
-            if let data = NSData(contentsOfURL: ForecastAPIClient.fileURL) {
-                let json = JSON(data: data)
-                return json
-            } else {
-                print("no data from file")
-                return nil
-            }
-        } else {
+        guard manager.fileExistsAtPath(path) else {
             print("error, no file at path")
-            return nil
+            throw ForecastError.CacheReadFailed
         }
-    }  // this method is ugly
+        guard let data = NSData(contentsOfURL: ForecastAPIClient.fileURL) else {
+            print("no data from file")
+            throw ForecastError.CacheReadFailed
+        }
+        let json = JSON(data: data)
+        return json
+    }
     
     func cacheJSON(json: JSON) {
         let manager = NSFileManager.defaultManager()

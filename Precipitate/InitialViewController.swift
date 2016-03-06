@@ -42,7 +42,7 @@ class InitialViewController: UIViewController {
                 self.showSettings()
                 self.presentWelcomeAlertController()
             } else {
-                self.loadViewsAfterGettingData()
+                //self.loadViewsAfterGettingData()
             }
         })
     }
