@@ -19,7 +19,6 @@
 		4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */; };
 		4D6373461C85516900C40B58 /* CurrentlyDataBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */; };
 		4D6373481C855B3700C40B58 /* CurrentlyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */; };
-		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
 		4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9771C588D1600A92ABF /* SettingsStore.swift */; };
@@ -28,6 +27,7 @@
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
 		4D7E0E051C064B4D00A15C54 /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E041C064B4D00A15C54 /* PrecipitateTests.swift */; };
 		4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0E1D1C06785500A15C54 /* Secrets.swift */; };
+		4D94552F1C8CCDF200D6AC7F /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D94552E1C8CCDF200D6AC7F /* Icon-Original.png */; };
 		4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */; };
 		4DA717191C15CEDA0039418E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA717181C15CEDA0039418E /* Main.storyboard */; };
 		4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */; };
@@ -86,7 +86,6 @@
 		4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyDataBlock.swift; sourceTree = "<group>"; };
 		4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyTableViewController.swift; sourceTree = "<group>"; };
-		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
 		4D7AF9771C588D1600A92ABF /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
@@ -101,6 +100,7 @@
 		4D7E0E0F1C064B4D00A15C54 /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D7E0E111C064B4D00A15C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7E0E1D1C06785500A15C54 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		4D94552E1C8CCDF200D6AC7F /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Original.png"; sourceTree = "<group>"; };
 		4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAPIClient.swift; sourceTree = "<group>"; };
 		4DA717181C15CEDA0039418E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		4DCC822C1C1F44A600AB2AD5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D718BA31C3F213C00F4C287 /* Icon-Original.png */,
+				4D94552E1C8CCDF200D6AC7F /* Icon-Original.png */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
 				4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
@@ -405,11 +405,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D94552F1C8CCDF200D6AC7F /* Icon-Original.png in Resources */,
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
 				4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */,
-				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
