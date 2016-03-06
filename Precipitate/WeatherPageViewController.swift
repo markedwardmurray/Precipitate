@@ -14,7 +14,33 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     var pages = [ChartsTableViewController]()
     
-    var presentationIndex: Int = 0
+    override func viewDidLayoutSubviews() {
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        // hides the footer
+        // Objective-C implementation by Zerotool (Stack Overflow)
+        var scrollView: UIScrollView?
+        var pageControl: UIPageControl?
+        
+        if (self.view.subviews.count == 2) {
+            for view in self.view.subviews {
+                if (view.isKindOfClass(UIScrollView)) {
+                    scrollView = view as? UIScrollView
+                } else if (view.isKindOfClass(UIPageControl)) {
+                    pageControl = view as? UIPageControl
+                }
+            }
+        }
+        
+        if let scrollView = scrollView {
+            if let pageControl = pageControl {
+                scrollView.frame = self.view.bounds
+                self.view.bringSubviewToFront(pageControl)
+            }
+        }
+        
+        super.viewDidLayoutSubviews()
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,74 +51,78 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         // KIF
         self.accessibilityLabel = "pageVC"
         
-        self.view.backgroundColor = UIColor.notMyChristian()
-        
         self.setUpChildVCs()
         
-        /*
-        let subviews: Array = self.pageViewController.view.subviews
-        var pageControl: UIPageControl! = nil
-        
-        for (var i = 0; i < subviews.count; i++) {
-            if (subviews[i] is UIPageControl) {
-                pageControl = subviews[i] as! UIPageControl
-                pageControl.pageIndicatorTintColor = UIColor.notMyChristian()
-                pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
-                break
-            }
-        }
-        */
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.havelockBlue()
+        pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
     }
     
     func setUpChildVCs() {
-        let hourlyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let twelveHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        twelveHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.TwelveHour
         // setup for KIF - begin
-        hourlyTVC.tableView.accessibilityLabel = "hourlyTableView"
-        hourlyTVC.tableView.accessibilityIdentifier = "hourlyTableView"
+        twelveHourTVC.tableView.accessibilityLabel = "twelveHourTableView"
+        twelveHourTVC.tableView.accessibilityIdentifier = "twelveHourTableView"
         // setup for KIF - end
         if let hourlyDatas = lineChartDataManager.hourlyDatas {
-            hourlyTVC.timescale = "48-Hour Forecast"
-            
-            hourlyTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
-            hourlyTVC.chartDatas = hourlyDatas
-            //hourlyTVC.chartKeys = DataEntryCollator.hourlyKeys
+            twelveHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            twelveHourTVC.chartDatas = hourlyDatas
         }
         
-        let dailyTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let fortyEightHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        fortyEightHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.FortyEightHour
         // setup for KIF - begin
-        dailyTVC.tableView.accessibilityLabel = "dailyTableView"
-        dailyTVC.tableView.accessibilityIdentifier = "dailyTableView"
+        fortyEightHourTVC.tableView.accessibilityLabel = "fortyEightHourTableView"
+        fortyEightHourTVC.tableView.accessibilityIdentifier = "fortyEightHourTableView"
+        // setup for KIF - end
+        if let hourlyDatas = lineChartDataManager.hourlyDatas {
+            fortyEightHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
+            fortyEightHourTVC.chartDatas = hourlyDatas
+        }
+        
+        let sevenDayTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        sevenDayTVC.timeScale = ChartsTableViewControllerTimeScaleOption.SevenDay
+        // setup for KIF - begin
+        sevenDayTVC.tableView.accessibilityLabel = "sevenDayTableView"
+        sevenDayTVC.tableView.accessibilityIdentifier = "sevenDayWeekTableView"
         // setup for KIF - end
         if let dailyDatas = lineChartDataManager.dailyDatas {
-            dailyTVC.timescale = "7-Day Forecast"
-            
-            dailyTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
-            dailyTVC.chartDatas = dailyDatas
+            sevenDayTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
+            sevenDayTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys
         }
         
-        pages = [hourlyTVC, dailyTVC]
+        pages = [twelveHourTVC, fortyEightHourTVC, sevenDayTVC]
         
-        self.setViewControllers([hourlyTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([twelveHourTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let chartsTVC = viewController as! ChartsTableViewController
+                
+        let currentIndex = self.pages.indexOf(chartsTVC)
         
-        let currentIndex = pages.indexOf(chartsTVC)!
-        
-        let previousIndex = abs((currentIndex - 1) % pages.count)
-        self.presentationIndex = previousIndex
-        return pages[previousIndex]
+        if let currentIndex = currentIndex {
+            if (currentIndex != 0) {
+                return self.pages[currentIndex - 1]
+            }
+        }
+        return nil;
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let chartsTVC = viewController as! ChartsTableViewController
         
-        let currentIndex = pages.indexOf(chartsTVC)!
-        let nextIndex = abs((currentIndex + 1) % pages.count)
-        self.presentationIndex = nextIndex
-        return pages[nextIndex]
+        let currentIndex = self.pages.indexOf(chartsTVC)
+        
+        if let currentIndex = currentIndex {
+            let lastIndex = self.pages.count - 1
+            if (currentIndex != lastIndex) {
+                return self.pages[currentIndex + 1]
+            }
+        }
+        return nil;
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
@@ -100,7 +130,11 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return self.presentationIndex
+        let visibleVC = self.viewControllers?.first as! ChartsTableViewController?
+        if let visibleVC = visibleVC {
+            return self.pages.indexOf(visibleVC)!
+        }
+        return 0
     }
     
 }

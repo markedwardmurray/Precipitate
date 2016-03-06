@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="weathericons-regular-webfont.ttf">
+            <string>WeatherIcons-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Initial View Controller-->
         <scene sceneID="7Gr-79-XF0">
@@ -26,16 +31,16 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-xV-ezV" userLabel="Summary Container">
-                                <rect key="frame" x="0.0" y="20" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="mvS-CH-9ie"/>
+                                    <constraint firstAttribute="height" constant="44" id="mvS-CH-9ie"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="j73-Re-sFS" kind="embed" identifier="embeddedSummaryVCSegue" id="8Ym-V5-9xp"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-bl-7dT">
-                                <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-bl-7dT">
+                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
                                 <connections>
                                     <segue destination="iKB-XS-qRD" kind="embed" identifier="embeddedPageVCSegue" id="r6w-BB-Jr7"/>
                                 </connections>
@@ -100,7 +105,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBl-2N-rKS" customClass="LineChartView" customModule="Charts">
                                             <rect key="frame" x="24" y="46" width="552" height="167.5"/>
-                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="160" id="KGi-w2-crI"/>
                                             </constraints>
@@ -165,24 +169,35 @@
                         <viewControllerLayoutGuide type="bottom" id="su2-ki-Dnu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rhH-16-Cbg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❄︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-Bd-9kF">
-                                <rect key="frame" x="270" y="20" width="60" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy with a chance of meatballs." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-Bd-9kF" customClass="MarqueeLabel" customModule="MarqueeLabel_Swift">
+                                <rect key="frame" x="52" y="10" width="496" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="9UO-Lr-L4u"/>
-                                    <constraint firstAttribute="height" constant="60" id="h8n-mP-V2V"/>
+                                    <constraint firstAttribute="height" constant="24" id="vJq-rX-CAy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-fh-iJU">
-                                <rect key="frame" x="536" y="27.5" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVd-Xd-HDQ">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Hoy-gY-fPR"/>
-                                    <constraint firstAttribute="height" constant="44" id="S4M-JB-z7Q"/>
+                                    <constraint firstAttribute="height" constant="44" id="Eb8-k3-c9g"/>
+                                    <constraint firstAttribute="width" constant="44" id="sbm-gH-TZn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="25"/>
+                                <state key="normal" title="❄"/>
+                                <connections>
+                                    <action selector="iconTapped:" destination="j73-Re-sFS" eventType="touchUpInside" id="hBw-92-Ylo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-fh-iJU">
+                                <rect key="frame" x="556" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="OWu-4W-PaC"/>
+                                    <constraint firstAttribute="height" constant="44" id="S8g-og-DRj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="⚙"/>
@@ -193,20 +208,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="top" secondItem="rhH-16-Cbg" secondAttribute="topMargin" constant="20" id="2WP-4J-5PQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cjL-fh-iJU" secondAttribute="trailing" id="6ge-dU-sA8"/>
-                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerX" secondItem="rhH-16-Cbg" secondAttribute="centerX" id="B3l-4U-ZYL"/>
-                            <constraint firstItem="cjL-fh-iJU" firstAttribute="centerY" secondItem="rhH-16-Cbg" secondAttribute="centerY" id="ucj-19-NK4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cjL-fh-iJU" secondAttribute="trailing" constant="-20" id="Hhc-Eq-c5o"/>
+                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="leading" secondItem="uVd-Xd-HDQ" secondAttribute="trailing" constant="8" id="YEm-qZ-mCI"/>
+                            <constraint firstItem="cjL-fh-iJU" firstAttribute="top" secondItem="gNM-Zl-1Lm" secondAttribute="bottom" id="ZtC-D7-yXV"/>
+                            <constraint firstItem="su2-ki-Dnu" firstAttribute="top" secondItem="uVd-Xd-HDQ" secondAttribute="bottom" id="b0n-CP-No0"/>
+                            <constraint firstItem="uVd-Xd-HDQ" firstAttribute="leading" secondItem="rhH-16-Cbg" secondAttribute="leadingMargin" constant="-20" id="bFd-3y-p3c"/>
+                            <constraint firstItem="cjL-fh-iJU" firstAttribute="leading" secondItem="nLq-Bd-9kF" secondAttribute="trailing" constant="8" id="eP7-7N-wJt"/>
+                            <constraint firstItem="su2-ki-Dnu" firstAttribute="top" secondItem="cjL-fh-iJU" secondAttribute="bottom" id="ejV-z9-gj1"/>
+                            <constraint firstItem="uVd-Xd-HDQ" firstAttribute="top" secondItem="gNM-Zl-1Lm" secondAttribute="bottom" id="hF9-Y2-VsQ"/>
+                            <constraint firstItem="nLq-Bd-9kF" firstAttribute="centerY" secondItem="uVd-Xd-HDQ" secondAttribute="centerY" id="jhM-RI-pIE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="iconLabel" destination="nLq-Bd-9kF" id="MzF-vz-UB8"/>
-                        <outlet property="settingsButton" destination="cjL-fh-iJU" id="YZn-Se-nuS"/>
+                        <outlet property="iconButton" destination="uVd-Xd-HDQ" id="yjt-Tq-Q0a"/>
+                        <outlet property="settingsButton" destination="cjL-fh-iJU" id="xeF-ZL-eLS"/>
+                        <outlet property="summaryLabel" destination="nLq-Bd-9kF" id="o99-aM-eCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGo-6k-Vsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-307" y="-723"/>
+            <point key="canvasLocation" x="-302" y="-709"/>
         </scene>
     </scenes>
 </document>

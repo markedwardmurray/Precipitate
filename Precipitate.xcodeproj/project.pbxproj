@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D05E5D61C8563CD00AA4FCC /* CurrentlyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */; };
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
+		4D1F98BF1C895AF000D94653 /* ForecastLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */; };
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
 		4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */; };
+		4D6373301C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */; };
+		4D6373321C82CE7800C40B58 /* NSDateFormatter+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */; };
+		4D6373341C82E46500C40B58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373331C82E46500C40B58 /* Constants.swift */; };
+		4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */; };
+		4D6373461C85516900C40B58 /* CurrentlyDataBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */; };
+		4D6373481C855B3700C40B58 /* CurrentlyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */; };
 		4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D718BA31C3F213C00F4C287 /* Icon-Original.png */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
@@ -28,7 +36,7 @@
 		4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */; };
 		4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */; };
 		4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB45011C18897D00C02325 /* LineChartDataManager.swift */; };
-		4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */; };
+		4DCC82301C1F65EA00AB2AD5 /* WeatherIconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */; };
 		4DCD9BC81C7127E900EA772B /* forecast20160122-0030-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */; };
 		4DCD9BC91C7127E900EA772B /* forecast20160122-0033-us.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */; };
 		4DCD9BCA1C7127E900EA772B /* forecast20160122-0034-uk2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */; };
@@ -66,10 +74,18 @@
 
 /* Begin PBXFileReference section */
 		10A33F943356239AD43CB6A7 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
+		4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyTableViewModel.swift; sourceTree = "<group>"; };
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastLanguage.swift; sourceTree = "<group>"; };
 		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastUnits.swift; sourceTree = "<group>"; };
+		4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumberFormatter+Formatters.swift"; sourceTree = "<group>"; };
+		4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Formatters.swift"; sourceTree = "<group>"; };
+		4D6373331C82E46500C40B58 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
+		4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyDataBlock.swift; sourceTree = "<group>"; };
+		4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyTableViewController.swift; sourceTree = "<group>"; };
 		4D718BA31C3F213C00F4C287 /* Icon-Original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Original.png"; path = "PrecipitateIconAssets/Icon-Original.png"; sourceTree = SOURCE_ROOT; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
@@ -114,7 +130,7 @@
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
 		4DCB45011C18897D00C02325 /* LineChartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartDataManager.swift; sourceTree = "<group>"; };
 		4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
-		4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconForIconString.swift; sourceTree = "<group>"; };
+		4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconName.swift; sourceTree = "<group>"; };
 		4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPageViewController.swift; sourceTree = "<group>"; };
 		4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5C3DF2AC0F65C37E63E85DFF /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,14 +201,19 @@
 			isa = PBXGroup;
 			children = (
 				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
+				4D6373331C82E46500C40B58 /* Constants.swift */,
 				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
+				4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */,
+				4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
 				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
 				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
 				4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */,
+				4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */,
 				4D7AF9771C588D1600A92ABF /* SettingsStore.swift */,
 				4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */,
+				4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */,
 				4DCC822A1C1F446900AB2AD5 /* DataConverters */,
 				4DCC822C1C1F44A600AB2AD5 /* Resources */,
 			);
@@ -251,7 +272,8 @@
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
 				4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */,
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
-				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconForIconString.swift */,
+				4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */,
+				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */,
 			);
 			name = DataConverters;
 			sourceTree = "<group>";
@@ -263,6 +285,7 @@
 				4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */,
 				4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */,
 				4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */,
+				4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */,
 				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
 				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 			);
@@ -274,6 +297,7 @@
 			children = (
 				4D718BA31C3F213C00F4C287 /* Icon-Original.png */,
 				4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */,
+				4D6373371C840E5800C40B58 /* weathericons-regular-webfont.ttf */,
 				4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */,
 				4D7E0DFB1C064B4D00A15C54 /* Info.plist */,
 				4DB10E921C193DD1002D618E /* saved-forecast.json */,
@@ -384,6 +408,7 @@
 				4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */,
 				4DA717191C15CEDA0039418E /* Main.storyboard in Resources */,
 				4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */,
+				4D6373381C840E8E00C40B58 /* weathericons-regular-webfont.ttf in Resources */,
 				4D718BA41C3F213C00F4C287 /* Icon-Original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,14 +545,21 @@
 				4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
 				4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */,
+				4D6373481C855B3700C40B58 /* CurrentlyTableViewController.swift in Sources */,
 				4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */,
+				4D6373461C85516900C40B58 /* CurrentlyDataBlock.swift in Sources */,
 				4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */,
-				4DCC82301C1F65EA00AB2AD5 /* WeatherIconForIconString.swift in Sources */,
+				4DCC82301C1F65EA00AB2AD5 /* WeatherIconName.swift in Sources */,
 				4DCB45021C18897D00C02325 /* LineChartDataManager.swift in Sources */,
 				4DCB44FE1C168AE800C02325 /* ChartDataSetManager.swift in Sources */,
+				4D6373301C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift in Sources */,
+				4D6373321C82CE7800C40B58 /* NSDateFormatter+Formatters.swift in Sources */,
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */,
+				4D6373341C82E46500C40B58 /* Constants.swift in Sources */,
+				4D05E5D61C8563CD00AA4FCC /* CurrentlyTableViewModel.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
+				4D1F98BF1C895AF000D94653 /* ForecastLanguage.swift in Sources */,
 				4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */,
 				4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */,
 				4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */,

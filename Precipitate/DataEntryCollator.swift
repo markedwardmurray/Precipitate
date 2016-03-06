@@ -12,6 +12,7 @@ import Charts
 
 class DataEntryCollator {
     let currentlyIcon: String
+    let summary: String
     
     let hours: [NSTimeInterval]
     let sunriseTime: NSTimeInterval  // from daily data
@@ -27,6 +28,7 @@ class DataEntryCollator {
         let dailyData = json["daily"]["data"]
         
         currentlyIcon = json["currently"]["icon"].string!
+        summary = json["currently"]["summary"].string!
         
         sunriseTime = NSTimeInterval(dailyData[0]["sunriseTime"].double!)
         sunsetTime = NSTimeInterval(dailyData[0]["sunsetTime"].double!)

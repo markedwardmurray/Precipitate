@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 import SnapKit
 import SwiftyUserDefaults
 
@@ -29,11 +30,39 @@ class InitialViewController: UIViewController {
         self.registerObservers()
         self.defineSpinner()
         
+        // delay to let the frames load correctly
+        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            
+            if Defaults["openCount"].int == nil {
+                Defaults["openCount"] = 0
+                
+                Defaults["units"] = 0
+                Defaults["lang"] = 6
+                self.showSettings()
+                self.presentWelcomeToPrecipitateAlert()
+            }
+            Defaults["openCount"] = Defaults["openCount"].int! + 1
+            print("openCount: \(Defaults["openCount"].int!)")
+        })
     }
     
     private func registerObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"showSettings", name: "showSettings", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showWeather", name: "showWeather", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "save", name: "applicationWillResignActive", object: UIApplication.sharedApplication().delegate)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "applicationDidBecomeActive", object: UIApplication.sharedApplication().delegate)
+    }
+    
+    func save() {
+        Defaults["shouldShowSettings"] = self.summaryViewController.shouldShowSettings
+    }
+    
+    func reload() {
+        if let shouldShowSettings = Defaults["shouldShowSettings"].bool {
+            shouldShowSettings ? self.showSettings() : self.showWeather()
+        }
     }
     
     private func defineSpinner() {
@@ -51,36 +80,34 @@ class InitialViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        // delay to let the frames load correctly
-        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            
-            if (Defaults["units"].int == nil) {
-                Defaults["units"] = 0
-                self.showSettings()
-                self.presentWelcomeAlertController()
-            } else {
-                self.loadViewsAfterGettingData()
-            }
-        })
     }
     
     func loadViewsAfterGettingData() {
         
         self.spinner.startAnimating()
         
-        self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json) -> Void in
-            
+        self.apiClient.getRecentlyCachedForecastOrNewAPIResponse { (json, error) -> Void in
             self.spinner.stopAnimating()
+            
+            if let error = error {
+                print("~~~~~~~~~~~~~ERROR~~~~~~~~~\n\(error)")
+                self.presentAlertWithNSError(error as NSError)
+            }
             
             if let json = json {
                 self.lineChartDataManager.json = json
                 
                 self.weatherPageViewController.setUpChildVCs()
                 self.summaryViewController.setUpSubviews()
-            } else {
-                self.presentDataErrorAlertController()
+                
+                if (Defaults["openCount"].int! == 1) {
+                    self.presentWeatherDataReceivedAlert()
+                }
+                if (Defaults["forecastCount"].int == nil) {
+                    Defaults["forecastCount"] = 1
+                }
+                Defaults["forecastCount"] = Defaults["forecastCount"].int! + 1
+                print("forecastCount: \(Defaults["forecastCount"].int!)")
             }
         }
     }
@@ -141,8 +168,22 @@ class InitialViewController: UIViewController {
     
 //MARK: Alert Controllers
     
-    func presentWelcomeAlertController() {
-        let alertController = UIAlertController(title: "Welcome to Precipitate!", message: "Since this is your first time opening the app, please select your preferred units option before receiving weather data. You can change this option later but doing so won't take effect until the following weather data request.\n\nTap the ⚙ button when you are done.", preferredStyle: .Alert)
+    func presentWelcomeToPrecipitateAlert() {
+        let gear = String.fontAwesomeIconWithName(FontAwesome.Gear)
+        let alertController = UIAlertController(title: "Welcome to Precipitate!", message: nil, preferredStyle: .Alert)
+        
+        let message = NSAttributedString(string: "Please select your preferences for the following options:\n\nForecast API: Units\nForecast API: Language\n\nYou can change these options later but they won't take immediate effect.\n\nTap the \(gear) when you are done.", attributes: [NSFontAttributeName : UIFont.fontAwesomeOfSize(14)])
+        alertController.setValue(message, forKey: "attributedMessage")
+        
+        let cancelAction = UIAlertAction(title: "Got it!", style: .Cancel) { (action) in
+            print(action)
+        }
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func presentWeatherDataReceivedAlert() {
+        let alertController = UIAlertController(title:"Weather Data Received!", message: "Precipitate has saved this data to display for the next hour. After that, it will automatically refresh the data the next time you use the app.\n\nAny changes you make to the units or language options won't take effect until the next refresh.", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Got it!", style: .Cancel) { (action) in
             print(action)
         }
@@ -152,11 +193,23 @@ class InitialViewController: UIViewController {
     
     func presentDataErrorAlertController() {
         let alertController = UIAlertController(title: "Data Error!", message: "Something went wrong—there is no weather data to display. Please make sure that your phone has an internet connection and that location services are enabled.", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-            print(action)
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in }
         alertController.addAction(cancelAction)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default) { (action) in
+            self.loadViewsAfterGettingData()
+        }
+        alertController.addAction(tryAgainAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
+    func presentAlertWithNSError(nsError: NSError) {
+        let alertController = UIAlertController(title: "Error!", message: nsError.localizedDescription, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) in }
+        alertController.addAction(cancelAction)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default) { (action) in
+            self.loadViewsAfterGettingData()
+        }
+        alertController.addAction(tryAgainAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
