@@ -52,9 +52,14 @@ class ForecastAPIClient {
         print("json cache is more than \(minutesAgo) minutes old, requesting new API response.")
         self.getForecastForCurrentLocationCompletion({ (json, error) -> Void in
             if error != nil {
-                print("API request failed, returning cached JSON, error:\(error)")
-                completion(json: cachedJSON, error: error)
-                return;
+                print("API request failed, error:\(error)")
+                if self.cache(cachedJSON, isRecentWithinMinutesAgo:12*60.0) {
+                    completion(json: cachedJSON, error: error)
+                    return;
+                } else {
+                    print("cached data is too old to display")
+                    completion(json: nil, error: error)
+                }
             }
             
             completion(json: json, error: nil)

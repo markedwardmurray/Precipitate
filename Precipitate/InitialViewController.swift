@@ -34,16 +34,16 @@ class InitialViewController: UIViewController {
         let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
         dispatch_after(dispatchTime, dispatch_get_main_queue(), {
             
-            if (Defaults["openedOnce"].bool == nil) {
-                Defaults["openedOnce"] = true
+            if Defaults["openCount"].int == nil {
+                Defaults["openCount"] = 0
                 
                 Defaults["units"] = 0
                 Defaults["lang"] = 6
                 self.showSettings()
-                self.presentWelcomeAlertController()
-            } else {
-                //self.loadViewsAfterGettingData()
+                self.presentWelcomeToPrecipitateAlert()
             }
+            Defaults["openCount"] = Defaults["openCount"].int! + 1
+            print("openCount: \(Defaults["openCount"].int!)")
         })
     }
     
@@ -99,6 +99,15 @@ class InitialViewController: UIViewController {
                 
                 self.weatherPageViewController.setUpChildVCs()
                 self.summaryViewController.setUpSubviews()
+                
+                if (Defaults["openCount"].int! == 1) {
+                    self.presentWeatherDataReceivedAlert()
+                }
+                if (Defaults["forecastCount"].int == nil) {
+                    Defaults["forecastCount"] = 1
+                }
+                Defaults["forecastCount"] = Defaults["forecastCount"].int! + 1
+                print("forecastCount: \(Defaults["forecastCount"].int!)")
             }
         }
     }
@@ -159,13 +168,22 @@ class InitialViewController: UIViewController {
     
 //MARK: Alert Controllers
     
-    func presentWelcomeAlertController() {
+    func presentWelcomeToPrecipitateAlert() {
         let gear = String.fontAwesomeIconWithName(FontAwesome.Gear)
         let alertController = UIAlertController(title: "Welcome to Precipitate!", message: nil, preferredStyle: .Alert)
         
         let message = NSAttributedString(string: "Please select your preferences for the following options:\n\nForecast API: Units\nForecast API: Language\n\nYou can change these options later but they won't take immediate effect.\n\nTap the \(gear) when you are done.", attributes: [NSFontAttributeName : UIFont.fontAwesomeOfSize(14)])
         alertController.setValue(message, forKey: "attributedMessage")
         
+        let cancelAction = UIAlertAction(title: "Got it!", style: .Cancel) { (action) in
+            print(action)
+        }
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func presentWeatherDataReceivedAlert() {
+        let alertController = UIAlertController(title:"Weather Data Received!", message: "Precipitate has saved this data to display for the next hour. After that, it will automatically refresh the data the next time you use the app.\n\nAny changes you make to the units or language options won't take effect until the next refresh.", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Got it!", style: .Cancel) { (action) in
             print(action)
         }
