@@ -100,11 +100,9 @@ class InitialViewController: UIViewController {
                 self.weatherPageViewController.setUpChildVCs()
                 self.summaryViewController.setUpSubviews()
                 
-                if (Defaults["openCount"].int! == 1) {
-                    self.presentWeatherDataReceivedAlert()
-                }
                 if (Defaults["forecastCount"].int == nil) {
                     Defaults["forecastCount"] = 1
+                    self.presentWeatherDataReceivedAlert()
                 }
                 Defaults["forecastCount"] = Defaults["forecastCount"].int! + 1
                 print("forecastCount: \(Defaults["forecastCount"].int!)")
