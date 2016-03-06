@@ -91,25 +91,25 @@ class ChartDataSetManager {
     static let settingsForKeys: [String : ChartDataSetSettings] =
     [
         "temperature" : ChartDataSetSettings(
-            label: "Temp"
+            label: "Actual"
         ),
         "apparentTemperature" : ChartDataSetSettings(
-            label: "Apparent Temp",
+            label: "Apparent",
             lineColor: UIColor.secondLine()
         ),
         
         "temperatureMin" : ChartDataSetSettings(
-            label: "Min Temp"
+            label: "Actual Min"
         ),
         "temperatureMax" : ChartDataSetSettings(
-            label: "Max Temp"
+            label: "Actual Max"
         ),
         "apparentTemperatureMin" : ChartDataSetSettings(
-            label: "App Min Temp",
+            label: "Apparent Min",
             lineColor: UIColor.secondLine()
         ),
         "apparentTemperatureMax" : ChartDataSetSettings(
-            label: "App Max Temp",
+            label: "Apparent Max",
             lineColor: UIColor.secondLine()
         ),
         
