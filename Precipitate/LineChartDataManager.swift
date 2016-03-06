@@ -118,7 +118,7 @@ class LineChartDataManager {
                 label: "Temperature",
                 units: self.units.forTemperature.short,
                 formatter: NSNumberFormatter.integerFormatter(),
-                dataKeys: ["temperature", "apparentTemperature"]
+                dataKeys: ["apparentTemperature", "temperature"]
             ),
             
             LineChartDataSettings(
@@ -196,7 +196,7 @@ class LineChartDataManager {
                 label: "Temperature",
                 units: units.forTemperature.short,
                 formatter: NSNumberFormatter.integerFormatter(),
-                dataKeys: ["temperatureMin", "temperatureMax", "apparentTemperatureMin", "apparentTemperatureMax"]
+                dataKeys: ["apparentTemperatureMin", "apparentTemperatureMax", "temperatureMin", "temperatureMax"]
             ),
             
             LineChartDataSettings(
@@ -209,7 +209,7 @@ class LineChartDataManager {
                 label: "Precipitation (Liquid Volume)",
                 units: units.forPrecipIntensity.short,
                 formatter: NSNumberFormatter.precipitationFormatter(),
-                dataKeys: ["precipIntensity", "precipIntensityMax"]
+                dataKeys: ["precipIntensityMax", "precipIntensity"]
             ),
             
             LineChartDataSettings(
