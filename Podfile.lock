@@ -1,43 +1,64 @@
 PODS:
-  - Alamofire (3.1.3)
+  - Alamofire (3.1.5)
   - Charts (2.1.6)
   - FBSnapshotTestCase (2.0.7):
     - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
   - FBSnapshotTestCase/Core (2.0.7)
   - FBSnapshotTestCase/SwiftSupport (2.0.7):
     - FBSnapshotTestCase/Core
+  - FontAwesome.swift (0.7.0)
   - INTULocationManager (4.1.1)
-  - KIF (3.3.0):
-    - KIF/Core (= 3.3.0)
-  - KIF/Core (3.3.0)
+  - KIF (3.3.2):
+    - KIF/Core (= 3.3.2)
+  - KIF/Core (3.3.2)
+  - MarqueeLabel-Swift (2.6.4)
   - Nimble (3.0.0)
   - Nimble-Snapshots (3.0.0):
     - FBSnapshotTestCase (~> 2.0.7)
     - Nimble
     - Quick
   - Quick (0.8.0)
-  - SwiftyJSON (2.3.1)
+  - SnapKit (0.19.1)
+  - SwiftHEXColors (1.0.2)
+  - SwiftyDate (1.0.1)
+  - SwiftyJSON (2.3.2)
+  - SwiftySettings (0.0.3)
+  - SwiftyUserDefaults (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.1.3)
+  - Alamofire (~> 3.1.5)
   - Charts (~> 2.1.6)
   - FBSnapshotTestCase (~> 2.0.7)
+  - FontAwesome.swift (~> 0.7.0)
   - INTULocationManager (~> 4.1.1)
-  - KIF (~> 3.3.0)
+  - KIF (~> 3.3.2)
+  - MarqueeLabel-Swift (~> 2.6.4)
   - Nimble (~> 3.0.0)
   - Nimble-Snapshots (~> 3.0.0)
   - Quick (~> 0.8.0)
-  - SwiftyJSON
+  - SnapKit (~> 0.19.1)
+  - SwiftHEXColors (~> 1.0.2)
+  - SwiftyDate (~> 1.0.1)
+  - SwiftyJSON (~> 2.3.2)
+  - SwiftySettings (~> 0.0.3)
+  - SwiftyUserDefaults (~> 2.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  FontAwesome.swift: c6e30a1a81716306ff9c81f2d38dda88ac5b8294
   INTULocationManager: 83c7373048d583cda57e25eefb9bb8a3675acf16
-  KIF: 0a82046d06f3648799cac522d2d0f7934214caac
+  KIF: 9de83fa627adaf65d28ace31e40f19d830bc255c
+  MarqueeLabel-Swift: 9e85cc250f6204dad5a8b285dd4910019b961491
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Nimble-Snapshots: ab41dd737dcd33a0b0cb005a30465fef70b7207a
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  SwiftHEXColors: 1238ce6ee5c698ef9caf00fad72876602ecd9df6
+  SwiftyDate: c36df91df8f59115bba3180828b633969517c4b0
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SwiftySettings: 93eea276ba534d80e07208a94a3df05aee520e3d
+  SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
 
 COCOAPODS: 0.39.0

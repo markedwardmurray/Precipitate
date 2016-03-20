@@ -2,6 +2,7 @@
 
 #import "IOHIDEvent+KIF.h"
 #import "KIF.h"
+#import "KIFAccessibilityEnabler.h"
 #import "KIFSystemTestActor.h"
 #import "KIFTestActor.h"
 #import "KIFTestCase.h"

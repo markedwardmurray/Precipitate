@@ -7,15 +7,21 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Charts
+import SwiftyJSON
+import SwiftyDate
+import SwiftyUserDefaults
 
 struct LineChartDataSettings {
     let label: String
+    let units: String
+    let formatter: NSNumberFormatter
     let dataKeys: [String]
     
-    init(label: String, dataKeys: [String]) {
+    init(label: String, units: String, formatter: NSNumberFormatter, dataKeys: [String]) {
         self.label = label
+        self.units = units
+        self.formatter = formatter
         self.dataKeys = dataKeys
     }
 }
@@ -31,23 +37,30 @@ class LineChartDataManager {
                 self.chartDataSetManager.collateDataEntrysFromJSON(json)
                 self.setHourlyDatas()
                 self.setDailyDatas()
+                self.units = ForecastUnits(option: ForecastUnits.optionFromJSON(json))
             }
         }
     }
     
     private(set) var hourlyDatas: [String : LineChartData]?
     private(set) var dailyDatas: [String : LineChartData]?
-    
+    private(set) var units: ForecastUnits = ForecastUnits(option: ForecastUnitsOption.US)
+        
     private func setHourlyDatas() {
+        let hoursFormatter = NSDateFormatter.selectedHoursFormatter()
+        
         if let hourlyDataSets = chartDataSetManager.hourlyDataSets {
             let hours = chartDataSetManager.dataEntryCollator!.hours
             var hourStrings = [String]()
             for hour in hours {
-                hourStrings.append("\(NSDate(timeIntervalSince1970: hour).hour)")
+                let hourString = hoursFormatter.stringFromDate(NSDate(timeIntervalSince1970:hour))
+                
+                hourStrings.append(hourString)
             }
             
             var hourlyDatasTmp = [String : LineChartData]()
-            for hourlyChartSetting in LineChartDataManager.hourlyChartSettings {
+            
+            for hourlyChartSetting in self.hourlyChartSettings() {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in hourlyChartSetting.dataKeys {
                     if let chartDataSet = hourlyDataSets[dataKey] {
@@ -56,6 +69,8 @@ class LineChartDataManager {
                 }
                 
                 let lineChartData = LineChartData(xVals: hourStrings, dataSets: chartDataSets)
+                lineChartData.setValueFormatter(hourlyChartSetting.formatter)
+                
                 let chartLabel = hourlyChartSetting.label
                 hourlyDatasTmp[chartLabel] = lineChartData
             }
@@ -64,15 +79,20 @@ class LineChartDataManager {
     }
     
     private func setDailyDatas() {
+        let daysFormatter = NSDateFormatter.selectedDaysFormatter()
+                
         if let dailyDataSets = chartDataSetManager.dailyDataSets {
             let days = chartDataSetManager.dataEntryCollator!.days
             var dayStrings = [String]()
             for day in days {
-                dayStrings.append("\(NSDate(timeIntervalSince1970: day).day)")
+                let dayString = daysFormatter.stringFromDate(NSDate(timeIntervalSince1970:day))
+                
+                dayStrings.append(dayString)
             }
             
             var dailyDatasTmp = [String : LineChartData]()
-            for dailyChartSetting in LineChartDataManager.dailyChartSettings {
+            
+            for dailyChartSetting in self.dailyChartSettings() {
                 var chartDataSets = [LineChartDataSet]()
                 for dataKey in dailyChartSetting.dataKeys {
                     if let chartDataSet = dailyDataSets[dataKey] {
@@ -81,6 +101,8 @@ class LineChartDataManager {
                 }
                 
                 let lineChartData = LineChartData(xVals: dayStrings, dataSets: chartDataSets)
+                lineChartData.setValueFormatter(dailyChartSetting.formatter)
+                
                 let chartLabel = dailyChartSetting.label
                 dailyDatasTmp[chartLabel] = lineChartData
             }
@@ -88,102 +110,153 @@ class LineChartDataManager {
         }
     }
     
-    static let hourlyChartSettings: [LineChartDataSettings] =
-    [
-        LineChartDataSettings(
-            label: "Temperature",
-            dataKeys: ["temperature", "apparentTemperature"]
-        ),
+    func hourlyChartSettings() -> [LineChartDataSettings] {
         
-        LineChartDataSettings(
-            label: "Precipitation Probability",
-            dataKeys: ["precipProbability"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Intensity",
-            dataKeys: ["precipIntensity"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Accumulation",
-            dataKeys: ["precipAccumulation"]
-        ),
+        let hourlyChartSettings: [LineChartDataSettings] =
+        [
+            LineChartDataSettings(
+                label: "Temperature",
+                units: self.units.forTemperature.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["apparentTemperature", "temperature"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Precipitation Probability",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["precipProbability"]
+            ),
+            LineChartDataSettings(
+                label: "Rainfall (Liquid Volume)",
+                units: units.forPrecipIntensity.short,
+                formatter: NSNumberFormatter.precipitationFormatter(),
+                dataKeys: ["precipIntensity"]
+            ),
+            LineChartDataSettings(
+                label: "Snowfall",
+                units: units.forPrecipAccumulation.short,
+                formatter: NSNumberFormatter.precipitationFormatter(),
+                dataKeys: ["precipAccumulation"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Wind Speed",
+                units: units.forSpeed.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["windSpeed"]
+            ),
+            LineChartDataSettings(
+                label: "Cloud Cover",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["cloudCover"]
+            ),
+            LineChartDataSettings(
+                label:"Visibility",
+                units: units.forDistance.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["visibility"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Ozone",
+                units: units.forOzone.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["ozone"]
+            ),
+            LineChartDataSettings(
+                label: "Humidity",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["humidity"]
+            ),
+            LineChartDataSettings(
+                label: "Dew Point",
+                units: units.forTemperature.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["dewPoint"]
+            ),
+            LineChartDataSettings(
+                label: "Pressure",
+                units: units.forPressure.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["pressure"]
+            )
+        ]
         
-        LineChartDataSettings(
-            label: "Wind Speed",
-            dataKeys: ["windSpeed"]
-        ),
-        LineChartDataSettings(
-            label:"Cloud Cover",
-            dataKeys: ["cloudCover"]
-        ),
-        LineChartDataSettings(
-            label:"Visibility",
-            dataKeys: ["visibility"]
-        ),
+        return hourlyChartSettings
+    }
     
-        LineChartDataSettings(
-            label: "Ozone",
-            dataKeys: ["ozone"]
-        ),
-        LineChartDataSettings(
-            label: "Humidity",
-            dataKeys: ["humidity"]
-        ),
-        LineChartDataSettings(
-            label: "Dew Point",
-            dataKeys: ["dewPoint"]
-        ),
-        LineChartDataSettings(
-            label: "Pressure",
-            dataKeys: ["pressure"]
-        )
-    ]
-    
-    static let dailyChartSettings: [LineChartDataSettings] =
-    [
-        LineChartDataSettings(
-            label: "Temperature",
-            dataKeys: ["temperatureMin", "temperatureMax", "apparentTemperatureMin", "apparentTemperatureMax"]
-        ),
+    func dailyChartSettings() -> [LineChartDataSettings] {
         
-        LineChartDataSettings(
-            label: "Precipitation Probability",
-            dataKeys: ["precipProbability"]
-        ),
-        LineChartDataSettings(
-            label: "Precipitation Intensity",
-            dataKeys: ["precipIntensity", "precipIntensityMax"]
-        ),
+    let dailyChartSettings: [LineChartDataSettings] =
+        [
+            LineChartDataSettings(
+                label: "Temperature",
+                units: units.forTemperature.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["apparentTemperatureMin", "apparentTemperatureMax", "temperatureMin", "temperatureMax"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Precipitation Probability",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["precipProbability"]
+            ),
+            LineChartDataSettings(
+                label: "Precipitation (Liquid Volume)",
+                units: units.forPrecipIntensity.short,
+                formatter: NSNumberFormatter.precipitationFormatter(),
+                dataKeys: ["precipIntensityMax", "precipIntensity"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Wind Speed",
+                units: units.forSpeed.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["windSpeed"]
+            ),
+            LineChartDataSettings(
+                label:"Cloud Cover",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["cloudCover"]
+            ),
+            LineChartDataSettings(
+                label:"Visibility",
+                units: units.forDistance.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["visibility"]
+            ),
+            
+            LineChartDataSettings(
+                label: "Ozone",
+                units: units.forOzone.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["ozone"]
+            ),
+            LineChartDataSettings(
+                label: "Humidity",
+                units: units.forPercentage.short,
+                formatter: NSNumberFormatter.percentageFormatter(),
+                dataKeys: ["humidity"]
+            ),
+            LineChartDataSettings(
+                label: "Dew Point",
+                units: units.forTemperature.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["dewPoint"]
+            ),
+            LineChartDataSettings(
+                label: "Pressure",
+                units: units.forPressure.short,
+                formatter: NSNumberFormatter.integerFormatter(),
+                dataKeys: ["pressure"]
+            )
+        ]
         
-        LineChartDataSettings(
-            label: "Wind Speed",
-            dataKeys: ["windSpeed"]
-        ),
-        LineChartDataSettings(
-            label:"Cloud Cover",
-            dataKeys: ["cloudCover"]
-        ),
-        LineChartDataSettings(
-            label:"Visibility",
-            dataKeys: ["visibility"]
-        ),
-        
-        LineChartDataSettings(
-            label: "Ozone",
-            dataKeys: ["ozone"]
-        ),
-        LineChartDataSettings(
-            label: "Humidity",
-            dataKeys: ["humidity"]
-        ),
-        LineChartDataSettings(
-            label: "Dew Point",
-            dataKeys: ["dewPoint"]
-        ),
-        LineChartDataSettings(
-            label: "Pressure",
-            dataKeys: ["pressure"]
-        )
-    ]
-
+        return dailyChartSettings
+    }
 }
