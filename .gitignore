@@ -26,5 +26,5 @@ build/
 
 
 # Project-specific ignores
-Precipitate/Secrets.swift
+Secrets.swift
 PrecipitateTests/ReferenceImages/

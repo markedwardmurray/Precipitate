@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D05E5D61C8563CD00AA4FCC /* CurrentlyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */; };
 		4D08623D1C1F6F9800FCC09F /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCC822D1C1F566200AB2AD5 /* SummaryViewController.swift */; };
 		4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */; };
+		4D153DB71D287A2F00747FCD /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D153DB61D287A2F00747FCD /* AppViewController.swift */; };
 		4D1F98BF1C895AF000D94653 /* ForecastLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */; };
 		4D552B281C20B75B001BDA3A /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */; };
 		4D55C7F61C50A5B100FED655 /* ForecastUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */; };
@@ -74,8 +74,8 @@
 
 /* Begin PBXFileReference section */
 		10A33F943356239AD43CB6A7 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
-		4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyTableViewModel.swift; sourceTree = "<group>"; };
 		4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		4D153DB61D287A2F00747FCD /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastLanguage.swift; sourceTree = "<group>"; };
 		4D552B261C20B632001BDA3A /* PrecipitateTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrecipitateTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D552B271C20B75B001BDA3A /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
@@ -107,24 +107,24 @@
 		4DA7171E1C15CFCF0039418E /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
 		4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Precipitate-Bridging-Header.h"; sourceTree = "<group>"; };
 		4DB10E921C193DD1002D618E /* saved-forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "saved-forecast.json"; sourceTree = "<group>"; };
-		4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-us.json"; path = "JSONfiles/forecast20160123-1547-us.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0030-si.json"; path = "JSONfiles/forecast20160122-0030-si.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0033-us.json"; path = "JSONfiles/forecast20160122-0033-us.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0034-uk2.json"; path = "JSONfiles/forecast20160122-0034-uk2.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0037-ca.json"; path = "JSONfiles/forecast20160122-0037-ca.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-si.json"; path = "JSONfiles/forecast20160122-1809-si.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-us.json"; path = "JSONfiles/forecast20160122-1809-us.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-ca.json"; path = "JSONfiles/forecast20160122-2140-ca.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-si.json"; path = "JSONfiles/forecast20160122-2140-si.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-uk2.json"; path = "JSONfiles/forecast20160122-2140-uk2.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-us.json"; path = "JSONfiles/forecast20160122-2140-us.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-ca.json"; path = "JSONfiles/forecast20160123-0306-ca.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-si.json"; path = "JSONfiles/forecast20160123-0306-si.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-uk2.json"; path = "JSONfiles/forecast20160123-0306-uk2.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-us.json"; path = "JSONfiles/forecast20160123-0306-us.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-ca.json"; path = "JSONfiles/forecast20160123-1547-ca.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-si.json"; path = "JSONfiles/forecast20160123-1547-si.json"; sourceTree = SOURCE_ROOT; };
-		4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-uk2.json"; path = "JSONfiles/forecast20160123-1547-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC001C55A0E500131BB2 /* forecast20160123-1547-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-us.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-1547-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC011C55A0E500131BB2 /* forecast20160122-0030-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0030-si.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-0030-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC021C55A0E500131BB2 /* forecast20160122-0033-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0033-us.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-0033-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC031C55A0E500131BB2 /* forecast20160122-0034-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0034-uk2.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-0034-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC041C55A0E500131BB2 /* forecast20160122-0037-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-0037-ca.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-0037-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC051C55A0E500131BB2 /* forecast20160122-1809-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-si.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-1809-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC061C55A0E500131BB2 /* forecast20160122-1809-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-1809-us.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-1809-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC071C55A0E500131BB2 /* forecast20160122-2140-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-ca.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-2140-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC081C55A0E500131BB2 /* forecast20160122-2140-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-si.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-2140-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC091C55A0E500131BB2 /* forecast20160122-2140-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-uk2.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-2140-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0A1C55A0E500131BB2 /* forecast20160122-2140-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160122-2140-us.json"; path = "Precipitate/Resources/JSONfiles/forecast20160122-2140-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0B1C55A0E500131BB2 /* forecast20160123-0306-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-ca.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-0306-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0C1C55A0E500131BB2 /* forecast20160123-0306-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-si.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-0306-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0D1C55A0E500131BB2 /* forecast20160123-0306-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-uk2.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-0306-uk2.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0E1C55A0E500131BB2 /* forecast20160123-0306-us.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-0306-us.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-0306-us.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC0F1C55A0E500131BB2 /* forecast20160123-1547-ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-ca.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-1547-ca.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC101C55A0E500131BB2 /* forecast20160123-1547-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-si.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-1547-si.json"; sourceTree = SOURCE_ROOT; };
+		4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "forecast20160123-1547-uk2.json"; path = "Precipitate/Resources/JSONfiles/forecast20160123-1547-uk2.json"; sourceTree = SOURCE_ROOT; };
 		4DB1EC271C574DFA00131BB2 /* PrecipitateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipitateSettingsViewController.swift; sourceTree = "<group>"; };
 		4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryCollator.swift; sourceTree = "<group>"; };
 		4DCB44FD1C168AE800C02325 /* ChartDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataSetManager.swift; sourceTree = "<group>"; };
@@ -176,6 +176,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4D153DB31D28751500747FCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D153DB41D28756700747FCD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
+				4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */,
+				4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4D153DB51D28760B00747FCD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
+				4D6373331C82E46500C40B58 /* Constants.swift */,
+				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
+				4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */,
+				4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		4D7E0DE31C064B4D00A15C54 = {
 			isa = PBXGroup;
 			children = (
@@ -200,21 +230,14 @@
 		4D7E0DEE1C064B4D00A15C54 /* Precipitate */ = {
 			isa = PBXGroup;
 			children = (
-				4D7E0E1D1C06785500A15C54 /* Secrets.swift */,
-				4D6373331C82E46500C40B58 /* Constants.swift */,
-				4D08623E1C207BC500FCC09F /* UIColor+Colors.swift */,
-				4D6373311C82CE7700C40B58 /* NSDateFormatter+Formatters.swift */,
-				4D63732F1C82B6DD00C40B58 /* NSNumberFormatter+Formatters.swift */,
 				4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */,
+				4D153DB61D287A2F00747FCD /* AppViewController.swift */,
 				4DA717181C15CEDA0039418E /* Main.storyboard */,
-				4DCC822B1C1F448100AB2AD5 /* ViewControllers */,
-				4DA717161C0FAFFF0039418E /* ForecastAPIClient.swift */,
-				4D55C7F51C50A5B100FED655 /* ForecastUnits.swift */,
-				4D1F98BE1C895AF000D94653 /* ForecastLanguage.swift */,
-				4D7AF9771C588D1600A92ABF /* SettingsStore.swift */,
-				4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */,
-				4D05E5D51C8563CD00AA4FCC /* CurrentlyTableViewModel.swift */,
-				4DCC822A1C1F446900AB2AD5 /* DataConverters */,
+				4DCC822B1C1F448100AB2AD5 /* Controllers */,
+				4D153DB31D28751500747FCD /* Views */,
+				4DCC822A1C1F446900AB2AD5 /* Data */,
+				4D153DB41D28756700747FCD /* Networking */,
+				4D153DB51D28760B00747FCD /* Utilities */,
 				4DCC822C1C1F44A600AB2AD5 /* Resources */,
 			);
 			path = Precipitate;
@@ -264,9 +287,10 @@
 				4DB1EC111C55A0E500131BB2 /* forecast20160123-1547-uk2.json */,
 			);
 			name = JSONFiles;
+			path = JSONfiles;
 			sourceTree = "<group>";
 		};
-		4DCC822A1C1F446900AB2AD5 /* DataConverters */ = {
+		4DCC822A1C1F446900AB2AD5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				4DCB45011C18897D00C02325 /* LineChartDataManager.swift */,
@@ -274,11 +298,13 @@
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
 				4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */,
 				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */,
+				4D7AF9771C588D1600A92ABF /* SettingsStore.swift */,
+				4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */,
 			);
-			name = DataConverters;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		4DCC822B1C1F448100AB2AD5 /* ViewControllers */ = {
+		4DCC822B1C1F448100AB2AD5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4DCF06B11C18E8E4009FEEA9 /* InitialViewController.swift */,
@@ -287,9 +313,8 @@
 				4DCF06AF1C18E8D0009FEEA9 /* WeatherPageViewController.swift */,
 				4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */,
 				4DA7171C1C15CFA10039418E /* ChartsTableViewController.swift */,
-				4DA7171E1C15CFCF0039418E /* LineChartCell.swift */,
 			);
-			name = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		4DCC822C1C1F44A600AB2AD5 /* Resources */ = {
@@ -304,7 +329,7 @@
 				4DA717261C1616EC0039418E /* Precipitate-Bridging-Header.h */,
 				4DB1EBFF1C55A0AC00131BB2 /* JSONFiles */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EE7AF513508E693F27478AF1 /* Frameworks */ = {
@@ -557,7 +582,7 @@
 				4D7E0E1E1C06785500A15C54 /* Secrets.swift in Sources */,
 				4DB1EC281C574DFA00131BB2 /* PrecipitateSettingsViewController.swift in Sources */,
 				4D6373341C82E46500C40B58 /* Constants.swift in Sources */,
-				4D05E5D61C8563CD00AA4FCC /* CurrentlyTableViewModel.swift in Sources */,
+				4D153DB71D287A2F00747FCD /* AppViewController.swift in Sources */,
 				4DA717171C0FAFFF0039418E /* ForecastAPIClient.swift in Sources */,
 				4D1F98BF1C895AF000D94653 /* ForecastLanguage.swift in Sources */,
 				4DA7171D1C15CFA10039418E /* ChartsTableViewController.swift in Sources */,
@@ -593,6 +618,7 @@
 				4D7E0DF91C064B4D00A15C54 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -689,12 +715,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Precipitate/Info.plist;
+				INFOPLIST_FILE = Precipitate/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Resources/Precipitate-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -706,12 +732,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Precipitate/Info.plist;
+				INFOPLIST_FILE = Precipitate/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Precipitate-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Resources/Precipitate-Bridging-Header.h";
 			};
 			name = Release;
 		};
