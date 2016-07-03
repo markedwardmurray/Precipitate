@@ -21,11 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Defaults["openCount"].int == nil {
             Defaults["openCount"] = 0
-            
+        }
+        if Defaults["units"].int == nil {
             Defaults["units"] = ForecastUnitsOption.US.rawValue
+        }
+        if Defaults["lang"].int == nil {
             Defaults["lang"] = ForecastLanguageOption.English.rawValue
-            
+        }
+        if Defaults["hours"].int == nil {
             Defaults["hours"] = 0
+        }
+        if Defaults["days"].int == nil {
             Defaults["days"] =  0
         }
         Defaults["openCount"] = Defaults["openCount"].int! + 1
