@@ -62,6 +62,8 @@ class ChartsTableViewController: UITableViewController {
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.allowsSelection = false
+        
+        self.tableView.contentInset.bottom = 24.0
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -104,7 +106,18 @@ class ChartsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        let pageControlHeight: CGFloat = 40.0
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        if (orientation == .LandscapeLeft || orientation == .LandscapeRight) {
+            return ScreenSize.SCREEN_WIDTH - UIApplication.sharedApplication().statusBarFrame.size.height - (self.navigationController?.navigationBar.frame.size.height)! - self.tableView.sectionHeaderHeight - pageControlHeight
+        }
+        
+        let tableViewDisplayHeight: CGFloat = ScreenSize.SCREEN_HEIGHT - UIApplication.sharedApplication().statusBarFrame.size.height - (self.navigationController?.navigationBar.frame.size.height)! - self.tableView.sectionHeaderHeight - pageControlHeight
+        
+        if (DeviceType.IS_IPHONE_4_OR_LESS) {
+            return  tableViewDisplayHeight / 2
+        }
+        return tableViewDisplayHeight / 3
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -114,5 +127,15 @@ class ChartsTableViewController: UITableViewController {
         default:
             return nil
         }
+    }
+    
+    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let tableViewHeaderHeight = self.tableView(self.tableView, heightForHeaderInSection: 0)
+        let rowHeight = self.tableView(self.tableView, heightForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
+        let cellOffsetCount = (targetContentOffset.memory.y - tableViewHeaderHeight) / rowHeight
+        let cellOffset = round(cellOffsetCount) * rowHeight
+        
+        targetContentOffset.memory.y = cellOffset + tableViewHeaderHeight
     }
 }

@@ -12,6 +12,9 @@ import MarqueeLabel_Swift
 
 class WeatherPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
+    var blurredFooterView: UIVisualEffectView?
+    var pageControl: UIPageControl?
+    
     var pages = [ChartsTableViewController]()
     
     override func viewDidLayoutSubviews() {
@@ -40,6 +43,8 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         
         super.viewDidLayoutSubviews()
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        self.pageControl = pageControl
+        self.loadBlurredFooterView()
     }
     
     override func viewDidLoad() {
@@ -152,6 +157,22 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         pages = [twelveHourTVC, fortyEightHourTVC, sevenDayTVC]
         
         self.setViewControllers([twelveHourTVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+    }
+    
+    func loadBlurredFooterView() {
+        if self.blurredFooterView != nil {
+            return;
+        }
+        
+        self.blurredFooterView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+        self.pageControl?.insertSubview(self.blurredFooterView!, atIndex: 0)
+        
+        self.blurredFooterView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.blurredFooterView?.leadingAnchor.constraintEqualToAnchor(self.pageControl?.leadingAnchor).active = true
+        self.blurredFooterView?.trailingAnchor.constraintEqualToAnchor(self.pageControl?.trailingAnchor).active = true
+        self.blurredFooterView?.bottomAnchor.constraintEqualToAnchor(self.pageControl?.bottomAnchor).active = true
+        self.blurredFooterView?.topAnchor.constraintEqualToAnchor(self.pageControl?.topAnchor).active = true
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
