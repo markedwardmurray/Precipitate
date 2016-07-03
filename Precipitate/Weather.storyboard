@@ -11,7 +11,7 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="WeatherPageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="6E1-Gr-g55">
-                        <barButtonItem key="leftBarButtonItem" title="❆" style="plain" id="hey-Ao-kjd">
+                        <barButtonItem key="leftBarButtonItem" title="❆" id="hey-Ao-kjd">
                             <color key="tintColor" red="0.047058824450000002" green="0.180392161" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="⚙" id="DKg-52-Egd">

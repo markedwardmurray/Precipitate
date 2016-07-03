@@ -9,7 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-enum ForecastUnitsOption: String {
+enum ForecastUnitsOption: Int {
+    case US = 0
+    case SI = 1
+    case UK2 = 2
+    case CA = 3
+}
+
+enum ForecastUnitsKey: String {
     case US = "us"
     case SI = "si"
     case UK2 = "uk2"
@@ -17,19 +24,34 @@ enum ForecastUnitsOption: String {
 }
 
 struct ForecastUnits {
-    static func unitsOptionForKey(key: Int?) -> ForecastUnitsOption {
+    static func unitsKeyForOption(option: ForecastUnitsOption?) -> ForecastUnitsKey {
+        if let option = option {
+            switch option {
+            case ForecastUnitsOption.US:
+                return ForecastUnitsKey.US
+            case ForecastUnitsOption.SI:
+                return ForecastUnitsKey.SI
+            case ForecastUnitsOption.UK2:
+                return ForecastUnitsKey.UK2
+            case ForecastUnitsOption.CA:
+                return ForecastUnitsKey.CA
+            }
+        } else {
+            return ForecastUnitsKey.US
+        }
+    }
+    
+    static func unitsOptionForKey(key: ForecastUnitsKey?) -> ForecastUnitsOption {
         if let key = key {
             switch key {
-            case 0:
+            case ForecastUnitsKey.US:
                 return ForecastUnitsOption.US
-            case 1:
+            case ForecastUnitsKey.SI:
                 return ForecastUnitsOption.SI
-            case 2:
+            case ForecastUnitsKey.UK2:
                 return ForecastUnitsOption.UK2
-            case 3:
+            case ForecastUnitsKey.CA:
                 return ForecastUnitsOption.CA
-            default:
-                return ForecastUnitsOption.US
             }
         } else {
             return ForecastUnitsOption.US
@@ -37,14 +59,23 @@ struct ForecastUnits {
     }
     
     let option: ForecastUnitsOption
+    let key: ForecastUnitsKey
     
     init() {
         self.option = ForecastUnitsOption.US
+        self.key = ForecastUnitsKey.US
     }
     
     init(option: ForecastUnitsOption) {
         self.option = option
+        self.key = ForecastUnits.unitsKeyForOption(option)
     }
+    
+    init(key: ForecastUnitsKey) {
+        self.key = key
+        self.option = ForecastUnits.unitsOptionForKey(key)
+    }
+
     
     struct Info {
         let ticker: String, name: String, units: String

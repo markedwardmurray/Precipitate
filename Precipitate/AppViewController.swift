@@ -10,7 +10,9 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
-class AppViewController: UIViewController {
+class AppViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
     
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     
@@ -20,18 +22,34 @@ class AppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.locationManager.delegate = self
+        
         self.loadSpinner()
         
-        if (CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse) {
-//            self.showWelcome()
-            self.showWeather()
+        let status = CLLocationManager.authorizationStatus()
+        if (status != .AuthorizedWhenInUse) {
+            if status == .NotDetermined {
+                self.showWelcome()
+            } else {
+                // show location issue screen
+            }
         } else {
             self.showWeather()
         }
     }
     
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            self.showWeather()
+        } else {
+            // show location issue screen
+        }
+    }
+    
     func showWelcome() {
         let welcomeViewController = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()! as! WelcomeViewController
+        welcomeViewController.locationManager = self.locationManager
+        
         self.welcomeViewController = welcomeViewController
         self.setEmbeddedMainViewController(welcomeViewController)
     }
@@ -50,12 +68,9 @@ class AppViewController: UIViewController {
             if let json = json {
                 LineChartDataManager.sharedInstance.json = json
                 
-                if (Defaults["forecastCount"].int == nil) {
-                    Defaults["forecastCount"] = 0
+                if (Defaults["forecastCount"].int == 1) {
                     self.presentWeatherDataReceivedAlert()
                 }
-                Defaults["forecastCount"] = Defaults["forecastCount"].int! + 1
-                print("forecastCount: \(Defaults["forecastCount"].int!)")
                 
                 let weatherNavigationController = UIStoryboard(name: "Weather", bundle: nil).instantiateInitialViewController()! as! UINavigationController
                 self.weatherNavigationController = weatherNavigationController

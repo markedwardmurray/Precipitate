@@ -10,16 +10,16 @@ import Foundation
 import SwiftyJSON
 
 enum ForecastLanguageOption: Int {
-    case None       = 0
-    case Arabic     = 10
-    case Bosnian    = 20
-    case Czech      = 30
-    case German     = 40
-    case Greek      = 50
-    case English    = 60
-    case Spanish    = 70
-    case French     = 80
-    case Croatian   = 90
+    case None       = 000
+    case Arabic     = 010
+    case Bosnian    = 020
+    case Czech      = 030
+    case German     = 040
+    case Greek      = 050
+    case English    = 060
+    case Spanish    = 070
+    case French     = 080
+    case Croatian   = 090
     case Hungarian  = 100
     case Italian    = 110
     case Icelandic  = 120

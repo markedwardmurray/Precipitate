@@ -101,14 +101,13 @@ class ForecastAPIClient {
     }
     
     func getForecastForLatitude(latitude: Double, longitude: Double, completion: (json: JSON?, error: ErrorType?) -> Void) {
-        let unitsKey = Defaults["units"].int
-        print(unitsKey)
-        let units = ForecastUnits.unitsOptionForKey(unitsKey).rawValue
+        let unitsOption = ForecastUnitsOption(rawValue: Defaults["units"].int!)
+        let unitsKey = ForecastUnits.unitsKeyForOption(unitsOption).rawValue
         
         let languageOption = ForecastLanguageOption(rawValue: Defaults["lang"].int!)
         let languageKey = ForecastLanguage.languageKeyForOption(languageOption).rawValue
         
-        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?units=\(units)&lang=\(languageKey)&exclude=[minutely]")!
+        let url = NSURL(string: "\(ForecastAPIClient.forecastURL)\(apiKey)/\(latitude),\(longitude)?units=\(unitsKey)&lang=\(languageKey)&exclude=[minutely]")!
         print(url)
         
         let request = NSMutableURLRequest(URL: url)
@@ -127,6 +126,12 @@ class ForecastAPIClient {
                         completion(json: nil, error: json.error)
                         return;
                     }
+                    
+                    if (Defaults["forecastCount"].int == nil) {
+                        Defaults["forecastCount"] = 0
+                    }
+                    Defaults["forecastCount"] = Defaults["forecastCount"].int! + 1
+                    print("forecastCount: \(Defaults["forecastCount"].int!)")
                     
                     self.cacheJSON(json)
                     print("ForecastAPIClient: return fresh API response")

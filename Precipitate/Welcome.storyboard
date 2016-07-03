@@ -17,49 +17,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc3-aD-ELD">
-                                <rect key="frame" x="120" y="532" width="160" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc3-aD-ELD">
+                                <rect key="frame" x="20" y="562" width="360" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="My4-He-Nh7"/>
+                                </constraints>
                                 <state key="normal" title="Show Me The Weather!"/>
+                                <connections>
+                                    <action selector="showMeTheWeatherButtonTapped:" destination="NcG-7H-UL4" eventType="touchUpInside" id="GaV-v0-yZ7"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Precipitate!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-sY-1dV">
-                                <rect key="frame" x="20" y="28" width="360" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Precipitate!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-sY-1dV">
+                                <rect key="frame" x="20" y="20" width="360" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XtZ-Dj-3UL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW2-2X-7P4">
-                                <rect key="frame" x="23" y="220" width="107" height="21"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sd-c8-mDw">
+                                <rect key="frame" x="0.0" y="74" width="400" height="480"/>
+                                <connections>
+                                    <segue destination="qbo-fw-bCX" kind="embed" id="lUA-Gk-5fo"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your preferences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-bL-vzj">
+                                <rect key="frame" x="20" y="50" width="360" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="SUH-LM-nAB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJA-XU-sr0">
-                                <rect key="frame" x="23" y="71" width="157" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="en - English 🇬🇧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVp-cZ-Wbt">
-                                <rect key="frame" x="23" y="249" width="360" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="US - miles, inches, F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-Z6-kmM">
-                                <rect key="frame" x="20" y="100" width="360" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sd-c8-mDw" firstAttribute="top" secondItem="ReZ-bL-vzj" secondAttribute="bottom" constant="8" id="04e-eH-O4r"/>
+                            <constraint firstItem="cmq-U2-cqQ" firstAttribute="top" secondItem="Bc3-aD-ELD" secondAttribute="bottom" constant="8" id="2Ag-St-Nen"/>
+                            <constraint firstItem="ReZ-bL-vzj" firstAttribute="top" secondItem="EOu-sY-1dV" secondAttribute="bottom" id="EIC-u4-5wB"/>
+                            <constraint firstItem="EOu-sY-1dV" firstAttribute="leading" secondItem="mIU-9I-cga" secondAttribute="leading" constant="20" id="HC6-vX-jnA"/>
+                            <constraint firstItem="EOu-sY-1dV" firstAttribute="top" secondItem="JSW-wE-FfS" secondAttribute="bottom" id="PgM-ZP-lvy"/>
+                            <constraint firstItem="Bc3-aD-ELD" firstAttribute="leading" secondItem="mIU-9I-cga" secondAttribute="leading" constant="20" id="aku-YF-dUL"/>
+                            <constraint firstAttribute="trailing" secondItem="Bc3-aD-ELD" secondAttribute="trailing" constant="20" id="cgQ-Jc-q38"/>
+                            <constraint firstItem="ReZ-bL-vzj" firstAttribute="leading" secondItem="mIU-9I-cga" secondAttribute="leading" constant="20" id="eKw-6f-34Y"/>
+                            <constraint firstItem="Bc3-aD-ELD" firstAttribute="top" secondItem="0sd-c8-mDw" secondAttribute="bottom" constant="8" id="eZJ-qc-udB"/>
+                            <constraint firstAttribute="trailing" secondItem="ReZ-bL-vzj" secondAttribute="trailing" constant="20" id="g5O-vq-UkB"/>
+                            <constraint firstAttribute="trailing" secondItem="0sd-c8-mDw" secondAttribute="trailing" id="jtd-Ab-pvU"/>
+                            <constraint firstItem="0sd-c8-mDw" firstAttribute="leading" secondItem="mIU-9I-cga" secondAttribute="leading" id="kqQ-Bu-wXm"/>
+                            <constraint firstAttribute="trailing" secondItem="EOu-sY-1dV" secondAttribute="trailing" constant="20" id="rWO-AG-DPn"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
+                    <connections>
+                        <outlet property="showMeTheWeatherButton" destination="Bc3-aD-ELD" id="WkR-lA-Kt3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hv-DF-qzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1171" y="149"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Uwn-sy-Z9h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="qbo-fw-bCX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSJ-ZZ-c9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="149"/>
         </scene>
     </scenes>
 </document>

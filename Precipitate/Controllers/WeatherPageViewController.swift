@@ -58,6 +58,8 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.havelockBlue()
         pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(reloadCharts), name:"NotificationDisplaySettingsDidChange", object: nil)
     }
     
     func loadNavigationItems() {
@@ -68,6 +70,9 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
             NSFontAttributeName : UIFont(name: "Weather Icons", size: 25)!,
             NSForegroundColorAttributeName : UIColor.s3Chambray()
             ], forState: .Normal)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([
+            NSForegroundColorAttributeName : UIColor.s3Chambray()
+            ], forState: .Highlighted)
         if let currentlyIcon = LineChartDataManager.sharedInstance.chartDataSetManager.dataEntryCollator?.currentlyIcon {
             let weatherIconName = WeatherIconName(rawValue: currentlyIcon)
             let (icon, size) = weatherIconForName(weatherIconName)
@@ -99,6 +104,14 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
             NSFontAttributeName : UIFont.fontAwesomeOfSize(25),
             NSForegroundColorAttributeName : UIColor.s3Chambray()
             ], forState: .Normal)
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            NSForegroundColorAttributeName : UIColor.s1FadedBlue()
+            ], forState: .Highlighted)
+    }
+    
+    func reloadCharts() {
+        LineChartDataManager.sharedInstance.json = LineChartDataManager.sharedInstance.json
+        self.loadChildVCs()
     }
     
     func loadChildVCs() {
