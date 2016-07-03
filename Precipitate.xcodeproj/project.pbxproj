@@ -25,7 +25,6 @@
 		4D6373481C855B3700C40B58 /* CurrentlyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */; };
 		4D727F5E1C21B32400A0285A /* KIF-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */; };
 		4D7AF9761C588AE500A92ABF /* DefaultsKeys+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */; };
-		4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7AF9771C588D1600A92ABF /* SettingsStore.swift */; };
 		4D7E0DF01C064B4D00A15C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */; };
 		4D7E0DF71C064B4D00A15C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */; };
 		4D7E0DFA1C064B4D00A15C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E0DF81C064B4D00A15C54 /* LaunchScreen.storyboard */; };
@@ -94,7 +93,6 @@
 		4D6373471C855B3700C40B58 /* CurrentlyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyTableViewController.swift; sourceTree = "<group>"; };
 		4D727F5D1C21B32400A0285A /* KIF-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF-Extensions.swift"; sourceTree = "<group>"; };
 		4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+Keys.swift"; sourceTree = "<group>"; };
-		4D7AF9771C588D1600A92ABF /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		4D7E0DEC1C064B4D00A15C54 /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7E0DEF1C064B4D00A15C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7E0DF61C064B4D00A15C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -309,7 +307,6 @@
 				4DCB44FB1C166C2C00C02325 /* DataEntryCollator.swift */,
 				4D6373451C85516900C40B58 /* CurrentlyDataBlock.swift */,
 				4DCC822F1C1F65EA00AB2AD5 /* WeatherIconName.swift */,
-				4D7AF9771C588D1600A92ABF /* SettingsStore.swift */,
 				4D7AF9751C588AE500A92ABF /* DefaultsKeys+Keys.swift */,
 			);
 			path = Data;
@@ -569,7 +566,6 @@
 			files = (
 				4D08623F1C207BC500FCC09F /* UIColor+Colors.swift in Sources */,
 				4DA7171F1C15CFCF0039418E /* LineChartCell.swift in Sources */,
-				4D7AF9781C588D1600A92ABF /* SettingsStore.swift in Sources */,
 				4DCB44FC1C166C2C00C02325 /* DataEntryCollator.swift in Sources */,
 				4DCF06B01C18E8D0009FEEA9 /* WeatherPageViewController.swift in Sources */,
 				4D153DBB1D2883EC00747FCD /* WelcomeViewController.swift in Sources */,
