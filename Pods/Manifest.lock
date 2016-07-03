@@ -3,6 +3,7 @@ PODS:
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
+  - DropDown (1.0.1)
   - FBSnapshotTestCase (2.1.1):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
   - FBSnapshotTestCase/Core (2.1.1)
@@ -21,6 +22,7 @@ PODS:
     - Quick
   - Quick (0.9.2)
   - SnapKit (0.21.1)
+  - SwiftCharts (0.4)
   - SwiftHEXColors (1.0.4)
   - SwiftyDate (1.0.1)
   - SwiftyJSON (2.3.2)
@@ -30,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.4.1)
   - Charts (~> 2.2.5)
+  - DropDown (~> 1.0.1)
   - FBSnapshotTestCase (~> 2.1.1)
   - FontAwesome.swift (~> 0.7.3)
   - INTULocationManager (~> 4.2.0)
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - Nimble-Snapshots (~> 4.1.0)
   - Quick (~> 0.9.2)
   - SnapKit (~> 0.21.1)
+  - SwiftCharts (~> 0.4)
   - SwiftHEXColors (~> 1.0.4)
   - SwiftyDate (~> 1.0.1)
   - SwiftyJSON (~> 2.3.2)
@@ -48,6 +52,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  DropDown: 335df9e9547e97a861a60aed8448821e239d3513
   FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
   FontAwesome.swift: f694fe0f667d6d3390b5919cdb0556a27b75d427
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
@@ -57,12 +62,13 @@ SPEC CHECKSUMS:
   Nimble-Snapshots: 2da4d2ec829b458d6886c06812c52493fce284c9
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
+  SwiftCharts: 84b43d9d70b791459ff5f50ae5a6704326de309d
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   SwiftyDate: c36df91df8f59115bba3180828b633969517c4b0
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SwiftySettings: 93eea276ba534d80e07208a94a3df05aee520e3d
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
 
-PODFILE CHECKSUM: 602801a329ff4658935f7e3e953d58c32e077630
+PODFILE CHECKSUM: 5d64bf8a0ac5a01eda5516a5a2495ca43ce7b131
 
 COCOAPODS: 1.0.0

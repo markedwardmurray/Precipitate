@@ -6,10 +6,12 @@ use_frameworks!
 target 'Precipitate' do
   pod 'Alamofire', '~> 3.4.1'
   pod 'Charts', '~> 2.2.5'
+  pod 'DropDown', '~> 1.0.1'
   pod 'FontAwesome.swift', '~> 0.7.3'
   pod 'INTULocationManager', '~> 4.2.0'
   pod 'MarqueeLabel-Swift', '~> 2.6.8'
   pod 'SnapKit', '~> 0.21.1'
+  pod 'SwiftCharts', '~> 0.4'
   pod 'SwiftHEXColors', '~> 1.0.4'
   pod 'SwiftyDate', '~> 1.0.1'
   pod 'SwiftyJSON', '~> 2.3.2'
