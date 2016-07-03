@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i7o-FL-Rs6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather Page View Controller-->
+        <scene sceneID="iVQ-78-Uci">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iKB-XS-qRD" customClass="WeatherPageViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6E1-Gr-g55">
+                        <barButtonItem key="leftBarButtonItem" title="❆" style="plain" id="hey-Ao-kjd">
+                            <color key="tintColor" red="0.047058824450000002" green="0.180392161" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="⚙" id="DKg-52-Egd">
+                            <color key="tintColor" red="0.047058824450000002" green="0.180392161" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="vlD-So-hTN" kind="show" id="GJb-bl-UAH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BL3-Yy-V09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-184"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="hAs-c9-DuO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="vlD-So-hTN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVd-rN-kwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-448"/>
+        </scene>
+        <!--Charts Table View Controller-->
+        <scene sceneID="Ayv-Rs-9Tu">
+            <objects>
+                <tableViewController storyboardIdentifier="ChartsTableViewController" id="fQE-Tv-YDH" customClass="ChartsTableViewController" customModule="Precipitate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6wa-Qj-3z7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lineChartCell" rowHeight="230" id="cJ6-Ox-m3l" customClass="LineChartCell" customModule="Precipitate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="230"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJ6-Ox-m3l" id="uSF-uK-YUH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="229"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBl-2N-rKS" customClass="LineChartView" customModule="Charts">
+                                            <rect key="frame" x="24" y="46" width="552" height="168"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="KGi-w2-crI"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="KGi-w2-crI"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veY-DJ-av8">
+                                            <rect key="frame" x="554" y="16" width="22" height="22"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYZ-Hm-wN0">
+                                            <rect key="frame" x="24" y="16" width="34" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="J33-se-Ymb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="veY-DJ-av8" secondAttribute="trailing" constant="16" id="6Vd-c9-1vy"/>
+                                        <constraint firstItem="VBl-2N-rKS" firstAttribute="top" secondItem="rYZ-Hm-wN0" secondAttribute="bottom" constant="8" id="9ku-yl-mPR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VBl-2N-rKS" secondAttribute="bottom" constant="8" id="PMh-WK-zpJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="VBl-2N-rKS" secondAttribute="trailing" constant="16" id="RQB-9u-sVa"/>
+                                        <constraint firstItem="rYZ-Hm-wN0" firstAttribute="top" secondItem="uSF-uK-YUH" secondAttribute="topMargin" constant="8" id="jmr-7n-IQW"/>
+                                        <constraint firstItem="VBl-2N-rKS" firstAttribute="leading" secondItem="uSF-uK-YUH" secondAttribute="leadingMargin" constant="16" id="mwf-zG-UoQ"/>
+                                        <constraint firstItem="rYZ-Hm-wN0" firstAttribute="top" secondItem="uSF-uK-YUH" secondAttribute="topMargin" constant="8" id="rlR-bf-uuj"/>
+                                        <constraint firstItem="veY-DJ-av8" firstAttribute="centerY" secondItem="rYZ-Hm-wN0" secondAttribute="centerY" id="sIy-my-Xfx"/>
+                                        <constraint firstItem="rYZ-Hm-wN0" firstAttribute="leading" secondItem="uSF-uK-YUH" secondAttribute="leadingMargin" constant="16" id="ykE-yL-Yru"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="rlR-bf-uuj"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lineChartView" destination="VBl-2N-rKS" id="9Dl-rI-vAs"/>
+                                    <outlet property="title" destination="rYZ-Hm-wN0" id="5qw-AU-RaU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fQE-Tv-YDH" id="9hu-6X-bwB"/>
+                            <outlet property="delegate" destination="fQE-Tv-YDH" id="Xhk-S0-mQ4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74w-A8-ctf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="540"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Djg-nI-2kt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i7o-FL-Rs6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="IQp-3x-1Vv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.047058824450000002" green="0.180392161" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iKB-XS-qRD" kind="relationship" relationship="rootViewController" id="ncl-Ji-v44"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Dy-Dr-dDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="464" y="-184"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import FontAwesome_swift
+import MarqueeLabel_Swift
 
 class WeatherPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
-    let lineChartDataManager = LineChartDataManager.sharedInstance
     
     var pages = [ChartsTableViewController]()
     
@@ -51,43 +51,86 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         // KIF
         self.accessibilityLabel = "pageVC"
         
-        self.setUpChildVCs()
+        self.loadNavigationItems()
+        
+        self.loadChildVCs()
         
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.havelockBlue()
         pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor()
     }
     
-    func setUpChildVCs() {
-        let twelveHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+    func loadNavigationItems() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([
+            NSFontAttributeName : UIFont(name: "Weather Icons", size: 25)!,
+            NSForegroundColorAttributeName : UIColor.s3Chambray()
+            ], forState: .Normal)
+        if let currentlyIcon = LineChartDataManager.sharedInstance.chartDataSetManager.dataEntryCollator?.currentlyIcon {
+            let weatherIconName = WeatherIconName(rawValue: currentlyIcon)
+            let (icon, size) = weatherIconForName(weatherIconName)
+            
+            self.navigationItem.leftBarButtonItem?.title = icon
+            self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([
+                NSFontAttributeName : UIFont(name: "Weather Icons", size: size)!,
+                NSForegroundColorAttributeName : UIColor.s3Chambray()
+                ], forState: .Normal)
+        }
+        
+        let width = ScreenSize.SCREEN_WIDTH - 55 - 55
+        let titleView = MarqueeLabel(frame: CGRect(x: 0, y: 0, width: width, height: 24))
+        titleView.font = UIFont(name: "Courier", size: 18)
+        titleView.textAlignment = .Center
+        if let summary = LineChartDataManager.sharedInstance.chartDataSetManager.dataEntryCollator?.summary {
+            titleView.text = summary
+        } else {
+            titleView.text = "Cloudy with a chance of meatballs."
+        }
+        titleView.trailingBuffer = 36
+        titleView.fadeLength = 16
+        titleView.triggerScrollStart()
+        titleView.animationDelay = 2.0
+        self.navigationItem.titleView = titleView
+        
+        self.navigationItem.rightBarButtonItem?.title = String.fontAwesomeIconWithName(FontAwesome.Gear)
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            NSFontAttributeName : UIFont.fontAwesomeOfSize(25),
+            NSForegroundColorAttributeName : UIColor.s3Chambray()
+            ], forState: .Normal)
+    }
+    
+    func loadChildVCs() {
+        let twelveHourTVC: ChartsTableViewController! = ChartsTableViewController.createNew()
         twelveHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.TwelveHour
         // setup for KIF - begin
         twelveHourTVC.tableView.accessibilityLabel = "twelveHourTableView"
         twelveHourTVC.tableView.accessibilityIdentifier = "twelveHourTableView"
         // setup for KIF - end
-        if let hourlyDatas = lineChartDataManager.hourlyDatas {
+        if let hourlyDatas = LineChartDataManager.sharedInstance.hourlyDatas {
             twelveHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
             twelveHourTVC.chartDatas = hourlyDatas
         }
         
-        let fortyEightHourTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let fortyEightHourTVC: ChartsTableViewController! = ChartsTableViewController.createNew()
         fortyEightHourTVC.timeScale = ChartsTableViewControllerTimeScaleOption.FortyEightHour
         // setup for KIF - begin
         fortyEightHourTVC.tableView.accessibilityLabel = "fortyEightHourTableView"
         fortyEightHourTVC.tableView.accessibilityIdentifier = "fortyEightHourTableView"
         // setup for KIF - end
-        if let hourlyDatas = lineChartDataManager.hourlyDatas {
+        if let hourlyDatas = LineChartDataManager.sharedInstance.hourlyDatas {
             fortyEightHourTVC.chartSettings = LineChartDataManager.sharedInstance.hourlyChartSettings()
             fortyEightHourTVC.chartDatas = hourlyDatas
         }
         
-        let sevenDayTVC: ChartsTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("chartsTVC") as! ChartsTableViewController
+        let sevenDayTVC: ChartsTableViewController! = ChartsTableViewController.createNew()
         sevenDayTVC.timeScale = ChartsTableViewControllerTimeScaleOption.SevenDay
         // setup for KIF - begin
         sevenDayTVC.tableView.accessibilityLabel = "sevenDayTableView"
         sevenDayTVC.tableView.accessibilityIdentifier = "sevenDayWeekTableView"
         // setup for KIF - end
-        if let dailyDatas = lineChartDataManager.dailyDatas {
+        if let dailyDatas = LineChartDataManager.sharedInstance.dailyDatas {
             sevenDayTVC.chartSettings = LineChartDataManager.sharedInstance.dailyChartSettings()
             sevenDayTVC.chartDatas = dailyDatas
             //dailyTVC.chartKeys = DataEntryCollator.dailyKeys

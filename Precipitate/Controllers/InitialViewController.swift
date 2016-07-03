@@ -48,11 +48,11 @@ class InitialViewController: UIViewController {
     }
     
     private func registerObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"showSettings", name: "showSettings", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showWeather", name: "showWeather", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showSettings), name: "showSettings", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showWeather), name: "showWeather", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "save", name: "applicationWillResignActive", object: UIApplication.sharedApplication().delegate)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "applicationDidBecomeActive", object: UIApplication.sharedApplication().delegate)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(save), name: "applicationWillResignActive", object: UIApplication.sharedApplication().delegate)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reload), name: "applicationDidBecomeActive", object: UIApplication.sharedApplication().delegate)
     }
     
     func save() {
@@ -97,7 +97,7 @@ class InitialViewController: UIViewController {
             if let json = json {
                 self.lineChartDataManager.json = json
                 
-                self.weatherPageViewController.setUpChildVCs()
+                self.weatherPageViewController.loadChildVCs()
                 self.summaryViewController.setUpSubviews()
                 
                 if (Defaults["forecastCount"].int == nil) {

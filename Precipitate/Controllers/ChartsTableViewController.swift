@@ -18,6 +18,13 @@ enum ChartsTableViewControllerTimeScaleOption: Int {
 }
 
 class ChartsTableViewController: UITableViewController {
+    static let storyboard: UIStoryboard = UIStoryboard(name: "Weather", bundle: nil)
+    static let storyboardId: String = "ChartsTableViewController"
+    
+    class func createNew() -> ChartsTableViewController {
+        return self.storyboard.instantiateViewControllerWithIdentifier(self.storyboardId) as! ChartsTableViewController
+    }
+    
     var chartSettings = [LineChartDataSettings]()
     
     var chartDatas = [String : LineChartData]()
