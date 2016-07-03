@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -59,8 +59,8 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\""
-    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements "$1"
+    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements \"$1\""
+    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1"
   fi
 }
 
@@ -84,28 +84,28 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Precipitate/Alamofire.framework"
-  install_framework "Pods-Precipitate/Charts.framework"
-  install_framework "Pods-Precipitate/FontAwesome_swift.framework"
-  install_framework "Pods-Precipitate/INTULocationManager.framework"
-  install_framework "Pods-Precipitate/MarqueeLabel_Swift.framework"
-  install_framework "Pods-Precipitate/SnapKit.framework"
-  install_framework "Pods-Precipitate/SwiftHEXColors.framework"
-  install_framework "Pods-Precipitate/SwiftyDate.framework"
-  install_framework "Pods-Precipitate/SwiftyJSON.framework"
-  install_framework "Pods-Precipitate/SwiftySettings.framework"
-  install_framework "Pods-Precipitate/SwiftyUserDefaults.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FontAwesome.swift/FontAwesome_swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/INTULocationManager/INTULocationManager.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarqueeLabel-Swift/MarqueeLabel_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHEXColors/SwiftHEXColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyDate/SwiftyDate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftySettings/SwiftySettings.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyUserDefaults/SwiftyUserDefaults.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Precipitate/Alamofire.framework"
-  install_framework "Pods-Precipitate/Charts.framework"
-  install_framework "Pods-Precipitate/FontAwesome_swift.framework"
-  install_framework "Pods-Precipitate/INTULocationManager.framework"
-  install_framework "Pods-Precipitate/MarqueeLabel_Swift.framework"
-  install_framework "Pods-Precipitate/SnapKit.framework"
-  install_framework "Pods-Precipitate/SwiftHEXColors.framework"
-  install_framework "Pods-Precipitate/SwiftyDate.framework"
-  install_framework "Pods-Precipitate/SwiftyJSON.framework"
-  install_framework "Pods-Precipitate/SwiftySettings.framework"
-  install_framework "Pods-Precipitate/SwiftyUserDefaults.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FontAwesome.swift/FontAwesome_swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/INTULocationManager/INTULocationManager.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarqueeLabel-Swift/MarqueeLabel_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftHEXColors/SwiftHEXColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyDate/SwiftyDate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftySettings/SwiftySettings.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyUserDefaults/SwiftyUserDefaults.framework"
 fi
