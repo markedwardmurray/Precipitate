@@ -346,12 +346,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D7E0E141C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "Precipitate" */;
 			buildPhases = (
-				CCC3B5CBBCABDE9FE3C238F1 /* 📦 Check Pods Manifest.lock */,
+				E87EAD38A3C2B1F89526E3F8 /* 📦 Check Pods Manifest.lock */,
+				CCC3B5CBBCABDE9FE3C238F1 /* [CP] Check Pods Manifest.lock */,
 				4D7E0DE81C064B4D00A15C54 /* Sources */,
 				4D7E0DE91C064B4D00A15C54 /* Frameworks */,
 				4D7E0DEA1C064B4D00A15C54 /* Resources */,
-				73031F4648FDE772F80CC6A2 /* 📦 Embed Pods Frameworks */,
-				DB7B891B82AC199079685EB9 /* 📦 Copy Pods Resources */,
+				73031F4648FDE772F80CC6A2 /* [CP] Embed Pods Frameworks */,
+				DB7B891B82AC199079685EB9 /* [CP] Copy Pods Resources */,
+				F2E642EB6F9509C144ACC53C /* 📦 Embed Pods Frameworks */,
+				55868E5B248C92507692CCB3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,12 +369,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D7E0E171C064B4D00A15C54 /* Build configuration list for PBXNativeTarget "PrecipitateTests" */;
 			buildPhases = (
-				96D5764BAF1197878592FB09 /* 📦 Check Pods Manifest.lock */,
+				689A74171A637E52FC928C87 /* 📦 Check Pods Manifest.lock */,
+				96D5764BAF1197878592FB09 /* [CP] Check Pods Manifest.lock */,
 				4D7E0DFC1C064B4D00A15C54 /* Sources */,
 				4D7E0DFD1C064B4D00A15C54 /* Frameworks */,
 				4D7E0DFE1C064B4D00A15C54 /* Resources */,
-				7D37CD593DCE903094C8BFCF /* 📦 Embed Pods Frameworks */,
-				AD5B50DA609B1719DFCF1B00 /* 📦 Copy Pods Resources */,
+				7D37CD593DCE903094C8BFCF /* [CP] Embed Pods Frameworks */,
+				AD5B50DA609B1719DFCF1B00 /* [CP] Copy Pods Resources */,
+				3DDBD8021D7479164809FED6 /* 📦 Embed Pods Frameworks */,
+				9F1D1ACA4999732F7CA3D246 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,7 +396,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = markedwardmurray;
 				TargetAttributes = {
 					4D7E0DEB1C064B4D00A15C54 = {
@@ -467,22 +473,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73031F4648FDE772F80CC6A2 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D37CD593DCE903094C8BFCF /* 📦 Embed Pods Frameworks */ = {
+		3DDBD8021D7479164809FED6 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,7 +488,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96D5764BAF1197878592FB09 /* 📦 Check Pods Manifest.lock */ = {
+		55868E5B248C92507692CCB3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		689A74171A637E52FC928C87 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,7 +518,52 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AD5B50DA609B1719DFCF1B00 /* 📦 Copy Pods Resources */ = {
+		73031F4648FDE772F80CC6A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D37CD593DCE903094C8BFCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D5764BAF1197878592FB09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9F1D1ACA4999732F7CA3D246 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -527,7 +578,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCC3B5CBBCABDE9FE3C238F1 /* 📦 Check Pods Manifest.lock */ = {
+		AD5B50DA609B1719DFCF1B00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCC3B5CBBCABDE9FE3C238F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DB7B891B82AC199079685EB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E87EAD38A3C2B1F89526E3F8 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -542,19 +638,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DB7B891B82AC199079685EB9 /* 📦 Copy Pods Resources */ = {
+		F2E642EB6F9509C144ACC53C /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -635,8 +731,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -664,6 +762,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -680,8 +779,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -701,6 +802,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -709,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7851F65BA7B4120C3E512ACF /* Pods-Precipitate.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -719,6 +823,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Resources/Precipitate-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -726,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D656B27363837DDE4B5CDAC2 /* Pods-Precipitate.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -736,6 +842,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/Precipitate/Resources/Precipitate-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -743,6 +850,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73B659CDB49E443B91360785 /* Pods-PrecipitateTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PrecipitateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -772,6 +880,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/PrecipitateTests/PrecipitateTests-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
 			};
 			name = Debug;
@@ -780,6 +889,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72DF5D6E415B5AFD2373FEFF /* Pods-PrecipitateTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PrecipitateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -809,6 +919,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.PrecipitateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mark/Development/Apps/Precipitate/PrecipitateTests/PrecipitateTests-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Precipitate.app/Precipitate";
 			};
 			name = Release;

@@ -15,10 +15,10 @@ import SwiftyUserDefaults
 struct LineChartDataSettings {
     let label: String
     let units: String
-    let formatter: NSNumberFormatter
+    let formatter: IValueFormatter
     let dataKeys: [String]
     
-    init(label: String, units: String, formatter: NSNumberFormatter, dataKeys: [String]) {
+    init(label: String, units: String, formatter: IValueFormatter, dataKeys: [String]) {
         self.label = label
         self.units = units
         self.formatter = formatter
@@ -67,8 +67,8 @@ class LineChartDataManager {
                         chartDataSets.append(chartDataSet)
                     }
                 }
-                
-                let lineChartData = LineChartData(xVals: hourStrings, dataSets: chartDataSets)
+                let lineChartData = LineChartData(dataSets: chartDataSets)
+
                 lineChartData.setValueFormatter(hourlyChartSetting.formatter)
                 
                 let chartLabel = hourlyChartSetting.label
@@ -100,7 +100,7 @@ class LineChartDataManager {
                     }
                 }
                 
-                let lineChartData = LineChartData(xVals: dayStrings, dataSets: chartDataSets)
+                let lineChartData = LineChartData(dataSets: chartDataSets)
                 lineChartData.setValueFormatter(dailyChartSetting.formatter)
                 
                 let chartLabel = dailyChartSetting.label
@@ -117,70 +117,70 @@ class LineChartDataManager {
             LineChartDataSettings(
                 label: "Temperature",
                 units: self.units.forTemperature.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["apparentTemperature", "temperature"]
             ),
             
             LineChartDataSettings(
                 label: "Precipitation Probability",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["precipProbability"]
             ),
             LineChartDataSettings(
                 label: "Rainfall (Liquid Volume)",
                 units: units.forPrecipIntensity.short,
-                formatter: NSNumberFormatter.precipitationFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.precipitationFormatter(),
                 dataKeys: ["precipIntensity"]
             ),
             LineChartDataSettings(
                 label: "Snowfall",
                 units: units.forPrecipAccumulation.short,
-                formatter: NSNumberFormatter.precipitationFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.precipitationFormatter(),
                 dataKeys: ["precipAccumulation"]
             ),
             
             LineChartDataSettings(
                 label: "Wind Speed",
                 units: units.forSpeed.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["windSpeed"]
             ),
             LineChartDataSettings(
                 label: "Cloud Cover",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["cloudCover"]
             ),
             LineChartDataSettings(
                 label:"Visibility",
                 units: units.forDistance.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["visibility"]
             ),
             
             LineChartDataSettings(
                 label: "Ozone",
                 units: units.forOzone.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["ozone"]
             ),
             LineChartDataSettings(
                 label: "Humidity",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["humidity"]
             ),
             LineChartDataSettings(
                 label: "Dew Point",
                 units: units.forTemperature.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["dewPoint"]
             ),
             LineChartDataSettings(
                 label: "Pressure",
                 units: units.forPressure.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["pressure"]
             )
         ]
@@ -195,64 +195,64 @@ class LineChartDataManager {
             LineChartDataSettings(
                 label: "Temperature",
                 units: units.forTemperature.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["apparentTemperatureMin", "apparentTemperatureMax", "temperatureMin", "temperatureMax"]
             ),
             
             LineChartDataSettings(
                 label: "Precipitation Probability",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["precipProbability"]
             ),
             LineChartDataSettings(
                 label: "Precipitation (Liquid Volume)",
                 units: units.forPrecipIntensity.short,
-                formatter: NSNumberFormatter.precipitationFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.precipitationFormatter(),
                 dataKeys: ["precipIntensityMax", "precipIntensity"]
             ),
             
             LineChartDataSettings(
                 label: "Wind Speed",
                 units: units.forSpeed.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["windSpeed"]
             ),
             LineChartDataSettings(
                 label:"Cloud Cover",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["cloudCover"]
             ),
             LineChartDataSettings(
                 label:"Visibility",
                 units: units.forDistance.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["visibility"]
             ),
             
             LineChartDataSettings(
                 label: "Ozone",
                 units: units.forOzone.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["ozone"]
             ),
             LineChartDataSettings(
                 label: "Humidity",
                 units: units.forPercentage.short,
-                formatter: NSNumberFormatter.percentageFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.percentageFormatter(),
                 dataKeys: ["humidity"]
             ),
             LineChartDataSettings(
                 label: "Dew Point",
                 units: units.forTemperature.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["dewPoint"]
             ),
             LineChartDataSettings(
                 label: "Pressure",
                 units: units.forPressure.short,
-                formatter: NSNumberFormatter.integerFormatter(),
+                formatter: DefaultValueFormatter(), // NSNumberFormatter.integerFormatter(),
                 dataKeys: ["pressure"]
             )
         ]

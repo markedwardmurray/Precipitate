@@ -8,7 +8,7 @@
 
 import UIKit
 import FontAwesome_swift
-import MarqueeLabel_Swift
+import MarqueeLabel
 
 class WeatherPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
@@ -169,10 +169,10 @@ class WeatherPageViewController: UIPageViewController, UIPageViewControllerDeleg
         
         self.blurredFooterView?.translatesAutoresizingMaskIntoConstraints = false
         
-        self.blurredFooterView?.leadingAnchor.constraintEqualToAnchor(self.pageControl?.leadingAnchor).active = true
-        self.blurredFooterView?.trailingAnchor.constraintEqualToAnchor(self.pageControl?.trailingAnchor).active = true
-        self.blurredFooterView?.bottomAnchor.constraintEqualToAnchor(self.pageControl?.bottomAnchor).active = true
-        self.blurredFooterView?.topAnchor.constraintEqualToAnchor(self.pageControl?.topAnchor).active = true
+        self.blurredFooterView?.leadingAnchor.constraintEqualToAnchor((self.pageControl?.leadingAnchor)!).active = true
+        self.blurredFooterView?.trailingAnchor.constraintEqualToAnchor((self.pageControl?.trailingAnchor)!).active = true
+        self.blurredFooterView?.bottomAnchor.constraintEqualToAnchor((self.pageControl?.bottomAnchor)!).active = true
+        self.blurredFooterView?.topAnchor.constraintEqualToAnchor((self.pageControl?.topAnchor)!).active = true
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {

@@ -4,7 +4,7 @@
 [![CI Status](https://api.travis-ci.org/radex/SwiftyUserDefaults.svg?branch=master)](https://travis-ci.org/radex/SwiftyUserDefaults)
 [![CocoaPods](http://img.shields.io/cocoapods/v/SwiftyUserDefaults.svg)](https://cocoapods.org/pods/SwiftyUserDefaults)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage)
-![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-2.2%20|%202.3-orange.svg)
 
 #### Modern Swift API for `NSUserDefaults`
 ###### SwiftyUserDefaults makes user defaults enjoyable to use by combining expressive Swifty API with the benefits of static typing. Define your keys in one place, use value types easily, and get extra safety and convenient compile-time checks for free.
@@ -223,6 +223,14 @@ if !Defaults.hasKey(.hotkey) {
 
 You can use the `hasKey` method to check for key's existence in the user defaults. `remove()` is an alias for `removeObjectForKey()`, that also works with `DefaultsKeys` shortcuts.
 
+### Remove all keys
+
+To reset user defaults, use `removeAll` method.
+
+```swift
+Defaults.removeAll()
+```
+
 ### Shared user defaults
 
 If you're sharing your user defaults between different apps or an app and its extensions, you can use SwiftyUserDefaults by overriding the `Defaults` shortcut with your own. Just add in your app:
@@ -261,6 +269,8 @@ Defaults["hotkey"].dataValue             // defaults to NSData()
 ```
 
 ## Installation
+
+**For Swift 3 compatibility, check out [the `swift3` branch](https://github.com/radex/SwiftyUserDefaults/tree/swift3)**
 
 #### CocoaPods
 

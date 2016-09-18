@@ -1,68 +1,83 @@
 PODS:
-  - Alamofire (3.4.1)
-  - Charts (2.2.5):
-    - Charts/Core (= 2.2.5)
-  - Charts/Core (2.2.5)
+  - Alamofire (3.5.0)
+  - Charts (2.2.6):
+    - Charts/Core (= 2.2.6)
+  - Charts/Core (2.2.6)
   - FBSnapshotTestCase (2.1.1):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
   - FBSnapshotTestCase/Core (2.1.1)
   - FBSnapshotTestCase/SwiftSupport (2.1.1):
     - FBSnapshotTestCase/Core
-  - FontAwesome.swift (0.7.3)
+  - FontAwesome.swift (0.10.1)
   - INTULocationManager (4.2.0)
   - KIF (3.4.2):
     - KIF/Core (= 3.4.2)
   - KIF/Core (3.4.2)
-  - MarqueeLabel-Swift (2.6.8)
+  - MarqueeLabel (2.7.10):
+    - MarqueeLabel/ObjC (= 2.7.10)
+  - MarqueeLabel/ObjC (2.7.10)
   - Nimble (4.1.0)
   - Nimble-Snapshots (4.1.0):
     - FBSnapshotTestCase (~> 2.0)
     - Nimble
     - Quick
-  - Quick (0.9.2)
-  - SnapKit (0.21.1)
-  - SwiftCharts (0.4)
+  - Quick (0.9.3)
+  - SnapKit (0.22.0)
   - SwiftHEXColors (1.0.4)
   - SwiftyDate (1.0.1)
   - SwiftyJSON (2.3.2)
-  - SwiftyUserDefaults (2.2.0)
+  - SwiftyUserDefaults (2.2.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4.1)
-  - Charts (~> 2.2.5)
+  - Alamofire (~> 3.5.0)
+  - Charts (from `https://github.com/danielgindi/Charts`, branch `Swift-2.3`)
   - FBSnapshotTestCase (~> 2.1.1)
-  - FontAwesome.swift (~> 0.7.3)
+  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-2.3`)
   - INTULocationManager (~> 4.2.0)
   - KIF (~> 3.4.2)
-  - MarqueeLabel-Swift (~> 2.6.8)
+  - MarqueeLabel (~> 2.7.10)
   - Nimble (~> 4.1.0)
   - Nimble-Snapshots (~> 4.1.0)
-  - Quick (~> 0.9.2)
-  - SnapKit (~> 0.21.1)
-  - SwiftCharts (~> 0.4)
+  - Quick (~> 0.9.3)
+  - SnapKit (~> 0.22.0)
   - SwiftHEXColors (~> 1.0.4)
   - SwiftyDate (~> 1.0.1)
   - SwiftyJSON (~> 2.3.2)
-  - SwiftyUserDefaults (~> 2.2.0)
+  - SwiftyUserDefaults (~> 2.2.1)
+
+EXTERNAL SOURCES:
+  Charts:
+    :branch: Swift-2.3
+    :git: https://github.com/danielgindi/Charts
+  FontAwesome.swift:
+    :branch: swift-2.3
+    :git: https://github.com/thii/FontAwesome.swift
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: ee51dba3be3bab2cae90fcaa5d9b295021f2da03
+    :git: https://github.com/danielgindi/Charts
+  FontAwesome.swift:
+    :commit: 75253b4c741d90284762fe3093044bf491308f86
+    :git: https://github.com/thii/FontAwesome.swift
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  Charts: ae18bd29200328832ee8c53d124d25ef51d3193c
   FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
-  FontAwesome.swift: f694fe0f667d6d3390b5919cdb0556a27b75d427
+  FontAwesome.swift: 340bcf987db498134d42838df73960603a720a84
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
   KIF: b518c9831453abea5afdbbde3908ec47832d6d56
-  MarqueeLabel-Swift: c4b6bd81ad77c5e79c4f04e3ca29d298bded2ebc
+  MarqueeLabel: 5d722a0bef353178feb301130621b9b8e8b3fcb5
   Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   Nimble-Snapshots: 2da4d2ec829b458d6886c06812c52493fce284c9
-  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
-  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
-  SwiftCharts: 84b43d9d70b791459ff5f50ae5a6704326de309d
+  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
+  SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   SwiftyDate: c36df91df8f59115bba3180828b633969517c4b0
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
+  SwiftyUserDefaults: 7abdba50a50ea0c18ee8903af3c88e4c1cb8448d
 
-PODFILE CHECKSUM: ccd8c3b1e1152789ca939cebffa486dd9f380894
+PODFILE CHECKSUM: 01159ce3507c8be2cc31b0be611456dd8c14c563
 
 COCOAPODS: 1.0.0

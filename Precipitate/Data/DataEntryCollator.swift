@@ -78,10 +78,10 @@ class DataEntryCollator {
             
             for i in 0 ..< hourlyData.count {
                 if let yVal = hourlyData[i][hourlyKey].double {
-                    let dataEntry = ChartDataEntry(value: yVal, xIndex: i)
+                    let dataEntry = ChartDataEntry(x: Double(i),y: yVal)
                     dataEntrys.append(dataEntry)
                 } else {
-                    let nilEntry = ChartDataEntry(value: 0.0, xIndex: i)
+                    let nilEntry = ChartDataEntry(x: Double(i),y: 0.0)
                     dataEntrys.append(nilEntry)
                 }
             }
@@ -98,10 +98,10 @@ class DataEntryCollator {
             
             for i in 0 ..< dailyData.count {
                 if let yVal = dailyData[i][dailyKey].double {
-                    let dataEntry = ChartDataEntry(value: yVal, xIndex: i)
+                    let dataEntry = ChartDataEntry(x: Double(i), y: yVal)
                     dataEntrys.append(dataEntry)
                 } else {
-                    let nilEntry = ChartDataEntry(value: 0.0, xIndex: i)
+                    let nilEntry = ChartDataEntry(x: Double(i), y: 0.0)
                     dataEntrys.append(nilEntry)
                 }
             }

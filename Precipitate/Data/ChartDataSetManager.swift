@@ -47,7 +47,7 @@ class ChartDataSetManager {
             for (hourlyKey, dataEntrysArray) in dataEntryCollator.hourlyDataEntrys {
                 let settings = ChartDataSetManager.settingsForKeys[hourlyKey]
                 let label = settings?.label
-                let hourlyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
+                let hourlyDataSet = LineChartDataSet(values: dataEntrysArray, label: label)
                 hourlyDataSet.setColor((settings?.lineColor)!)
                 
                 // settings for all lines //////
@@ -71,7 +71,7 @@ class ChartDataSetManager {
             for (dailyKey, dataEntrysArray) in dataEntryCollator.dailyDataEntrys {
                 let settings = ChartDataSetManager.settingsForKeys[dailyKey]
                 let label = settings?.label
-                let dailyDataSet = LineChartDataSet(yVals: dataEntrysArray, label: label)
+                let dailyDataSet = LineChartDataSet(values: dataEntrysArray, label: label)
                 dailyDataSet.setColor((settings?.lineColor)!)
                 
                 // settings for all lines //////
