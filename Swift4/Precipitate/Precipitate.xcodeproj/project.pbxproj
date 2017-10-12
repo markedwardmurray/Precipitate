@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B8CA70B7AE9E003634A50ED /* Pods_PrecipitateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E661479F42086075FE0B3D4C /* Pods_PrecipitateTests.framework */; };
 		4D2A86171F8F2198000F41DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A86161F8F2198000F41DE /* AppDelegate.swift */; };
 		4D2A86191F8F2198000F41DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A86181F8F2198000F41DE /* ViewController.swift */; };
 		4D2A861C1F8F2198000F41DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A861A1F8F2198000F41DE /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		4D2A86211F8F2198000F41DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2A861F1F8F2198000F41DE /* LaunchScreen.storyboard */; };
 		4D2A862C1F8F2198000F41DE /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A862B1F8F2198000F41DE /* PrecipitateTests.swift */; };
 		4D2A86371F8F2198000F41DE /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A86361F8F2198000F41DE /* PrecipitateUITests.swift */; };
+		8D91BE4DCCE0271597F7A2A5 /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */; };
+		AE5BF7794742AC79D8C60AE4 /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341E053D6BB05C59044CAA85 /* Pods_Precipitate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341E053D6BB05C59044CAA85 /* Pods_Precipitate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Precipitate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A86131F8F2198000F41DE /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A86161F8F2198000F41DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D2A86181F8F2198000F41DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		4D2A86321F8F2198000F41DE /* PrecipitateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A86361F8F2198000F41DE /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D2A86381F8F2198000F41DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFC31152B1DA31E9E30D285 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
+		809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979C0AF7F1C59063F9C34B21 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A189CD1CA1EAFD6B52B393CA /* Pods-PrecipitateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0B4FE873538977051838CB3 /* Pods-Precipitate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.release.xcconfig"; sourceTree = "<group>"; };
+		E0F5CE295375B0527D8AE799 /* Pods-PrecipitateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.release.xcconfig"; sourceTree = "<group>"; };
+		E661479F42086075FE0B3D4C /* Pods_PrecipitateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54BD811AB6836FE53CB0079 /* Pods-PrecipitateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5BF7794742AC79D8C60AE4 /* Pods_Precipitate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8CA70B7AE9E003634A50ED /* Pods_PrecipitateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D91BE4DCCE0271597F7A2A5 /* Pods_PrecipitateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				4D2A862A1F8F2198000F41DE /* PrecipitateTests */,
 				4D2A86351F8F2198000F41DE /* PrecipitateUITests */,
 				4D2A86141F8F2198000F41DE /* Products */,
+				9E7A61E5C33FD428D0B07287 /* Pods */,
+				F1011D511A106C6D02E2F281 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = PrecipitateUITests;
 			sourceTree = "<group>";
 		};
+		9E7A61E5C33FD428D0B07287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AFC31152B1DA31E9E30D285 /* Pods-Precipitate.debug.xcconfig */,
+				E0B4FE873538977051838CB3 /* Pods-Precipitate.release.xcconfig */,
+				F54BD811AB6836FE53CB0079 /* Pods-PrecipitateTests.debug.xcconfig */,
+				E0F5CE295375B0527D8AE799 /* Pods-PrecipitateTests.release.xcconfig */,
+				A189CD1CA1EAFD6B52B393CA /* Pods-PrecipitateUITests.debug.xcconfig */,
+				979C0AF7F1C59063F9C34B21 /* Pods-PrecipitateUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1011D511A106C6D02E2F281 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				341E053D6BB05C59044CAA85 /* Pods_Precipitate.framework */,
+				E661479F42086075FE0B3D4C /* Pods_PrecipitateTests.framework */,
+				809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D2A863B1F8F2198000F41DE /* Build configuration list for PBXNativeTarget "Precipitate" */;
 			buildPhases = (
+				7609D51FEC0542649B4B530F /* [CP] Check Pods Manifest.lock */,
 				4D2A860F1F8F2198000F41DE /* Sources */,
 				4D2A86101F8F2198000F41DE /* Frameworks */,
 				4D2A86111F8F2198000F41DE /* Resources */,
+				2629A71256BA3B909E50A1AF /* [CP] Embed Pods Frameworks */,
+				2C51498399C605952F7BAF59 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D2A863E1F8F2198000F41DE /* Build configuration list for PBXNativeTarget "PrecipitateTests" */;
 			buildPhases = (
+				025BEC4F5C218CEA62989C38 /* [CP] Check Pods Manifest.lock */,
 				4D2A86231F8F2198000F41DE /* Sources */,
 				4D2A86241F8F2198000F41DE /* Frameworks */,
 				4D2A86251F8F2198000F41DE /* Resources */,
+				3C3869AD98ED58E912F22369 /* [CP] Embed Pods Frameworks */,
+				C1563A6001BBAB619578478E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D2A86411F8F2198000F41DE /* Build configuration list for PBXNativeTarget "PrecipitateUITests" */;
 			buildPhases = (
+				992AE85DCDA6DCE97C4C6E5B /* [CP] Check Pods Manifest.lock */,
 				4D2A862E1F8F2198000F41DE /* Sources */,
 				4D2A862F1F8F2198000F41DE /* Frameworks */,
 				4D2A86301F8F2198000F41DE /* Resources */,
+				577D7B4DB67E02ED601AD2B6 /* [CP] Embed Pods Frameworks */,
+				93D61E2456A16853E6258CAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,160 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		025BEC4F5C218CEA62989C38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrecipitateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2629A71256BA3B909E50A1AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
+				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchorage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C51498399C605952F7BAF59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C3869AD98ED58E912F22369 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		577D7B4DB67E02ED601AD2B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7609D51FEC0542649B4B530F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Precipitate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D61E2456A16853E6258CAC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		992AE85DCDA6DCE97C4C6E5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrecipitateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1563A6001BBAB619578478E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrecipitateTests/Pods-PrecipitateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D2A860F1F8F2198000F41DE /* Sources */ = {
@@ -424,6 +627,7 @@
 		};
 		4D2A863C1F8F2198000F41DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AFC31152B1DA31E9E30D285 /* Pods-Precipitate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +643,7 @@
 		};
 		4D2A863D1F8F2198000F41DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B4FE873538977051838CB3 /* Pods-Precipitate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +659,7 @@
 		};
 		4D2A863F1F8F2198000F41DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F54BD811AB6836FE53CB0079 /* Pods-PrecipitateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +677,7 @@
 		};
 		4D2A86401F8F2198000F41DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0F5CE295375B0527D8AE799 /* Pods-PrecipitateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +695,7 @@
 		};
 		4D2A86421F8F2198000F41DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A189CD1CA1EAFD6B52B393CA /* Pods-PrecipitateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +712,7 @@
 		};
 		4D2A86431F8F2198000F41DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979C0AF7F1C59063F9C34B21 /* Pods-PrecipitateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
