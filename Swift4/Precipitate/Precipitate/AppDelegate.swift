@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        DarkSky.provide(apiKey: marksAPIKey)
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 40.7787898, longitude: -73.9065882)
+        let request = DarkSky.Request(coordinate: coordinate)
+        DarkSky.shared.request(request) { (_, result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let weather):
+                print(weather)
+            }
+        }
+        
         return true
     }
 

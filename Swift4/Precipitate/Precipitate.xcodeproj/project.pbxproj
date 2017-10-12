@@ -16,7 +16,8 @@
 		4D2A862C1F8F2198000F41DE /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A862B1F8F2198000F41DE /* PrecipitateTests.swift */; };
 		4D2A86371F8F2198000F41DE /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A86361F8F2198000F41DE /* PrecipitateUITests.swift */; };
 		4D8CBA401F8F235B00FE1F67 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */; };
-		4D8CBA421F8F245900FE1F67 /* DarkSkyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA411F8F245800FE1F67 /* DarkSkyAPIClient.swift */; };
+		4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA411F8F245800FE1F67 /* DarkSky.swift */; };
+		4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA85F51F8F28AF006C65E6 /* Secrets.swift */; };
 		8D91BE4DCCE0271597F7A2A5 /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */; };
 		AE5BF7794742AC79D8C60AE4 /* Pods_Precipitate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341E053D6BB05C59044CAA85 /* Pods_Precipitate.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +55,8 @@
 		4D2A86361F8F2198000F41DE /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D2A86381F8F2198000F41DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		4D8CBA411F8F245800FE1F67 /* DarkSkyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyAPIClient.swift; sourceTree = "<group>"; };
+		4D8CBA411F8F245800FE1F67 /* DarkSky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSky.swift; sourceTree = "<group>"; };
+		4DFA85F51F8F28AF006C65E6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../../../Precipitate/Utilities/Secrets.swift; sourceTree = "<group>"; };
 		6AFC31152B1DA31E9E30D285 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
 		809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrecipitateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		979C0AF7F1C59063F9C34B21 /* Pods-PrecipitateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrecipitateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrecipitateUITests/Pods-PrecipitateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,10 +120,11 @@
 		4D2A86151F8F2198000F41DE /* Precipitate */ = {
 			isa = PBXGroup;
 			children = (
+				4DFA85F51F8F28AF006C65E6 /* Secrets.swift */,
 				4D2A86161F8F2198000F41DE /* AppDelegate.swift */,
 				4D2A86181F8F2198000F41DE /* ViewController.swift */,
 				4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */,
-				4D8CBA411F8F245800FE1F67 /* DarkSkyAPIClient.swift */,
+				4D8CBA411F8F245800FE1F67 /* DarkSky.swift */,
 				4D2A861A1F8F2198000F41DE /* Main.storyboard */,
 				4D2A861D1F8F2198000F41DE /* Assets.xcassets */,
 				4D2A861F1F8F2198000F41DE /* LaunchScreen.storyboard */,
@@ -469,9 +472,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D2A86191F8F2198000F41DE /* ViewController.swift in Sources */,
+				4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */,
 				4D8CBA401F8F235B00FE1F67 /* WeatherData.swift in Sources */,
 				4D2A86171F8F2198000F41DE /* AppDelegate.swift in Sources */,
-				4D8CBA421F8F245900FE1F67 /* DarkSkyAPIClient.swift in Sources */,
+				4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
