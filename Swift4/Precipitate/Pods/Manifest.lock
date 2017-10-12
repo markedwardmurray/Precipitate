@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (4.5.0)
-  - Anchorage (4.0.0)
+  - Alamofire (4.5.1)
+  - Anchorage (4.1.0)
   - DateToolsSwift (2.0.3)
 
 DEPENDENCIES:
@@ -9,10 +9,10 @@ DEPENDENCIES:
   - DateToolsSwift
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Anchorage: fe50dca4e20846b8cb15c859d26fec5132b41577
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Anchorage: 6c20225cb7f44fdf9609ec99949ee160c803969c
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
 
-PODFILE CHECKSUM: 6679d08d62fe6ffd96f15ce1591165699566f037
+PODFILE CHECKSUM: d7eaf30463a22e1586d7a006b13e7f0c179db090
 
 COCOAPODS: 1.3.1
