@@ -20,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DarkSky.provide(apiKey: marksAPIKey)
         
         let coordinate = CLLocationCoordinate2D(latitude: 40.7787898, longitude: -73.9065882)
-        let request = DarkSky.Request(coordinate: coordinate)
+        let request = DarkSky.Request(coordinate: coordinate,
+                                      time: nil,
+                                      language: .english,
+                                      units: .unitedStates,
+                                      exclude: DarkSky.Request.Exclude(rawValue: DarkSky.Request.Exclude.hourly)
+            )
         DarkSky.shared.request(request) { (_, result) in
             switch result {
             case .failure(let error):

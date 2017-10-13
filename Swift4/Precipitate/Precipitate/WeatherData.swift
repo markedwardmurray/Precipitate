@@ -9,7 +9,7 @@
 import Foundation
 
 struct Weather: Codable {
-    let hourly: Hourly
+    let hourly: Hourly?
     
     struct Hourly: Codable {
         let summary: String
