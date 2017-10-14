@@ -10,30 +10,22 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var appCoordinator: AppCoordinator!
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         DarkSky.provide(apiKey: marksAPIKey)
         
-        let coordinate = CLLocationCoordinate2D(latitude: 40.7787898, longitude: -73.9065882)
-        let request = DarkSky.Request(coordinate: coordinate,
-                                      time: nil,
-                                      language: .english,
-                                      units: .unitedStates,
-                                      exclude: DarkSky.Request.Exclude(rawValue: DarkSky.Request.Exclude.hourly)
-            )
-        DarkSky.shared.request(request) { (_, result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let weather):
-                print(weather)
-            }
-        }
+        appCoordinator = AppCoordinator()
+        window = UIWindow()
+        window?.rootViewController = appCoordinator.navigationController
+        window?.makeKeyAndVisible()
+        
+        appCoordinator.start()
         
         return true
     }
