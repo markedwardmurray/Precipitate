@@ -37,21 +37,26 @@ class AppCoordinator {
             case .success(let weather):
                 guard let hourly = weather.hourly?.data else { return }
                 
-                let temperatures: [(x: TimeInterval, y: Double)] = hourly.map { (x: $0.time, y: $0.temperature) }
-                let chartSeries = ChartSeries(data: temperatures)
-                chartSeries.color = .blue
+                var chartCellModel = ChartCellModel()
+                chartCellModel.title = "Temperature"
                 
-                var chartModel = ChartModel()
-                chartModel.series.append(chartSeries)
-                let indexSet = (0..<(chartSeries.data.count)).filter { $0 % 4 == 0 }
-                chartModel.xLabels = indexSet.map { temperatures[$0].x }
-                chartModel.xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
+                let times: [TimeInterval] = hourly.map { $0.time }
+                let indexSet = (0..<(times.count)).filter { $0 % 4 == 0 }
+                chartCellModel.xLabels = indexSet.map { times[$0] }
+                chartCellModel.xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
                     let date = Date(timeIntervalSince1970: TimeInterval(labelValue))
                     return "\(date.hour)"
                 }
-                chartModel.minY = 0
                 
-                self.chartsTableViewController.model.chartModels = [chartModel]
+                let temperatures = ChartSeries(data: hourly.map { (x: $0.time, y: $0.temperature) })
+                temperatures.color = .blue
+                
+                let apparentTemperatures = ChartSeries(data: hourly.map { (x: $0.time, y: $0.apparentTemperature) })
+                apparentTemperatures.color = .cyan
+                
+                chartCellModel.series = [temperatures, apparentTemperatures].reversed()
+                
+                self.chartsTableViewController.model.chartCellModels = [chartCellModel]
             }
         }
     }

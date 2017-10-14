@@ -15,15 +15,18 @@ class ChartCell: UITableViewCell {
         return String(describing: self)
     }
     
-    struct Model {
-        var chartModel: ChartModel = .init()
-    }
-    
-    var model: Model = .init() {
+    var model: ChartCellModel = .init() {
         didSet {
-            chart.configure(model.chartModel)
+            titleLabel.text = model.title
+            chart.configure(model)
         }
     }
+    
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        return titleLabel
+    }()
     
     private lazy var chart: Chart = {
         let chart = Chart()
@@ -36,10 +39,14 @@ class ChartCell: UITableViewCell {
         layer.cornerRadius = 8
         clipsToBounds = true
         
+        contentView.addSubview(titleLabel)
         contentView.addSubview(chart)
         
-        chart.verticalAnchors == contentView.verticalAnchors + 8
+        titleLabel.topAnchor == contentView.topAnchor + 8
+        titleLabel.horizontalAnchors == contentView.horizontalAnchors + 8
+        chart.topAnchor == titleLabel.bottomAnchor + 4
         chart.horizontalAnchors == contentView.horizontalAnchors + 8
+        chart.bottomAnchor == contentView.bottomAnchor - 8
     }
     
     required init?(coder aDecoder: NSCoder) {

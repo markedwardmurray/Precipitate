@@ -1,5 +1,5 @@
 //
-//  Charting.swift
+//  ChartCellModel.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 10/13/17.
@@ -8,8 +8,10 @@
 
 import SwiftChart
 
-struct ChartModel {
+struct ChartCellModel {
     var identifier: String?
+    
+    var title: String?
     
     /**
      Series to display in the chart.
@@ -142,7 +144,7 @@ struct ChartModel {
 }
 
 extension Chart {
-    func configure(_ model: ChartModel) {
+    func configure(_ model: ChartCellModel) {
         identifier = model.identifier
 
         series = model.series

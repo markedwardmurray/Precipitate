@@ -112,6 +112,8 @@ open class Chart: UIControl {
     Displays the y-axis labels on the right side of the chart.
     */
     open var yLabelsOnRightSide: Bool = false
+    
+    open var yLabelsAutoCount: Int = 5
 
     /**
     Font used for the labels.
@@ -635,9 +637,14 @@ open class Chart: UIControl {
         if let yLabels = yLabels {
             labels = yLabels.map { Float($0) }
         } else {
-            labels = [(min.y + max.y) / 2, max.y]
-            if yLabelsOnRightSide || min.y != 0 {
-                labels.insert(min.y, at: 0)
+            let range = fabs(max.y-min.y)
+            let sectionSize = range / Float(yLabelsAutoCount-1)
+            labels = [min.y]
+            for i in 0..<yLabelsAutoCount {
+                labels.append(min.y + Float(i)*sectionSize)
+            }
+            if yLabelsOnRightSide && min.y != 0 {
+                labels.remove(at: 0)
             }
         }
 
