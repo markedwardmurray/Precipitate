@@ -71,12 +71,12 @@ open class Chart: UIControl {
     The values to display as labels on the x-axis. You can format these values  with the `xLabelFormatter` attribute. 
     As default, it will display the values of the series which has the most data.
     */
-    open var xLabels: [Float]?
+    open var xLabels: [Double]?
 
     /**
     Formatter for the labels on the x-axis. The `index` represents the `xLabels` index, `value` its value:
     */
-    open var xLabelsFormatter = { (labelIndex: Int, labelValue: Float) -> String in
+    open var xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
         String(Int(labelValue))
     }
 
@@ -99,12 +99,12 @@ open class Chart: UIControl {
     Values to display as labels of the y-axis. If not specified, will display the
     lowest, the middle and the highest values.
     */
-    open var yLabels: [Float]?
+    open var yLabels: [Double]?
 
     /**
     Formatter for the labels on the y-axis.
     */
-    open var yLabelsFormatter = { (labelIndex: Int, labelValue: Float) -> String in
+    open var yLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
         String(Int(labelValue))
     }
 
@@ -381,16 +381,18 @@ open class Chart: UIControl {
 
         // Check in labels
 
-        if xLabels != nil {
-            let newMinX = (xLabels!).min()!
-            let newMaxX = (xLabels!).max()!
+        if let xLabels = xLabels {
+            let xFloats = xLabels.map { Float($0) }
+            let newMinX = xFloats.min()!
+            let newMaxX = xFloats.max()!
             if min.x == nil || newMinX < min.x! { min.x = newMinX }
             if max.x == nil || newMaxX > max.x! { max.x = newMaxX }
         }
 
-        if yLabels != nil {
-            let newMinY = (yLabels!).min()!
-            let newMaxY = (yLabels!).max()!
+        if let yLabels = yLabels {
+            let yFloats = yLabels.map { Float($0) }
+            let newMinY = yFloats.min()!
+            let newMaxY = yFloats.max()!
             if min.y == nil || newMinY < min.y! { min.y = newMinY }
             if max.y == nil || newMaxY > max.y! { max.y = newMaxY }
         }
@@ -556,12 +558,12 @@ open class Chart: UIControl {
         context.setLineWidth(0.5)
 
         var labels: [Float]
-        if xLabels == nil {
+        if let xLabels = xLabels {
+            labels = xLabels.map { Float($0) }
+        } else {
             // Use labels from the first series
             labels = series[0].data.map({ (point: ChartPoint) -> Float in
                 return point.x })
-        } else {
-            labels = xLabels!
         }
 
         let scaled = scaleValuesOnXAxis(labels)
@@ -586,7 +588,7 @@ open class Chart: UIControl {
             // Add label
             let label = UILabel(frame: CGRect(x: x, y: drawingHeight, width: 0, height: 0))
             label.font = labelFont
-            label.text = xLabelsFormatter(i, labels[i])
+            label.text = xLabelsFormatter(i, xLabels?[i] ?? Double(labels[i]) )
             label.textColor = labelColor
 
             // Set label size
@@ -630,13 +632,13 @@ open class Chart: UIControl {
         context.setLineWidth(0.5)
 
         var labels: [Float]
-        if yLabels == nil {
+        if let yLabels = yLabels {
+            labels = yLabels.map { Float($0) }
+        } else {
             labels = [(min.y + max.y) / 2, max.y]
             if yLabelsOnRightSide || min.y != 0 {
                 labels.insert(min.y, at: 0)
             }
-        } else {
-            labels = yLabels!
         }
 
         let scaled = scaleValuesOnYAxis(labels)
@@ -663,7 +665,7 @@ open class Chart: UIControl {
 
             let label = UILabel(frame: CGRect(x: padding, y: y, width: 0, height: 0))
             label.font = labelFont
-            label.text = yLabelsFormatter(i, labels[i])
+            label.text = yLabelsFormatter(i, yLabels?[i] ?? Double(labels[i]) )
             label.textColor = labelColor
             label.sizeToFit()
 

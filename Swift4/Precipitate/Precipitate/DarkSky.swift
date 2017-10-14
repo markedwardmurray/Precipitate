@@ -40,13 +40,13 @@ class DarkSky {
         
         Alamofire.request( request )
             .validate()
-            .responseJSON { response in
+            .responseData { response in
                 switch response.result {
                 case .failure(let error):
                     completion(request, .failure(error))
-                case .success(_):
+                case .success(let data):
                     let decoder = JSONDecoder()
-                    let weather = try! decoder.decode(Weather.self, from: response.data!)
+                    let weather = try! decoder.decode(Weather.self, from: data)
                     
                     completion(request, .success(weather))
                 }

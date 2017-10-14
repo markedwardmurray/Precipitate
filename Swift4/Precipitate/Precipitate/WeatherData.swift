@@ -25,7 +25,7 @@ struct Weather: Codable {
 }
 
 struct Currently: DataBlockType {
-    let time: Date
+    let time: TimeInterval
     let summary: String
     let icon: String
     let temperature: Double
@@ -62,7 +62,7 @@ struct Minutely: DataBlockType {
 }
 
 struct Hourly: DataBlockType {
-    let time: Date
+    let time: TimeInterval
     let summary: String
     let icon: String
     let precipIntensity: Double
@@ -84,26 +84,26 @@ struct Hourly: DataBlockType {
 }
 
 struct Daily: DataBlockType {
-    let time: Date
+    let time: TimeInterval
     let summary: String
     let icon: String
-    let sunriseTime: Date
-    let sunsetTime: Date
+    let sunriseTime: TimeInterval
+    let sunsetTime: TimeInterval
     let moonPhase: Double
     let precipIntensity: Double
     let precipIntensityMax: Double
-    let precipIntensityMaxTime: Date
+    let precipIntensityMaxTime: TimeInterval?
     let precipProbability: Double
     let precipAccumulation: Double?
     let precipType: String?
     let temperatureHigh: Double
-    let temperatureHighTime: Date
+    let temperatureHighTime: TimeInterval
     let temperatureLow: Double
-    let temperatureLowTime: Date
+    let temperatureLowTime: TimeInterval
     let apparentTemperatureHigh: Double
-    let apparentTemperatureHighTime: Date
+    let apparentTemperatureHighTime: TimeInterval
     let apparentTemperatureLow: Double
-    let apparentTemperatureLowTime: Date
+    let apparentTemperatureLowTime: TimeInterval
     let dewPoint: Double
     let humidity: Double
     let pressure: Double
@@ -111,13 +111,13 @@ struct Daily: DataBlockType {
     let windBearing: Int
     let cloudCover: Double
     let uvIndex: Int
-    let uvIndexTime: Date
+    let uvIndexTime: TimeInterval
     let visibility: Double?
 }
 
 struct WeatherAlert: Codable {
-    let time: Date
-    let expires: Date
+    let time: TimeInterval
+    let expires: TimeInterval
     let title: String
     let description: String
     let regions: [String]

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftChart
+import DateToolsSwift
 
 class AppCoordinator {
     
@@ -36,12 +37,19 @@ class AppCoordinator {
             case .success(let weather):
                 guard let hourly = weather.hourly?.data else { return }
                 
-                let temperatures: [(x: TimeInterval, y: Double)] = hourly.map { (x: $0.time.timeIntervalSince1970, y: $0.temperature) }
+                let temperatures: [(x: TimeInterval, y: Double)] = hourly.map { (x: $0.time, y: $0.temperature) }
                 let chartSeries = ChartSeries(data: temperatures)
                 chartSeries.color = .blue
                 
                 var chartModel = ChartModel()
                 chartModel.series.append(chartSeries)
+                let indexSet = (0..<(chartSeries.data.count)).filter { $0 % 4 == 0 }
+                chartModel.xLabels = indexSet.map { temperatures[$0].x }
+                chartModel.xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
+                    let date = Date(timeIntervalSince1970: TimeInterval(labelValue))
+                    return "\(date.hour)"
+                }
+                chartModel.minY = 0
                 
                 self.chartsTableViewController.model.chartModels = [chartModel]
             }

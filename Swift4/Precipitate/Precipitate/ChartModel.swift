@@ -20,12 +20,12 @@ struct ChartModel {
      The values to display as labels on the x-axis. You can format these values  with the `xLabelFormatter` attribute.
      As default, it will display the values of the series which has the most data.
      */
-    var xLabels: [Float]?
+    var xLabels: [Double]?
     
     /**
      Formatter for the labels on the x-axis. The `index` represents the `xLabels` index, `value` its value:
      */
-    var xLabelsFormatter = { (labelIndex: Int, labelValue: Float) -> String in
+    var xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
         String(Int(labelValue))
     }
     
@@ -48,12 +48,12 @@ struct ChartModel {
      Values to display as labels of the y-axis. If not specified, will display the
      lowest, the middle and the highest values.
      */
-    var yLabels: [Float]?
+    var yLabels: [Double]?
     
     /**
      Formatter for the labels on the y-axis.
      */
-    var yLabelsFormatter = { (labelIndex: Int, labelValue: Float) -> String in
+    var yLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
         String(Int(labelValue))
     }
     
