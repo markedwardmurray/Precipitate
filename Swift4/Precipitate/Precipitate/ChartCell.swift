@@ -15,7 +15,17 @@ class ChartCell: UITableViewCell {
         return String(describing: self)
     }
     
-    lazy var chart: Chart = {
+    struct Model {
+        var chartModel: ChartModel = .init()
+    }
+    
+    var model: Model = .init() {
+        didSet {
+            chart.configure(model.chartModel)
+        }
+    }
+    
+    private lazy var chart: Chart = {
         let chart = Chart()
         return chart
     }()
@@ -35,10 +45,5 @@ class ChartCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        chart.removeAllSeries()
-    }
+
 }

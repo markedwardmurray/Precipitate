@@ -40,7 +40,10 @@ class AppCoordinator {
                 let chartSeries = ChartSeries(data: temperatures)
                 chartSeries.color = .blue
                 
-                self.chartsTableViewController.model.chartSeriess = [chartSeries]
+                var chartModel = ChartModel()
+                chartModel.series.append(chartSeries)
+                
+                self.chartsTableViewController.model.chartModels = [chartModel]
             }
         }
     }

@@ -13,7 +13,7 @@ import SwiftChart
 class ChartsTableViewController: UITableViewController {
     
     struct Model {
-        var chartSeriess: [ChartSeries] = []
+        var chartModels: [ChartModel] = []
     }
     
     var model: Model = .init() {
@@ -27,19 +27,18 @@ class ChartsTableViewController: UITableViewController {
         
         tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.reuseIdentifier)
         
-        tableView.rowHeight = 88
+        tableView.rowHeight = tableView.bounds.size.width / 2
         tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.chartSeriess.count
+        return model.chartModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chartCell = tableView.dequeueReusableCell(withIdentifier: ChartCell.reuseIdentifier, for: indexPath) as! ChartCell
         
-        let chartSeries = model.chartSeriess[indexPath.row]
-        chartCell.chart.add(chartSeries)
+        chartCell.model.chartModel = model.chartModels[indexPath.row]
         
         return chartCell
     }
