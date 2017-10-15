@@ -35,28 +35,9 @@ class AppCoordinator {
             case .failure(let error):
                 print(error)
             case .success(let weather):
-                guard let hourly = weather.hourly?.data else { return }
+                guard let hourly = weather.hourly else { return }
                 
-                var chartCellModel = ChartCellModel()
-                chartCellModel.title = "Temperature"
-                
-                let times: [TimeInterval] = hourly.map { $0.time }
-                let indexSet = (0..<(times.count)).filter { $0 % 4 == 0 }
-                chartCellModel.xLabels = indexSet.map { times[$0] }
-                chartCellModel.xLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
-                    let date = Date(timeIntervalSince1970: TimeInterval(labelValue))
-                    return "\(date.hour)"
-                }
-                
-                let temperatures = ChartSeries(data: hourly.map { (x: $0.time, y: $0.temperature) })
-                temperatures.color = .blue
-                
-                let apparentTemperatures = ChartSeries(data: hourly.map { (x: $0.time, y: $0.apparentTemperature) })
-                apparentTemperatures.color = .cyan
-                
-                chartCellModel.series = [temperatures, apparentTemperatures].reversed()
-                
-                self.chartsTableViewController.model.chartCellModels = [chartCellModel]
+                self.chartsTableViewController.model.chartCellModels = HourlyChartBuilder(hourly).chartCellModels
             }
         }
     }

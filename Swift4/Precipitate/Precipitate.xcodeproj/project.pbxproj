@@ -17,7 +17,8 @@
 		4D4C9ED01F919C52007B8413 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ECF1F919C52007B8413 /* ChartCell.swift */; };
 		4D4C9ED21F919C9D007B8413 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED11F919C9D007B8413 /* AppCoordinator.swift */; };
 		4D4C9ED41F91A17E007B8413 /* ChartCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED31F91A17E007B8413 /* ChartCellModel.swift */; };
-		4D8CBA401F8F235B00FE1F67 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */; };
+		4D4C9ED61F92FB9D007B8413 /* HourlyChartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */; };
+		4D8CBA401F8F235B00FE1F67 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */; };
 		4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA411F8F245800FE1F67 /* DarkSky.swift */; };
 		4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA85F51F8F28AF006C65E6 /* Secrets.swift */; };
 		8D91BE4DCCE0271597F7A2A5 /* Pods_PrecipitateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809FE1DEE97DC3F8F8395695 /* Pods_PrecipitateUITests.framework */; };
@@ -58,7 +59,8 @@
 		4D4C9ECF1F919C52007B8413 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		4D4C9ED11F919C9D007B8413 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4D4C9ED31F91A17E007B8413 /* ChartCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellModel.swift; sourceTree = "<group>"; };
-		4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyChartBuilder.swift; sourceTree = "<group>"; };
+		4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		4D8CBA411F8F245800FE1F67 /* DarkSky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSky.swift; sourceTree = "<group>"; };
 		4DFA85F51F8F28AF006C65E6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../../../Precipitate/Utilities/Secrets.swift; sourceTree = "<group>"; };
 		6AFC31152B1DA31E9E30D285 /* Pods-Precipitate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Precipitate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Precipitate/Pods-Precipitate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,8 +132,9 @@
 				4D2A86181F8F2198000F41DE /* ChartsTableViewController.swift */,
 				4D4C9ECF1F919C52007B8413 /* ChartCell.swift */,
 				4D4C9ED31F91A17E007B8413 /* ChartCellModel.swift */,
-				4D8CBA3F1F8F235B00FE1F67 /* WeatherData.swift */,
 				4D8CBA411F8F245800FE1F67 /* DarkSky.swift */,
+				4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */,
+				4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */,
 				4D2A861D1F8F2198000F41DE /* Assets.xcassets */,
 				4D2A861F1F8F2198000F41DE /* LaunchScreen.storyboard */,
 				4D2A86221F8F2198000F41DE /* Info.plist */,
@@ -482,9 +485,10 @@
 				4D4C9ED41F91A17E007B8413 /* ChartCellModel.swift in Sources */,
 				4D2A86191F8F2198000F41DE /* ChartsTableViewController.swift in Sources */,
 				4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */,
-				4D8CBA401F8F235B00FE1F67 /* WeatherData.swift in Sources */,
+				4D8CBA401F8F235B00FE1F67 /* Weather.swift in Sources */,
 				4D2A86171F8F2198000F41DE /* AppDelegate.swift in Sources */,
 				4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */,
+				4D4C9ED61F92FB9D007B8413 /* HourlyChartBuilder.swift in Sources */,
 				4D4C9ED21F919C9D007B8413 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

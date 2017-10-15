@@ -30,6 +30,7 @@ class ChartCell: UITableViewCell {
     
     private lazy var chart: Chart = {
         let chart = Chart()
+        chart.clipsToBounds = true
         return chart
     }()
     

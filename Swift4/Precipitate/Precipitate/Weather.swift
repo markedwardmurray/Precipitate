@@ -1,5 +1,5 @@
 //
-//  WeatherData.swift
+//  Weather.swift
 //  Precipitate
 //
 //  Created by Mark Murray on 10/12/17.
@@ -65,22 +65,23 @@ struct Hourly: DataBlockType {
     let time: TimeInterval
     let summary: String
     let icon: String
+    
+    let temperature: Double
+    let apparentTemperature: Double
+    let cloudCover: Double
+    let dewPoint: Double
+    let humidity: Double
+    let ozone: Double
     let precipIntensity: Double
     let precipProbability: Double
     let precipAccumulation: Double?
     let precipType: String?
-    let temperature: Double
-    let apparentTemperature: Double
-    let dewPoint: Double
-    let humidity: Double
-    let windSpeed: Double
-    let windBearing: Int
-    let windGust: Double
+    let pressure: Double
     let uvIndex: Int
     let visibility: Double
-    let cloudCover: Double
-    let pressure: Double
-    let ozone: Double
+    let windBearing: Int
+    let windGust: Double
+    let windSpeed: Double
 }
 
 struct Daily: DataBlockType {
