@@ -34,7 +34,7 @@ class ChartCell: UITableViewCell {
         return chart
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         layer.cornerRadius = 8

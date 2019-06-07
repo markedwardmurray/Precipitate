@@ -8,9 +8,9 @@ target 'Precipitate' do
   # Pods for Precipitate
 
   pod 'Alamofire', '4.8.0'
-  pod 'Anchorage', '4.2.4'
+  pod 'Anchorage', '4.3.0'
   pod 'DateToolsSwift', '4.0.0'
-  pod 'SwiftChart', '1.0.0'
+  pod 'SwiftChart', '1.0.1'
 
   target 'PrecipitateTests' do
     inherit! :search_paths
@@ -24,13 +24,13 @@ target 'Precipitate' do
 
 end
 
-#post_install do |installer|
-#    installer.pods_project.targets.each do |target|
-#      if target.name == 'Alamofire' || target.name == 'Anchorage'
-#            target.build_configurations.each do |config|
-#                config.build_settings['SWIFT_VERSION'] = '3.2'
-#            end
-#        end
-#    end
-#end
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name == 'SwiftChart'
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.0'
+            end
+        end
+    end
+end
 
