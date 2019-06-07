@@ -9,6 +9,7 @@
 import UIKit
 import Anchorage
 import SwiftChart
+import SwiftUI
 
 class ChartsTableViewController: UITableViewController {
     
@@ -24,6 +25,8 @@ class ChartsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(pushSettingsViewController))
         
         tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.reuseIdentifier)
         
@@ -41,6 +44,11 @@ class ChartsTableViewController: UITableViewController {
         chartCell.model = model.chartCellModels[indexPath.row]
         
         return chartCell
+    }
+    
+    @objc func pushSettingsViewController() {
+        let vc = UIHostingController(rootView: SettingsView())
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

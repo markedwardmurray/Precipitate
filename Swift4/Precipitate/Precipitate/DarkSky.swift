@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import CoreLocation
+import SwiftUI
 
 typealias CLLocationCoordinate2D = CoreLocation.CLLocationCoordinate2D
 
@@ -140,7 +141,7 @@ extension DarkSky.Request {
 }
 
 extension DarkSky.Request {
-    enum Units: String {
+    enum Units: String, CaseIterable {
         /// automatically select units based on geographic location
         case auto
         /// same as si, except that windSpeed is in kilometers per hour
@@ -155,7 +156,7 @@ extension DarkSky.Request {
 }
 
 extension DarkSky.Request {
-    enum Language: String {
+    enum Language: String, CaseIterable {
         case arabic = "ar"
         case azerbaijani = "az"
         case belarusian = "be"

@@ -18,6 +18,7 @@
 		4D4C9ED21F919C9D007B8413 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED11F919C9D007B8413 /* AppCoordinator.swift */; };
 		4D4C9ED41F91A17E007B8413 /* ChartCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED31F91A17E007B8413 /* ChartCellModel.swift */; };
 		4D4C9ED61F92FB9D007B8413 /* HourlyChartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */; };
+		4D8C2ADD22AA28D600161133 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8C2ADC22AA28D600161133 /* SettingsView.swift */; };
 		4D8CBA401F8F235B00FE1F67 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */; };
 		4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CBA411F8F245800FE1F67 /* DarkSky.swift */; };
 		4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA85F51F8F28AF006C65E6 /* Secrets.swift */; };
@@ -60,6 +61,7 @@
 		4D4C9ED11F919C9D007B8413 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4D4C9ED31F91A17E007B8413 /* ChartCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellModel.swift; sourceTree = "<group>"; };
 		4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyChartBuilder.swift; sourceTree = "<group>"; };
+		4D8C2ADC22AA28D600161133 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		4D8CBA411F8F245800FE1F67 /* DarkSky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSky.swift; sourceTree = "<group>"; };
 		4DFA85F51F8F28AF006C65E6 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../../../Precipitate/Utilities/Secrets.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				4D8CBA411F8F245800FE1F67 /* DarkSky.swift */,
 				4D8CBA3F1F8F235B00FE1F67 /* Weather.swift */,
 				4D4C9ED51F92FB9D007B8413 /* HourlyChartBuilder.swift */,
+				4D8C2ADC22AA28D600161133 /* SettingsView.swift */,
 				4D2A861D1F8F2198000F41DE /* Assets.xcassets */,
 				4D2A861F1F8F2198000F41DE /* LaunchScreen.storyboard */,
 				4D2A86221F8F2198000F41DE /* Info.plist */,
@@ -409,6 +412,7 @@
 				4D2A86191F8F2198000F41DE /* ChartsTableViewController.swift in Sources */,
 				4DFA85F61F8F28AF006C65E6 /* Secrets.swift in Sources */,
 				4D8CBA401F8F235B00FE1F67 /* Weather.swift in Sources */,
+				4D8C2ADD22AA28D600161133 /* SettingsView.swift in Sources */,
 				4D2A86171F8F2198000F41DE /* AppDelegate.swift in Sources */,
 				4D8CBA421F8F245900FE1F67 /* DarkSky.swift in Sources */,
 				4D4C9ED61F92FB9D007B8413 /* HourlyChartBuilder.swift in Sources */,
@@ -509,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -562,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
