@@ -1,14 +1,14 @@
 PODS:
   - Alamofire (4.5.1)
   - Anchorage (4.1.0)
-  - DateToolsSwift (2.0.3)
-  - SwiftChart (0.5.0)
+  - DateToolsSwift (4.0.0)
+  - SwiftChart (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Anchorage
-  - DateToolsSwift
-  - SwiftChart
+  - DateToolsSwift (= 4.0.0)
+  - SwiftChart (= 1.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -20,9 +20,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Anchorage: 6c20225cb7f44fdf9609ec99949ee160c803969c
-  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
-  SwiftChart: d1d22d2b1c4582f4d561edf97a210059c00ee256
+  DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
+  SwiftChart: 976cfe7614e750b0ee98f145841723f882ed84b3
 
-PODFILE CHECKSUM: d16bc959b8fb3f331e4816372b28fe185f96ed1f
+PODFILE CHECKSUM: 3cdb0e0d60b640e2604bebe255c9f4ef5e386a02
 
 COCOAPODS: 1.7.1

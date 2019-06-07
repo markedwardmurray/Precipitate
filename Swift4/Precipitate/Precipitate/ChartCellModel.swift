@@ -110,22 +110,22 @@ struct ChartCellModel {
     /**
      Custom minimum value for the x-axis.
      */
-    var minX: Float?
+    var minX: Double?
     
     /**
      Custom minimum value for the y-axis.
      */
-    var minY: Float?
+    var minY: Double?
     
     /**
      Custom maximum value for the x-axis.
      */
-    var maxX: Float?
+    var maxX: Double?
     
     /**
      Custom maximum value for the y-axis.
      */
-    var maxY: Float?
+    var maxY: Double?
     
     /**
      Color for the highlight line.
