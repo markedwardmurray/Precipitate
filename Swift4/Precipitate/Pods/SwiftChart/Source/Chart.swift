@@ -65,9 +65,11 @@ open class Chart: UIControl {
     Series to display in the chart.
     */
     open var series: [ChartSeries] = [] {
-        didSet {
-            setNeedsDisplay()
+      didSet {
+        DispatchQueue.main.async {
+          self.setNeedsDisplay()
         }
+      }
     }
 
     /**
@@ -480,7 +482,7 @@ open class Chart: UIControl {
         }
         lineLayer.fillColor = nil
         lineLayer.lineWidth = lineWidth
-        lineLayer.lineJoin = kCALineJoinBevel
+        lineLayer.lineJoin = CAShapeLayerLineJoin.bevel
 
         self.layer.addSublayer(lineLayer)
 

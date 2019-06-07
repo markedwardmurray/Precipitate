@@ -8,21 +8,29 @@ DEPENDENCIES:
   - Alamofire (= 4.8.1)
   - Anchorage (= 4.3.1)
   - DateToolsSwift (= 4.0.0)
-  - SwiftChart (= 1.0.1)
+  - SwiftChart (from `https://github.com/gpbl/SwiftChart`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Anchorage
     - DateToolsSwift
-    - SwiftChart
+
+EXTERNAL SOURCES:
+  SwiftChart:
+    :git: https://github.com/gpbl/SwiftChart
+
+CHECKOUT OPTIONS:
+  SwiftChart:
+    :commit: 4949a94090641ca85b8133129f7a7b2230694788
+    :git: https://github.com/gpbl/SwiftChart
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
-  SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
+  SwiftChart: 6ed8c61f3731cc32e3cb92858dba339d08ddac87
 
-PODFILE CHECKSUM: d1e1edd2b0851eb6dcddd34eb3c439a253f636a1
+PODFILE CHECKSUM: e0b7ee630d6c901569480cbf405d644d8b43b1fa
 
 COCOAPODS: 1.7.1

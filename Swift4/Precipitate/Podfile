@@ -11,7 +11,7 @@ target 'Precipitate' do
   pod 'Alamofire', '4.8.1'
   pod 'Anchorage', '4.3.1'
   pod 'DateToolsSwift', '4.0.0'
-  pod 'SwiftChart', '1.0.1'
+  pod 'SwiftChart', :git => 'https://github.com/gpbl/SwiftChart'
 
   target 'PrecipitateTests' do
     inherit! :search_paths
@@ -27,13 +27,7 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    if target.name == 'SwiftChart'
-      target.build_configurations.each do |config|
-        config.build_settings['SWIFT_VERSION'] = '4.0'
-      end
-    end
-    
-    if target.name == 'DateToolsSwift' || target.name == 'Alamofire'
+    if target.name == 'DateToolsSwift' || target.name == 'Alamofire' || target.name == 'SwiftChart'
       target.build_configurations.each do |config|
         config.build_settings['SWIFT_VERSION'] = '4.2'
       end
