@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
  platform :ios, '11.0'
+ inhibit_all_warnings!
 
 target 'Precipitate' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,8 +8,8 @@ target 'Precipitate' do
 
   # Pods for Precipitate
 
-  pod 'Alamofire', '4.8.0'
-  pod 'Anchorage', '4.3.0'
+  pod 'Alamofire', '4.8.1'
+  pod 'Anchorage', '4.3.1'
   pod 'DateToolsSwift', '4.0.0'
   pod 'SwiftChart', '1.0.1'
 
@@ -25,12 +26,17 @@ target 'Precipitate' do
 end
 
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-      if target.name == 'SwiftChart'
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
-            end
-        end
+  installer.pods_project.targets.each do |target|
+    if target.name == 'SwiftChart'
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.0'
+      end
     end
+    
+    if target.name == 'DateToolsSwift' || target.name == 'Alamofire'
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.2'
+      end
+    end
+  end
 end
-
