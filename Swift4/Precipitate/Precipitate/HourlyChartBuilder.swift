@@ -6,8 +6,7 @@
 //  Copyright © 2017 Mark Edward Murray. All rights reserved.
 //
 
-import Foundation
-import SwiftChart
+import UIKit
 
 let percentageFormatter: NumberFormatter = {
     let percentageFormatter = NumberFormatter()
@@ -74,9 +73,11 @@ struct HourlyChartBuilder {
     private var temperature: ChartCellModel {
         let temperatures = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.temperature) })
         temperatures.color = .blue
+        temperatures.legend = "Actual"
         
         let apparentTemperatures = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.apparentTemperature) })
         apparentTemperatures.color = .cyan
+        apparentTemperatures.legend = "Apparent"
         
         return defaultChartCellModel(title: "Temperature", series: [temperatures, apparentTemperatures])
     }
@@ -95,11 +96,13 @@ struct HourlyChartBuilder {
         precipIntensity.color = .blue
         precipIntensity.area = true
         precipIntensity.line = false
+        precipIntensity.legend = "Intensity"
         
         let precipAccumulation = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipAccumulation ?? 0) })
         precipAccumulation.color = .purple
         precipAccumulation.area = true
         precipAccumulation.line = false
+        precipAccumulation.legend = "Accumulation"
             
         var chartCellModel = defaultChartCellModel(title: "Precip", series: [precipIntensity, precipAccumulation])
         chartCellModel.yLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
@@ -135,9 +138,11 @@ struct HourlyChartBuilder {
     private var wind: ChartCellModel {
         let windSpeed = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.windSpeed) })
         windSpeed.color = .blue
+        windSpeed.legend = "Speed"
         
         let windGust = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.windGust) })
         windGust.color = .cyan
+        windGust.legend = "Gust"
         
         var chartCellModel = defaultChartCellModel(title: "Wind Speed", series: [windSpeed, windGust])
         chartCellModel.minY = 0

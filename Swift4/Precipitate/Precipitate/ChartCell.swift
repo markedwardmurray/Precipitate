@@ -19,6 +19,7 @@ class ChartCell: UITableViewCell {
         didSet {
             titleLabel.text = model.title
             chart.configure(model)
+            updateLegend()
         }
     }
     
@@ -34,6 +35,15 @@ class ChartCell: UITableViewCell {
         return chart
     }()
     
+    private lazy var legendStackView: UIStackView = {
+        let legendStackView = UIStackView()
+        legendStackView.axis = .horizontal
+        legendStackView.alignment = .leading
+        legendStackView.distribution = .equalSpacing
+        legendStackView.spacing = 8
+        return legendStackView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -42,16 +52,55 @@ class ChartCell: UITableViewCell {
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(chart)
+        contentView.addSubview(legendStackView)
         
         titleLabel.topAnchor == contentView.topAnchor + 8
         titleLabel.horizontalAnchors == contentView.horizontalAnchors + 8
+        
         chart.topAnchor == titleLabel.bottomAnchor + 4
         chart.horizontalAnchors == contentView.horizontalAnchors + 8
-        chart.bottomAnchor == contentView.bottomAnchor - 8
+        
+        legendStackView.topAnchor == chart.bottomAnchor + 4
+        legendStackView.leadingAnchor == contentView.leadingAnchor + 20
+        legendStackView.trailingAnchor <= contentView.trailingAnchor - 20
+        legendStackView.bottomAnchor == contentView.bottomAnchor - 8
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-
+    
+    private func updateLegend() {
+        legendStackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
+        model.series.reversed().forEach { chartSeries in
+            guard let legend = chartSeries.legend else { return }
+            let font = UIFont.systemFont(ofSize: 12)
+            
+            var legendColor: UIColor {
+                var color = chartSeries.color
+                if !chartSeries.line, chartSeries.area {
+                    color = color.withAlphaComponent(model.areaAlphaComponent)
+                }
+                return color
+            }
+            
+            let attText = NSMutableAttributedString(string: "■ ", attributes: [
+                NSAttributedString.Key.foregroundColor: legendColor,
+                NSAttributedString.Key.font: font
+            ])
+            attText.append(
+                NSAttributedString(string: legend, attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor.black,
+                    NSAttributedString.Key.font: font
+                ])
+            )
+            
+            let label = UILabel()
+            label.attributedText = attText
+            legendStackView.addArrangedSubview(label)
+        }
+    }
 }

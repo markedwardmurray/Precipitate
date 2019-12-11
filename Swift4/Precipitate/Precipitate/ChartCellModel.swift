@@ -8,6 +8,10 @@
 
 import SwiftChart
 
+class ChartSeries: SwiftChart.ChartSeries {
+    open var legend: String?
+}
+
 struct ChartCellModel {
     var identifier: String?
     
