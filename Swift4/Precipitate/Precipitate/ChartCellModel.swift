@@ -76,17 +76,17 @@ struct ChartCellModel {
     /**
      Font used for the labels.
      */
-    var labelColor: UIColor = UIColor.black
+    var labelColor: UIColor = dynamicTextColor
     
     /**
      Color for the axes.
      */
-    var axesColor: UIColor = UIColor.gray.withAlphaComponent(0.3)
+    var axesColor: UIColor = UIColor.systemGray3
     
     /**
      Color for the grid.
      */
-    var gridColor: UIColor = UIColor.gray.withAlphaComponent(0.3)
+    var gridColor: UIColor = UIColor.systemGray2
     /**
      Should draw lines for labels on X axis.
      */
@@ -144,7 +144,7 @@ struct ChartCellModel {
     /**
      Alpha component for the area's color.
      */
-    var areaAlphaComponent: CGFloat = 0.1
+    var areaAlphaComponent: CGFloat = 0.4
 }
 
 extension Chart {

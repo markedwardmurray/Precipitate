@@ -72,11 +72,11 @@ struct HourlyChartBuilder {
     
     private var temperature: ChartCellModel {
         let temperatures = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.temperature) })
-        temperatures.color = .blue
+        temperatures.color = .systemBlue
         temperatures.legend = "Actual"
         
         let apparentTemperatures = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.apparentTemperature) })
-        apparentTemperatures.color = .cyan
+        apparentTemperatures.color = .systemTeal
         apparentTemperatures.legend = "Apparent"
         
         return defaultChartCellModel(title: "Temperature", series: [temperatures, apparentTemperatures])
@@ -84,7 +84,7 @@ struct HourlyChartBuilder {
     
     private var precipProbability: ChartCellModel {
         let precipProbability = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipProbability) })
-        precipProbability.color = .blue
+        precipProbability.color = .systemBlue
         precipProbability.area = true
         precipProbability.line = false
         
@@ -93,13 +93,13 @@ struct HourlyChartBuilder {
     
     private var precip: ChartCellModel {
         let precipIntensity = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipIntensity) })
-        precipIntensity.color = .blue
+        precipIntensity.color = .systemBlue
         precipIntensity.area = true
         precipIntensity.line = false
         precipIntensity.legend = "Intensity"
         
         let precipAccumulation = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipAccumulation ?? 0) })
-        precipAccumulation.color = .purple
+        precipAccumulation.color = .systemPurple
         precipAccumulation.area = true
         precipAccumulation.line = false
         precipAccumulation.legend = "Accumulation"
@@ -114,7 +114,7 @@ struct HourlyChartBuilder {
     
     private var cloudCover: ChartCellModel {
         let cloudCover = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.cloudCover) })
-        cloudCover.color = .blue
+        cloudCover.color = .systemBlue
         cloudCover.area = true
         cloudCover.line = false
         
@@ -123,25 +123,25 @@ struct HourlyChartBuilder {
     
     private var uvIndex: ChartCellModel {
         let uvIndex = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: Double($0.uvIndex)) })
-        uvIndex.color = UIColor.orange
+        uvIndex.color = .systemOrange
         uvIndex.area = true
         uvIndex.line = false
         
         var chartCellModel = defaultChartCellModel(title: "UV Index", series: [uvIndex])
         chartCellModel.minY = 0
         chartCellModel.maxY = 10
-        chartCellModel.areaAlphaComponent = 0.4
+        chartCellModel.areaAlphaComponent = 0.6
         
         return chartCellModel
     }
     
     private var wind: ChartCellModel {
         let windSpeed = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.windSpeed) })
-        windSpeed.color = .blue
+        windSpeed.color = .systemBlue
         windSpeed.legend = "Speed"
         
         let windGust = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.windGust) })
-        windGust.color = .cyan
+        windGust.color = .systemTeal
         windGust.legend = "Gust"
         
         var chartCellModel = defaultChartCellModel(title: "Wind Speed", series: [windSpeed, windGust])

@@ -25,6 +25,7 @@ class ChartCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.textColor = dynamicTextColor
         titleLabel.textAlignment = .center
         return titleLabel
     }()
@@ -87,20 +88,26 @@ class ChartCell: UITableViewCell {
                 return color
             }
             
-            let attText = NSMutableAttributedString(string: "■ ", attributes: [
-                NSAttributedString.Key.foregroundColor: legendColor,
-                NSAttributedString.Key.font: font
-            ])
-            attText.append(
-                NSAttributedString(string: legend, attributes: [
-                    NSAttributedString.Key.foregroundColor: UIColor.black,
+            let label = UILabel()
+            traitCollection.performAsCurrent {
+                let attText = NSMutableAttributedString(string: "■ ", attributes: [
+                    NSAttributedString.Key.foregroundColor: legendColor,
                     NSAttributedString.Key.font: font
                 ])
-            )
+                attText.append(
+                    NSAttributedString(string: legend, attributes: [
+                        NSAttributedString.Key.foregroundColor: dynamicTextColor,
+                        NSAttributedString.Key.font: font
+                    ])
+                )
+                label.attributedText = attText
+            }
             
-            let label = UILabel()
-            label.attributedText = attText
             legendStackView.addArrangedSubview(label)
         }
     }
+}
+
+let dynamicTextColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+    return traitCollection.userInterfaceStyle == .dark ? .white : .black
 }
