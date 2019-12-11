@@ -28,28 +28,29 @@ struct SettingsView : View {
     @State var hourDisplay: HourDisplay = ._12
     
     var body: some View {
-        List {
-            Section(header: Text("Dark Sky API")) {
-                Picker(selection: $units, label: Text("Units")) {
-                    ForEach(DarkSky.Request.Units.allCases.identified(by: \.self)) { unit in
-                        Text(unit.rawValue).tag(unit)
-                    }
-                }
-                Picker(selection: $language, label: Text("Language")) {
-                    ForEach(DarkSky.Request.Language.allCases.identified(by: \.self)) { lang in
-                        Text(lang.rawValue).tag(lang)
-                    }
-                }
-            }
-            Section(header: Text("Charts")) {
-                SegmentedControl(selection: $hourDisplay) {
-                    ForEach(HourDisplay.allCases.identified(by: \.self)) { hour in
-                        Text(hour.display).tag(hour)
-                    }
-                }
-            }
-        }.listStyle(.grouped)
-         .navigationBarTitle(Text("Settings"))
+        Text("Settings")
+//        List {
+//            Section(header: Text("Dark Sky API")) {
+//                Picker(selection: $units, label: Text("Units")) {
+//                    ForEach(DarkSky.Request.Units.allCases.identified(by: \.self)) { unit in
+//                        Text(unit.rawValue).tag(unit)
+//                    }
+//                }
+//                Picker(selection: $language, label: Text("Language")) {
+//                    ForEach(DarkSky.Request.Language.allCases.identified(by: \.self)) { lang in
+//                        Text(lang.rawValue).tag(lang)
+//                    }
+//                }
+//            }
+//            Section(header: Text("Charts")) {
+//                SegmentedControl(selection: $hourDisplay) {
+//                    ForEach(HourDisplay.allCases.identified(by: \.self)) { hour in
+//                        Text(hour.display).tag(hour)
+//                    }
+//                }
+//            }
+//        }.listStyle(.grouped)
+//         .navigationBarTitle(Text("Settings"))
     }
 }
 
