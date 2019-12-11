@@ -30,8 +30,8 @@ class ChartsTableViewController: UITableViewController {
         
         tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.reuseIdentifier)
         
-        tableView.rowHeight = (tableView.bounds.size.width / 2) + 20
         tableView.tableFooterView = UIView()
+        tableView.allowsSelection = false
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +44,16 @@ class ChartsTableViewController: UITableViewController {
         chartCell.model = model.chartCellModels[indexPath.row]
         
         return chartCell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let safeLayoutFrame = tableView.safeAreaLayoutGuide.layoutFrame
+        switch traitCollection.verticalSizeClass {
+            case .compact:
+                return safeLayoutFrame.height
+            default:
+                return (safeLayoutFrame.width / 2) + 20
+        }
     }
     
     @objc func pushSettingsViewController() {
