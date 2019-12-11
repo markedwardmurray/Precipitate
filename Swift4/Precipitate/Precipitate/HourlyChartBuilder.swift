@@ -15,6 +15,13 @@ let percentageFormatter: NumberFormatter = {
     return percentageFormatter
 }()
 
+let decimalFormatter: NumberFormatter = {
+    let decimalFormatter = NumberFormatter()
+    decimalFormatter.maximumSignificantDigits = 2
+    decimalFormatter.minimumSignificantDigits = 2
+    return decimalFormatter
+}()
+
 struct HourlyChartBuilder {
     let dataBlock: DataBlock<Hourly>
     let times: [TimeInterval]
@@ -28,6 +35,7 @@ struct HourlyChartBuilder {
         return [
             temperature,
             precipProbability,
+            precip,
             wind,
             cloudCover,
             uvIndex
@@ -80,6 +88,25 @@ struct HourlyChartBuilder {
         precipProbability.line = false
         
         return percentageChartCellModel(title: "Precip %", series: [precipProbability])
+    }
+    
+    private var precip: ChartCellModel {
+        let precipIntensity = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipIntensity) })
+        precipIntensity.color = .blue
+        precipIntensity.area = true
+        precipIntensity.line = false
+        
+        let precipAccumulation = ChartSeries(data: dataBlock.data.map { (x: $0.time, y: $0.precipAccumulation ?? 0) })
+        precipAccumulation.color = .purple
+        precipAccumulation.area = true
+        precipAccumulation.line = false
+            
+        var chartCellModel = defaultChartCellModel(title: "Precip", series: [precipIntensity, precipAccumulation])
+        chartCellModel.yLabelsFormatter = { (labelIndex: Int, labelValue: Double) -> String in
+            return decimalFormatter.string(from: NSNumber(value: labelValue) ) ?? ""
+        }
+        
+        return chartCellModel
     }
     
     private var cloudCover: ChartCellModel {
