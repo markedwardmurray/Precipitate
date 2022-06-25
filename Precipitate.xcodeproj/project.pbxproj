@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4D09566828679B5000AAF5DB /* PrecipitateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09566728679B5000AAF5DB /* PrecipitateApp.swift */; };
-		4D09566A28679B5000AAF5DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09566928679B5000AAF5DB /* ContentView.swift */; };
 		4D09566C28679B5000AAF5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D09566B28679B5000AAF5DB /* Assets.xcassets */; };
 		4D09566F28679B5000AAF5DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D09566E28679B5000AAF5DB /* Preview Assets.xcassets */; };
 		4D09567928679B5100AAF5DB /* PrecipitateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09567828679B5100AAF5DB /* PrecipitateTests.swift */; };
 		4D09568328679B5100AAF5DB /* PrecipitateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09568228679B5100AAF5DB /* PrecipitateUITests.swift */; };
 		4D09568528679B5100AAF5DB /* PrecipitateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09568428679B5100AAF5DB /* PrecipitateUITestsLaunchTests.swift */; };
+		4D09569828679D4400AAF5DB /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09569428679D4400AAF5DB /* WeatherClient.swift */; };
+		4D09569928679D4400AAF5DB /* WeatherChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09569528679D4400AAF5DB /* WeatherChartView.swift */; };
+		4D09569A28679D4400AAF5DB /* WeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09569628679D4400AAF5DB /* WeatherListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		4D09566428679B5000AAF5DB /* Precipitate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precipitate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D09566728679B5000AAF5DB /* PrecipitateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateApp.swift; sourceTree = "<group>"; };
-		4D09566928679B5000AAF5DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D09566B28679B5000AAF5DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D09566E28679B5000AAF5DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D09567428679B5100AAF5DB /* PrecipitateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,10 @@
 		4D09567E28679B5100AAF5DB /* PrecipitateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecipitateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D09568228679B5100AAF5DB /* PrecipitateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITests.swift; sourceTree = "<group>"; };
 		4D09568428679B5100AAF5DB /* PrecipitateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4D09569128679D0A00AAF5DB /* Precipitate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Precipitate.entitlements; sourceTree = "<group>"; };
+		4D09569428679D4400AAF5DB /* WeatherClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
+		4D09569528679D4400AAF5DB /* WeatherChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherChartView.swift; sourceTree = "<group>"; };
+		4D09569628679D4400AAF5DB /* WeatherListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				4D09566728679B5000AAF5DB /* PrecipitateApp.swift */,
-				4D09566928679B5000AAF5DB /* ContentView.swift */,
-				4D09566B28679B5000AAF5DB /* Assets.xcassets */,
+				4D09569528679D4400AAF5DB /* WeatherChartView.swift */,
+				4D09569428679D4400AAF5DB /* WeatherClient.swift */,
+				4D09569628679D4400AAF5DB /* WeatherListView.swift */,
 				4D09566D28679B5000AAF5DB /* Preview Content */,
+				4D09569228679D1700AAF5DB /* Supporting Files */,
 			);
 			path = Precipitate;
 			sourceTree = "<group>";
@@ -125,6 +132,15 @@
 				4D09568428679B5100AAF5DB /* PrecipitateUITestsLaunchTests.swift */,
 			);
 			path = PrecipitateUITests;
+			sourceTree = "<group>";
+		};
+		4D09569228679D1700AAF5DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D09566B28679B5000AAF5DB /* Assets.xcassets */,
+				4D09569128679D0A00AAF5DB /* Precipitate.entitlements */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D09566A28679B5000AAF5DB /* ContentView.swift in Sources */,
+				4D09569928679D4400AAF5DB /* WeatherChartView.swift in Sources */,
+				4D09569828679D4400AAF5DB /* WeatherClient.swift in Sources */,
+				4D09569A28679D4400AAF5DB /* WeatherListView.swift in Sources */,
 				4D09566828679B5000AAF5DB /* PrecipitateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +448,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0.Precipitate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,7 +477,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0.Precipitate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markedwardmurray.precipitate0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

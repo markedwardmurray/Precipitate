@@ -11,7 +11,7 @@ import SwiftUI
 struct PrecipitateApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WeatherListView()
         }
     }
 }
